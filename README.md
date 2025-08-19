@@ -1,24 +1,26 @@
 # 🚀 Pretty Good Prompts
-## Enterprise-Grade AI Coding Assistant Prompts
+## JGamblin's Personal AI Coding Assistant Prompts
 
-**⚠️ HIGHLY OPINIONATED COLLECTION**  
+**⚠️ PERSONAL COLLECTION - USE AT YOUR OWN RISK**  
 
-### 🎯 **What Makes These Prompts Different**
+These are my personal prompts that I've developed to help with common coding issues. I'm sharing them in case others find them useful, but they reflect my own preferences and workflow.
 
-- **📊 Report-Driven**: Generate comprehensive analysis reports instead of direct code changes
-- **🏗️ Architecture-First**: Focus on clean code principles, SOLID design, and scalability
-- **🛡️ Security-Conscious**: Vulnerability identification and secure coding practices built-in
-- **⚡ Performance-Engineered**: Algorithm optimization and resource efficiency prioritized
-- **🧪 Quality-Assured**: Comprehensive testing strategies and maintainability focus
-- **📚 Enterprise-Ready**: Documentation, compliance, and team collaboration standards
+### 🎯 **What I Focus On**
 
-### 🎖️ **Designed for Professional Software Development**
+- **📊 Analysis-First**: I prefer getting detailed reports before making changes
+- **🏗️ Clean Code**: I try to follow SOLID principles and good architecture
+- **🛡️ Security**: I've learned to always think about security implications
+- **⚡ Performance**: I care about making code that runs efficiently
+- **🧪 Testing**: I believe in comprehensive testing (when I remember to write it)
+- **📚 Documentation**: I document things so I don't forget how they work
 
-These prompts are crafted for:
-- **Senior Engineers** who demand high-quality analysis
-- **Tech Leads** who need architectural guidance
-- **Engineering Teams** building production systems
-- **Organizations** with strict quality and security requirements
+### 🤷 **Who Might Find These Useful**
+
+These prompts work for me, but your mileage may vary:
+- Developers who like detailed code analysis
+- People who want structured feedback on their code
+- Teams that care about code quality and security
+- Anyone who wants to improve their development process
 
 ---
 
@@ -29,134 +31,145 @@ These prompts are crafted for:
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
-| [`code-refactoring.md`](./generic/code-refactoring.md) | **World-class refactoring analysis** with security, performance, and architecture assessment | Expert |
-| [`documentation-generation.md`](./generic/documentation-generation.md) | **Professional documentation strategy** with API specs and architectural records | Senior |
-| [`pr-review-feedback.md`](./generic/pr-review-feedback.md) | **Comprehensive code review** with security and performance analysis | Expert |
+| [`code-refactoring.md`](./generic/code-refactoring.md) | **World-class refactoring analysis** with security, performance, and architecture assessment | Principal |
+| [`documentation-generation.md`](./generic/documentation-generation.md) | **Professional documentation strategy** with API specs and architectural records | Principal |
+| [`pr-review-feedback.md`](./generic/pr-review-feedback.md) | **Comprehensive code review** with security and performance analysis | Principal |
+| [`project-repo.md`](./generic/project-repo.md) | **Repository setup guide** for creating well-structured project foundations | Principal |
 
 ### 🐍 **Python Ecosystem**
 *Production-ready Python development*
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
-| [`unit-test-generation.md`](./python/unit-test-generation.md) | **Test strategy and coverage analysis** with pytest best practices | Senior |
-| [`docstring-creation.md`](./python/docstring-creation.md) | **Professional API documentation** with Google/PEP 257 standards | Intermediate |
-| [`type-hinting.md`](./python/type-hinting.md) | **Type safety analysis** with mypy integration and modern typing | Advanced |
+| [`project-repo.md`](./python/project-repo.md) | **Python repository setup** with Poetry, pytest, and development tooling | Principal |
+| [`code-refactoring.md`](./python/code-refactoring.md) | **Python refactoring excellence** with asyncio, Django/Flask/FastAPI optimization | Principal |
+| [`documentation-generation.md`](./python/documentation-generation.md) | **Python documentation mastery** with Sphinx, type hints, and framework integration | Principal |
+| [`pr-review-feedback.md`](./python/pr-review-feedback.md) | **Python code review excellence** with Django ORM, security, and performance focus | Principal |
+| [`unit-test-generation.md`](./python/unit-test-generation.md) | **Test strategy and coverage analysis** with pytest best practices | Principal |
+| [`docstring-creation.md`](./python/docstring-creation.md) | **Professional API documentation** with Google/PEP 257 standards | Principal |
+| [`type-hinting.md`](./python/type-hinting.md) | **Type safety analysis** with mypy integration and modern typing | Principal |
 
 ### 🌐 **Frontend & Web**
 *Modern web development standards*
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
-| [`accessibility-check.md`](./html/accessibility-check.md) | **WCAG compliance audit** with comprehensive accessibility analysis | Expert |
-| [`semantic-markup-refinement.md`](./html/semantic-markup-refinement.md) | **HTML5 semantic optimization** with SEO and performance focus | Advanced |
-| [`bem-naming-convention.md`](./html/bem-naming-convention.md) | **CSS architecture analysis** with BEM methodology implementation | Intermediate |
-| [`navigation-consistency.md`](./html/navigation-consistency.md) | **UX navigation standardization** across multi-page applications | Senior |
+| [`project-repo.md`](./html/project-repo.md) | **Frontend repository setup** with Webpack/Vite, ESLint, and modern tooling | Principal |
+| [`code-refactoring.md`](./html/code-refactoring.md) | **Frontend refactoring excellence** with React/Vue/Angular, BEM CSS, accessibility | Principal |
+| [`documentation-generation.md`](./html/documentation-generation.md) | **Frontend documentation mastery** with Storybook, component libraries, design systems | Principal |
+| [`pr-review-feedback.md`](./html/pr-review-feedback.md) | **Frontend code review excellence** with Core Web Vitals, accessibility, performance | Principal |
+| [`accessibility-check.md`](./html/accessibility-check.md) | **WCAG compliance audit** with comprehensive accessibility analysis | Principal |
+| [`semantic-markup-refinement.md`](./html/semantic-markup-refinement.md) | **HTML5 semantic optimization** with SEO and performance focus | Principal |
+| [`bem-naming-convention.md`](./html/bem-naming-convention.md) | **CSS architecture analysis** with BEM methodology implementation | Principal |
+| [`navigation-consistency.md`](./html/navigation-consistency.md) | **UX navigation standardization** across multi-page applications | Principal |
 
 ### 💎 **Ruby Ecosystem**
 *Enterprise Ruby and Rails development*
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
-| [`rspec-test-generation.md`](./ruby/rspec-test-generation.md) | **RSpec test strategy** with comprehensive coverage planning | Senior |
-| [`rubocop-compliance.md`](./ruby/rubocop-compliance.md) | **Code quality analysis** with Ruby style guide enforcement | Intermediate |
-| [`gemfile-management.md`](./ruby/gemfile-management.md) | **Dependency security audit** with version management strategy | Advanced |
+| [`project-repo.md`](./ruby/project-repo.md) | **Ruby repository setup** with Bundler, RSpec, and Rails conventions | Principal |
+| [`code-refactoring.md`](./ruby/code-refactoring.md) | **Ruby refactoring excellence** with Rails conventions, metaprogramming, gem patterns | Principal |
+| [`documentation-generation.md`](./ruby/documentation-generation.md) | **Ruby documentation mastery** with YARD, Rails API docs, gem documentation | Principal |
+| [`pr-review-feedback.md`](./ruby/pr-review-feedback.md) | **Ruby code review excellence** with Rails security, ActiveRecord optimization | Principal |
+| [`rspec-test-generation.md`](./ruby/rspec-test-generation.md) | **RSpec test strategy** with comprehensive coverage planning | Principal |
+| [`rubocop-compliance.md`](./ruby/rubocop-compliance.md) | **Code quality analysis** with Ruby style guide enforcement | Principal |
+| [`gemfile-management.md`](./ruby/gemfile-management.md) | **Dependency security audit** with version management strategy | Principal |
 
 ---
 
-## 🛠️ **Integration Guide**
+## 🛠️ **How I Use These**
 
-### **IDE-Native Workflow**
+### **My Workflow**
 ```bash
-# Step 1: Select your code or place cursor in target file
-# Step 2: Copy the appropriate prompt
-# Step 3: Paste into your AI coding assistant
-# Step 4: Review the generated analysis report
-# Step 5: Implement suggested improvements iteratively
+# Step 1: Select the code I want help with
+# Step 2: Copy the relevant prompt
+# Step 3: Paste it into my AI assistant (usually Windsurf or Claude)
+# Step 4: Read through the analysis
+# Step 5: Implement the changes that make sense to me
 ```
 
-### **Supported AI Platforms**
-- ✅ **Windsurf** - Full IDE integration
-- ✅ **GitHub Copilot** - VS Code/JetBrains
-- ✅ **Claude** - Direct API usage
-- ✅ **Cursor** - IDE integration
-- ✅ **Codeium** - Multi-editor support
+### **AI Tools I've Tested With**
+- ✅ **Windsurf** - My main IDE, works great
+- ✅ **Claude** - Good for detailed analysis
+- ✅ **GitHub Copilot** - Works in VS Code
+- ✅ **Cursor** - Also pretty good
+- 🤔 **Others** - Haven't tried extensively but should work
 
 ---
 
-## 📊 **What You Get**
+## 📊 **What These Prompts Give Me**
 
-### **📋 Comprehensive Analysis Reports**
+### **📋 Structured Analysis**
+I find it helpful to get organized feedback like:
 ```markdown
-# Example Output Structure
-## 📊 Executive Dashboard
-- Codebase Health Score: 73/100
-- Technical Debt Hours: 24 hours
-- Security Risk Level: Medium
-- Performance Impact: 3 bottlenecks identified
+# Example of what I typically see
+## Issues Found
+- Potential security problem on line 45
+- This algorithm might be slow with large datasets
+- Code structure could be cleaner
 
-## 🔍 Detailed Findings
-### Critical Issues (Fix Immediately)
-1. **SQL Injection Vulnerability** - Line 45
-2. **Performance Bottleneck** - O(n²) algorithm
-3. **Architecture Violation** - God object pattern
-
-## 📋 Implementation Roadmap
-### Priority 1: Security Fixes (2 hours)
-### Priority 2: Performance Optimization (4 hours)
-### Priority 3: Architecture Refactoring (8 hours)
+## Suggestions
+1. Fix the input validation
+2. Consider using a more efficient algorithm
+3. Maybe refactor this into smaller functions
 ```
 
-### **🎯 Interactive Follow-ups**
-Every prompt includes intelligent follow-up questions:
-> *"Would you like me to help implement the first critical security fix identified in the analysis?"*
+### **🎯 Follow-up Questions**
+The prompts usually ask helpful questions like:
+> *"Want me to help fix that security issue first?"*
+
+Which helps me decide what to tackle next.
 
 ---
 
-## ⚡ **Why These Prompts Work**
+## ⚡ **Why I Think These Work**
 
-### **🧠 Expert-Level Context**
-- **15+ years** of enterprise development experience
-- **Battle-tested** in production environments
-- **Industry standards** compliance (WCAG, OWASP, SOLID)
-- **Modern practices** with latest tools and frameworks
+### **🧠 Based on Real Experience**
+- I've been writing code for a while and made plenty of mistakes
+- I try to follow industry best practices (WCAG, OWASP, SOLID, etc.)
+- I update these based on what actually helps in day-to-day work
+- I use modern tools and try to stay current
 
-### **🎯 Actionable Outcomes**
-- **Quantified improvements**: "60-80% response time improvement"
-- **Risk assessment**: "90% of critical vulnerabilities eliminated"
-- **Clear priorities**: "Fix security issues first, then performance"
-- **Time estimates**: "16-24 hours effort for security fixes"
+### **🎯 Practical Focus**
+- I like getting specific suggestions rather than vague advice
+- I want to know what to prioritize when I have limited time
+- I prefer step-by-step guidance over theory
+- I want to understand why something matters
 
-### **🔄 Iterative Excellence**
-Designed for continuous improvement cycles:
-1. **Analysis** → Identify issues with precision
-2. **Planning** → Prioritized, time-estimated roadmap
-3. **Implementation** → Step-by-step guided fixes
-4. **Validation** → Measure improvements achieved
-
----
-
-## 🎖️ **Quality Standards**
-
-> **These prompts represent the gold standard for AI-assisted code analysis.**
-
-- **🔒 Security-First**: OWASP Top 10, SAST integration, vulnerability assessment
-- **⚡ Performance-Engineered**: Algorithm analysis, memory optimization, bottleneck identification
-- **🏗️ Architecture-Focused**: SOLID principles, design patterns, clean code
-- **🧪 Test-Driven**: Comprehensive coverage, quality metrics, CI/CD integration
-- **📚 Documentation-Complete**: API docs, architecture records, team knowledge transfer
+### **🔄 My Process**
+How I typically use these:
+1. **Analyze** → Figure out what needs attention
+2. **Prioritize** → Decide what to tackle first
+3. **Implement** → Make changes one at a time
+4. **Test** → Make sure I didn't break anything
 
 ---
 
-## 📈 **Expected Outcomes**
+## 🎖️ **What I Care About**
 
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| **Development Velocity** | Baseline | +300% | 3x faster delivery |
-| **Code Quality Score** | Variable | 90+ | Professional grade |
-| **Security Vulnerabilities** | Multiple | Zero Critical | Risk elimination |
-| **Performance** | Baseline | +60-80% | Response time |
-| **Technical Debt** | High | <10% | Maintainable code |
-| **Test Coverage** | <50% | >90% | Quality assurance |
+> **These are the things I try to focus on in my own code.**
+
+- **🔒 Security**: I check for common vulnerabilities (OWASP Top 10, etc.)
+- **⚡ Performance**: I look for obvious bottlenecks and inefficiencies
+- **🏗️ Clean Architecture**: I try to follow SOLID principles when I remember
+- **🧪 Testing**: I aim for good test coverage (though I don't always achieve it)
+- **📚 Documentation**: I document things so future me understands the code
+
+---
+
+## 📈 **What I Hope You Get Out of These**
+
+| What I'm Aiming For | Reality Check |
+|---------------------|---------------|
+| **Faster Development** | Helps me catch issues earlier |
+| **Better Code Quality** | My code has gotten cleaner over time |
+| **Fewer Security Issues** | I catch more problems before they hit production |
+| **Better Performance** | I'm more aware of performance implications |
+| **Less Technical Debt** | My code is easier to maintain now |
+| **Better Testing** | I write more tests than I used to |
+
+**Disclaimer**: Your results will definitely vary. These work for my style and the kind of projects I work on, but everyone's different.
 
 ---
 

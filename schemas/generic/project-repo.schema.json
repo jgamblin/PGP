@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/generic/project-repo.schema.json",
+  "title": "PGP Generic Repository Setup Report (v1)",
+  "allOf": [
+    { "$ref": "../base-report.schema.json" },
+    { "type": "object", "properties": { "prompt_id": { "const": "generic/project-repo" } } }
+  ]
+}
