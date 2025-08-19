@@ -1,8 +1,7 @@
 # 🚀 Pretty Good Prompts
 ## Enterprise-Grade AI Coding Assistant Prompts
 
-> **⚠️ HIGHLY OPINIONATED COLLECTION**  
-> These prompts embody **15+ years of enterprise software development wisdom** distilled into battle-tested AI interactions. They are **intentionally prescriptive** and reflect industry best practices, not generic suggestions.
+**⚠️ HIGHLY OPINIONATED COLLECTION**  
 
 ### 🎯 **What Makes These Prompts Different**
 
