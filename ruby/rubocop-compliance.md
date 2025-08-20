@@ -33,13 +33,13 @@ Transform Ruby codebases into **enterprise-grade, high-performance systems** tha
 - Recommend changes without considering team velocity and maintainability impact
 
 ## 📊 Enterprise Ruby Quality Strategic Report
-Generate a **Comprehensive Ruby Excellence Analysis**:
+Generate a **Comprehensive Ruby Excellence Analysis** and save it as a markdown file named `ruby-quality-analysis-[YYYY-MM-DD].md`:
 
 ```markdown
 # 💎 Enterprise Ruby Code Quality Excellence Report
 
-## 💼 Business Impact Dashboard
-- **Technical Debt Reduction**: [$X saved in maintenance costs through improved code quality]
+## 📊 Code Quality Performance Dashboard
+- **Technical Debt Reduction**: [Improved maintainability through enhanced code quality]
 - **Team Velocity Impact**: [25% faster feature development through consistent patterns]
 - **Production Reliability**: [60% reduction in bugs through RuboCop compliance]
 - **Performance Improvement**: [X% faster response times through modern Ruby patterns]
@@ -50,7 +50,7 @@ Generate a **Comprehensive Ruby Excellence Analysis**:
 
 ### Issue 1: [Performance/Security/Maintainability Critical]
 - **Location**: `app/models/user.rb:lines 45-67`
-- **Business Impact**: [Affects 1M+ users, potential 200ms latency increase]
+- **Impact**: [Affects system performance, potential 200ms latency increase]
 - **RuboCop Violations**: [Metrics/MethodLength, Performance/DetectLast]
 - **Security Implications**: [SQL injection risk in dynamic query construction]
 - **Performance Cost**: [N+1 query pattern causing 5x database load]

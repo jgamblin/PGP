@@ -15,7 +15,7 @@ Conduct a comprehensive, multi-dimensional analysis of the provided code to iden
 7. **Testing Excellence**: RSpec mastery, FactoryBot patterns, test-driven development
 
 **Report Format:**
-Generate a comprehensive, enterprise-grade refactoring analysis report:
+Generate a comprehensive, enterprise-grade refactoring analysis report and save it as a markdown file named `ruby-refactoring-analysis-[YYYY-MM-DD].md`:
 
 ```markdown
 # 🔧 Code Refactoring Analysis Report

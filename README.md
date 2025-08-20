@@ -85,8 +85,9 @@ These prompts work for me, but your mileage may vary:
 # Step 1: Select the code I want help with
 # Step 2: Copy the relevant prompt
 # Step 3: Paste it into my AI assistant (usually Windsurf or Claude)
-# Step 4: Read through the analysis
-# Step 5: Implement the changes that make sense to me
+# Step 4: AI generates a detailed report and saves it as a markdown file
+# Step 5: Review the saved analysis file
+# Step 6: Implement the changes that make sense to me
 ```
 
 ### **AI Tools I've Tested With**
@@ -100,8 +101,14 @@ These prompts work for me, but your mileage may vary:
 
 ## 📊 **What These Prompts Give Me**
 
+### **📁 Saved Analysis Reports**
+All prompts generate comprehensive reports saved as dated markdown files:
+- `python-test-analysis-2024-01-15.md`
+- `ruby-code-review-2024-01-15.md`
+- `html-accessibility-analysis-2024-01-15.md`
+
 ### **📋 Structured Analysis**
-I find it helpful to get organized feedback like:
+Each saved report contains organized feedback like:
 ```markdown
 # Example of what I typically see
 ## Issues Found
@@ -120,6 +127,12 @@ The prompts usually ask helpful questions like:
 > *"Want me to help fix that security issue first?"*
 
 Which helps me decide what to tackle next.
+
+### **💾 File Output Benefits**
+- **Permanent Record**: All analysis reports are saved for future reference
+- **Team Sharing**: Easy to share detailed analysis with colleagues
+- **Progress Tracking**: Compare reports over time to see improvements
+- **Documentation**: Reports serve as technical documentation for decisions
 
 ---
 

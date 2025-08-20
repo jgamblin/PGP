@@ -41,7 +41,7 @@ Conduct **enterprise-grade pull request analysis** that not only identifies code
 - Assume test coverage without analyzing test quality and edge case handling
 
 ## 📋 Enterprise Pull Request Analysis Report
-Generate a **Strategic Code Review Report** with quantified business impact:
+Generate a **Comprehensive Code Review Excellence Analysis** and save it as a markdown file named `python-code-review-[YYYY-MM-DD].md`:
 
 ```markdown
 # 🎯 Enterprise Pull Request Strategic Analysis
@@ -64,7 +64,7 @@ Generate a **Strategic Code Review Report** with quantified business impact:
 
 ### Issue 1: [Security Vulnerability/Performance Regression/Data Integrity Risk]
 - **Location**: `path/to/file.ext:lines X-Y`
-- **Business Impact**: [Revenue/security/compliance risk with dollar/reputation cost]
+- **Impact**: [Security/compliance/system reliability risk assessment]
 - **Technical Severity**: [Critical - production incident risk]
 - **Root Cause**: [Detailed technical analysis with contributing factors]
 - **Blast Radius**: [Systems/users/services affected by this issue]
@@ -125,7 +125,7 @@ Generate a **Strategic Code Review Report** with quantified business impact:
 - **Code Complexity**: Cyclomatic complexity <10 per method
 - **Documentation**: All public APIs documented
 
-### Business Impact Tracking (30-day measurement)
+### Performance Impact Tracking (30-day measurement)
 - **System Reliability**: 99.9% uptime maintenance
 - **Developer Productivity**: 30% reduction in debug time
 - **Security Posture**: Zero security incidents

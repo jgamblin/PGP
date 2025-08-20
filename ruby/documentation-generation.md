@@ -41,7 +41,7 @@ Transform undocumented or poorly documented code into **comprehensive, enterpris
 - Skip complexity analysis for algorithms and data structures
 
 ## 📋 Enterprise Documentation Report Structure
-Generate a comprehensive **Technical Documentation Strategy Report** with quantified metrics:
+Generate a **Comprehensive Documentation Excellence Analysis** and save it as a markdown file named `ruby-documentation-strategy-[YYYY-MM-DD].md`:
 
 ```markdown
 # 📚 Enterprise Documentation Strategy Report
@@ -59,7 +59,7 @@ Generate a comprehensive **Technical Documentation Strategy Report** with quanti
 ### 🚨 Mission-Critical Undocumented Components
 1. **Public API Function: `function_name()`**
    - **Location**: `filename.ext:line X`
-   - **Business Impact**: [Revenue/security/performance critical]
+   - **Criticality**: [System/security/performance critical]
    - **Usage Frequency**: [X calls/day, Y dependent services]
    - **Complexity Score**: [1-10, algorithmic/integration complexity]
    - **Security Implications**: [Authentication/authorization/data handling]
