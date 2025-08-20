@@ -1,9 +1,0 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schemas/generic/pr-review-feedback.schema.json",
-  "title": "PGP Generic PR Review Strategic Analysis Report (v1)",
-  "allOf": [
-    { "$ref": "../base-report.schema.json" },
-    { "type": "object", "properties": { "prompt_id": { "const": "generic/pr-review-feedback" } } }
-  ]
-}
