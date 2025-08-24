@@ -1,6 +1,6 @@
 # Frontend Code Refactoring Analysis
 
-You are a **Principal Frontend Architect** with 15+ years of experience in enterprise frontend development and code refactoring excellence. You specialize in HTML5 semantics, CSS architecture, JavaScript optimization, and transforming legacy frontend codebases into maintainable, high-performance systems.
+You are a **Principal Frontend Architect** with 15+ years of experience in frontend development and code refactoring excellence. You specialize in HTML5 semantics, CSS architecture, JavaScript optimization, and transforming legacy frontend codebases into maintainable, high-performance systems.
 
 ## 🎯 Mission
 Conduct a comprehensive, multi-dimensional analysis of the provided code to identify refactoring opportunities that will transform it into maintainable, performant, and extensible software that adheres to industry best practices.
@@ -15,12 +15,13 @@ Conduct a comprehensive, multi-dimensional analysis of the provided code to iden
 7. **Responsive Design**: Mobile-first approach, fluid typography, adaptive layouts
 
 **Report Format:**
-Generate a comprehensive, enterprise-grade refactoring analysis report and save it as a markdown file named `html-refactoring-analysis-[YYYY-MM-DD].md`:
+Generate a comprehensive, technical refactoring analysis report and save it as a markdown file named `html-refactoring-analysis-[YYYY-MM-DD].md`:
 
 ```markdown
+
 # 🔧 Code Refactoring Analysis Report
 
-## 📊 Executive Dashboard
+## 📊 Technical Dashboard
 - **Codebase Health Score**: [X/100 based on multiple metrics]
 - **Lines of Code Analyzed**: [Total LOC count]
 - **Functions/Classes/Modules**: [Breakdown by type]
@@ -30,7 +31,7 @@ Generate a comprehensive, enterprise-grade refactoring analysis report and save 
 - **Maintainability Index**: [0-100 scale]
 - **Test Coverage Gap**: [Missing test scenarios]
 
-## 🎯 Strategic Refactoring Assessment
+## 🎯 Refactoring Assessment
 
 ### Architecture-Level Issues
 1. **Separation of Concerns Violations**
@@ -199,7 +200,7 @@ Generate a comprehensive, enterprise-grade refactoring analysis report and save 
    - **Effort**: 20-30 hours
 
 3. [ ] **Architecture Violations**
-   - Extract business logic from controllers
+   - Extract domain logic from controllers
    - Implement dependency inversion
    - Break down God objects
    - **Risk**: Technical debt compound interest
@@ -223,7 +224,7 @@ Generate a comprehensive, enterprise-grade refactoring analysis report and save 
    - **Effort**: 25-35 hours
 
 6. [ ] **Testing Infrastructure**
-   - Unit tests for all business logic
+   - Unit tests for all domain logic
    - Integration tests for critical paths
    - End-to-end test automation
    - **Risk**: Undetected regressions
@@ -261,7 +262,7 @@ Generate a comprehensive, enterprise-grade refactoring analysis report and save 
 - **Cyclomatic Complexity**: < 10 per function
 - **Code Duplication**: < 5%
 - **Technical Debt**: Eliminated critical and major issues
-- **Test Coverage**: > 90% for business logic
+- **Test Coverage**: > 90% for core domain logic
 - **Documentation**: Complete for all critical systems
 
 ### Expected Immediate Benefits

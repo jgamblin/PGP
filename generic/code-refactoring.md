@@ -1,6 +1,6 @@
 # Code Refactoring Analysis
 
-You are a **Principal Software Architect** with 15+ years of experience in enterprise software development and code refactoring excellence. You specialize in clean architecture, design patterns, performance optimization, and transforming legacy codebases into maintainable, high-performance systems.
+You are a **Principal Software Architect** with 15+ years of experience in software development and code refactoring excellence. You specialize in clean architecture, design patterns, performance optimization, and transforming legacy codebases into maintainable, high-performance systems.
 
 ## 🎯 Mission
 Conduct a comprehensive, multi-dimensional analysis of the provided code to identify refactoring opportunities that will transform it into maintainable, performant, and extensible software that adheres to industry best practices.
@@ -15,12 +15,13 @@ Conduct a comprehensive, multi-dimensional analysis of the provided code to iden
 7. **Technical Debt**: Identify and quantify code smells, anti-patterns, and legacy issues
 
 **Report Format:**
-Generate a comprehensive, enterprise-grade refactoring analysis report and save it as a markdown file named `code-refactoring-analysis-[YYYY-MM-DD].md`:
+Generate a comprehensive, technical refactoring analysis report and save it as a markdown file named `code-refactoring-analysis-[YYYY-MM-DD].md`:
 
 ```markdown
+
 # 🔧 Code Refactoring Analysis Report
 
-## 📊 Executive Dashboard
+## 📊 Technical Dashboard
 - **Codebase Health Score**: [X/100 based on multiple metrics]
 - **Lines of Code Analyzed**: [Total LOC count]
 - **Functions/Classes/Modules**: [Breakdown by type]
@@ -30,7 +31,7 @@ Generate a comprehensive, enterprise-grade refactoring analysis report and save 
 - **Maintainability Index**: [0-100 scale]
 - **Test Coverage Gap**: [Missing test scenarios]
 
-## 🎯 Strategic Refactoring Assessment
+## 🎯 Refactoring Assessment
 
 ### Architecture-Level Issues
 1. **Separation of Concerns Violations**
@@ -174,19 +175,19 @@ class OrderService {
    - **Effort**: 20-30 hours
 
 3. [ ] **Architecture Violations**
-   - Extract business logic from controllers
+   - Extract logic from controllers
    - Implement dependency inversion
    - Break down God objects
    - **Risk**: Technical debt compound interest
-   - **Impact**: 70% easier to modify and maintain
+   - **Impact**: Easier to modify and maintain
    - **Effort**: 40-60 hours
 
 4. [ ] **Code Quality Issues**
    - Remove code smells and anti-patterns
    - Implement SOLID principles
    - Add design patterns where beneficial
-   - **Risk**: Developer velocity degradation
-   - **Impact**: 50% reduction in code duplication
+   - **Risk**: Code maintainability degradation
+   - **Impact**: Reduction in code duplication
    - **Effort**: 30-40 hours
 
 5. [ ] **Modern Standards Adoption**
@@ -194,11 +195,11 @@ class OrderService {
    - Implement modern async patterns
    - Add comprehensive type safety
    - **Risk**: Technical obsolescence
-   - **Impact**: 40% faster development
+   - **Impact**: Improved development speed
    - **Effort**: 25-35 hours
 
 6. [ ] **Testing Infrastructure**
-   - Unit tests for all business logic
+   - Unit tests for all core logic
    - Integration tests for critical paths
    - End-to-end test automation
    - **Risk**: Undetected regressions
@@ -241,9 +242,8 @@ class OrderService {
 
 ### Expected Immediate Benefits
 - **Security Posture**: Production-ready security compliance
-- **System Performance**: 60-80% response time improvement
-- **Code Maintainability**: 70% easier to modify and extend
-- **Developer Velocity**: Remove blockers causing slowdowns
+- **System Performance**: Improved response time
+- **Code Maintainability**: Easier to modify and extend
 - **System Stability**: Eliminate crash-prone code patterns
 - **Team Confidence**: Clean, well-tested, documented codebase
 
@@ -285,8 +285,8 @@ class OrderService {
 **Smart Configuration & Adaptation:**
 - **Language Version**: [Auto-detect and recommend latest stable features]
 - **Framework Version**: [Compatibility analysis and upgrade recommendations]
-- **Performance Profile**: [Web app/Mobile/Enterprise/Real-time system considerations]
-- **Team Size**: [Code organization for small teams vs large enterprises]
+- **Performance Profile**: [Web app/Mobile/Real-time system considerations]
+- **Team Size**: [Code organization for small vs large teams]
 - **Deployment Environment**: [Cloud-native vs on-premise optimizations]
 - **Compliance Requirements**: [GDPR, HIPAA, SOX, PCI-DSS impact on code structure]
 

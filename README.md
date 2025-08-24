@@ -24,10 +24,27 @@ These prompts work for me, but your mileage may vary:
 
 ---
 
-## 📂 **Prompt Library**
+## � Recent Updates (Language & Consistency Cleanup)
 
-### 🌟 **Universal Prompts** 
-*Analysis prompts for any codebase*
+Neutral technical wording pass applied across all prompt files:
+
+- Removed marketing / enterprise / executive / strategic style phrases
+- Standardized headings to use "Technical Report", "Analysis", or "Review"
+- Replaced occurrences of "business logic" with "domain logic" where appropriate
+- Normalized dashboard labels (e.g. "Technical Dashboard", "Type Safety Performance Dashboard")
+- Reframed ROI / revenue impact wording into reliability, user impact, or maintenance effort
+- Unified improvement sections (e.g. renamed "Strategic Improvement Opportunities" → "Technical Improvement Opportunities")
+- Cleaned duplicate/legacy sections and fixed markdown spacing & fenced code language tags
+
+If any legacy wording slipped through, it's easy to patch later.
+
+---
+
+## �📂 **Prompt Library**
+
+### 🌟 **Universal Prompts**
+
+Analysis prompts for any codebase.
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
@@ -37,7 +54,8 @@ These prompts work for me, but your mileage may vary:
 | [`project-repo.md`](./generic/project-repo.md) | **Repository setup guide** for creating well-structured project foundations | Principal |
 
 ### 🐍 **Python Ecosystem**
-*Python development prompts*
+
+Python development prompts.
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
@@ -50,7 +68,8 @@ These prompts work for me, but your mileage may vary:
 | [`type-hinting.md`](./python/type-hinting.md) | **Type safety analysis** with mypy integration and modern typing | Principal |
 
 ### 🌐 **Frontend & Web**
-*Web development prompts*
+
+Web development prompts.
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
@@ -64,7 +83,8 @@ These prompts work for me, but your mileage may vary:
 | [`navigation-consistency.md`](./html/navigation-consistency.md) | **UX navigation standardization** across multi-page applications | Principal |
 
 ### 💎 **Ruby Ecosystem**
-*Ruby and Rails development prompts*
+
+Ruby and Rails development prompts.
 
 | Prompt | Purpose | Expertise Level |
 |--------|---------|----------------|
@@ -81,6 +101,7 @@ These prompts work for me, but your mileage may vary:
 ## 🛠️ **How I Use These**
 
 ### **My Workflow**
+
 ```bash
 # Step 1: Select the code I want help with
 # Step 2: Copy the relevant prompt
@@ -91,6 +112,7 @@ These prompts work for me, but your mileage may vary:
 ```
 
 ### **AI Tools I've Tested With**
+
 - ✅ **Windsurf** - My main IDE, works great
 - ✅ **Claude** - Good for detailed analysis
 - ✅ **GitHub Copilot** - Works in VS Code
@@ -102,13 +124,17 @@ These prompts work for me, but your mileage may vary:
 ## 📊 **What These Prompts Give Me**
 
 ### **📁 Saved Analysis Reports**
+
 All prompts generate comprehensive reports saved as dated markdown files:
+
 - `python-test-analysis-2024-01-15.md`
 - `ruby-code-review-2024-01-15.md`
 - `html-accessibility-analysis-2024-01-15.md`
 
 ### **📋 Structured Analysis**
+
 Each saved report contains organized feedback like:
+
 ```markdown
 # Example of what I typically see
 ## Issues Found
@@ -123,12 +149,14 @@ Each saved report contains organized feedback like:
 ```
 
 ### **🎯 Follow-up Questions**
+
 The prompts usually ask helpful questions like:
 > *"Want me to help fix that security issue first?"*
 
 Which helps me decide what to tackle next.
 
 ### **💾 File Output Benefits**
+
 - **Permanent Record**: All analysis reports are saved for future reference
 - **Team Sharing**: Easy to share detailed analysis with colleagues
 - **Progress Tracking**: Compare reports over time to see improvements
@@ -139,19 +167,23 @@ Which helps me decide what to tackle next.
 ## ⚡ **Why I Think These Work**
 
 ### **🧠 Based on Real Experience**
+
 - I've been writing code for a while and made plenty of mistakes
 - I try to follow industry best practices (WCAG, OWASP, SOLID, etc.)
 - I update these based on what actually helps in day-to-day work
 - I use modern tools and try to stay current
 
 ### **🎯 Practical Focus**
+
 - I like getting specific suggestions rather than vague advice
 - I want to know what to prioritize when I have limited time
 - I prefer step-by-step guidance over theory
 - I want to understand why something matters
 
 ### **🔄 My Process**
+
 How I typically use these:
+
 1. **Analyze** → Figure out what needs attention
 2. **Prioritize** → Decide what to tackle first
 3. **Implement** → Make changes one at a time
