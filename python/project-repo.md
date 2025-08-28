@@ -14,10 +14,6 @@ Transform a blank repository into a **well-structured, professional Python proje
 - **Python Versions**: Support for multiple Python versions and compatibility
 
 ### 2. **Python Development Standards**
-- **Code Quality**: Black formatting, isort imports, flake8/ruff linting
-- **Type Safety**: mypy type checking and type hint enforcement
-- **Testing Framework**: pytest with fixtures, parametrization, and coverage
-- **Documentation**: Sphinx documentation with docstring standards (Google/NumPy style)
 
 ### 3. **Python-Specific Tooling**
 - **Pre-commit Hooks**: Automated code quality checks before commits

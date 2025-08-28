@@ -116,5 +116,5 @@ Generate a **Comprehensive ORM Optimization Review** and save it as a markdown f
 - ✅ Migration scripts are safe and reversible
 - ✅ Sensitive data is protected
 - ✅ Documentation is clear and complete
-
-```markdown
+- ✅ All ORM and schema code must pass Flake8 checks for style, formatting, and error-free code before submission.
+```

@@ -46,55 +46,64 @@ If any legacy wording slipped through, it's easy to patch later.
 
 Analysis prompts for any codebase.
 
-| Prompt | Purpose | Expertise Level |
-|--------|---------|----------------|
-| [`code-refactoring.md`](./generic/code-refactoring.md) | **Refactoring analysis** with security, performance, and architecture assessment | Principal |
-| [`documentation-generation.md`](./generic/documentation-generation.md) | **Documentation strategy** with API specs and architectural records | Principal |
-| [`pr-review-feedback.md`](./generic/pr-review-feedback.md) | **Code review** with security and performance analysis | Principal |
-| [`project-repo.md`](./generic/project-repo.md) | **Repository setup guide** for creating well-structured project foundations | Principal |
+| Prompt | Purpose |
+|--------|---------|
+| [`ci-cd-pipeline-analysis.md`](./generic/ci-cd-pipeline-analysis.md) | **CI/CD pipeline analysis** |
+| [`code-refactoring.md`](./generic/code-refactoring.md) | **Refactoring analysis** with security, performance, and architecture assessment |
+| [`documentation-generation.md`](./generic/documentation-generation.md) | **Documentation strategy** with API specs and architectural records |
+| [`pr-review-feedback.md`](./generic/pr-review-feedback.md) | **Code review** with security and performance analysis |
+| [`project-repo.md`](./generic/project-repo.md) | **Repository setup guide** for creating well-structured project foundations |
+| [`system-design-architecture-review.md`](./generic/system-design-architecture-review.md) | **System design and architecture review** |
 
 ### 🐍 **Python Ecosystem**
 
 Python development prompts.
 
-| Prompt | Purpose | Expertise Level |
-|--------|---------|----------------|
-| [`project-repo.md`](./python/project-repo.md) | **Python repository setup** with Poetry, pytest, and development tooling | Principal |
-| [`code-refactoring.md`](./python/code-refactoring.md) | **Python refactoring** with asyncio, Django/Flask/FastAPI optimization | Principal |
-| [`documentation-generation.md`](./python/documentation-generation.md) | **Python documentation** with Sphinx, type hints, and framework integration | Principal |
-| [`pr-review-feedback.md`](./python/pr-review-feedback.md) | **Python code review** with Django ORM, security, and performance focus | Principal |
-| [`unit-test-generation.md`](./python/unit-test-generation.md) | **Test strategy and coverage analysis** with pytest best practices | Principal |
-| [`docstring-creation.md`](./python/docstring-creation.md) | **API documentation** with Google/PEP 257 standards | Principal |
-| [`type-hinting.md`](./python/type-hinting.md) | **Type safety analysis** with mypy integration and modern typing | Principal |
+| Prompt | Purpose |
+|--------|---------|
+| [`code-refactoring.md`](./python/code-refactoring.md) | **Python refactoring** with asyncio, Django/Flask/FastAPI optimization |
+| [`concurrency-asyncio-pattern-analysis.md`](./python/concurrency-asyncio-pattern-analysis.md) | **Concurrency and asyncio pattern analysis** |
+| [`database-schema-orm-optimization.md`](./python/database-schema-orm-optimization.md) | **Database schema and ORM optimization** |
+| [`docstring-creation.md`](./python/docstring-creation.md) | **API documentation** with Google/PEP 257 standards |
+| [`documentation-generation.md`](./python/documentation-generation.md) | **Python documentation** with Sphinx, type hints, and framework integration |
+| [`flake8-compliance.md`](./python/flake8-compliance.md) | **Flake8 compliance check** |
+| [`pr-review-feedback.md`](./python/pr-review-feedback.md) | **Python code review** with Django ORM, security, and performance focus |
+| [`project-repo.md`](./python/project-repo.md) | **Python repository setup** with Poetry, pytest, and development tooling |
+| [`type-hinting.md`](./python/type-hinting.md) | **Type safety analysis** with mypy integration and modern typing |
+| [`unit-test-generation.md`](./python/unit-test-generation.md) | **Test strategy and coverage analysis** with pytest best practices |
 
 ### 🌐 **Frontend & Web**
 
 Web development prompts.
 
-| Prompt | Purpose | Expertise Level |
-|--------|---------|----------------|
-| [`project-repo.md`](./html/project-repo.md) | **Frontend repository setup** with Webpack/Vite, ESLint, and modern tooling | Principal |
-| [`code-refactoring.md`](./html/code-refactoring.md) | **Frontend refactoring** with React/Vue/Angular, BEM CSS, accessibility | Principal |
-| [`documentation-generation.md`](./html/documentation-generation.md) | **Frontend documentation** with Storybook, component libraries, design systems | Principal |
-| [`pr-review-feedback.md`](./html/pr-review-feedback.md) | **Frontend code review** with Core Web Vitals, accessibility, performance | Principal |
-| [`accessibility-check.md`](./html/accessibility-check.md) | **WCAG compliance audit** with comprehensive accessibility analysis | Principal |
-| [`semantic-markup-refinement.md`](./html/semantic-markup-refinement.md) | **HTML5 semantic optimization** with SEO and performance focus | Principal |
-| [`bem-naming-convention.md`](./html/bem-naming-convention.md) | **CSS architecture analysis** with BEM methodology implementation | Principal |
-| [`navigation-consistency.md`](./html/navigation-consistency.md) | **UX navigation standardization** across multi-page applications | Principal |
+| Prompt | Purpose |
+|--------|---------|
+| [`accessibility-check.md`](./html/accessibility-check.md) | **WCAG compliance audit** with comprehensive accessibility analysis |
+| [`bem-naming-convention.md`](./html/bem-naming-convention.md) | **CSS architecture analysis** with BEM methodology implementation |
+| [`code-refactoring.md`](./html/code-refactoring.md) | **Frontend refactoring** with React/Vue/Angular, BEM CSS, accessibility |
+| [`component-design-system-review.md`](./html/component-design-system-review.md) | **Component design system review** |
+| [`documentation-generation.md`](./html/documentation-generation.md) | **Frontend documentation** with Storybook, component libraries, design systems |
+| [`navigation-consistency.md`](./html/navigation-consistency.md) | **UX navigation standardization** across multi-page applications |
+| [`performance-core-web-vitals-audit.md`](./html/performance-core-web-vitals-audit.md) | **Core Web Vitals performance audit** |
+| [`pr-review-feedback.md`](./html/pr-review-feedback.md) | **Frontend code review** with Core Web Vitals, accessibility, performance |
+| [`project-repo.md`](./html/project-repo.md) | **Frontend repository setup** with Webpack/Vite, ESLint, and modern tooling |
+| [`semantic-markup-refinement.md`](./html/semantic-markup-refinement.md) | **HTML5 semantic optimization** with SEO and performance focus |
 
 ### 💎 **Ruby Ecosystem**
 
 Ruby and Rails development prompts.
 
-| Prompt | Purpose | Expertise Level |
-|--------|---------|----------------|
-| [`project-repo.md`](./ruby/project-repo.md) | **Ruby repository setup** with Bundler, RSpec, and Rails conventions | Principal |
-| [`code-refactoring.md`](./ruby/code-refactoring.md) | **Ruby refactoring** with Rails conventions, metaprogramming, gem patterns | Principal |
-| [`documentation-generation.md`](./ruby/documentation-generation.md) | **Ruby documentation** with YARD, Rails API docs, gem documentation | Principal |
-| [`pr-review-feedback.md`](./ruby/pr-review-feedback.md) | **Ruby code review** with Rails security, ActiveRecord optimization | Principal |
-| [`rspec-test-generation.md`](./ruby/rspec-test-generation.md) | **RSpec test strategy** with comprehensive coverage planning | Principal |
-| [`rubocop-compliance.md`](./ruby/rubocop-compliance.md) | **Code quality analysis** with Ruby style guide enforcement | Principal |
-| [`gemfile-management.md`](./ruby/gemfile-management.md) | **Dependency security audit** with version management strategy | Principal |
+| Prompt | Purpose |
+|--------|---------|
+| [`code-refactoring.md`](./ruby/code-refactoring.md) | **Ruby refactoring** with Rails conventions, metaprogramming, gem patterns |
+| [`documentation-generation.md`](./ruby/documentation-generation.md) | **Ruby documentation** with YARD, Rails API docs, gem documentation |
+| [`gemfile-management.md`](./ruby/gemfile-management.md) | **Dependency security audit** with version management strategy |
+| [`pr-review-feedback.md`](./ruby/pr-review-feedback.md) | **Ruby code review** with Rails security, ActiveRecord optimization |
+| [`project-repo.md`](./ruby/project-repo.md) | **Ruby repository setup** with Bundler, RSpec, and Rails conventions |
+| [`rails-active-record-performance-audit.md`](./ruby/rails-active-record-performance-audit.md) | **ActiveRecord performance audit** |
+| [`rspec-test-generation.md`](./ruby/rspec-test-generation.md) | **RSpec test strategy** with comprehensive coverage planning |
+| [`rubocop-compliance.md`](./ruby/rubocop-compliance.md) | **Code quality analysis** with Ruby style guide enforcement |
+| [`service-object-domain-logic-refactoring.md`](./ruby/service-object-domain-logic-refactoring.md) | **Service object and domain logic refactoring** |
 
 ---
 

@@ -36,6 +36,7 @@ Conduct **comprehensive pull request analysis** that identifies code issues and 
 - **Code Coverage**: Meaningful coverage with edge case validation
 - **Error Handling**: Graceful degradation and circuit breaker patterns
 - **Documentation**: Self-documenting code and architectural decision records
+- **Flake8 Compliance**: All code changes must pass Flake8 checks for style, formatting, and error-free code before merging.
 
 ## 🚫 Critical Review Constraints
 **Do NOT:**

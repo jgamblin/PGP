@@ -113,6 +113,7 @@ class OrderService:
 from typing import Protocol
 from dataclasses import dataclass
 
+
 class DatabaseProtocol(Protocol):
     def save(self, order: Order) -> OrderResult: ...
 

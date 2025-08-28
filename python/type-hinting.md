@@ -199,6 +199,7 @@ def function_name(
 2. [ ] **Medium Priority**: Annotate function parameters
 3. [ ] **Low Priority**: Add type hints to private methods
 4. [ ] **Cleanup**: Update imports and use modern syntax
+5. [ ] **Flake8 Compliance**: All type-hinted code must pass Flake8 checks for style, formatting, and error-free code before submission.
 
 ## 🛠️ mypy Configuration
 

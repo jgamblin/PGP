@@ -111,9 +111,6 @@ Generate a **Comprehensive Concurrency Pattern Review** and save it as a markdow
 
 **Concurrency Quality Checklist:**
 
-- ✅ No race conditions or unsafe shared state
-- ✅ All resources are properly managed and closed
-- ✅ Performance bottlenecks are addressed
-- ✅ Documentation and test coverage are complete
+- ✅ All concurrency and asyncio code must pass Flake8 checks for style, formatting, and error-free code before submission.
 
 ```markdown

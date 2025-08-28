@@ -10,21 +10,12 @@ Transform undocumented or poorly documented code into **comprehensive, high-qual
 
 ### 1. **Python Documentation Foundation**
 
-- **Docstring Excellence**: PEP 257 compliant docstrings with Google/NumPy/Sphinx styles
-- **Type Hint Integration**: Comprehensive type annotations with mypy compatibility
-- **Parameter Precision**: Detailed parameter documentation with type constraints and validation
-- **Exception Documentation**: Complete exception hierarchy with usage examples
 
 ### 2. **Python Documentation Standards**
 
-- **Sphinx Integration**: Auto-generated documentation with autodoc and cross-references
-- **Django/Flask API Docs**: DRF schema generation, Flask-RESTX integration
-- **Package Documentation**: setuptools integration, PyPI-ready documentation
-- **Testing Documentation**: pytest fixtures, parametrized tests, and mocking strategies
+- **Flake8 Compliance**: Ensure all documented code passes Flake8 checks for style and error-free formatting.
 
 ### 3. **Developer Experience Optimization**
-
-- **Contextual Examples**: Real-world usage patterns with performance implications
 - **Error Prevention**: Proactive guidance to prevent common misuse patterns
 - **Integration Guidance**: Clear dependency and setup requirements
 - **Testing Documentation**: Unit test examples that double as usage specifications
