@@ -47,7 +47,7 @@ Generate a **Comprehensive ORM Optimization Review** and save it as a markdown f
 ```markdown
 # 🗄️ Database Schema & ORM Optimization Review
 
-## 📊 Technical Summary
+## 📊 Technical Dashboard
 
 - **Performance Score**: [0-100, based on query efficiency and indexing]
 - **Data Integrity**: [Constraint and migration safety assessment]

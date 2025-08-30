@@ -181,63 +181,14 @@ Generate a comprehensive, technical refactoring analysis report and save it as a
 
 ## 📋 Immediate Action Plan
 
-### 🚨 CRITICAL - Fix Immediately (All High Priority)
-1. [ ] **Security Vulnerabilities**
-   - Implement input validation layer
-   - Add SQL injection protection
-   - Fix XSS vulnerabilities
-   - Update vulnerable dependencies
-   - **Risk**: Production security breach
-   - **Impact**: System compromise prevention
-   - **Effort**: 16-24 hours
+### 🚀 Implementation Tasks
 
-2. [ ] **Performance Bottlenecks**
-   - Optimize database queries (N+1 problems)
-   - Fix memory leaks
-   - Implement caching layer
-   - **Risk**: System degradation/outages
-   - **Impact**: 60-80% response time improvement
-   - **Effort**: 20-30 hours
-
-3. [ ] **Architecture Violations**
-   - Extract domain logic from controllers
-   - Implement dependency inversion
-   - Break down God objects
-   - **Risk**: Technical debt compound interest
-   - **Impact**: 70% easier to modify and maintain
-   - **Effort**: 40-60 hours
-
-4. [ ] **Code Quality Issues**
-   - Remove code smells and anti-patterns
-   - Implement SOLID principles
-   - Add design patterns where beneficial
-   - **Risk**: Developer velocity degradation
-   - **Impact**: 50% reduction in code duplication
-   - **Effort**: 30-40 hours
-
-5. [ ] **Modern Standards Adoption**
-   - Upgrade to latest language version
-   - Implement modern async patterns
-   - Add comprehensive type safety
-   - **Risk**: Technical obsolescence
-   - **Impact**: 40% faster development
-   - **Effort**: 25-35 hours
-
-6. [ ] **Testing Infrastructure**
-   - Unit tests for all domain logic
-   - Integration tests for critical paths
-   - End-to-end test automation
-   - **Risk**: Undetected regressions
-   - **Impact**: 95% test coverage
-   - **Effort**: 50-70 hours
-
-7. [ ] **Documentation & Knowledge Transfer**
-   - Architecture decision records
-   - API documentation
-   - Critical system documentation
-   - **Risk**: Knowledge silos and onboarding delays
-   - **Impact**: Complete knowledge transfer
-   - **Effort**: 15-20 hours
+1. Fix all identified security vulnerabilities
+2. Address critical performance optimizations
+3. Refactor toward SOLID principles and clean architecture
+4. Implement missing unit/integration tests for critical paths
+5. Add comprehensive logging, metrics, and alerting
+6. Create architectural decision records and operational runbooks
 
 ### 📊 Execution Strategy
 - **Parallel Execution**: Security and performance fixes can run concurrently
@@ -292,44 +243,3 @@ Generate a comprehensive, technical refactoring analysis report and save it as a
 - **Code Review Process**: [Quality gates]
 - **Documentation Updates**: [Knowledge transfer]
 - **Pair Programming**: [Knowledge sharing sessions]
-```
-
-**Analysis Scope & Context Intelligence:**
-- **Micro-Analysis**: Current selection or function under cursor
-- **File-Level Analysis**: Complete file with all dependencies
-- **Module-Level Analysis**: Related files and their interactions
-- **System-Level Analysis**: Architecture patterns across entire codebase
-- **Cross-Cutting Concerns**: Security, performance, and maintainability across all layers
-
-**Advanced Frontend Context Awareness:**
-- **Framework Detection**: [React, Vue, Angular, Svelte, Lit, vanilla JavaScript]
-- **Architecture Pattern**: [Component-based, JAMstack, Micro-frontends, Server Components]
-- **CSS Methodology**: [BEM, OOCSS, SMACSS, CSS-in-JS, Tailwind CSS, Styled Components]
-- **Build Tools**: [Vite, Webpack, Parcel, esbuild, Rollup, SWC optimization]
-- **Testing Framework**: [Jest, Vitest, Cypress, Playwright, Testing Library]
-- **Performance Monitoring**: [Lighthouse, Web Vitals, Bundle analyzers]
-
-**Smart Frontend Configuration & Adaptation:**
-- **Browser Support**: [Auto-detect target browsers, progressive enhancement strategies]
-- **Framework Version**: [React 18+, Vue 3+, Angular 15+, compatibility analysis]
-- **Performance Profile**: [SPA, MPA, SSG, SSR, Edge rendering optimizations]
-- **Device Targeting**: [Mobile-first, tablet-optimized, desktop-enhanced strategies]
-- **Deployment Environment**: [CDN optimization, edge computing, static hosting]
-- **Accessibility Requirements**: [WCAG compliance level, screen reader support, keyboard navigation]
-
-**Industry-Specific Adaptations:**
-- **Fintech**: [PCI compliance, transaction integrity, audit trails]
-- **Healthcare**: [HIPAA compliance, data privacy, security protocols]
-- **E-commerce**: [Performance optimization, scalability patterns]
-- **Gaming**: [Real-time performance, memory optimization]
-- **IoT/Embedded**: [Resource constraints, power efficiency]
-
-**Modern Development Practices Integration:**
-- **DevOps Alignment**: [Infrastructure as code compatibility]
-- **Observability**: [Logging, monitoring, tracing integration points]
-- **Security DevOps**: [SAST/DAST integration, vulnerability scanning]
-- **Documentation as Code**: [API docs, architecture diagrams generation]
-- **Feature Flags**: [Progressive deployment and A/B testing support]
-
-**Interactive Follow-up:**
-After generating the report, ask: "Which phase of the refactoring roadmap would you like me to help implement first - the critical security fixes, performance optimizations, or architectural improvements?"

@@ -48,7 +48,7 @@ Generate a **Comprehensive Active Record Performance Audit** and save it as a ma
 ```markdown
 # 🚂 Rails Active Record Performance Audit
 
-## 📊 Technical Summary
+## 📊 Technical Dashboard
 
 - **Query Performance Score**: [0-100, based on N+1 and association optimization]
 - **Index Coverage**: [Assessment of indexes on critical columns]

@@ -35,6 +35,8 @@ Neutral technical wording pass applied across all prompt files:
 - Reframed ROI / revenue impact wording into reliability, user impact, or maintenance effort
 - Unified improvement sections (e.g. renamed "Strategic Improvement Opportunities" → "Technical Improvement Opportunities")
 - Cleaned duplicate/legacy sections and fixed markdown spacing & fenced code language tags
+- Removed quantified effort estimates
+- Standardized implementation tasks as flat to-do lists
 
 If any legacy wording slipped through, it's easy to patch later.
 

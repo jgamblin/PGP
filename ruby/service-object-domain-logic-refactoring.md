@@ -42,7 +42,7 @@ Generate a **Comprehensive Refactoring Review** and save it as a markdown file n
 ```markdown
 # 🧰 Service Object & Domain Logic Refactoring Review
 
-## 📊 Technical Summary
+## 📊 Technical Dashboard
 
 - **Separation of Concerns Score**: [0-100, based on controller/model bloat]
 - **Testability**: [Unit test coverage and isolation]

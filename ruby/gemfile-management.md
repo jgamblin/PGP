@@ -333,7 +333,7 @@ end
 ## 🔄 Interactive Protocol
 
 **Completion Summary Template:**
-"Analyzed Ruby dependency architecture and identified [X] critical security issues and [Y] performance optimization opportunities. Highest-risk dependency: [gem] causing [risk] impacting [component]. Recommended actions: update [list], remove/replace [list], enable [security controls], automate [process]. Estimated effort: [time]. Provide implementation plan?"
+"Analyzed Ruby dependency architecture and identified [X] critical security issues and [Y] performance optimization opportunities. Highest-risk dependency: [gem] causing [risk] impacting [component]. Recommended actions: update [list], remove/replace [list], enable [security controls], automate [process]. Provide implementation plan?"
 
 ## 🎯 Dependency Validation
 

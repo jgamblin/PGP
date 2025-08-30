@@ -40,7 +40,7 @@ Generate a **Comprehensive Documentation Excellence Analysis** and save it as a 
 ```markdown
 # 📚 Documentation Strategy Report
 
-## 🎯 Technical Summary
+## 📊 Technical Dashboard
 
 ## 🔍 Critical Documentation Analysis
 
@@ -64,15 +64,15 @@ Generate a **Comprehensive Documentation Excellence Analysis** and save it as a 
 ## 📝 Production-Grade Documentation Specifications
 
 ### For `function_name()` - Production-Ready Documentation:
-```[language]
-[Complete documentation following technical standards with:
- - Functional context and use cases
- - Comprehensive parameter validation rules
- - Error handling strategies with recovery procedures
- - Performance characteristics and scaling considerations
- - Security implications and data handling policies
- - Integration examples with common frameworks
- - Monitoring and observability guidance]
+```ruby
+# [Complete documentation following technical standards with:
+# - Functional context and use cases
+# - Comprehensive parameter validation rules
+# - Error handling strategies with recovery procedures
+# - Performance characteristics and scaling considerations
+# - Security implications and data handling policies
+# - Integration examples with common frameworks
+# - Monitoring and observability guidance]
 ```
 
 ## 🚀 Implementation Tasks

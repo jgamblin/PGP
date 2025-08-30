@@ -43,7 +43,7 @@ Generate a **Comprehensive Component Review** and save it as a markdown file nam
 # 🧩 Component & Design System Review
 
 
-## 📊 Technical Review Summary
+## 📊 Technical Dashboard
 
 - **Design System Compliance**: [0-100, based on structure and principles]
 - **Accessibility Score**: [0-100, based on ARIA, keyboard, and responsive design]

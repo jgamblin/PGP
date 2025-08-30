@@ -46,7 +46,7 @@ Generate a **Comprehensive CI/CD Pipeline Review** and save it as a markdown fil
 ```markdown
 # 🚀 CI/CD Pipeline Review
 
-## 📊 Technical Summary
+## 📊 Technical Dashboard
 
 - **Security Posture**: [Critical/High/Medium/Low with specific risk vectors]
 - **Pipeline Efficiency Score**: [0-100, weighted by speed, reliability, and cost]
