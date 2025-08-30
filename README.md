@@ -1,9 +1,7 @@
 # 🚀 Pretty Good Prompts
 ## JGamblin's Personal AI Coding Assistant Prompts
 
-**⚠️ PERSONAL COLLECTION - USE AT YOUR OWN RISK**  
-
-These are my personal prompts that I've developed to help with common coding issues. I'm sharing them in case others find them useful, but they reflect my own preferences and workflow.
+A collection of practical prompts I use to help with common coding and code review tasks. These reflect my own workflow and preferences, but I hope others find them useful too.
 
 ### 🎯 **What I Focus On**
 
