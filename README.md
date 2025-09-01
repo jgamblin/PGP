@@ -2,43 +2,23 @@
 
 ## Personal AI Coding Assistant Prompt Library
 
-Personal prompt collection by **@JGamblin** – published so others can adapt, but optimized for my workflow.
+Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shared so others can adapt—optimized for my own workflow (analysis first, pragmatic improvements, durable documentation).
 
-Curated, practical prompts for common code analysis, review, refactoring, and documentation tasks. Optimized for structured technical output and iterative improvement workflows.
+### Who This Helps
 
-### 🎯 Focus Areas
-
-- **Analysis First** – Structured diagnostics before modification
-- **Clean Code & Architecture** – SOLID-aligned, modular design
-- **Security Awareness** – Routine review against common vulnerability classes
-- **Performance Consideration** – Identify obvious bottlenecks early
-- **Testing Mindset** – Encourage coverage and regression safety nets
-- **Actionable Documentation** – Persistent technical records
-
-### 🤷 Who Might Find These Useful
-
-- Developers who prefer systematic diagnostics
-- Engineers seeking structured review artifacts
-- Teams standardizing technical feedback formats
-- Anyone improving repository quality and maintainability
+- Engineers who want structured, repeatable analysis output
+- People standardizing review/report formats
+- Anyone reducing technical debt with evidence-based refactors
 
 ---
 
-## 🛠️ Recent Updates (Language & Consistency Cleanup)
+## 🛠️ Recent Cleanup Snapshot
 
-Neutral technical wording pass applied across all prompt files:
-
-- Removed marketing / enterprise / executive / strategic style phrases
-- Standardized headings to use "Technical Report", "Analysis", or "Review"
-- Replaced occurrences of "business logic" with "domain logic" where appropriate
-- Normalized dashboard labels (e.g. "Technical Dashboard", "Type Safety Performance Dashboard")
-- Reframed ROI / revenue impact wording into reliability, user impact, or maintenance effort
-- Unified improvement sections (e.g. renamed "Strategic Improvement Opportunities" → "Technical Improvement Opportunities")
-- Cleaned duplicate/legacy sections and fixed markdown spacing & fenced code language tags
-- Removed quantified effort estimates
-- Standardized implementation tasks as flat to-do lists
-
-If any legacy wording slipped through, it's easy to patch later.
+- Neutral wording + heading normalization
+- Removed quantified hour/effort estimates
+- Unified: "domain logic" terminology
+- Normalized dashboard/analysis labels
+- Eliminated earlier duplication & stray markdown fences
 
 ---
 
@@ -109,123 +89,67 @@ Ruby and Rails development prompts.
 
 ---
 
-## 🧭 How To Use
+## 🧭 Usage
 
-### Workflow
+### Quick Start
 
 ```bash
-# Step 1: Select the code I want help with
-# Step 2: Copy the relevant prompt
-# Step 3: Paste it into my AI assistant (usually Windsurf or Claude)
-# Step 4: AI generates a detailed report and saves it as a markdown file
-# Step 5: Review the saved analysis file
-# Step 6: Implement the changes that make sense to me
+# 1. Pick a domain prompt (e.g. python/code-refactoring.md)
+# 2. Copy prompt + relevant code into AI assistant
+# 3. Save generated report: name like python-refactor-YYYY-MM-DD.md
+# 4. Skim top issues → pick 1–2 highest impact
+# 5. Implement & validate (tests / lint / run)
+# 6. Re-run prompt for delta analysis
 ```
 
-### Compatible AI Tools
+### Tools Tested
 
-- ✅ **Windsurf** - My main IDE, works great
-- ✅ **Claude** - Good for detailed analysis
-- ✅ **GitHub Copilot** - Works in VS Code
-- ✅ **Cursor** - Also pretty good
-- 🤔 **Others** - Haven't tried extensively but should work
+Windsurf, Claude, GitHub Copilot, Cursor (others should work).
 
 ---
 
-## 📊 Output Characteristics
+## 📊 Report Output (What To Expect)
 
-### Saved Analysis Reports
+Each prompt produces a dated markdown file with:
 
-All prompts generate comprehensive reports saved as dated markdown files:
+- Dashboard / summary (security, performance, maintainability highlights)
+- Issue list grouped by severity / category
+- Concrete remediation suggestions (code snippets where relevant)
+- Optional follow-up question offering next-step focus
 
-- `python-test-analysis-2024-01-15.md`
-- `ruby-code-review-2024-01-15.md`
-- `html-accessibility-analysis-2024-01-15.md`
-
-### Structured Analysis Pattern
-
-Each saved report contains organized feedback like:
-
-```markdown
-# Example of what I typically see
-## Issues Found
-- Potential security problem on line 45
-- This algorithm might be slow with large datasets
-- Code structure could be cleaner
-
-## Suggestions
-1. Fix the input validation
-2. Consider using a more efficient algorithm
-3. Maybe refactor this into smaller functions
-```
-
-### Follow-up Question Pattern
-
-The prompts usually ask helpful questions like:
-> *"Want me to help fix that security issue first?"*
-
-Which helps me decide what to tackle next.
-
-### Benefits of Persisted Output
-
-- **Permanent Record**: All analysis reports are saved for future reference
-- **Team Sharing**: Easy to share detailed analysis with colleagues
-- **Progress Tracking**: Compare reports over time to see improvements
-- **Documentation**: Reports serve as technical documentation for decisions
+Benefits: historical trace, shareable review artifact, incremental improvement tracking.
 
 ---
 
-## ⚙️ Rationale
+## ⚙️ Approach & Cycle
 
-### Practical Basis
+Design principles: evidence-based analysis, smallest safe change, repeat.
 
-- I've been writing code for a while and made plenty of mistakes
-- I try to follow industry best practices (WCAG, OWASP, SOLID, etc.)
-- I update these based on what actually helps in day-to-day work
-- I use modern tools and try to stay current
+Loop:
 
-### Practical Focus
-
-- I like getting specific suggestions rather than vague advice
-- I want to know what to prioritize when I have limited time
-- I prefer step-by-step guidance over theory
-- I want to understand why something matters
-
-### Iterative Cycle
-
-How I typically use these:
-
-1. **Analyze** → Figure out what needs attention
-2. **Prioritize** → Decide what to tackle first
-3. **Implement** → Make changes one at a time
-4. **Test** → Make sure I didn't break anything
+1. Analyze
+2. Prioritize
+3. Implement
+4. Test / Verify
+5. Re-run (compare deltas)
 
 ---
 
-## 🎖️ Core Quality Axes
+## 🎖️ Quality Focus Areas
 
-> **These are the things I try to focus on in my own code.**
-
-- **🔒 Security**: I check for common vulnerabilities (OWASP Top 10, etc.)
-- **⚡ Performance**: I look for obvious bottlenecks and inefficiencies
-- **🏗️ Clean Architecture**: I try to follow SOLID principles when I remember
-- **🧪 Testing**: I aim for good test coverage (though I don't always achieve it)
-- **📚 Documentation**: I document things so future me understands the code
+- Security (common vulnerability classes, unsafe patterns)
+- Performance (hot paths, unnecessary allocations, query inefficiencies)
+- Architecture (boundaries, cohesion, coupling)
+- Testing (coverage of risk & regression vectors)
+- Documentation (clarity of intent & public contracts)
 
 ---
 
-## 📈 Expected Outcomes
+## 📈 Why It Helps (In Practice)
 
-| What I'm Aiming For | Reality Check |
-|---------------------|---------------|
-| **Faster Development** | Helps me catch issues earlier |
-| **Better Code Quality** | My code has gotten cleaner over time |
-| **Fewer Security Issues** | I catch more problems before they hit production |
-| **Better Performance** | I'm more aware of performance implications |
-| **Less Technical Debt** | My code is easier to maintain now |
-| **Better Testing** | I write more tests than I used to |
+Common effects: earlier issue detection, clearer priorities, reduced rework, incremental hardening of performance & security posture.
 
-**Disclaimer**: Results vary by codebase size, team norms, and tooling maturity.
+Disclaimer: Effectiveness varies by codebase maturity and follow-through.
 
 ---
 
@@ -241,27 +165,27 @@ I am not accepting pull requests. If you want to extend or alter these:
 
 Feel free to publish your own variant.
 
+## 🔍 Quick Start (TL;DR)
+
+1. Pick prompt
+2. Provide code
+3. Save report
+4. Triage top items
+5. Implement + verify
+6. Re-run for changes
+
+---
+
+## ✅ Style Consistency (Optional)
+
+- Sentence case headings
+- Prefer "Analysis" / "Review" / "Report" labels
+- Use "domain logic" not "business logic"
+- Flat improvement task lists (no speculative effort estimates)
+- Avoid unverifiable quantitative claims
+
+---
+
 ## 📜 License
 
 See `LICENSE` for terms. Prompts may be reused with attribution to the original repository.
-
----
-
-## 🔍 Quick Start (TL;DR)
-
-1. Select domain prompt (e.g. Python refactoring)
-2. Paste prompt + target code into your AI assistant
-3. Receive structured analysis markdown
-4. Save under dated filename
-5. Triage high-impact items first
-6. Implement + re-run for regression confirmation
-
----
-
-## ✅ Style Consistency Checklist (Optional)
-
-- Headings: Use sentence case except proper nouns
-- Sections: Favor "Analysis", "Review", "Report" over marketing terms
-- Replace "business logic" with "domain logic"
-- Prefer "improvement tasks" over "action plan" / "strategic initiatives"
-- Avoid unverifiable quantitative impact claims
