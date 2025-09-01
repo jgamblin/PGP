@@ -1,28 +1,30 @@
 # 🚀 Pretty Good Prompts
-## JGamblin's Personal AI Coding Assistant Prompts
 
-A collection of practical prompts I use to help with common coding and code review tasks. These reflect my own workflow and preferences, but I hope others find them useful too.
+## Personal AI Coding Assistant Prompt Library
 
-### 🎯 **What I Focus On**
+Personal prompt collection by **@JGamblin** – published so others can adapt, but optimized for my workflow.
 
-- **📊 Analysis-First**: I prefer getting detailed reports before making changes
-- **🏗️ Clean Code**: I try to follow SOLID principles and good architecture
-- **🛡️ Security**: I've learned to always think about security implications
-- **⚡ Performance**: I care about making code that runs efficiently
-- **🧪 Testing**: I believe in comprehensive testing (when I remember to write it)
-- **📚 Documentation**: I document things so I don't forget how they work
+Curated, practical prompts for common code analysis, review, refactoring, and documentation tasks. Optimized for structured technical output and iterative improvement workflows.
 
-### 🤷 **Who Might Find These Useful**
+### 🎯 Focus Areas
 
-These prompts work for me, but your mileage may vary:
-- Developers who like detailed code analysis
-- People who want structured feedback on their code
-- Teams that care about code quality and security
-- Anyone who wants to improve their development process
+- **Analysis First** – Structured diagnostics before modification
+- **Clean Code & Architecture** – SOLID-aligned, modular design
+- **Security Awareness** – Routine review against common vulnerability classes
+- **Performance Consideration** – Identify obvious bottlenecks early
+- **Testing Mindset** – Encourage coverage and regression safety nets
+- **Actionable Documentation** – Persistent technical records
+
+### 🤷 Who Might Find These Useful
+
+- Developers who prefer systematic diagnostics
+- Engineers seeking structured review artifacts
+- Teams standardizing technical feedback formats
+- Anyone improving repository quality and maintainability
 
 ---
 
-## � Recent Updates (Language & Consistency Cleanup)
+## 🛠️ Recent Updates (Language & Consistency Cleanup)
 
 Neutral technical wording pass applied across all prompt files:
 
@@ -40,9 +42,9 @@ If any legacy wording slipped through, it's easy to patch later.
 
 ---
 
-## �📂 **Prompt Library**
+## 📂 Prompt Library
 
-### 🌟 **Universal Prompts**
+### 🌟 Universal Prompts
 
 Analysis prompts for any codebase.
 
@@ -55,7 +57,7 @@ Analysis prompts for any codebase.
 | [`project-repo.md`](./generic/project-repo.md) | **Repository setup guide** for creating well-structured project foundations |
 | [`system-design-architecture-review.md`](./generic/system-design-architecture-review.md) | **System design and architecture review** |
 
-### 🐍 **Python Ecosystem**
+### 🐍 Python Ecosystem
 
 Python development prompts.
 
@@ -72,7 +74,7 @@ Python development prompts.
 | [`type-hinting.md`](./python/type-hinting.md) | **Type safety analysis** with mypy integration and modern typing |
 | [`unit-test-generation.md`](./python/unit-test-generation.md) | **Test strategy and coverage analysis** with pytest best practices |
 
-### 🌐 **Frontend & Web**
+### 🌐 Frontend & Web
 
 Web development prompts.
 
@@ -89,7 +91,7 @@ Web development prompts.
 | [`project-repo.md`](./html/project-repo.md) | **Frontend repository setup** with Webpack/Vite, ESLint, and modern tooling |
 | [`semantic-markup-refinement.md`](./html/semantic-markup-refinement.md) | **HTML5 semantic optimization** with SEO and performance focus |
 
-### 💎 **Ruby Ecosystem**
+### 💎 Ruby Ecosystem
 
 Ruby and Rails development prompts.
 
@@ -107,9 +109,9 @@ Ruby and Rails development prompts.
 
 ---
 
-## 🛠️ **How I Use These**
+## 🧭 How To Use
 
-### **My Workflow**
+### Workflow
 
 ```bash
 # Step 1: Select the code I want help with
@@ -120,7 +122,7 @@ Ruby and Rails development prompts.
 # Step 6: Implement the changes that make sense to me
 ```
 
-### **AI Tools I've Tested With**
+### Compatible AI Tools
 
 - ✅ **Windsurf** - My main IDE, works great
 - ✅ **Claude** - Good for detailed analysis
@@ -130,9 +132,9 @@ Ruby and Rails development prompts.
 
 ---
 
-## 📊 **What These Prompts Give Me**
+## 📊 Output Characteristics
 
-### **📁 Saved Analysis Reports**
+### Saved Analysis Reports
 
 All prompts generate comprehensive reports saved as dated markdown files:
 
@@ -140,7 +142,7 @@ All prompts generate comprehensive reports saved as dated markdown files:
 - `ruby-code-review-2024-01-15.md`
 - `html-accessibility-analysis-2024-01-15.md`
 
-### **📋 Structured Analysis**
+### Structured Analysis Pattern
 
 Each saved report contains organized feedback like:
 
@@ -157,14 +159,14 @@ Each saved report contains organized feedback like:
 3. Maybe refactor this into smaller functions
 ```
 
-### **🎯 Follow-up Questions**
+### Follow-up Question Pattern
 
 The prompts usually ask helpful questions like:
 > *"Want me to help fix that security issue first?"*
 
 Which helps me decide what to tackle next.
 
-### **💾 File Output Benefits**
+### Benefits of Persisted Output
 
 - **Permanent Record**: All analysis reports are saved for future reference
 - **Team Sharing**: Easy to share detailed analysis with colleagues
@@ -173,23 +175,23 @@ Which helps me decide what to tackle next.
 
 ---
 
-## ⚡ **Why I Think These Work**
+## ⚙️ Rationale
 
-### **🧠 Based on Real Experience**
+### Practical Basis
 
 - I've been writing code for a while and made plenty of mistakes
 - I try to follow industry best practices (WCAG, OWASP, SOLID, etc.)
 - I update these based on what actually helps in day-to-day work
 - I use modern tools and try to stay current
 
-### **🎯 Practical Focus**
+### Practical Focus
 
 - I like getting specific suggestions rather than vague advice
 - I want to know what to prioritize when I have limited time
 - I prefer step-by-step guidance over theory
 - I want to understand why something matters
 
-### **🔄 My Process**
+### Iterative Cycle
 
 How I typically use these:
 
@@ -200,7 +202,7 @@ How I typically use these:
 
 ---
 
-## 🎖️ **What I Care About**
+## 🎖️ Core Quality Axes
 
 > **These are the things I try to focus on in my own code.**
 
@@ -212,7 +214,7 @@ How I typically use these:
 
 ---
 
-## 📈 **What I Hope You Get Out of These**
+## 📈 Expected Outcomes
 
 | What I'm Aiming For | Reality Check |
 |---------------------|---------------|
@@ -223,7 +225,43 @@ How I typically use these:
 | **Less Technical Debt** | My code is easier to maintain now |
 | **Better Testing** | I write more tests than I used to |
 
-**Disclaimer**: Your results will definitely vary. These work for my style and the kind of projects I work on, but everyone's different.
+**Disclaimer**: Results vary by codebase size, team norms, and tooling maturity.
 
 ---
 
+## 🔀 Fork & Adapt (No Direct PRs)
+
+I am not accepting pull requests. If you want to extend or alter these:
+
+1. Fork the repository
+2. Adjust wording / sections to match your team or tooling
+3. Rename or reorganize prompts as needed
+4. Remove sections you don't use to reduce noise
+5. Maintain attribution if large portions are reused
+
+Feel free to publish your own variant.
+
+## 📜 License
+
+See `LICENSE` for terms. Prompts may be reused with attribution to the original repository.
+
+---
+
+## 🔍 Quick Start (TL;DR)
+
+1. Select domain prompt (e.g. Python refactoring)
+2. Paste prompt + target code into your AI assistant
+3. Receive structured analysis markdown
+4. Save under dated filename
+5. Triage high-impact items first
+6. Implement + re-run for regression confirmation
+
+---
+
+## ✅ Style Consistency Checklist (Optional)
+
+- Headings: Use sentence case except proper nouns
+- Sections: Favor "Analysis", "Review", "Report" over marketing terms
+- Replace "business logic" with "domain logic"
+- Prefer "improvement tasks" over "action plan" / "strategic initiatives"
+- Avoid unverifiable quantitative impact claims
