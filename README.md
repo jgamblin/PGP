@@ -37,9 +37,10 @@ Analysis prompts for any codebase.
 | [`project-repo.md`](./generic/project-repo.md) | **Repository setup guide** for creating well-structured project foundations |
 | [`system-design-architecture-review.md`](./generic/system-design-architecture-review.md) | **System design and architecture review** |
 
+
 ### 🐍 Python Ecosystem
 
-Python development prompts.
+Python development prompts. All Python prompt files explicitly mention support for all common Python file types, including `.py`, `.pyw`, `.pyx`, `.pxd`, and Jupyter notebooks (`.ipynb`). Prompts are markdown lint clean and ready for use in modern workflows.
 
 | Prompt | Purpose |
 |--------|---------|
