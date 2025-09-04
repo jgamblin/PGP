@@ -22,90 +22,79 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 
 ---
 
-## 📂 Prompt Library
+## 📂 Repository Structure & File Index
 
-### 🌟 Universal Prompts
-
-Analysis prompts for any codebase.
-
-| Prompt | Purpose |
-|--------|---------|
-| [`ci-cd-pipeline-analysis.md`](./generic/ci-cd-pipeline-analysis.md) | **CI/CD pipeline analysis** |
-| [`code-refactoring.md`](./generic/code-refactoring.md) | **Refactoring analysis** with security, performance, and architecture assessment |
-| [`documentation-generation.md`](./generic/documentation-generation.md) | **Documentation strategy** with API specs and architectural records |
-| [`pr-review-feedback.md`](./generic/pr-review-feedback.md) | **Code review** with security and performance analysis |
-| [`project-repo.md`](./generic/project-repo.md) | **Repository setup guide** for creating well-structured project foundations |
-| [`system-design-architecture-review.md`](./generic/system-design-architecture-review.md) | **System design and architecture review** |
-
-
-### 🐍 Python Ecosystem
-
-Python development prompts. All Python prompt files explicitly mention support for all common Python file types, including `.py`, `.pyw`, `.pyx`, `.pxd`, and Jupyter notebooks (`.ipynb`). Prompts are markdown lint clean and ready for use in modern workflows.
-
-| Prompt | Purpose |
-|--------|---------|
-| [`code-refactoring.md`](./python/code-refactoring.md) | **Python refactoring** with asyncio, Django/Flask/FastAPI optimization |
-| [`concurrency-asyncio-pattern-analysis.md`](./python/concurrency-asyncio-pattern-analysis.md) | **Concurrency and asyncio pattern analysis** |
-| [`database-schema-orm-optimization.md`](./python/database-schema-orm-optimization.md) | **Database schema and ORM optimization** |
-| [`docstring-creation.md`](./python/docstring-creation.md) | **API documentation** with Google/PEP 257 standards |
-| [`documentation-generation.md`](./python/documentation-generation.md) | **Python documentation** with Sphinx, type hints, and framework integration |
-| [`flake8-compliance.md`](./python/flake8-compliance.md) | **Flake8 compliance check** |
-| [`pr-review-feedback.md`](./python/pr-review-feedback.md) | **Python code review** with Django ORM, security, and performance focus |
-| [`project-repo.md`](./python/project-repo.md) | **Python repository setup** with Poetry, pytest, and development tooling |
-| [`type-hinting.md`](./python/type-hinting.md) | **Type safety analysis** with mypy integration and modern typing |
-| [`unit-test-generation.md`](./python/unit-test-generation.md) | **Test strategy and coverage analysis** with pytest best practices |
-
-### 🌐 Frontend & Web
-
-Web development prompts.
-
-| Prompt | Purpose |
-|--------|---------|
-| [`accessibility-check.md`](./html/accessibility-check.md) | **WCAG compliance audit** with comprehensive accessibility analysis |
-| [`bem-naming-convention.md`](./html/bem-naming-convention.md) | **CSS architecture analysis** with BEM methodology implementation |
-| [`code-refactoring.md`](./html/code-refactoring.md) | **Frontend refactoring** with React/Vue/Angular, BEM CSS, accessibility |
-| [`component-design-system-review.md`](./html/component-design-system-review.md) | **Component design system review** |
-| [`documentation-generation.md`](./html/documentation-generation.md) | **Frontend documentation** with Storybook, component libraries, design systems |
-| [`navigation-consistency.md`](./html/navigation-consistency.md) | **UX navigation standardization** across multi-page applications |
-| [`performance-core-web-vitals-audit.md`](./html/performance-core-web-vitals-audit.md) | **Core Web Vitals performance audit** |
-| [`pr-review-feedback.md`](./html/pr-review-feedback.md) | **Frontend code review** with Core Web Vitals, accessibility, performance |
-| [`project-repo.md`](./html/project-repo.md) | **Frontend repository setup** with Webpack/Vite, ESLint, and modern tooling |
-| [`semantic-markup-refinement.md`](./html/semantic-markup-refinement.md) | **HTML5 semantic optimization** with SEO and performance focus |
-
-### 💎 Ruby Ecosystem
-
-Ruby and Rails development prompts.
-
-| Prompt | Purpose |
-|--------|---------|
-| [`code-refactoring.md`](./ruby/code-refactoring.md) | **Ruby refactoring** with Rails conventions, metaprogramming, gem patterns |
-| [`documentation-generation.md`](./ruby/documentation-generation.md) | **Ruby documentation** with YARD, Rails API docs, gem documentation |
-| [`gemfile-management.md`](./ruby/gemfile-management.md) | **Dependency security audit** with version management strategy |
-| [`pr-review-feedback.md`](./ruby/pr-review-feedback.md) | **Ruby code review** with Rails security, ActiveRecord optimization |
-| [`project-repo.md`](./ruby/project-repo.md) | **Ruby repository setup** with Bundler, RSpec, and Rails conventions |
-| [`rails-active-record-performance-audit.md`](./ruby/rails-active-record-performance-audit.md) | **ActiveRecord performance audit** |
-| [`rspec-test-generation.md`](./ruby/rspec-test-generation.md) | **RSpec test strategy** with comprehensive coverage planning |
-| [`rubocop-compliance.md`](./ruby/rubocop-compliance.md) | **Code quality analysis** with Ruby style guide enforcement |
-| [`service-object-domain-logic-refactoring.md`](./ruby/service-object-domain-logic-refactoring.md) | **Service object and domain logic refactoring** |
+### Top-Level Files
+- `LICENSE` — License terms for reuse.
+- `README.md` — This documentation.
 
 ---
 
-## 🧭 Usage
+### 🗂️ `generic/` — Universal Prompts
+| File | Purpose |
+|------|---------|
+| `agents.md` | Agent instructions for using generic prompts |
+| `ci-cd-pipeline-analysis.md` | CI/CD pipeline analysis |
+| `code-refactoring.md` | Refactoring analysis (security, performance, architecture) |
+| `copilot-instructions.md` | Copilot/AI guidance for generic prompt usage |
+| `do-next.md` | Next-step planning prompt |
+| `documentation-generation.md` | Documentation strategy (API specs, records) |
+| `pr-review-feedback.md` | Code review (security, performance) |
+| `project-repo.md` | Repository setup guide |
+| `system-design-architecture-review.md` | System design and architecture review |
 
-### Quick Start
+---
 
-```bash
-# 1. Pick a domain prompt (e.g. python/code-refactoring.md)
-# 2. Copy prompt + relevant code into AI assistant
-# 3. Save generated report: name like python-refactor-YYYY-MM-DD.md
-# 4. Skim top issues → pick 1–2 highest impact
-# 5. Implement & validate (tests / lint / run)
-# 6. Re-run prompt for delta analysis
-```
+### 🐍 `python/` — Python Ecosystem Prompts
+| File | Purpose |
+|------|---------|
+| `agents.md` | Agent instructions for Python prompt usage |
+| `code-refactoring.md` | Python refactoring (asyncio, Django/Flask/FastAPI) |
+| `concurrency-asyncio-pattern-analysis.md` | Concurrency and asyncio pattern analysis |
+| `copilot-instructions.md` | Copilot/AI guidance for Python prompt usage |
+| `database-schema-orm-optimization.md` | Database schema and ORM optimization |
+| `docstring-creation.md` | API documentation (Google/PEP 257) |
+| `documentation-generation.md` | Python documentation (Sphinx, type hints) |
+| `flake8-compliance.md` | Flake8 compliance check |
+| `pr-review-feedback.md` | Python code review (ORM, security, performance) |
+| `project-repo.md` | Python repository setup (Poetry, pytest) |
+| `type-hinting.md` | Type safety analysis (mypy, modern typing) |
+| `unit-test-generation.md` | Test strategy and coverage analysis (pytest) |
 
-### Tools Tested
+---
 
-Windsurf, Claude, GitHub Copilot, Cursor (others should work).
+### 🌐 `html/` — Frontend & Web Prompts
+| File | Purpose |
+|------|---------|
+| `accessibility-check.md` | WCAG compliance audit (accessibility) |
+| `agents.md` | Agent instructions for frontend prompt usage |
+| `bem-naming-convention.md` | CSS architecture analysis (BEM) |
+| `code-refactoring.md` | Frontend refactoring (React/Vue/Angular, BEM, accessibility) |
+| `component-design-system-review.md` | Component design system review |
+| `copilot-instructions.md` | Copilot/AI guidance for frontend prompt usage |
+| `documentation-generation.md` | Frontend documentation (Storybook, design systems) |
+| `navigation-consistency.md` | UX navigation standardization |
+| `performance-core-web-vitals-audit.md` | Core Web Vitals performance audit |
+| `pr-review-feedback.md` | Frontend code review (performance, accessibility) |
+| `project-repo.md` | Frontend repository setup (Webpack/Vite, ESLint) |
+| `semantic-markup-refinement.md` | HTML5 semantic optimization (SEO, performance) |
+
+---
+
+### 💎 `ruby/` — Ruby & Rails Prompts
+| File | Purpose |
+|------|---------|
+| `agents.md` | Agent instructions for Ruby/Rails prompt usage |
+| `code-refactoring.md` | Ruby refactoring (Rails, metaprogramming, gems) |
+| `copilot-instructions.md` | Copilot/AI guidance for Ruby/Rails prompt usage |
+| `documentation-generation.md` | Ruby documentation (YARD, Rails API) |
+| `gemfile-management.md` | Dependency security audit (Gemfile) |
+| `pr-review-feedback.md` | Ruby code review (Rails, ActiveRecord) |
+| `project-repo.md` | Ruby repository setup (Bundler, RSpec, Rails) |
+| `rails-active-record-performance-audit.md` | ActiveRecord performance audit |
+| `rspec-test-generation.md` | RSpec test strategy (coverage planning) |
+| `rubocop-compliance.md` | Code quality analysis (Rubocop) |
+| `service-object-domain-logic-refactoring.md` | Service object and domain logic refactoring |
 
 ---
 
@@ -184,6 +173,27 @@ Feel free to publish your own variant.
 - Use "domain logic" not "business logic"
 - Flat improvement task lists (no speculative effort estimates)
 - Avoid unverifiable quantitative claims
+
+---
+
+## 📋 Instruction & Meta Files
+
+Each folder includes:
+- `agents.md`: World-class instructions for AI agents and Copilot coding agent, clarifying how to use the prompts for automated code review, technical reporting, and incremental improvements. Domain-specific guidance for each folder.
+- `copilot-instructions.md`: Guidance for Copilot/AI tools on how to use the prompts in code review, refactoring, and analysis workflows. Copy into your own repo to standardize AI-assisted reviews.
+
+See each folder for details and usage examples.
+
+---
+
+## 🧭 Usage
+
+1. Pick a domain prompt (e.g. `python/code-refactoring.md`)
+2. Copy prompt + relevant code into your AI assistant
+3. Save generated report (e.g. `python-refactor-YYYY-MM-DD.md`)
+4. Skim top issues, pick 1–2 highest impact
+5. Implement & validate (tests / lint / run)
+6. Re-run prompt for delta analysis
 
 ---
 
