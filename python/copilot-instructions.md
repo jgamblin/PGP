@@ -1,58 +1,50 @@
-# 🧭 Python Prompt Set – Copilot Usage Guide
+# 🧭 Python Development Assistant Guide
 
-Context: This file lives in a *prompt library* (no Python runtime here). Copy it into an actual Python repository to guide AI-assisted improvements. After copying, replace example structures/tooling with real project details.
+This guide helps you use the normalized Python prompts effectively for personal projects and POC development. Copy this into your actual Python project and adapt it to your specific needs.
 
-Primary purpose: Coordinate refactor, typing, performance, and test coverage workflows using the Python prompt files in this folder.
-
----
-## 🎯 Priority Focus Areas (Ordered)
-1. Correctness & safety (input validation, error handling, side effects)
-2. Type coverage & static analysis (mypy, pyright, runtime guards where needed)
-3. Performance (algorithmic complexity, DB/IO efficiency, async concurrency)
-4. Test coverage (critical paths, edge cases, regression protection)
-5. Architecture boundaries (domain vs infrastructure separation)
-6. Observability (structured logging, metrics, tracing hooks)
+Purpose: Coordinate code improvements, testing, and quality checks using the practical Python prompts in this collection.
 
 ---
-## 📁 Example Python Project Structure (Adjust After Copy)
-```
-project/
-  src/               # Application packages
-    app/
-    domain/
-    infra/
-    adapters/
-  tests/
-    unit/
-    integration/
-    e2e/
-  scripts/
-  docs/
-  pyproject.toml / requirements.txt
-  mypy.ini / pyproject typing config
-  .github/workflows/ci.yml
-  README.md
-```
-Optional: `alembic/`, `docker/`, `infra/`.
+## 🎯 Focus Areas for Personal Projects
+1. **Code Quality**: Clean, readable code that works correctly
+2. **Basic Testing**: Cover the important functions and edge cases
+3. **Type Hints**: Add helpful type annotations for clarity
+4. **Performance**: Fix obvious bottlenecks and inefficiencies
+5. **Documentation**: Clear README and function documentation
+6. **Style**: Consistent formatting with Flake8 and Black
 
 ---
-## 🛠️ Base Analysis Prompt (Drop-In)
+## 📁 Simple Project Structure
 ```
-You are a neutral senior Python reviewer.
-Scope: <files / module / diff>.
-Objectives: correctness + type safety + performance + test gaps.
-Constraints: minimal speculation, no framework overreach, no full rewrites.
-Output:
-# Python Technical Report
-## Summary
-## Critical Issues (ranked)
-## Type Safety & Static Analysis
-## Performance / Algorithmic Concerns
-## Concurrency / Async Risks (if any)
-## Security & Input Validation
-## Testing Gaps
-## Suggested Minimal Patches (top 2)
-End with next-step question.
+my_project/
+  src/                 # Your main code
+    my_project/
+      __init__.py
+      main.py
+      utils.py
+  tests/               # Test files
+    test_main.py
+    test_utils.py
+  requirements.txt     # Dependencies
+  README.md           # Project documentation
+  .flake8            # Style configuration
+```
+Optional: `pyproject.toml`, `.pre-commit-config.yaml`, `docs/`
+
+---
+## 🛠️ Quick Code Review Prompt
+```
+Use the Python Code Review Assistant to review this code:
+[paste your code or file]
+
+Focus on:
+- Code correctness and potential bugs
+- Readability and maintainability
+- Basic performance issues
+- Missing error handling
+- Simple improvements
+
+Provide practical suggestions with examples.
 ```
 
 Follow-ups:
@@ -61,125 +53,152 @@ Follow-ups:
 - "List unawaited async calls or blocking sync calls inside async funcs." 
 
 ---
-## 🔡 Typing Increment Plan Prompt (Progressive Adoption)
+## 🔡 Adding Type Hints
 ```
-Phase 1: Add return + parameter types for public APIs.
-Phase 2: Introduce TypedDict / Protocol for key structures.
-Phase 3: Enable mypy strict flags incrementally.
-List top 5 fastest type wins with file:line and target annotation.
+Use the Python Type Hints Assistant to add type annotations:
+[paste your function or class]
+
+Start with:
+1. Function parameters and return types
+2. Class attributes
+3. Complex data structures (dicts, lists)
+
+Focus on helpful annotations that catch common bugs.
 ```
 
 ---
-## ⚙️ Performance / Async Audit Prompt
+## ⚙️ Performance Check
 ```
-Identify:
-- O(n^2) loops on large collections
-- Inefficient DB/ORM patterns (N+1 queries)
-- Blocking I/O in async contexts
-- Over-frequent object allocations in hot paths
-Return each with file:line, impact rationale, suggested fix.
+Use the Python Async & Concurrency Assistant for async code:
+[paste your async code]
+
+Or use the Database & ORM Assistant for database code:
+[paste your models or queries]
+
+Look for:
+- Slow loops or inefficient algorithms
+- Database N+1 query problems
+- Blocking operations in async code
+- Memory usage issues
 ```
 
 ---
-## 🧪 Test Gap Analysis Prompt
+## 🧪 Adding Tests
 ```
-List untested conditional branches (file:line → condition).
-Rank by risk (data mutation, external I/O, security relevance).
-Generate pytest tests for top 3 branches—return only code.
-```
+Use the Python Testing Assistant to create tests:
+[paste your function or class]
 
----
-## 🛡️ Security Checklist (General Python)
-- Unsanitized external input
-- Direct SQL string formatting
-- Use of eval/exec or insecure deserialization (pickle, yaml.load)
-- Weak hashing / crypto misuse
-- Missing auth/authorization guards
-Prompt: "Security-only scan; provide top 3 issues with safer code snippet." 
+Create tests for:
+- Normal operation (happy path)
+- Edge cases and error conditions
+- Different input types
+- Important business logic
 
----
-## 🧾 Logging & Observability Prompt
-```
-Scan for:
-- Print statements (replace with structured logging)
-- Missing exception context (bare except / suppressed traceback)
-- No correlation IDs at request boundaries
-Return suggestions + minimal diff for top 1.
+Provide pytest examples that are easy to run.
 ```
 
 ---
-## 🔄 Refactor Iteration Loop (Execution Sequence)
-1. Run high-level report
-2. Approve first fix target
-3. Generate minimal patch
-4. Ask for regression risk list
-5. Add tests
-6. Add types / tighten static checks
-7. Final quality gate
+## 🛡️ Basic Security Check
+```
+Use the Python Code Review Assistant to check for security issues:
+[paste your code]
+
+Look for:
+- User input validation
+- SQL injection risks
+- File path traversal
+- Unsafe deserialization
+- Missing error handling
+
+Provide safer alternatives with examples.
+``` 
 
 ---
-## ✅ Quality Gate (Ask Copilot)
-- Tests pass (new tests fail pre-patch?)
-- mypy (or pyright) clean on touched files
-- Cyclomatic complexity stable or reduced
-- No new global mutable state
-- Logging improved (not degraded)
-- Security risk count decreased or stable
-Prompt: "Produce PASS/FAIL table + one-line rationale." 
+## 🧾 Better Logging
+```
+Use the Python Code Helper to improve logging:
+[paste your code with print statements or poor error handling]
 
----
-## 🗜️ Diff Rules Prompt
-```
-Return unified diff only.
-Do not reorder imports unless required.
-Preserve formatting; no sweeping black reflow if unrelated.
-Add TODO for non-critical improvements.
-```
+Replace:
+- print() statements with proper logging
+- Bare except clauses with specific exceptions
+- Silent failures with informative error messages
 
----
-## 🧠 When Output Too Generic
-Reply:
-```
-Regenerate with:
-- Concrete before/after code
-- Complexity classification (O notation) where relevant
-- File:line references
-- Explicit severity rationale (cause → impact → fix)
+Show practical logging examples.
 ```
 
 ---
-## 🧩 Example Multi-Phase Session
+## 🔄 Improvement Workflow
+1. **Code Review**: Use Code Review Assistant for overall assessment
+2. **Fix Issues**: Use Code Helper to clean up identified problems
+3. **Add Tests**: Use Testing Assistant for important functions
+4. **Type Hints**: Use Type Hints Assistant for better IDE support
+5. **Style**: Use Code Style Assistant for consistent formatting
+6. **Documentation**: Use Documentation Assistant for README and docstrings
+
+---
+## ✅ Final Check
+- [ ] Code runs without errors
+- [ ] Tests pass (if you have them)
+- [ ] Flake8 style check passes
+- [ ] Functions have clear names and docstrings
+- [ ] No obvious security issues
+- [ ] README explains how to use the project 
+
+---
+## 🗜️ Making Changes
 ```
-1. Report (types + performance + test gaps)
-2. Patch: remove O(n^2) hotspot
-3. Add tests for refactored area
-4. Add protocol & TypedDict for key data flow
-5. Introduce structured logging
-6. Final gate + risk summary
+When asking for code improvements:
+- Request specific, small changes
+- Ask for before/after examples
+- Focus on one issue at a time
+- Test changes before applying more
 ```
 
 ---
-## 🧪 Tooling Bootstrap Prompt (Optional if Starting Fresh)
+## 🧠 Getting Better Responses
+If suggestions are too vague, ask for:
 ```
-Generate minimal pyproject.toml with:
-- dependencies section placeholder
-- black, isort, mypy, pytest tool config
-Also produce mypy.ini strict-but-gradual config.
+- Specific code examples
+- Step-by-step instructions
+- Explanation of why the change helps
+- Simple examples I can copy and modify
 ```
 
 ---
-## 🔐 Final Verification Checklist
-Ask Copilot:
-- New code paths covered by tests?
-- Any silent behavior change risk?
-- Any lingering blocking calls in async context?
-- Any added untyped public API?
-- Are security-sensitive operations validated?
-
-Prompt: "Generate final checklist PASS/FAIL with 1-line per item." 
+## 🧩 Example Improvement Session
+```
+1. Code review: "What can be improved in this file?"
+2. Fix issues: "Help me clean up this function"
+3. Add tests: "Create tests for this function"
+4. Add types: "Add type hints to this code"
+5. Document: "Write a docstring for this function"
+6. Style: "Check the formatting of this file"
+```
 
 ---
-## ♻️ Using Inside the Prompt Library
-Inside this repo you only copy text; do not attempt to run anything here. After copying to a real project, replace placeholders (e.g. Python version, package manager, CI specifics).
+## 🧪 Project Setup
+```
+Use the Python Project Setup Assistant to:
+- Create a good project structure
+- Set up requirements.txt or pyproject.toml
+- Configure Flake8, Black, and pytest
+- Create a helpful README template
 
-Small diffs, measurable improvements, type + test reinforcement every step.
+Start with: "Help me set up a new Python project for [describe your project]"
+```
+
+---
+## 🔐 Before You're Done
+- [ ] Does the code do what you intended?
+- [ ] Are there tests for the important parts?
+- [ ] Is the code readable and well-organized?
+- [ ] Does it handle errors gracefully?
+- [ ] Is the README up to date?
+- [ ] Can someone else understand and use your code? 
+
+---
+## ♻️ Using This Guide
+Copy this guide into your actual Python project and adapt it to your needs. Replace examples with your specific project details.
+
+Focus on small, practical improvements that make your code better step by step.

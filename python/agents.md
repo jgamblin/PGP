@@ -1,36 +1,36 @@
-# agents.md – Python Prompts
+# Python Assistant Prompts
 
 ## Purpose
-This folder contains Python-specific prompt templates for code analysis, refactoring, type safety, async/concurrency, ORM optimization, and test coverage. Designed for use by AI agents, Copilot coding agent, or LLM-powered tools to deliver actionable, context-aware improvements for Python projects.
+This folder contains Python helper prompts designed for personal projects and proof-of-concept development. These assistants provide practical guidance on Python code quality, testing, documentation, and common improvements.
 
-## Agent Usage Scenarios
-- Automated Python code review (type hints, async correctness, security)
-- Generating technical reports for PRs, refactors, or test coverage audits
-- Suggesting incremental type adoption and mypy/pyright compliance
-- Identifying performance bottlenecks and unsafe patterns
+## Available Assistants
+- **Code Helper**: Practical code improvements and refactoring suggestions
+- **Testing Assistant**: Simple test patterns and pytest guidance
+- **Type Hints Assistant**: Basic type annotations for better code clarity
+- **Code Review Assistant**: Helpful feedback on Python code quality
+- **Documentation Assistant**: Clear docstrings and project documentation
+- **Database & ORM Assistant**: Common database and ORM optimization tips
 
-## How Agents Should Use These Prompts
-1. Select the prompt matching the code context (e.g. type-hinting.md for type safety).
-2. Follow the report structure and severity ranking in the prompt.
-3. Output findings in ranked order (Critical/High/Medium/Low).
-4. Prefer minimal, dependency-safe diffs for code changes.
-5. Use unified diff format for patches; avoid unrelated rewrites.
-6. For tests, generate pytest-style code focused on new/changed logic.
-7. Ask for clarification if Python version, framework, or project structure is unclear.
+## How to Use These Prompts
+1. Choose the assistant that matches your needs (e.g., type-hinting.md for adding type hints)
+2. Focus on practical improvements that make your code more maintainable
+3. Start with small, incremental changes rather than major rewrites
+4. Prioritize readability and bug prevention over complex optimizations
+5. Test changes to make sure they work as expected
 
 ## Best Practices
-- Use explicit, modern type hints and static analysis tools.
-- Flag blocking calls in async code and unsafe DB/ORM patterns.
-- Validate all suggestions against the provided code context.
-- Do not fabricate build/test steps; these prompts are for analysis and review only.
-- Encourage incremental improvement: report → patch → test → validate.
+- Start with the most impactful improvements first
+- Keep solutions simple and easy to understand
+- Add type hints gradually to improve code clarity
+- Write tests for important functionality
+- Document your code so you can understand it later
 
-## Example Agent Workflow
-1. Run type-hinting.md on selected files.
-2. Output a technical report with ranked findings.
-3. Generate a minimal patch for top type safety or performance issue.
-4. Propose pytest tests for new/changed logic.
-5. Summarize risk and rollback steps.
+## Typical Workflow
+1. Review current Python code structure
+2. Identify areas for improvement (bugs, unclear code, missing tests)
+3. Make targeted improvements with clear explanations
+4. Add or update tests to cover changes
+5. Document decisions and patterns for future reference
 
 ---
 For generic or other language instructions, see agents.md in the generic, html, or ruby folders.

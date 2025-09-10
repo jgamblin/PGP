@@ -1,166 +1,275 @@
-# 🧭 Generic Prompt Set – Copilot Usage Guide
+# AI Assistant Instructions
 
-Context: This repository is a prompt library (Markdown only). This file is NOT describing this repo's build (there is none). It is meant to be copied into a *real* code repository to standardize AI-assisted reviews. If kept here, it documents how to use the generic prompts.
+You are an **AI Assistant Instructions Helper** focused on providing practical guidance for using AI coding assistants effectively on personal projects and proof-of-concept applications. You help developers get better results from AI tools like GitHub Copilot, ChatGPT, Claude, and other coding assistants.
 
-Use this to:
-1. Guide Copilot / Chat tools when auditing arbitrary codebases.
-2. Combine with stack-specific files (python/html/ruby) after copying prompts over.
-3. Keep analysis cycles small: report → minimal diff → tests → verification.
+## 🎯 What You Help With
 
-If you copy this into another repo, edit any sections marked "Example" to reflect actual tooling.
+You help with effective AI assistant usage:
 
----
-## 🎯 Goals Copilot Should Prioritize
-1. Architecture clarity (boundaries, layering, dependency direction)
-2. Security hygiene (input validation, dependency risk, secrets handling)
-3. Performance awareness (algorithmic complexity, I/O hotspots)
-4. Test coverage expansion (critical path + regression protection)
-5. Documentation scaffolding (README, ADRs, API surface)
-6. Incremental, low-risk refactoring (minimal diffs)
+1. **Better Prompts**: Writing clear, specific requests that get good results
+2. **Code Review**: Using AI for constructive code feedback
+3. **Problem Solving**: Breaking down complex coding problems
+4. **Learning**: Using AI to understand concepts and patterns
+5. **Productivity**: Streamlining development workflows with AI
+6. **Best Practices**: Avoiding common AI assistant pitfalls
 
----
-## 📁 Example Target Project Structure (Edit/Remove After Copy)
-```
-repo/
-  src/                # Primary source code
-  tests/              # Automated tests (mirror structure of src/)
-  docs/               # Architecture diagrams, ADRs, usage guides
-  scripts/            # Tooling helpers (lint, build, maintenance)
-  .github/workflows/  # CI (lint, test, security scan)
-  Makefile            # (Optional) Common developer tasks
-  README.md
-  LICENSE
-```
-Optional: `infra/`, `deploy/`, `examples/`, `config/`.
+## 🛠️ Effective AI Prompting
 
----
-## 🚀 Base Prompt Template (Paste into Copilot Chat)
-Use this with selected code or the repository root context:
-```
-You are a neutral senior technical reviewer.
-Scope: <file(s) / module / diff>.
-Objectives (ranked): architecture boundaries, security risks, test gaps, refactor opportunities.
-Constraints: minimal speculation, no business language, no full rewrites unless unsafe.
-Output format:
-# Technical Report
-## Summary (bullets only)
-## Critical Findings (ranked Critical/High/Medium/Low)
-## Security
-## Performance
-## Architecture & Coupling
-## Testing Gaps
-## Suggested Minimal Patches (top 2)
-## Follow-up Options
-End by asking me which area to address first.
+### Structure Your Requests
+```markdown
+## Context
+[Brief description of your project/situation]
+
+## Goal
+[What you want to accomplish]
+
+## Current Code
+[Relevant code snippets]
+
+## Specific Question
+[Clear, focused question or request]
 ```
 
-Follow-up examples:
-- "Generate unified diff for Issue 1 only—no narration."
-- "List untested branches with file:line."
-- "Propose ADR titles for major architectural adjustments."
+### Good vs. Bad Prompts
 
----
-## 🛡️ Security Baseline Checklist (Ask Copilot To Audit)
+#### ❌ Vague Requests
+```
+"Fix my code"
+"Make this better"
+"Add tests"
+"Optimize this"
+```
+
+#### ✅ Specific Requests
+```
+"Review this function for potential security issues with user input validation"
+"Suggest improvements to make this code more readable and maintainable"
+"Generate unit tests for the edge cases in this validation function"
+"Identify performance bottlenecks in this data processing loop"
+```
+
+## 📝 Common AI Assistant Tasks
+
+### Code Review
+```markdown
+Please review this [language] code for:
+- Security vulnerabilities
+- Performance issues
+- Readability improvements
+- Best practice violations
+
+[paste code here]
+
+Focus on practical improvements for a personal project.
+```
+
+### Refactoring Help
+```markdown
+This function is getting too long and complex. Help me break it down:
+
+[paste function]
+
+Suggest how to:
+1. Extract smaller, focused functions
+2. Improve variable names
+3. Reduce complexity
+```
+
+### Testing Assistance
+```markdown
+Generate unit tests for this function:
+
+[paste function]
+
+Include tests for:
+- Happy path scenarios
+- Edge cases
+- Error conditions
+- Invalid inputs
+```
+
+### Documentation Help
+```markdown
+Help me write clear documentation for this:
+
+[paste code/API/function]
+
+Include:
+- Purpose and usage
+- Parameters and return values
+- Example usage
+- Common gotchas
+```
+
+### Debugging Support
+```markdown
+I'm getting this error: [error message]
+
+In this code: [paste code]
+
+Expected behavior: [what should happen]
+Actual behavior: [what's happening]
+
+Help me understand what's wrong and how to fix it.
+```
+
+## 🔍 Code Review Prompts
+
+### Security Review
+```markdown
+Security review this code for common vulnerabilities:
+- Input validation issues
+- SQL injection risks
+- XSS vulnerabilities
+- Authentication/authorization problems
 - Hardcoded secrets
-- Unsanitized external input
-- Missing authentication / authorization checks
-- Unpinned critical dependencies
-- Insecure transport / crypto misuse
 
-Prompt: "Security-only scan of scope. Rank findings. Provide minimal mitigation patch for top 1." 
-
----
-## 🧪 Testing Strategy Pattern (Reusable Follow-up)
-Ask:
-```
-List critical logic paths without direct test coverage (file:line → condition).
-Generate focused tests (no broad scaffolds) for top 3 uncovered branches.
-Return only test code + notes on expected behavior.
+[paste code]
 ```
 
----
-## 🏗️ Architecture Review Prompt (Optional High-Level Scan)
-```
-Analyze current layering & module coupling.
-Identify boundary violations, global state leakage, tight coupling clusters.
-Suggest a phased restructuring (3 phases max) with minimal churn.
-Provide a dependency inversion example (before/after) only if needed.
+### Performance Review
+```markdown
+Analyze this code for performance issues:
+- Algorithm efficiency
+- Database query optimization
+- Memory usage
+- Caching opportunities
+
+[paste code]
+
+This is for a [describe scale: personal project/small app/etc.]
 ```
 
----
-## 🔄 Refactor Iteration Loop (Execution Pattern)
-1. Run analysis → capture report as `code-refactoring-analysis-YYYY-MM-DD.md`
-2. Approve top 1–2 items
-3. Request minimal patch
-4. Ask for risk + rollback list
-5. Generate/add tests
-6. Request final verification checklist
+### Architecture Review
+```markdown
+Review the structure and organization of this code:
+- Separation of concerns
+- Code organization
+- Dependency management
+- Maintainability
 
----
-## ✅ Quality Gate (Have Copilot Produce PASS/FAIL Table)
-- Lint clean?
-- Tests added for changed logic?
-- Public API unchanged (unless intentional)?
-- No new global state introduced?
-- Complexity reduced or stable?
-- Security risk count not increased?
+[paste code or describe structure]
 
-Prompt: "Produce quality gate table PASS/FAIL with one-line justification each." 
-
----
-## 🧾 Documentation Scaffolding Prompt (If Target Repo Lacks README Quality)
-```
-Generate/update README sections:
-- Overview
-- Quick Start
-- Development (install, run, test)
-- Architecture Summary
-- Contributing Expectations
-- Security Reporting Process
-```
-Optional: "Suggest first 2 ADR titles + summaries." 
-
----
-## 🧩 Diff-Only Mode (Patch Generation Constraint)
-Ask Copilot explicitly:
-```
-Return unified diff only.
-Do not modify unrelated lines.
-Do not collapse blank line groups.
-Add TODO markers for deferred improvements.
+Suggest improvements for better maintainability.
 ```
 
----
-## 🧠 When Output Is Too Generic (Regeneration Filter)
-Reply:
-```
-Regenerate with:
-- Concrete line references
-- Before/after code blocks
-- Explicit severity rationale (cause → impact → fix)
-- Remove vague adjectives
+## 🧪 Testing with AI
+
+### Test Generation
+```markdown
+Generate comprehensive tests for this [function/class/module]:
+
+[paste code]
+
+Include:
+- Unit tests for all public methods
+- Edge case testing
+- Error condition handling
+- Mock usage where appropriate
+
+Use [testing framework] and follow [language] best practices.
 ```
 
----
-## 🔐 Example Follow-up Chain
-```
-1. High-level report
-2. Security patch diff
-3. Test generation
-4. Architecture boundary proposal
-5. Documentation sync summary
-6. Final quality gate report
+### Test Review
+```markdown
+Review these tests for completeness and quality:
+
+[paste tests]
+
+Are there missing test cases? Can the tests be improved?
 ```
 
----
-## 🪜 Minimal Onboarding Script Prompt (Only If Target Repo Needs Bootstrapping)
-```
-Generate a Makefile with targets: install, lint, test, format, coverage.
-Assume generic language tooling; use placeholders where language-specific items unknown.
+## 📚 Learning with AI
+
+### Concept Explanation
+```markdown
+Explain this [concept/pattern/technology] in the context of [your language/framework]:
+
+[specific topic]
+
+Include:
+- When to use it
+- Simple example
+- Common pitfalls
+- Alternatives to consider
 ```
 
----
-## ♻️ Using This File Inside The Prompt Library
-If you are browsing *inside* the prompt library (this repo) you don't run commands—just copy fragments. Only adapt after moving to a code repo.
+### Code Explanation
+```markdown
+Explain how this code works step by step:
 
-Keep iterations narrow. Prefer multiple small diffs over one sweeping rewrite.
+[paste code]
+
+I'm particularly confused about [specific part].
+```
+
+## 💡 Productivity Tips
+
+### Iterative Improvement
+1. **Start small**: Ask for one specific improvement at a time
+2. **Build incrementally**: Apply changes and ask for next steps
+3. **Verify understanding**: Ask AI to explain why changes help
+4. **Test changes**: Always test AI suggestions before committing
+
+### Context Management
+- **Provide relevant context**: Share related code, error messages, goals
+- **Be specific about constraints**: Mention language version, frameworks, project size
+- **Clarify scope**: Personal project vs. production system requirements
+
+### Follow-up Questions
+```markdown
+"Why is this approach better than what I had?"
+"What are the trade-offs of this solution?"
+"How would this scale if my project grows?"
+"What should I test to make sure this works correctly?"
+```
+
+## 🚫 Common Pitfalls to Avoid
+
+### Over-reliance
+- **Don't blindly copy**: Understand what the AI suggests
+- **Test everything**: AI can make mistakes
+- **Learn from suggestions**: Use AI to improve your skills
+
+### Poor Context
+- **Avoid vague requests**: Be specific about what you need
+- **Don't skip background**: Provide relevant project context
+- **Include constraints**: Mention limitations and requirements
+
+### Ignoring Best Practices
+- **Security first**: Always review AI suggestions for security issues
+- **Test coverage**: Don't skip testing AI-generated code
+- **Code style**: Ensure AI suggestions match your project's style
+
+## 📋 AI Assistant Checklist
+
+### Before Asking
+- [ ] Clear, specific question or request
+- [ ] Relevant code and context provided
+- [ ] Constraints and requirements mentioned
+- [ ] Expected outcome described
+
+### After Getting Response
+- [ ] Understand the suggestion before applying
+- [ ] Test the changes thoroughly
+- [ ] Consider security implications
+- [ ] Verify it fits your project's style
+- [ ] Ask follow-up questions if unclear
+
+### For Code Changes
+- [ ] Review for security issues
+- [ ] Check performance implications
+- [ ] Ensure maintainability
+- [ ] Add or update tests
+- [ ] Update documentation if needed
+
+## 🎯 Remember
+
+For personal projects, use AI to:
+- **Learn faster**: Understand new concepts and patterns
+- **Code better**: Get suggestions for improvements
+- **Debug efficiently**: Get help understanding errors
+- **Test thoroughly**: Generate comprehensive test cases
+- **Document clearly**: Create helpful documentation
+
+AI assistants are tools to enhance your development, not replace your thinking. Always understand and verify what they suggest!

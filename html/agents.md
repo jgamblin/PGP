@@ -1,35 +1,38 @@
-# agents.md – Frontend/HTML Prompts
+# HTML/CSS Assistant Prompts
 
 ## Purpose
-This folder contains frontend prompt templates for accessibility, semantic markup, performance (Core Web Vitals), CSS architecture, and code review. Designed for use by AI agents, Copilot coding agent, or LLM-powered tools to deliver actionable, standards-compliant improvements for web projects.
+This folder contains HTML/CSS helper prompts designed for personal projects and proof-of-concept sites. These assistants provide practical guidance on HTML structure, CSS styling, accessibility basics, and performance optimization.
 
-## Agent Usage Scenarios
-- Automated accessibility audits (WCAG 2.2, ARIA, keyboard navigation)
-- Semantic HTML and CSS architecture review (BEM, utility-first)
-- Performance analysis (LCP, CLS, INP) and optimization suggestions
-- Generating technical reports for PRs or refactor proposals
+## Available Assistants
+- **Accessibility Helper**: Basic accessibility improvements and WCAG compliance
+- **Semantic Markup Helper**: Proper HTML structure and semantic elements
+- **Performance Helper**: Core Web Vitals optimization and loading improvements
+- **BEM Helper**: CSS naming conventions and architecture
+- **Navigation Helper**: User-friendly navigation design
+- **Component Helper**: Reusable component patterns
+- **Code Review Assistant**: Practical feedback on HTML/CSS code
+- **Documentation Assistant**: Clear documentation for frontend projects
 
-## How Agents Should Use These Prompts
-1. Select the prompt matching the code context (e.g. accessibility-check.md for a11y).
-2. Follow the report structure and severity ranking in the prompt.
-3. Output findings in ranked order (Critical/High/Medium/Low) with WCAG references.
-4. Prefer minimal, semantic diffs for code changes; avoid broad rewrites.
-5. Use unified diff format for patches; preserve existing spacing and comments.
-6. For tests, generate code for keyboard navigation, ARIA state, and conditional rendering.
-7. Ask for clarification if framework, design system, or project structure is unclear.
+## How to Use These Prompts
+1. Choose the assistant that matches your needs (e.g., accessibility-check.md for accessibility help)
+2. Focus on practical, actionable improvements for personal projects
+3. Prioritize user experience and accessibility over complex enterprise solutions
+4. Make incremental improvements rather than complete rewrites
+5. Test changes on real devices and with real users when possible
 
 ## Best Practices
-- Always audit landmarks, heading hierarchy, and ARIA before suggesting changes.
-- Validate all suggestions against the provided code context.
-- Do not fabricate build/test steps; these prompts are for analysis and review only.
-- Encourage incremental improvement: report → patch → test → validate.
+- Start with accessibility and semantic HTML basics
+- Focus on the most impactful changes first
+- Keep solutions simple and maintainable
+- Test with keyboard navigation and screen readers when possible
+- Optimize for mobile devices and slow connections
 
-## Example Agent Workflow
-1. Run accessibility-check.md on selected files.
-2. Output a technical report with ranked findings and WCAG refs.
-3. Generate a minimal patch for top accessibility or semantic issue.
-4. Propose tests for keyboard navigation and ARIA state.
-5. Summarize risk and rollback steps.
+## Typical Workflow
+1. Review current HTML/CSS structure
+2. Identify high-priority accessibility and performance issues
+3. Make targeted improvements with clear before/after examples
+4. Test changes across different browsers and devices
+5. Document decisions for future reference
 
 ---
 For other domains, see agents.md in the generic, python, or ruby folders.

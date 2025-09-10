@@ -2,7 +2,7 @@
 
 ## Personal AI Coding Assistant Prompt Library
 
-Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shared so others can adapt—optimized for my own workflow (analysis first, pragmatic improvements, durable documentation).
+Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shared so others can adapt—optimized for personal projects and proof-of-concept development with practical, actionable guidance.
 
 ### Who This Helps
 
@@ -12,21 +12,14 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 
 ---
 
-## 🛠️ Recent Cleanup Snapshot
-
-- Neutral wording + heading normalization
-- Removed quantified hour/effort estimates
-- Unified: "domain logic" terminology
-- Normalized dashboard/analysis labels
-- Eliminated earlier duplication & stray markdown fences
-
----
 
 ## 📂 Repository Structure & File Index
 
 ### Top-Level Files
 - `LICENSE` — License terms for reuse.
 - `README.md` — This documentation.
+
+**Total: 32 normalized prompts across all technology stacks**
 
 ---
 
@@ -55,7 +48,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 | `database-schema-orm-optimization.md` | Database schema and ORM optimization |
 | `docstring-creation.md` | API documentation (Google/PEP 257) |
 | `documentation-generation.md` | Python documentation (Sphinx, type hints) |
-| `flake8-compliance.md` | Flake8 compliance check |
+| `flake8-compliance.md` | Python code style and formatting (Flake8, Black) |
 | `pr-review-feedback.md` | Python code review (ORM, security, performance) |
 | `project-repo.md` | Python repository setup (Poetry, pytest) |
 | `type-hinting.md` | Type safety analysis (mypy, modern typing) |
@@ -70,7 +63,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 | `agents.md` | Agent instructions for frontend prompt usage |
 | `bem-naming-convention.md` | CSS architecture analysis (BEM) |
 | `code-refactoring.md` | Frontend refactoring (React/Vue/Angular, BEM, accessibility) |
-| `component-design-system-review.md` | Component design system review |
+| `component-design-system-review.md` | Component design system review and optimization |
 | `copilot-instructions.md` | Copilot/AI guidance for frontend prompt usage |
 | `documentation-generation.md` | Frontend documentation (Storybook, design systems) |
 | `navigation-consistency.md` | UX navigation standardization |
@@ -91,57 +84,13 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 | `gemfile-management.md` | Dependency security audit (Gemfile) |
 | `pr-review-feedback.md` | Ruby code review (Rails, ActiveRecord) |
 | `project-repo.md` | Ruby repository setup (Bundler, RSpec, Rails) |
-| `rails-active-record-performance-audit.md` | ActiveRecord performance audit |
+| `rails-active-record-performance-audit.md` | ActiveRecord performance optimization and N+1 query detection |
 | `rspec-test-generation.md` | RSpec test strategy (coverage planning) |
 | `rubocop-compliance.md` | Code quality analysis (Rubocop) |
 | `service-object-domain-logic-refactoring.md` | Service object and domain logic refactoring |
 
 ---
 
-## 📊 Report Output (What To Expect)
-
-Each prompt produces a dated markdown file with:
-
-- Dashboard / summary (security, performance, maintainability highlights)
-- Issue list grouped by severity / category
-- Concrete remediation suggestions (code snippets where relevant)
-- Optional follow-up question offering next-step focus
-
-Benefits: historical trace, shareable review artifact, incremental improvement tracking.
-
----
-
-## ⚙️ Approach & Cycle
-
-Design principles: evidence-based analysis, smallest safe change, repeat.
-
-Loop:
-
-1. Analyze
-2. Prioritize
-3. Implement
-4. Test / Verify
-5. Re-run (compare deltas)
-
----
-
-## 🎖️ Quality Focus Areas
-
-- Security (common vulnerability classes, unsafe patterns)
-- Performance (hot paths, unnecessary allocations, query inefficiencies)
-- Architecture (boundaries, cohesion, coupling)
-- Testing (coverage of risk & regression vectors)
-- Documentation (clarity of intent & public contracts)
-
----
-
-## 📈 Why It Helps (In Practice)
-
-Common effects: earlier issue detection, clearer priorities, reduced rework, incremental hardening of performance & security posture.
-
-Disclaimer: Effectiveness varies by codebase maturity and follow-through.
-
----
 
 ## 🔀 Fork & Adapt (No Direct PRs)
 
@@ -155,38 +104,207 @@ I am not accepting pull requests. If you want to extend or alter these:
 
 Feel free to publish your own variant.
 
-## 🔍 Quick Start (TL;DR)
+## 🎯 Which Prompt Should I Use?
 
-1. Pick prompt
-2. Provide code
-3. Save report
-4. Triage top items
-5. Implement + verify
-6. Re-run for changes
+### "My code is messy and hard to understand"
+**Python:** `python/code-refactoring.md` - Python Code Helper  
+**Ruby:** `ruby/code-refactoring.md` - Ruby Code Helper  
+**Frontend:** `html/code-refactoring.md` - Frontend Code Helper  
+**Any Language:** `generic/code-refactoring.md` - Code Refactoring Helper  
+
+### "I need to add tests to my project"
+**Python:** `python/unit-test-generation.md` - Python Testing Assistant  
+**Ruby:** `ruby/rspec-test-generation.md` - Ruby Testing Assistant  
+**Any Language:** Use language-specific testing prompts  
+
+### "I want feedback on my code changes"
+**Python:** `python/pr-review-feedback.md` - Python Code Review Assistant  
+**Ruby:** `ruby/pr-review-feedback.md` - Ruby Code Review Assistant  
+**Frontend:** `html/pr-review-feedback.md` - Frontend Code Review Assistant  
+**Any Language:** `generic/pr-review-feedback.md` - Code Review Helper  
+
+### "My project needs better documentation"
+**Python:** `python/documentation-generation.md` - Python Documentation Assistant  
+**Ruby:** `ruby/documentation-generation.md` - Ruby Documentation Assistant  
+**Frontend:** `html/documentation-generation.md` - Frontend Documentation Assistant  
+**Any Language:** `generic/documentation-generation.md` - Documentation Helper  
+
+### "I need to set up a new project"
+**Any Language:** `generic/project-repo.md` - Project Setup Helper  
+- Repository structure and organization
+- README templates and essential files
+- Development tools and CI/CD setup
+
+### "My website is slow or has accessibility issues"
+**Frontend:** `html/performance-core-web-vitals-audit.md` - Web Performance Helper  
+**Frontend:** `html/accessibility-check.md` - Web Accessibility Helper  
+**Frontend:** `html/semantic-markup-refinement.md` - HTML Semantic Helper  
+
+### "I need help with specific technologies"
+**Python Types:** `python/type-hinting.md` - Python Type Hints Assistant  
+**Python Docs:** `python/docstring-creation.md` - Python Documentation Assistant  
+**Python Database:** `python/database-schema-orm-optimization.md` - Database & ORM Assistant  
+**Ruby Style:** `ruby/rubocop-compliance.md` - Ruby Style Guide Helper  
+**Ruby Gems:** `ruby/gemfile-management.md` - Ruby Dependencies Helper  
+**Ruby Services:** `ruby/service-object-domain-logic-refactoring.md` - Ruby Service Objects Helper  
+**CSS Organization:** `html/bem-naming-convention.md` - CSS Organization Helper  
+**Navigation:** `html/navigation-consistency.md` - Navigation Helper  
+
+### "I need help with development workflow"
+**CI/CD:** `generic/ci-cd-pipeline-analysis.md` - CI/CD Pipeline Helper  
+**Architecture:** `generic/system-design-architecture-review.md` - Architecture Review Helper  
+**AI Tools:** `generic/copilot-instructions.md` - AI Assistant Instructions Helper  
+**Project Planning:** `generic/do-next.md` - Project Next Steps Helper  
+**General Help:** `generic/agents.md` - Generic Development Helper
 
 ---
 
-## ✅ Style Consistency (Optional)
+## ⚡ Quick Commands by Technology
 
-- Sentence case headings
-- Prefer "Analysis" / "Review" / "Report" labels
-- Use "domain logic" not "business logic"
-- Flat improvement task lists (no speculative effort estimates)
-- Avoid unverifiable quantitative claims
+Copy and paste these into your AI assistant:
+
+### Python Projects
+```
+# Code cleanup
+Use the Python Code Helper prompt to review this code and suggest improvements:
+[paste your Python code]
+
+# Add tests
+Use the Python Testing Assistant prompt to create pytest tests for this function:
+[paste your function]
+
+# Add type hints
+Use the Python Type Hints Assistant prompt to add type annotations:
+[paste your code]
+
+# Database optimization
+Use the Database & ORM Assistant prompt to optimize these models:
+[paste your Django/SQLAlchemy models]
+
+# Function documentation
+Use the Python Documentation Assistant prompt to write docstrings:
+[paste your functions]
+```
+
+### Ruby/Rails Projects
+```
+# Code cleanup
+Use the Ruby Code Helper prompt to improve this Ruby code:
+[paste your Ruby code]
+
+# Add RSpec tests
+Use the Ruby Testing Assistant prompt to create RSpec tests:
+[paste your Ruby class or method]
+
+# Check Ruby style
+Use the Ruby Style Guide Helper prompt to review code style:
+[paste your Ruby code]
+
+# Extract service objects
+Use the Ruby Service Objects Helper prompt to refactor this controller:
+[paste your Rails controller]
+
+# Manage dependencies
+Use the Ruby Dependencies Helper prompt to review my Gemfile:
+[paste your Gemfile]
+```
+
+### Frontend Projects
+```
+# Improve HTML/CSS/JS
+Use the Frontend Code Helper prompt to improve this code:
+[paste your frontend code]
+
+# Check accessibility
+Use the Web Accessibility Helper prompt to review this component:
+[paste your HTML/React component]
+
+# Optimize performance
+Use the Web Performance Helper prompt to speed up this page:
+[describe your performance issues or paste code]
+
+# Organize CSS
+Use the CSS Organization Helper prompt to improve this stylesheet:
+[paste your CSS]
+
+# Improve HTML semantics
+Use the HTML Semantic Helper prompt to review this markup:
+[paste your HTML]
+```
+
+### Any Project Type
+```
+# Project setup
+Use the Project Setup Helper prompt to organize my repository:
+[describe your project type and needs]
+
+# Code review
+Use the Code Review Helper prompt to review these changes:
+[paste your git diff or changed code]
+
+# Documentation
+Use the Documentation Helper prompt to create docs for this project:
+[describe your project or paste code]
+
+# CI/CD setup
+Use the CI/CD Pipeline Helper prompt to set up automation:
+[describe your project and deployment needs]
+
+# Architecture review
+Use the Architecture Review Helper prompt to evaluate this design:
+[describe your system or paste architecture diagrams]
+```
 
 ---
 
-## 📋 Instruction & Meta Files
+## 🔄 Common Workflows by Technology
 
-Each folder includes:
-- `agents.md`: World-class instructions for AI agents and Copilot coding agent, clarifying how to use the prompts for automated code review, technical reporting, and incremental improvements. Domain-specific guidance for each folder.
-- `copilot-instructions.md`: Guidance for Copilot/AI tools on how to use the prompts in code review, refactoring, and analysis workflows. Copy into your own repo to standardize AI-assisted reviews.
+### Python Web App (Django/Flask)
+1. **Setup:** `generic/project-repo.md` → **Code:** `python/code-refactoring.md` → **Tests:** `python/unit-test-generation.md` → **Database:** `python/database-schema-orm-optimization.md` → **Review:** `python/pr-review-feedback.md`
 
-See each folder for details and usage examples.
+### Ruby on Rails App
+1. **Setup:** `generic/project-repo.md` → **Code:** `ruby/code-refactoring.md` → **Services:** `ruby/service-object-domain-logic-refactoring.md` → **Tests:** `ruby/rspec-test-generation.md` → **Style:** `ruby/rubocop-compliance.md`
+
+### Frontend React/Vue App
+1. **Setup:** `generic/project-repo.md` → **Code:** `html/code-refactoring.md` → **Performance:** `html/performance-core-web-vitals-audit.md` → **Accessibility:** `html/accessibility-check.md` → **CSS:** `html/bem-naming-convention.md`
+
+### Any Project - Quick Cleanup
+1. **Review:** `generic/pr-review-feedback.md` → **Refactor:** Language-specific `code-refactoring.md` → **Document:** `generic/documentation-generation.md`
+
+### Any Project - Production Ready
+1. **Architecture:** `generic/system-design-architecture-review.md` → **Code Quality:** Language-specific prompts → **CI/CD:** `generic/ci-cd-pipeline-analysis.md` → **Final Review:** `generic/pr-review-feedback.md`
 
 ---
 
-## 🧭 Usage
+## 🚀 Personal Project Quick Start Guide
+
+### Python Projects
+1. **Start with**: `python/code-refactoring.md` - Clean up your Python code
+2. **Add testing**: `python/unit-test-generation.md` - Cover key functionality with pytest
+3. **Add types**: `python/type-hinting.md` - Catch bugs with type hints
+4. **Document**: `python/docstring-creation.md` - Make functions self-documenting
+
+### Ruby/Rails Projects
+1. **Start with**: `ruby/code-refactoring.md` - Improve Ruby code quality
+2. **Add testing**: `ruby/rspec-test-generation.md` - Write comprehensive RSpec tests
+3. **Check style**: `ruby/rubocop-compliance.md` - Follow Ruby style guidelines
+4. **Manage gems**: `ruby/gemfile-management.md` - Keep dependencies secure
+
+### HTML/CSS/Frontend Projects
+1. **Start with**: `html/code-refactoring.md` - Improve frontend code structure
+2. **Check accessibility**: `html/accessibility-check.md` - Make sites accessible
+3. **Optimize performance**: `html/performance-core-web-vitals-audit.md` - Speed up loading
+4. **Improve CSS**: `html/bem-naming-convention.md` - Better CSS organization
+
+### Any Project Type (Generic)
+1. **Project setup**: `generic/project-repo.md` - Organize your repository
+2. **Code review**: `generic/pr-review-feedback.md` - Get feedback on changes
+3. **Documentation**: `generic/documentation-generation.md` - Write clear docs
+4. **CI/CD**: `generic/ci-cd-pipeline-analysis.md` - Automate testing and deployment
+
+---
+
+## 🧭 How to Use These Prompts
 
 1. Pick a domain prompt (e.g. `python/code-refactoring.md`)
 2. Copy prompt + relevant code into your AI assistant
@@ -194,6 +312,29 @@ See each folder for details and usage examples.
 4. Skim top issues, pick 1–2 highest impact
 5. Implement & validate (tests / lint / run)
 6. Re-run prompt for delta analysis
+
+---
+
+## 📋 Instruction & Meta Files
+
+Each folder includes:
+- `agents.md`: Instructions for AI agents and Copilot coding agent, clarifying how to use the prompts for automated code review, technical reporting, and incremental improvements. Domain-specific guidance for each folder.
+- `copilot-instructions.md`: Guidance for Copilot/AI tools on how to use the prompts in code review, refactoring, and analysis workflows. Copy into your own repo to standardize AI-assisted reviews.
+
+See each folder for details and usage examples.
+
+---
+
+## 🛠️ Recent Cleanup Snapshot
+
+- Normalized all 30 prompts across Python, Ruby, HTML/CSS, and Generic technology stacks
+- Transformed enterprise-focused prompts into practical personal project helpers
+- Consolidated PERSONAL_PROJECT_GUIDE.md and QUICK_REFERENCE.md into README.md
+- Standardized role statements and removed "world-class" language
+- Added comprehensive quick start guides and workflows by technology
+- Unified prompt naming conventions (e.g., "Python Code Helper", "Ruby Testing Assistant")
+- Removed quantified hour/effort estimates and enterprise jargon
+- Added copy-paste command examples for immediate use
 
 ---
 
