@@ -19,7 +19,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 - `LICENSE` — License terms for reuse.
 - `README.md` — This documentation.
 
-**Total: 32 normalized prompts across all technology stacks**
+**Total: 35 normalized prompts across all technology stacks**
 
 ---
 
@@ -42,15 +42,18 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 | File | Purpose |
 |------|---------|
 | `agents.md` | Agent instructions for Python prompt usage |
-| `code-refactoring.md` | Python refactoring (asyncio, Django/Flask/FastAPI) |
+| `cli-application-development.md` | Professional CLI development (Click, Rich, testing) |
+| `code-refactoring.md` | Python refactoring (asyncio, Django/Flask/FastAPI, modern patterns) |
 | `concurrency-asyncio-pattern-analysis.md` | Concurrency and asyncio pattern analysis |
 | `copilot-instructions.md` | Copilot/AI guidance for Python prompt usage |
 | `database-schema-orm-optimization.md` | Database schema and ORM optimization |
-| `docstring-creation.md` | API documentation (Google/PEP 257) |
-| `documentation-generation.md` | Python documentation (Sphinx, type hints) |
-| `flake8-compliance.md` | Python code style and formatting (Flake8, Black) |
+| `documentation-generation.md` | Comprehensive Python documentation (docstrings, Sphinx, API docs) |
+| `logging-error-handling.md` | Logging setup, structured error handling, security events |
+| `packaging-distribution.md` | Modern Python packaging (Poetry, pyproject.toml, PyPI) |
 | `pr-review-feedback.md` | Python code review (ORM, security, performance) |
 | `project-repo.md` | Python repository setup (Poetry, pytest) |
+| `python-linting.md` | Modern code linting and formatting (Ruff, Black, Flake8) |
+| `security-analysis.md` | Security vulnerability analysis and secure coding practices |
 | `type-hinting.md` | Type safety analysis (mypy, modern typing) |
 | `unit-test-generation.md` | Test strategy and coverage analysis (pytest) |
 
@@ -142,8 +145,13 @@ Feel free to publish your own variant.
 
 ### "I need help with specific technologies"
 **Python Types:** `python/type-hinting.md` - Python Type Hints Assistant  
-**Python Docs:** `python/docstring-creation.md` - Python Documentation Assistant  
+**Python Docs:** `python/documentation-generation.md` - Python Documentation Assistant  
 **Python Database:** `python/database-schema-orm-optimization.md` - Database & ORM Assistant  
+**Python CLI:** `python/cli-application-development.md` - Python CLI Assistant  
+**Python Packaging:** `python/packaging-distribution.md` - Python Packaging Assistant  
+**Python Logging:** `python/logging-error-handling.md` - Python Logging Assistant  
+**Python Security:** `python/security-analysis.md` - Python Security Assistant  
+**Python Linting:** `python/python-linting.md` - Python Code Style Assistant  
 **Ruby Style:** `ruby/rubocop-compliance.md` - Ruby Style Guide Helper  
 **Ruby Gems:** `ruby/gemfile-management.md` - Ruby Dependencies Helper  
 **Ruby Services:** `ruby/service-object-domain-logic-refactoring.md` - Ruby Service Objects Helper  
@@ -184,6 +192,26 @@ Use the Database & ORM Assistant prompt to optimize these models:
 # Function documentation
 Use the Python Documentation Assistant prompt to write docstrings:
 [paste your functions]
+
+# Code linting and formatting
+Use the Python Code Style Assistant prompt to improve code style:
+[paste your Python code]
+
+# CLI application
+Use the Python CLI Assistant prompt to build command-line tools:
+[describe your CLI needs or paste existing code]
+
+# Package for distribution
+Use the Python Packaging Assistant prompt to package your project:
+[describe your project structure]
+
+# Add logging and error handling
+Use the Python Logging Assistant prompt to improve error handling:
+[paste your code]
+
+# Security analysis
+Use the Python Security Assistant prompt to find vulnerabilities:
+[paste your code or describe security concerns]
 ```
 
 ### Ruby/Rails Projects
@@ -260,7 +288,7 @@ Use the Architecture Review Helper prompt to evaluate this design:
 ## 🔄 Common Workflows by Technology
 
 ### Python Web App (Django/Flask)
-1. **Setup:** `generic/project-repo.md` → **Code:** `python/code-refactoring.md` → **Tests:** `python/unit-test-generation.md` → **Database:** `python/database-schema-orm-optimization.md` → **Review:** `python/pr-review-feedback.md`
+1. **Setup:** `generic/project-repo.md` → **Code:** `python/code-refactoring.md` → **Linting:** `python/python-linting.md` → **Tests:** `python/unit-test-generation.md` → **Database:** `python/database-schema-orm-optimization.md` → **Security:** `python/security-analysis.md` → **Logging:** `python/logging-error-handling.md` → **Review:** `python/pr-review-feedback.md`
 
 ### Ruby on Rails App
 1. **Setup:** `generic/project-repo.md` → **Code:** `ruby/code-refactoring.md` → **Services:** `ruby/service-object-domain-logic-refactoring.md` → **Tests:** `ruby/rspec-test-generation.md` → **Style:** `ruby/rubocop-compliance.md`
@@ -279,10 +307,15 @@ Use the Architecture Review Helper prompt to evaluate this design:
 ## 🚀 Personal Project Quick Start Guide
 
 ### Python Projects
-1. **Start with**: `python/code-refactoring.md` - Clean up your Python code
-2. **Add testing**: `python/unit-test-generation.md` - Cover key functionality with pytest
-3. **Add types**: `python/type-hinting.md` - Catch bugs with type hints
-4. **Document**: `python/docstring-creation.md` - Make functions self-documenting
+1. **Start with**: `python/code-refactoring.md` - Clean up your Python code with modern patterns
+2. **Code quality**: `python/python-linting.md` - Format and lint with Ruff and Black
+3. **Add testing**: `python/unit-test-generation.md` - Cover key functionality with pytest
+4. **Add types**: `python/type-hinting.md` - Catch bugs with type hints
+5. **Document**: `python/documentation-generation.md` - Create comprehensive documentation
+6. **Security**: `python/security-analysis.md` - Find and fix security vulnerabilities
+7. **Package**: `python/packaging-distribution.md` - Prepare for distribution with Poetry
+8. **CLI tools**: `python/cli-application-development.md` - Build professional command-line interfaces
+9. **Logging**: `python/logging-error-handling.md` - Add robust logging and error handling
 
 ### Ruby/Rails Projects
 1. **Start with**: `ruby/code-refactoring.md` - Improve Ruby code quality
@@ -327,12 +360,21 @@ See each folder for details and usage examples.
 
 ## 🛠️ Recent Cleanup Snapshot
 
-- Normalized all 30 prompts across Python, Ruby, HTML/CSS, and Generic technology stacks
+- Normalized all prompts across Python, Ruby, HTML/CSS, and Generic technology stacks
+- **Python Collection Enhanced**: Added 4 new essential prompts and modernized existing ones
+  - New: CLI development, packaging/distribution, logging/error handling, security analysis
+  - Updated: Consolidated documentation prompts, modernized linting with Ruff/Black
+  - Enhanced: Code refactoring with Python-specific patterns (dataclasses, context managers, etc.)
 - Transformed enterprise-focused prompts into practical personal project helpers
 - Consolidated PERSONAL_PROJECT_GUIDE.md and QUICK_REFERENCE.md into README.md
 - Standardized role statements and removed "world-class" language
 - Added comprehensive quick start guides and workflows by technology
 - Unified prompt naming conventions (e.g., "Python Code Helper", "Ruby Testing Assistant")
+- **Modern Python Tooling**: Updated all Python prompts to feature current best practices
+  - Ruff for ultra-fast linting (10-100x faster than Flake8)
+  - Poetry for modern dependency management and packaging
+  - Click and Rich for professional CLI applications
+  - Structured logging and comprehensive security analysis
 - Removed quantified hour/effort estimates and enterprise jargon
 - Added copy-paste command examples for immediate use
 
