@@ -19,7 +19,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 - `LICENSE` — License terms for reuse.
 - `README.md` — This documentation.
 
-**Total: 35 normalized prompts across all technology stacks**
+**Total: 37 normalized prompts across all technology stacks**
 
 ---
 
@@ -56,6 +56,16 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 | `security-analysis.md` | Security vulnerability analysis and secure coding practices |
 | `type-hinting.md` | Type safety analysis (mypy, modern typing) |
 | `unit-test-generation.md` | Test strategy and coverage analysis (pytest) |
+
+---
+
+---
+
+### 🏗️ `infrastructure/` — DevOps & Infrastructure Prompts
+| File | Purpose |
+|------|---------|
+| `aws-ec2-deployment.md` | EC2 instance selection, containerized deployment scripts |
+| `docker-containerization.md` | Container optimization, multi-stage builds, orchestration |
 
 ---
 
@@ -156,7 +166,11 @@ Feel free to publish your own variant.
 **Ruby Gems:** `ruby/gemfile-management.md` - Ruby Dependencies Helper  
 **Ruby Services:** `ruby/service-object-domain-logic-refactoring.md` - Ruby Service Objects Helper  
 **CSS Organization:** `html/bem-naming-convention.md` - CSS Organization Helper  
-**Navigation:** `html/navigation-consistency.md` - Navigation Helper  
+**Navigation:** `html/navigation-consistency.md` - Navigation Helper
+
+### "I need help with infrastructure and DevOps"
+**Docker:** `infrastructure/docker-containerization.md` - Docker Container Assistant  
+**AWS EC2:** `infrastructure/aws-ec2-deployment.md` - AWS EC2 Deployment Assistant  
 
 ### "I need help with development workflow"
 **CI/CD:** `generic/ci-cd-pipeline-analysis.md` - CI/CD Pipeline Helper  
@@ -212,6 +226,17 @@ Use the Python Logging Assistant prompt to improve error handling:
 # Security analysis
 Use the Python Security Assistant prompt to find vulnerabilities:
 [paste your code or describe security concerns]
+```
+
+### Infrastructure & DevOps Projects
+```
+# Containerize application
+Use the Docker Container Assistant prompt to create optimized containers:
+[describe your application stack or paste existing Dockerfile]
+
+# Deploy to AWS EC2
+Use the AWS EC2 Deployment Assistant prompt to deploy containerized apps:
+[describe your application requirements and expected traffic]
 ```
 
 ### Ruby/Rails Projects
@@ -288,7 +313,7 @@ Use the Architecture Review Helper prompt to evaluate this design:
 ## 🔄 Common Workflows by Technology
 
 ### Python Web App (Django/Flask)
-1. **Setup:** `generic/project-repo.md` → **Code:** `python/code-refactoring.md` → **Linting:** `python/python-linting.md` → **Tests:** `python/unit-test-generation.md` → **Database:** `python/database-schema-orm-optimization.md` → **Security:** `python/security-analysis.md` → **Logging:** `python/logging-error-handling.md` → **Review:** `python/pr-review-feedback.md`
+1. **Setup:** `generic/project-repo.md` → **Code:** `python/code-refactoring.md` → **Linting:** `python/python-linting.md` → **Tests:** `python/unit-test-generation.md` → **Database:** `python/database-schema-orm-optimization.md` → **Security:** `python/security-analysis.md` → **Logging:** `python/logging-error-handling.md` → **Containerize:** `infrastructure/docker-containerization.md` → **Deploy:** `infrastructure/aws-ec2-deployment.md` → **Review:** `python/pr-review-feedback.md`
 
 ### Ruby on Rails App
 1. **Setup:** `generic/project-repo.md` → **Code:** `ruby/code-refactoring.md` → **Services:** `ruby/service-object-domain-logic-refactoring.md` → **Tests:** `ruby/rspec-test-generation.md` → **Style:** `ruby/rubocop-compliance.md`
@@ -298,6 +323,9 @@ Use the Architecture Review Helper prompt to evaluate this design:
 
 ### Any Project - Quick Cleanup
 1. **Review:** `generic/pr-review-feedback.md` → **Refactor:** Language-specific `code-refactoring.md` → **Document:** `generic/documentation-generation.md`
+
+### Infrastructure Project - Simple Stack
+1. **Containers:** `infrastructure/docker-containerization.md` → **Deploy:** `infrastructure/aws-ec2-deployment.md`
 
 ### Any Project - Production Ready
 1. **Architecture:** `generic/system-design-architecture-review.md` → **Code Quality:** Language-specific prompts → **CI/CD:** `generic/ci-cd-pipeline-analysis.md` → **Final Review:** `generic/pr-review-feedback.md`
@@ -326,6 +354,12 @@ Use the Architecture Review Helper prompt to evaluate this design:
 ### HTML/CSS/Frontend Projects
 1. **Start with**: `html/code-refactoring.md` - Improve frontend code structure
 2. **Check accessibility**: `html/accessibility-check.md` - Make sites accessible
+3. **Containerize**: `infrastructure/docker-containerization.md` - Package for deployment
+4. **Deploy**: `infrastructure/aws-ec2-deployment.md` - Deploy to AWS EC2
+
+### Infrastructure & DevOps Projects
+1. **Containerize**: `infrastructure/docker-containerization.md` - Create optimized containers
+2. **Deploy**: `infrastructure/aws-ec2-deployment.md` - Deploy to AWS EC2 with automation scripts
 3. **Optimize performance**: `html/performance-core-web-vitals-audit.md` - Speed up loading
 4. **Improve CSS**: `html/bem-naming-convention.md` - Better CSS organization
 
@@ -365,6 +399,9 @@ See each folder for details and usage examples.
   - New: CLI development, packaging/distribution, logging/error handling, security analysis
   - Updated: Consolidated documentation prompts, modernized linting with Ruff/Black
   - Enhanced: Code refactoring with Python-specific patterns (dataclasses, context managers, etc.)
+- **Infrastructure Collection Added**: 2 focused DevOps prompts for personal projects
+  - Docker containerization with multi-stage builds and security best practices
+  - AWS EC2 deployment with instance selection and automated deployment scripts
 - Transformed enterprise-focused prompts into practical personal project helpers
 - Consolidated PERSONAL_PROJECT_GUIDE.md and QUICK_REFERENCE.md into README.md
 - Standardized role statements and removed "world-class" language
@@ -375,6 +412,11 @@ See each folder for details and usage examples.
   - Poetry for modern dependency management and packaging
   - Click and Rich for professional CLI applications
   - Structured logging and comprehensive security analysis
+- **Practical Infrastructure Approach**: Simple, effective deployment toolkit
+  - Container-first development with Docker optimization and security
+  - AWS EC2 deployment with cost-effective instance selection and automation
+  - Complete deployment scripts for containerized applications
+  - Focus on personal projects and proof-of-concept deployments
 - Removed quantified hour/effort estimates and enterprise jargon
 - Added copy-paste command examples for immediate use
 
