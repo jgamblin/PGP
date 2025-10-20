@@ -1,4 +1,4 @@
-# 🚀 Pretty Good Prompts
+# Pretty Good Prompts
 
 ## Personal AI Coding Assistant Prompt Library
 
@@ -13,17 +13,23 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 ---
 
 
-## 📂 Repository Structure & File Index
+## Repository Structure & File Index
 
 ### Top-Level Files
 - `LICENSE` — License terms for reuse.
 - `README.md` — This documentation.
 
-**Total: 37 normalized prompts across all technology stacks**
+**Total: 49 prompts across all technology stacks**
+
+All prompts follow a consistent structure optimized for peer-based collaboration:
+- 📋 Structured outputs with summary report + per-finding details
+- 🤝 Peer-friendly language (no hierarchical terms)
+- 🎯 Measurable success indicators (no arbitrary time estimates)
+- 🔧 Stack-specific tooling and automation guidance
 
 ---
 
-### 🗂️ `generic/` — Universal Prompts
+### `generic/` — Universal Prompts
 | File | Purpose |
 |------|---------|
 | `agents.md` | Agent instructions for using generic prompts |
@@ -38,7 +44,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 
 ---
 
-### 🐍 `python/` — Python Ecosystem Prompts
+### `python/` — Python Ecosystem Prompts
 | File | Purpose |
 |------|---------|
 | `agents.md` | Agent instructions for Python prompt usage |
@@ -61,7 +67,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 
 ---
 
-### 🏗️ `infrastructure/` — DevOps & Infrastructure Prompts
+### `infrastructure/` — DevOps & Infrastructure Prompts
 | File | Purpose |
 |------|---------|
 | `aws-ec2-deployment.md` | EC2 instance selection, containerized deployment scripts |
@@ -69,7 +75,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 
 ---
 
-### 🌐 `html/` — Frontend & Web Prompts
+### `html/` — Frontend & Web Prompts
 | File | Purpose |
 |------|---------|
 | `accessibility-check.md` | WCAG compliance audit (accessibility) |
@@ -87,7 +93,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 
 ---
 
-### 💎 `ruby/` — Ruby & Rails Prompts
+### `ruby/` — Ruby & Rails Prompts
 | File | Purpose |
 |------|---------|
 | `agents.md` | Agent instructions for Ruby/Rails prompt usage |
@@ -105,7 +111,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 ---
 
 
-## 🔀 Fork & Adapt (No Direct PRs)
+## Fork & Adapt (No Direct PRs)
 
 I am not accepting pull requests. If you want to extend or alter these:
 
@@ -117,71 +123,71 @@ I am not accepting pull requests. If you want to extend or alter these:
 
 Feel free to publish your own variant.
 
-## 🎯 Which Prompt Should I Use?
+## Which Prompt Should I Use?
 
 ### "My code is messy and hard to understand"
-**Python:** `python/code-refactoring.md` - Python Code Helper  
-**Ruby:** `ruby/code-refactoring.md` - Ruby Code Helper  
-**Frontend:** `html/code-refactoring.md` - Frontend Code Helper  
-**Any Language:** `generic/code-refactoring.md` - Code Refactoring Helper  
+**Python:** `python/code-refactoring.md` - Python Code Helper 
+**Ruby:** `ruby/code-refactoring.md` - Ruby Code Helper 
+**Frontend:** `html/code-refactoring.md` - Frontend Code Helper 
+**Any Language:** `generic/code-refactoring.md` - Code Refactoring Helper 
 
 ### "I need to add tests to my project"
-**Python:** `python/unit-test-generation.md` - Python Testing Assistant  
-**Ruby:** `ruby/rspec-test-generation.md` - Ruby Testing Assistant  
-**Any Language:** Use language-specific testing prompts  
+**Python:** `python/unit-test-generation.md` - Python Testing Assistant 
+**Ruby:** `ruby/rspec-test-generation.md` - Ruby Testing Assistant 
+**Any Language:** Use language-specific testing prompts 
 
 ### "I want feedback on my code changes"
-**Python:** `python/pr-review-feedback.md` - Python Code Review Assistant  
-**Ruby:** `ruby/pr-review-feedback.md` - Ruby Code Review Assistant  
-**Frontend:** `html/pr-review-feedback.md` - Frontend Code Review Assistant  
-**Any Language:** `generic/pr-review-feedback.md` - Code Review Helper  
+**Python:** `python/pr-review-feedback.md` - Python Code Review Assistant 
+**Ruby:** `ruby/pr-review-feedback.md` - Ruby Code Review Assistant 
+**Frontend:** `html/pr-review-feedback.md` - Frontend Code Review Assistant 
+**Any Language:** `generic/pr-review-feedback.md` - Code Review Helper 
 
 ### "My project needs better documentation"
-**Python:** `python/documentation-generation.md` - Python Documentation Assistant  
-**Ruby:** `ruby/documentation-generation.md` - Ruby Documentation Assistant  
-**Frontend:** `html/documentation-generation.md` - Frontend Documentation Assistant  
-**Any Language:** `generic/documentation-generation.md` - Documentation Helper  
+**Python:** `python/documentation-generation.md` - Python Documentation Assistant 
+**Ruby:** `ruby/documentation-generation.md` - Ruby Documentation Assistant 
+**Frontend:** `html/documentation-generation.md` - Frontend Documentation Assistant 
+**Any Language:** `generic/documentation-generation.md` - Documentation Helper 
 
 ### "I need to set up a new project"
-**Any Language:** `generic/project-repo.md` - Project Setup Helper  
+**Any Language:** `generic/project-repo.md` - Project Setup Helper 
 - Repository structure and organization
 - README templates and essential files
 - Development tools and CI/CD setup
 
 ### "My website is slow or has accessibility issues"
-**Frontend:** `html/performance-core-web-vitals-audit.md` - Web Performance Helper  
-**Frontend:** `html/accessibility-check.md` - Web Accessibility Helper  
-**Frontend:** `html/semantic-markup-refinement.md` - HTML Semantic Helper  
+**Frontend:** `html/performance-core-web-vitals-audit.md` - Web Performance Helper 
+**Frontend:** `html/accessibility-check.md` - Web Accessibility Helper 
+**Frontend:** `html/semantic-markup-refinement.md` - HTML Semantic Helper 
 
 ### "I need help with specific technologies"
-**Python Types:** `python/type-hinting.md` - Python Type Hints Assistant  
-**Python Docs:** `python/documentation-generation.md` - Python Documentation Assistant  
-**Python Database:** `python/database-schema-orm-optimization.md` - Database & ORM Assistant  
-**Python CLI:** `python/cli-application-development.md` - Python CLI Assistant  
-**Python Packaging:** `python/packaging-distribution.md` - Python Packaging Assistant  
-**Python Logging:** `python/logging-error-handling.md` - Python Logging Assistant  
-**Python Security:** `python/security-analysis.md` - Python Security Assistant  
-**Python Linting:** `python/python-linting.md` - Python Code Style Assistant  
-**Ruby Style:** `ruby/rubocop-compliance.md` - Ruby Style Guide Helper  
-**Ruby Gems:** `ruby/gemfile-management.md` - Ruby Dependencies Helper  
-**Ruby Services:** `ruby/service-object-domain-logic-refactoring.md` - Ruby Service Objects Helper  
-**CSS Organization:** `html/bem-naming-convention.md` - CSS Organization Helper  
+**Python Types:** `python/type-hinting.md` - Python Type Hints Assistant 
+**Python Docs:** `python/documentation-generation.md` - Python Documentation Assistant 
+**Python Database:** `python/database-schema-orm-optimization.md` - Database & ORM Assistant 
+**Python CLI:** `python/cli-application-development.md` - Python CLI Assistant 
+**Python Packaging:** `python/packaging-distribution.md` - Python Packaging Assistant 
+**Python Logging:** `python/logging-error-handling.md` - Python Logging Assistant 
+**Python Security:** `python/security-analysis.md` - Python Security Assistant 
+**Python Linting:** `python/python-linting.md` - Python Code Style Assistant 
+**Ruby Style:** `ruby/rubocop-compliance.md` - Ruby Style Guide Helper 
+**Ruby Gems:** `ruby/gemfile-management.md` - Ruby Dependencies Helper 
+**Ruby Services:** `ruby/service-object-domain-logic-refactoring.md` - Ruby Service Objects Helper 
+**CSS Organization:** `html/bem-naming-convention.md` - CSS Organization Helper 
 **Navigation:** `html/navigation-consistency.md` - Navigation Helper
 
 ### "I need help with infrastructure and DevOps"
-**Docker:** `infrastructure/docker-containerization.md` - Docker Container Assistant  
-**AWS EC2:** `infrastructure/aws-ec2-deployment.md` - AWS EC2 Deployment Assistant  
+**Docker:** `infrastructure/docker-containerization.md` - Docker Container Assistant 
+**AWS EC2:** `infrastructure/aws-ec2-deployment.md` - AWS EC2 Deployment Assistant 
 
 ### "I need help with development workflow"
-**CI/CD:** `generic/ci-cd-pipeline-analysis.md` - CI/CD Pipeline Helper  
-**Architecture:** `generic/system-design-architecture-review.md` - Architecture Review Helper  
-**AI Tools:** `generic/copilot-instructions.md` - AI Assistant Instructions Helper  
-**Project Planning:** `generic/do-next.md` - Project Next Steps Helper  
+**CI/CD:** `generic/ci-cd-pipeline-analysis.md` - CI/CD Pipeline Helper 
+**Architecture:** `generic/system-design-architecture-review.md` - Architecture Review Helper 
+**AI Tools:** `generic/copilot-instructions.md` - AI Assistant Instructions Helper 
+**Project Planning:** `generic/do-next.md` - Project Next Steps Helper 
 **General Help:** `generic/agents.md` - Generic Development Helper
 
 ---
 
-## ⚡ Quick Commands by Technology
+## Quick Commands by Technology
 
 Copy and paste these into your AI assistant:
 
@@ -310,7 +316,7 @@ Use the Architecture Review Helper prompt to evaluate this design:
 
 ---
 
-## 🔄 Common Workflows by Technology
+## Common Workflows by Technology
 
 ### Python Web App (Django/Flask)
 1. **Setup:** `generic/project-repo.md` → **Code:** `python/code-refactoring.md` → **Linting:** `python/python-linting.md` → **Tests:** `python/unit-test-generation.md` → **Database:** `python/database-schema-orm-optimization.md` → **Security:** `python/security-analysis.md` → **Logging:** `python/logging-error-handling.md` → **Containerize:** `infrastructure/docker-containerization.md` → **Deploy:** `infrastructure/aws-ec2-deployment.md` → **Review:** `python/pr-review-feedback.md`
@@ -332,7 +338,7 @@ Use the Architecture Review Helper prompt to evaluate this design:
 
 ---
 
-## 🚀 Personal Project Quick Start Guide
+## Personal Project Quick Start Guide
 
 ### Python Projects
 1. **Start with**: `python/code-refactoring.md` - Clean up your Python code with modern patterns
@@ -371,7 +377,7 @@ Use the Architecture Review Helper prompt to evaluate this design:
 
 ---
 
-## 🧭 How to Use These Prompts
+## How to Use These Prompts
 
 1. Pick a domain prompt (e.g. `python/code-refactoring.md`)
 2. Copy prompt + relevant code into your AI assistant
@@ -382,7 +388,7 @@ Use the Architecture Review Helper prompt to evaluate this design:
 
 ---
 
-## 📋 Instruction & Meta Files
+## Instruction & Meta Files
 
 Each folder includes:
 - `agents.md`: Instructions for AI agents and Copilot coding agent, clarifying how to use the prompts for automated code review, technical reporting, and incremental improvements. Domain-specific guidance for each folder.
@@ -392,36 +398,36 @@ See each folder for details and usage examples.
 
 ---
 
-## 🛠️ Recent Cleanup Snapshot
+## Recent Cleanup Snapshot
 
 - Normalized all prompts across Python, Ruby, HTML/CSS, and Generic technology stacks
 - **Python Collection Enhanced**: Added 4 new essential prompts and modernized existing ones
-  - New: CLI development, packaging/distribution, logging/error handling, security analysis
-  - Updated: Consolidated documentation prompts, modernized linting with Ruff/Black
-  - Enhanced: Code refactoring with Python-specific patterns (dataclasses, context managers, etc.)
+ - New: CLI development, packaging/distribution, logging/error handling, security analysis
+ - Updated: Consolidated documentation prompts, modernized linting with Ruff/Black
+ - Enhanced: Code refactoring with Python-specific patterns (dataclasses, context managers, etc.)
 - **Infrastructure Collection Added**: 2 focused DevOps prompts for personal projects
-  - Docker containerization with multi-stage builds and security best practices
-  - AWS EC2 deployment with instance selection and automated deployment scripts
+ - Docker containerization with multi-stage builds and security best practices
+ - AWS EC2 deployment with instance selection and automated deployment scripts
 - Transformed enterprise-focused prompts into practical personal project helpers
 - Consolidated PERSONAL_PROJECT_GUIDE.md and QUICK_REFERENCE.md into README.md
 - Standardized role statements and removed "world-class" language
 - Added comprehensive quick start guides and workflows by technology
 - Unified prompt naming conventions (e.g., "Python Code Helper", "Ruby Testing Assistant")
 - **Modern Python Tooling**: Updated all Python prompts to feature current best practices
-  - Ruff for ultra-fast linting (10-100x faster than Flake8)
-  - Poetry for modern dependency management and packaging
-  - Click and Rich for professional CLI applications
-  - Structured logging and comprehensive security analysis
+ - Ruff for ultra-fast linting (10-100x faster than Flake8)
+ - Poetry for modern dependency management and packaging
+ - Click and Rich for professional CLI applications
+ - Structured logging and comprehensive security analysis
 - **Practical Infrastructure Approach**: Simple, effective deployment toolkit
-  - Container-first development with Docker optimization and security
-  - AWS EC2 deployment with cost-effective instance selection and automation
-  - Complete deployment scripts for containerized applications
-  - Focus on personal projects and proof-of-concept deployments
+ - Container-first development with Docker optimization and security
+ - AWS EC2 deployment with cost-effective instance selection and automation
+ - Complete deployment scripts for containerized applications
+ - Focus on personal projects and proof-of-concept deployments
 - Removed quantified hour/effort estimates and enterprise jargon
 - Added copy-paste command examples for immediate use
 
 ---
 
-## 📜 License
+## License
 
 See `LICENSE` for terms. Prompts may be reused with attribution to the original repository.
