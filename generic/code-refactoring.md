@@ -37,58 +37,7 @@ To provide effective refactoring guidance, please provide:
 
 **Constraints**:
 - Project urgency level
-- Team collaboration preferences
-- Deployment environment
 - Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code structure** - Review organization, naming, and architecture patterns
-2. **Identify code smells** - Long methods, duplicate code, complex conditionals, magic numbers
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, brittle code
-4. **Evaluate testability** - How easy is it to test? Are tests present?
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- Are there any parts of the code that are particularly confusing?
-- What's the expected lifespan of this project?
-- Are there any known bugs or issues to address?
-
-## Recommended Plan
-
-Based on the code analysis, I will provide a prioritized refactoring plan:
-
-1. **Address Security Issues**
-   - Fix critical vulnerabilities (SQL injection, XSS, hardcoded secrets)
-   - Add input validation where missing
-   - **Success indicators**: Zero critical security vulnerabilities, all inputs validated
-
-2. **Improve Code Clarity**
-   - Rename unclear variables and functions
-   - Break up long, complex functions
-   - Add comments for complex business logic
-   - **Success indicators**: Average function length <50 lines, clear naming throughout
-
-3. **Enhance Structure**
-   - Extract duplicate code into reusable functions
-   - Separate concerns (data, business logic, presentation)
-   - Improve error handling
-   - **Success indicators**: No duplicate code blocks, single responsibility per function
-
-4. **Optimize Performance**
-   - Address obvious inefficiencies
-   - Improve database query patterns
-   - Add caching where appropriate
-   - **Success indicators**: No N+1 queries, response times improved
-
-5. **Increase Testability**
-   - Make code easier to test
-   - Add tests for critical functionality
-   - **Success indicators**: Key functionality has test coverage, tests are easy to write
 
 ## Report Format
 
@@ -106,8 +55,8 @@ Generate a comprehensive refactoring analysis and save as **two deliverables**:
 - **Quick Wins**: [Count]
 - **Recommended Priority**: [High/Medium/Low issues breakdown]
 
-## Executive Summary
-[Brief overview of findings and recommended approach]
+## Summary
+[Brief overview of findings]
 
 ## Findings Summary
 - Security: [Brief summary with count]
@@ -372,22 +321,22 @@ When reviewing code, look for:
 
 Define clear success criteria for refactoring outcomes:
 
-### Quality Gates
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
+### Quality Guidelines
+- **Security**: No critical vulnerabilities or hardcoded secrets
 - **Code Quality**: Linting passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function
+- **Complexity**: Functions are focused and readable
 - **Duplication**: No code blocks duplicated more than twice
 - **Documentation**: Complex logic has explanatory comments
 
-### Testing Thresholds
-- **Critical paths**: 80%+ test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
+### Testing
+- Important functionality has tests
+- Tests verify behavior, not implementation
+- Edge cases are considered
 
-### Performance Benchmarks
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing code
-- **Resource usage**: Memory and CPU usage reasonable
+### Performance
+- No obvious performance regressions
+- Response times are reasonable
+- Resource usage is acceptable
 
 ## Tooling & Automation
 
@@ -421,37 +370,14 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-## Follow-Up & Continuous Improvement
+## After Refactoring
 
-### Feedback Loop
-After implementing refactoring changes:
+Once changes are complete:
 
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (linting scores, complexity)
-   - Gather feedback from team members on code clarity
-
-2. **Monitor impact**
-   - Track if bugs decreased in refactored areas
-   - Measure if development velocity improved
-   - Note if code reviews are faster/easier
-
-3. **Document learnings**
-   - Update team coding standards based on findings
-   - Create architecture decision records (ADRs) for major changes
-   - Share refactoring patterns that worked well
-
-### When to Get Team Input
-- **Breaking changes needed**: Discuss with the team before major refactoring
-- **Performance degradation**: Roll back and investigate if metrics worsen
-- **Test coverage drops**: Pause refactoring to add tests first
-- **Team questions**: Pair program or add more documentation together
-
-### Continuous Improvement
-- Schedule regular code quality reviews (monthly/quarterly)
-- Gradually increase linting strictness as code improves
-- Celebrate wins and improvements with the team
-- Keep refactoring incremental and sustainable
+1. **Run tests** to ensure nothing broke
+2. **Check linting** and code quality metrics
+3. **Review the changes** - make sure they actually help
+4. **Update docs** if you changed important functionality
 
 ## Remember
 

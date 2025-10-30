@@ -41,11 +41,9 @@ To provide effective guidance, please provide:
 
 **Constraints**:
 - Project urgency level
-- Team collaboration preferences
-- Deployment environment
 - Any compliance or security requirements
 
-## Situation Assessment
+## Ruby Refactoring Focus
 
 Before providing recommendations, I will:
 
@@ -99,7 +97,7 @@ Based on the analysis, I will provide a prioritized action plan:
 # Ruby Code Review
 
 ## Summary
-[Brief overview of what you found]
+[Brief overview of findings]
 
 ## Issues Found
 ### High Priority
@@ -375,7 +373,7 @@ pre-commit run --all-files
 
 Define clear success criteria for outcomes:
 
-### Quality Gates
+### Quality Guidelines
 - **Security**: Zero critical vulnerabilities, zero hardcoded secrets
 - **Code Quality**: RuboCop passes with minimal warnings
 - **Complexity**: Cyclomatic complexity <10 per function/method

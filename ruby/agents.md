@@ -163,7 +163,7 @@ pre-commit run --all-files
 
 Define clear success criteria for outcomes:
 
-### Quality Gates
+### Quality Guidelines
 - **Security**: Zero critical vulnerabilities, zero hardcoded secrets
 - **Code Quality**: RuboCop passes with minimal warnings
 - **Complexity**: Cyclomatic complexity <10 per function/method
@@ -182,7 +182,7 @@ Define clear success criteria for outcomes:
 - **Resource usage**: Memory and CPU usage within reasonable bounds
 - **Scalability**: System handles expected load
 
-### Operational Readiness
+### Deployment Readiness
 - **Documentation**: README, API docs, and runbooks up-to-date
 - **Monitoring**: Key metrics and errors are observable
 - **Deployment**: Automated deployment process works reliably

@@ -39,56 +39,7 @@ To provide effective guidance, please provide:
 
 **Constraints**:
 - Project urgency level
-- Team collaboration preferences
-- Deployment environment
 - Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
 
 ## Practical Code Review Approach
 
@@ -124,14 +75,9 @@ Based on the analysis, I will provide a prioritized action plan:
 - Focusing on theoretical problems instead of practical concerns
 - Assuming tests are good just because they exist
 
-## Code Review Report
-
-Generate a **Practical Code Review Analysis** and save it as a markdown file named `python-code-review-[YYYY-MM-DD].md`:
-
-
 ## Report Format
 
-Generate a comprehensive analysis and save as **two deliverables**:
+Generate a comprehensive analysis and save as **three deliverables**:
 
 ### 1. Summary Report: `pr-review-feedback-[YYYY-MM-DD].md`
 
@@ -139,14 +85,12 @@ Generate a comprehensive analysis and save as **two deliverables**:
 # Pr Review Feedback
 
 ## Overview
-- **Scope**: [What was analyzed]
 - **Files Analyzed**: [Count]
 - **Critical Issues**: [Count]
-- **High Priority Items**: [Count]
-- **Recommended Priority**: [Summary]
+- **Suggestions**: [Count]
 
-## Executive Summary
-[Brief overview of findings and recommended approach]
+## Summary
+[Brief overview of findings]
 
 ## Findings Summary
 - Security: [Summary with count]
@@ -160,11 +104,10 @@ Generate a comprehensive analysis and save as **two deliverables**:
 3. [Medium priority item with link to finding file]
 ...
 
-## Success Metrics
-- Security: Zero critical vulnerabilities
-- Quality: Linting passes, complexity reduced
-- Performance: Response times within targets
-- Testing: 80%+ coverage for critical paths
+## Next Steps
+- Address any critical security issues first
+- Consider performance and quality improvements
+- Add tests for important functionality
 ```
 
 ### 2. Per-Finding Details: `pr-review-feedback-[YYYY-MM-DD]/`
@@ -183,6 +126,41 @@ Each finding file should contain:
 - **Implementation steps** (step-by-step guidance)
 - **Testing recommendations** (how to verify the fix works)
 
+### 3. Quick Approval Comment: `pr-approval-comment-[YYYY-MM-DD].md`
+
+**ONLY generate this file if there are NO critical issues** (security vulnerabilities, data loss risks, blocking bugs).
+
+If the PR has only minor issues and suggestions, create a short, copy-paste ready approval message:
+
+```markdown
+✅ APPROVED
+
+Great work on this PR! Here are a few suggestions to consider for follow-up:
+
+## Suggestions
+- [Issue 1]: Brief description of the fix needed (see finding-XXX.md for details)
+- [Issue 2]: Brief description of improvement
+- [Issue 3]: Brief description of enhancement
+
+## What Looks Good
+- [Positive observation 1]
+- [Positive observation 2]
+
+Full analysis: `pr-review-feedback-[YYYY-MM-DD].md`
+```
+
+**Guidelines for Approval Comment:**
+- Maximum 20 lines total
+- Only create if PR can be safely merged (no critical security/data/blocking issues)
+- Include 3-5 most important non-critical items as suggestions
+- Brief descriptions only - reference finding files for detailed code examples
+- Always include 2-3 positive observations in "What Looks Good"
+- Use friendly, encouraging language
+- Reference the detailed findings file for complete analysis
+
+---
+
+### Alternative Format (if detailed findings used)
 
 ```markdown
 # Code Review Analysis
@@ -191,14 +169,7 @@ Each finding file should contain:
 - **Security Check**: [Any security concerns found?]
 - **Code Quality**: [Overall quality rating and main issues]
 - **Performance**: [Any performance concerns or improvements]
-- **Maintainability**: [How easy is this code to understand and change?]
 - **Testing**: [Are the changes properly tested?]
-
-## Architectural Excellence Identified
-- **Security Implementation**: [Specific security pattern usage]
-- **Performance Optimization**: [Algorithmic improvements with quantified impact]
-- **Design Pattern Application**: [Clean architecture adherence with maintainability benefits]
-- **Testing Strategy**: [Comprehensive test coverage with risk mitigation value]
 
 ## Issues Found
 
@@ -237,93 +208,6 @@ def safe_function(user_input: int) -> List[User]:
 - Validates input before using it
 - Clear error messages for invalid input
 
-## Technical Improvement Opportunities
-
-### Architecture & Design Enhancements
-
-- **Domain Modeling**: [Logic encapsulation improvements with maintainability]
-- **Dependency Management**: [Coupling reduction strategies with testing benefits]
-- **Error Handling**: [Resilience patterns with system reliability improvements]
-- **API Design**: [Contract evolution strategies with backward compatibility]
-
-### Performance Engineering Optimizations
-
-- **Database Optimization**: [Query performance improvements]
-- **Caching Strategy**: [Memory/Redis patterns]
-- **Algorithmic Efficiency**: [Big-O improvements]
-- **Resource Management**: [Connection pooling/memory optimization]
-
-### Security Hardening Initiatives
-
-- **Input Validation**: [Injection prevention with compliance requirements]
-- **Authentication Enhancement**: [Zero-trust implementation with security posture improvement]
-- **Data Protection**: [Encryption/tokenization with regulatory compliance benefits]
-- **Access Control**: [Least privilege implementation with audit trail improvements]
-
-### Quality Assurance Excellence
-
-- **Test Coverage Gaps**: [Critical paths missing validation]
-- **Integration Testing**: [Contract testing with system reliability improvements]
-- **Monitoring Integration**: [Observability gaps with incident response time impact]
-
-## Implementation Tasks
-
-1. Fix all identified security vulnerabilities
-2. Address critical performance optimizations
-3. Refactor toward SOLID principles and clean architecture
-4. Implement missing unit/integration tests for critical paths
-5. Add comprehensive logging, metrics, and alerting
-6. Create architectural decision records and operational runbooks
-
-## Success Metrics & Validation Framework
-
-### Quality Gates (Must Pass)
-
-- **Security Scan**: Zero critical vulnerabilities
-- **Performance Benchmark**: <5% regression in critical paths
-- **Test Coverage**: >85% with meaningful assertions
-- **Code Complexity**: Cyclomatic complexity <10 per method
-- **Documentation**: All public APIs documented
-
-### Performance Tracking (30-day measurement)
-
-- **System Reliability**: 99.9% uptime maintenance
-- **Security Posture**: Zero security incidents
-- **Performance SLA**: 95th percentile <200ms response time
-- **Technical Debt**: 20% reduction in maintenance overhead
-
-```text
-(Add any supplemental performance tracking notes here)
-```
-
-## Advanced Context Intelligence Engine
-
-**Python Review Scope Analysis:**
-
-- **Git Diff Analysis**: Automatically detect current branch and compare with main using `git diff main...HEAD --name-only`
-- **Python Module Changes**: Deep-dive into ONLY modified .py files with import impact assessment
-- **Package Dependencies**: requirements.txt, Poetry, or Pipfile changes with security implications
-- **Django Migration Review**: Database migration safety, backwards compatibility analysis for new migrations
-- **Test Coverage**: pytest coverage analysis for changed modules, fixture usage, and test quality assessment
-- **Type Safety**: mypy compliance, type hint completeness for modified functions/classes
-- **Performance Profiling**: cProfile integration, Django Debug Toolbar insights for changed code paths
-
-**Python IDE Integration:**
-
-- **Framework Detection**: Django, Flask, FastAPI pattern recognition with best practice validation
-- **Virtual Environment**: Poetry, pipenv, venv configuration analysis
-- **Package Structure**: `__init__.py` usage, namespace packages, import organization
-- **Django Patterns**: Model design, view patterns, template usage, admin configuration
-- **Testing Framework**: pytest configuration, fixture design, parametrized testing
-- **Code Quality**: Black formatting, isort imports, flake8 compliance, pre-commit hooks
-
-**Smart Configuration Engine:**
-
-- **Risk Assessment**: Critical system classification (payment, health, financial data)
-- **Performance Requirements**: Scaling and reliability needs
-- **Security Posture**: Threat model alignment with security standards
-- **Compliance Requirements**: Industry-specific regulation mapping (healthcare, finance, government)
-
 ## Git Analysis Steps
 
 ### Review Changed Files
@@ -340,33 +224,6 @@ git diff main...HEAD
 # Check if dependencies changed
 git diff main...HEAD requirements.txt setup.py pyproject.toml
 ```
-
-**Continuous Improvement Loop:**
-
-- **Process Optimization**: "Based on this analysis, I recommend updating your [linting rules/CI checks/architecture guidelines] to catch these issues earlier."
-- **Knowledge Transfer**: "The security pattern demonstrated here should be documented in your team's architecture decision records for future reference."
-
-## Review Excellence Validation
-
-**Technical Quality Checklist:**
-
-- Security implications analyzed with threat modeling
-- Performance measured with benchmarking
-- Architecture patterns validated against SOLID principles
-- Error handling strategies aligned with system reliability goals
-- Testing coverage analyzed for critical paths
-- Monitoring and observability considerations addressed
-- Technical debt impact calculated with future cost analysis
-
-**Quality Guidelines:**
-
-- **Actionability**: Every recommendation includes specific implementation steps
-- **Prioritization**: Issues ranked by technical severity
-- **Measurability**: Success criteria defined with quantifiable metrics
-- **Preventability**: Root cause analysis with process improvement recommendations
-
-
-
 
 ## Tooling & Automation
 
@@ -417,78 +274,32 @@ pre-commit run --all-files
 ```
 
 
-## Metrics & Validation
+## Quality Guidelines
 
-Define clear success criteria for outcomes:
+### Security
+- No critical vulnerabilities or hardcoded secrets
+- Input validation for user data
+- Safe handling of sensitive information
 
-### Quality Gates
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: Ruff and Black passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
+### Code Quality
+- Linting passes (ruff, black)
+- Functions are focused and readable
+- No significant code duplication
 
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
+### Testing
+- Important functionality has tests
+- Edge cases are considered
+- Tests verify behavior, not implementation
 
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Operational Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
+### Documentation
+- Complex logic is explained
+- README updated if needed
 
 
 
-## Follow-Up & Continuous Improvement
+## After the Review
 
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+1. **Run tests** to make sure nothing broke
+2. **Fix critical issues first** (security, bugs)
+3. **Consider other suggestions** as time permits
+4. **Update docs** if you made significant changes

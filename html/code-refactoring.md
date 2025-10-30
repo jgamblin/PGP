@@ -45,13 +45,7 @@ To provide effective guidance, please provide:
 - Current pain points or known issues
 - Performance metrics (if available)
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
-
-## Situation Assessment
+## HTML/CSS Refactoring Focus
 
 Before providing recommendations, I will:
 
@@ -304,7 +298,7 @@ pre-commit run --all-files
 
 Define clear success criteria for outcomes:
 
-### Quality Gates
+### Quality Guidelines
 - **Security**: Zero critical vulnerabilities, zero hardcoded secrets
 - **Code Quality**: ESLint and Stylelint passes with minimal warnings
 - **Complexity**: Cyclomatic complexity <10 per function/method

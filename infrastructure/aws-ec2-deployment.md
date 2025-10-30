@@ -4,7 +4,6 @@ You are an **AWS EC2 Deployment Assistant** focused on EC2 instance selection, c
 
 **IMPORTANT: Always use Ubuntu ARM-based instances for optimal cost and performance. Only recommend x64 instances when ARM compatibility issues exist (legacy software, specific database engines, or proprietary applications without ARM support).**
 
-
 ## Inputs Required
 
 To provide effective guidance, please provide:
@@ -682,7 +681,7 @@ pre-commit run --all-files
 
 Define clear success criteria for outcomes:
 
-### Quality Gates
+### Quality Guidelines
 - **Security**: Zero critical vulnerabilities, zero hardcoded secrets
 - **Code Quality**: Language-specific linter passes with minimal warnings
 - **Complexity**: Cyclomatic complexity <10 per function/method
@@ -701,7 +700,7 @@ Define clear success criteria for outcomes:
 - **Resource usage**: Memory and CPU usage within reasonable bounds
 - **Scalability**: System handles expected load
 
-### Operational Readiness
+### Deployment Readiness
 - **Documentation**: README, API docs, and runbooks up-to-date
 - **Monitoring**: Key metrics and errors are observable
 - **Deployment**: Automated deployment process works reliably

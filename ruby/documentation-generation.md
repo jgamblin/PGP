@@ -41,11 +41,9 @@ To provide effective guidance, please provide:
 
 **Constraints**:
 - Project urgency level
-- Team collaboration preferences
-- Deployment environment
 - Any compliance or security requirements
 
-## Situation Assessment
+## Ruby Documentation Focus
 
 Before providing recommendations, I will:
 
@@ -97,7 +95,7 @@ Based on the analysis, I will provide a prioritized action plan:
 # Ruby Documentation Review
 
 ## Summary
-[Brief overview of current documentation state]
+[Brief overview of documentation scope]
 
 ## Documentation Gaps
 ### High Priority
@@ -282,7 +280,7 @@ pre-commit run --all-files
 
 Define clear success criteria for outcomes:
 
-### Quality Gates
+### Quality Guidelines
 - **Security**: Zero critical vulnerabilities, zero hardcoded secrets
 - **Code Quality**: RuboCop passes with minimal warnings
 - **Complexity**: Cyclomatic complexity <10 per function/method

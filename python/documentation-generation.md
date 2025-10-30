@@ -34,11 +34,9 @@ To provide effective guidance, please provide:
 
 **Constraints**:
 - Project urgency level
-- Team collaboration preferences
-- Deployment environment
 - Any compliance or security requirements
 
-## Situation Assessment
+## Python Documentation Focus
 
 Before providing recommendations, I will:
 
@@ -145,14 +143,6 @@ Generate a comprehensive analysis and save as **two deliverables**:
 # Documentation Generation
 
 ## Overview
-- **Scope**: [What was analyzed]
-- **Files Analyzed**: [Count]
-- **Critical Issues**: [Count]
-- **High Priority Items**: [Count]
-- **Recommended Priority**: [Summary]
-
-## Executive Summary
-[Brief overview of findings and recommended approach]
 
 ## Findings Summary
 - Security: [Summary with count]
@@ -504,7 +494,7 @@ pre-commit run --all-files
 
 Define clear success criteria for outcomes:
 
-### Quality Gates
+### Quality Guidelines
 - **Security**: Zero critical vulnerabilities, zero hardcoded secrets
 - **Code Quality**: Ruff and Black passes with minimal warnings
 - **Complexity**: Cyclomatic complexity <10 per function/method

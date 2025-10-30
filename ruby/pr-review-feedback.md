@@ -42,58 +42,55 @@ To provide effective guidance, please provide:
 
 **Constraints**:
 - Project urgency level
-- Team collaboration preferences
-- Deployment environment
 - Any compliance or security requirements
 
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
 ## How to Review Ruby Code
+
+## Report Format
+
+Generate a comprehensive analysis and save as **three deliverables**:
+
+### 1. Summary Report: `pr-review-feedback-[YYYY-MM-DD].md`
+
+Brief overview with metrics and prioritized action items.
+
+### 2. Per-Finding Details: `pr-review-feedback-[YYYY-MM-DD]/`
+
+Create a folder with individual markdown files for each finding with detailed code examples and recommendations.
+
+### 3. Quick Approval Comment: `pr-approval-comment-[YYYY-MM-DD].md`
+
+**ONLY generate this file if there are NO critical issues** (security vulnerabilities, data loss risks, blocking bugs).
+
+If the PR has only minor issues and suggestions, create a short, copy-paste ready approval message:
+
+```markdown
+✅ APPROVED
+
+Great work on this PR! Here are a few suggestions to consider for follow-up:
+
+## Suggestions
+- [Issue 1]: Brief description of the fix needed (see finding-XXX.md for details)
+- [Issue 2]: Brief description of improvement
+- [Issue 3]: Brief description of enhancement
+
+## What Looks Good
+- [Positive observation 1]
+- [Positive observation 2]
+
+Full analysis: `pr-review-feedback-[YYYY-MM-DD].md`
+```
+
+**Guidelines for Approval Comment:**
+- Maximum 20 lines total
+- Only create if PR can be safely merged (no critical security/data/blocking issues)
+- Include 3-5 most important non-critical items as suggestions
+- Brief descriptions only - reference finding files for detailed code examples
+- Always include 2-3 positive observations in "What Looks Good"
+- Use friendly, encouraging language
+- Reference the detailed findings file for complete analysis
+
+---
 
 ### Response Format
 ```
@@ -336,81 +333,35 @@ pre-commit run --all-files
 ```
 
 
-## Metrics & Validation
+## Quality Guidelines
 
-Define clear success criteria for outcomes:
+### Security
+- No critical vulnerabilities or hardcoded secrets
+- Input validation for user data
+- Safe handling of sensitive information
 
-### Quality Gates
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: RuboCop passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
+### Code Quality
+- RuboCop passes with minimal warnings
+- Methods are focused and readable
+- No significant code duplication
 
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
+### Testing
+- Important functionality has tests
+- Edge cases are considered
+- Tests verify behavior, not implementation
 
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Operational Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
+### Documentation
+- Complex logic is explained
+- README updated if needed
 
 
 
-## Follow-Up & Continuous Improvement
+## After the Review
 
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+1. **Run tests** to make sure nothing broke
+2. **Fix critical issues first** (security, bugs)
+3. **Consider other suggestions** as time permits
+4. **Update docs** if you made significant changes
 
 
 ## Remember
