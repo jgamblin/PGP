@@ -1,95 +1,145 @@
 # Python Type Hints Helper
 
-You are a **Python Type Hints Assistant** focused on adding practical type hints to personal projects and POC code. You specialize in basic type annotations that make code clearer and help catch common bugs during development.
+> **Purpose**: Add practical type hints for safety and clarity  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Python Version**: 3.11+ (3.12+ for latest syntax)  
+> **Last Updated**: 2025-12-09
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
+Help add **useful type hints** using modern Python 3.11+ syntax, Pydantic v2 for validation, and TypedDict for structured data. Focus on types that catch bugs and improve IDE support.
 
-Help add **useful type hints** that make your code clearer, catch bugs early, and improve your development experience. Focus on practical type annotations that provide real value without overcomplicating things.
+---
 
+## Guard Clauses
 
-## Inputs Required
+**If no code provided:**
+```
+NO_ACTIONABLE_INPUT
 
-To provide effective guidance, please provide:
+Please provide Python code to add type hints to:
+- Functions/methods
+- Classes
+- Data structures
+```
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+**If code is already fully typed:**
+```
+ALREADY_TYPED
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+✅ Code is already fully typed.
+- Function signatures: ✓
+- Return types: ✓
+- Class attributes: ✓
 
-**Runtime Context**:
-- Python version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+Consider running `mypy --strict` to verify type safety.
+```
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
+---
 
-## Situation Assessment
+## Quick Context Checklist
 
-Before providing recommendations, I will:
+```
+☐ Code to type
+☐ Python version (affects syntax)
+☐ Strictness level (basic, moderate, strict)
+☐ Framework constraints (Django, Pydantic, etc.)
+```
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+> 📝 **Standard Context**: See [_common-sections.md](_common-sections.md) for full input checklist and severity levels.
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+---
 
-## Recommended Plan
+## Copy-Paste Type Hinting Prompts
 
-Based on the analysis, I will provide a prioritized action plan:
+### Prompt: Add Type Hints
+```text
+Add comprehensive type hints to this code:
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+{{CODE}}
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+Use Python 3.11+ syntax:
+- Built-in generics (list[str], dict[str, int])
+- Union with | operator (str | None)
+- Self for methods returning self
+- TypedDict for dictionaries with known keys
+- Literal for specific values
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Make it pass mypy --strict.
+```
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+### Prompt: Type a Class
+```text
+Add type hints to this class:
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+{{CODE}}
+
+Include:
+- __init__ parameters and return None
+- All method signatures
+- Class and instance attributes
+- Property return types
+- Generic type parameters if applicable
+
+Use dataclass or Pydantic if appropriate.
+```
+
+### Prompt: Fix Type Errors
+```text
+Fix these mypy errors in this code:
+
+Errors:
+{{ERRORS}}
+
+Code:
+{{CODE}}
+
+For each error:
+1. Explain the issue
+2. Show the fix
+3. Note if it reveals a real bug
+
+Provide the corrected code.
+```
+
+### Prompt: Type Stub Generation
+```text
+Generate type stubs (.pyi) for this module:
+
+{{CODE}}
+
+Create a .pyi file with:
+- All public function signatures
+- Class definitions with attributes
+- Protocol definitions if needed
+- Overloads for polymorphic functions
+
+Follow typeshed conventions.
+```
+
+### Prompt: Add Protocols
+```text
+Define Protocol types for these duck-typed usages:
+
+{{CODE}}
+
+Create Protocol classes for:
+- Structural typing (methods/attributes used)
+- Runtime checkable where appropriate
+- Generic protocols if needed
+
+Replace Any with proper Protocols.
+```
+
+---
 
 ## Practical Type Hints Approach
 
 ### 1. **Bug Prevention**
 
-- **None Handling**: Use Optional to show when values might be None
+- **None Handling**: Use `str | None` to show when values might be None
 - **Basic Types**: Catch simple type errors like passing strings to math functions
 - **Function Contracts**: Show what functions expect and return
 - **Data Validation**: Use types to document expected data structures

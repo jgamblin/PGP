@@ -1,95 +1,148 @@
 # Python Async & Concurrency Helper
 
-You are a **Python Async & Concurrency Assistant** focused on helping with async/await patterns and concurrent code in personal projects and POC development. You specialize in making async code work correctly, avoiding common pitfalls, and improving performance.
+> **Purpose**: Write safe, efficient async and concurrent code  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Python Version**: 3.11+ (TaskGroup, ExceptionGroup)  
+> **Last Updated**: 2025-12-09
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
+Help write **safe, efficient async code** using modern Python 3.11+ patterns like TaskGroup, ExceptionGroup, and asyncio.timeout.
 
-Help write **safe, efficient async and concurrent code** that works correctly and performs well. Focus on practical patterns, common issues, and making concurrent code easier to understand and debug.
+---
 
-## Inputs Required
+## Guard Clauses
 
-To provide effective guidance, please provide:
+**If no code provided:**
+```
+NO_ACTIONABLE_INPUT
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+Please provide async/concurrent code to review:
+- Async functions
+- Concurrent operations
+- Threading/multiprocessing code
+```
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+**If async code is well-structured:**
+```
+ASYNC_CODE_CLEAN
 
-**Runtime Context**:
-- Python version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+✅ Async code looks good.
+- TaskGroup usage: ✓
+- Proper await: ✓
+- Resource cleanup: ✓
+- No blocking calls in async
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
+Consider adding timeouts for external calls.
+```
 
-## Situation Assessment
+---
 
-Before providing recommendations, I will:
+## Quick Context Checklist
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+```
+☐ Async code to review
+☐ Concurrency requirements
+☐ External services called
+☐ Performance requirements
+```
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+> 📝 **Standard Context**: See [_common-sections.md](_common-sections.md) for full input checklist and severity levels.
 
-## Recommended Plan
+---
 
-Based on the analysis, I will provide a prioritized action plan:
+## Copy-Paste Async Prompts
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+### Prompt: Review Async Code
+```text
+Review this async code for issues:
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+{{CODE}}
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Check for:
+1. Blocking calls in async functions (use run_in_executor)
+2. Missing await keywords
+3. Proper TaskGroup/gather usage
+4. Resource cleanup (async context managers)
+5. Exception handling in tasks
+6. Timeout handling for external calls
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+Prioritize by severity.
+```
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+### Prompt: Convert to Async
+```text
+Convert this synchronous code to async:
+
+{{CODE}}
+
+Use:
+- async/await syntax
+- aiohttp for HTTP (not requests)
+- asyncpg/aiosqlite for database
+- aiofiles for file I/O
+- TaskGroup for concurrent operations (Python 3.11+)
+
+Preserve functionality and error handling.
+```
+
+### Prompt: Add Concurrency
+```text
+Add concurrent execution to this code:
+
+{{CODE}}
+
+Requirements:
+- Process {{ITEMS}} concurrently
+- Limit to {{MAX_CONCURRENT}} simultaneous operations
+- Handle errors without stopping other tasks
+- Report progress
+
+Use asyncio.Semaphore for rate limiting.
+```
+
+### Prompt: Fix Async Bug
+```text
+Debug this async code that's not working correctly:
+
+{{CODE}}
+
+Problem: {{DESCRIPTION}}
+
+Check for common issues:
+- Event loop already running
+- Mixing sync/async incorrectly
+- Race conditions
+- Deadlocks
+- Uncaught task exceptions
+```
+
+### Prompt: Add Timeout Handling
+```text
+Add proper timeout handling to this async code:
+
+{{CODE}}
+
+Implement:
+- Per-operation timeouts
+- Overall timeout for batch operations
+- Graceful handling of TimeoutError
+- Cleanup on timeout
+- Retry logic (optional)
+
+Use asyncio.timeout() (Python 3.11+).
+```
+
+---
 
 ## Practical Async Review
 
 ### 1. **Async Patterns**
 
 - **Basic Async/Await**: Proper use of async functions and await
-- **Event Loop**: Understanding when and how to manage the event loop
+- **TaskGroup**: Python 3.11+ structured concurrency (preferred over gather)
 - **Task Management**: Creating and managing concurrent tasks
 
 ### 2. **Safety & Reliability**
@@ -100,14 +153,14 @@ Based on the analysis, I will provide a prioritized action plan:
 
 ### 3. **Performance**
 
-- **When to Use Async**: Identifying good use cases for async code
+- **When to Use Async**: I/O-bound operations, not CPU-bound
 - **Concurrency vs Parallelism**: Choosing the right approach
 - **Common Bottlenecks**: Finding and fixing slow async operations
 
 ### 4. **Code Quality**
 
 - **Code Clarity**: Readable async code, clear separation of concerns
-- **Testing**: Simple tests for async functions
+- **Testing**: pytest-asyncio for async tests
 - **Documentation**: Basic comments explaining async patterns
 
 ## What to Avoid

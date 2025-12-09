@@ -1,84 +1,29 @@
 # Python Development Assistant Guide
 
-This guide helps you use the normalized Python prompts effectively for personal projects and POC development. Copy this into your actual Python project and adapt it to your specific needs.
-
-Purpose: Coordinate code improvements, testing, and quality checks using the practical Python prompts in this collection.
+> **Purpose**: Copy this into your project's `.github/copilot-instructions.md`  
+> **Best For**: GitHub Copilot, VS Code Copilot Chat  
+> **Python Version**: 3.11+  
+> **Last Updated**: 2025-12-09
 
 ---
 
-## Summary
+This guide helps AI assistants understand your Python project conventions and provide consistent, high-quality suggestions.
 
-To provide guidance, please provide:
+---
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+## Quick Context
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+```
+Project: {{PROJECT_NAME}}
+Python: 3.11+
+Package Manager: uv
+Linter: ruff
+Formatter: ruff format
+Type Checker: mypy
+Test Framework: pytest
+```
 
-**Runtime Context**:
-- Python version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+> 📝 **Full Reference**: See [_common-sections.md](_common-sections.md) for complete tool configurations.
 
 ## Focus Areas for Personal Projects
 1. **Code Quality**: Clean, readable code that works correctly
@@ -86,9 +31,97 @@ Based on the analysis, I will provide a prioritized action plan:
 3. **Type Hints**: Add helpful type annotations for clarity
 4. **Performance**: Fix obvious bottlenecks and inefficiencies
 5. **Documentation**: Clear README and function documentation
-6. **Style**: Consistent formatting with Flake8 and Black
+6. **Style**: Consistent formatting with Ruff
 
 ---
+
+## Copy-Paste Copilot Prompts
+
+### Prompt: Configure Copilot for Python
+```text
+Configure GitHub Copilot for Python development:
+
+Project type: {{TYPE}}
+Python version: 3.11+
+Framework: {{FRAMEWORK}}
+
+I want Copilot to:
+1. Generate type-hinted code by default
+2. Use f-strings, not .format()
+3. Prefer pathlib over os.path
+4. Use match/case where appropriate
+5. Follow Google docstring style
+6. Generate pytest tests, not unittest
+
+How do I set up .github/copilot-instructions.md?
+```
+
+### Prompt: Generate Code with Context
+```text
+Generate Python code for:
+
+{{DESCRIPTION}}
+
+Context:
+- Existing imports: {{IMPORTS}}
+- Existing classes: {{CLASSES}}
+- Error handling style: exceptions with context
+- Logging: structlog
+
+Requirements:
+- Full type hints
+- Docstrings with examples
+- Handle edge cases
+- Return clear errors
+```
+
+### Prompt: Refactor with Copilot
+```text
+Refactor this code using Copilot:
+
+{{CODE}}
+
+Goals:
+1. Extract helper functions (max 20 lines each)
+2. Add comprehensive type hints
+3. Replace if/elif chains with match/case
+4. Use dataclasses for data structures
+5. Add error handling
+
+Show complete refactored code.
+```
+
+### Prompt: Generate Tests with Copilot
+```text
+Generate pytest tests for this code:
+
+{{CODE}}
+
+Include:
+1. Happy path tests
+2. Edge cases (empty, None, boundary)
+3. Error condition tests
+4. Parametrized tests for multiple inputs
+
+Use fixtures for setup. Mock external dependencies.
+```
+
+### Prompt: Complete Function
+```text
+Complete this function:
+
+{{PARTIAL_CODE}}
+
+Requirements:
+- Match the existing style
+- Handle errors gracefully
+- Add type hints
+- Include docstring
+- Consider edge cases: {{EDGE_CASES}}
+```
+
+---
+
 ## Simple Project Structure
 ```
 my_project/
@@ -100,11 +133,10 @@ my_project/
  tests/ # Test files
  test_main.py
  test_utils.py
- requirements.txt # Dependencies
+ pyproject.toml # Dependencies & config
  README.md # Project documentation
- .flake8 # Style configuration
 ```
-Optional: `pyproject.toml`, `.pre-commit-config.yaml`, `docs/`
+Optional: `.pre-commit-config.yaml`, `docs/`
 
 ---
 ## Quick Code Review Prompt

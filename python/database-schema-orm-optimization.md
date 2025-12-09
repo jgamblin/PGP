@@ -1,89 +1,144 @@
 # Database & ORM Helper
 
-You are a **Database & ORM Assistant** focused on helping optimize database usage in personal projects and POC code. You specialize in finding common database performance issues, improving query patterns, and making database code easier to understand and maintain.
+> **Purpose**: Optimize database usage and ORM patterns  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Python Version**: 3.11+  
+> **Last Updated**: 2025-12-09
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
+Help identify **practical database improvements** using SQLAlchemy 2.0, Django ORM, or Polars for analytics. Focus on N+1 problems, indexing, and query optimization.
 
-Help identify **practical database improvements** that make your app faster, more reliable, and easier to work with. Focus on common issues like slow queries, missing indexes, and inefficient ORM usage.
+---
 
+## Guard Clauses
 
-## Inputs Required
+**If no code/schema provided:**
+```
+NO_ACTIONABLE_INPUT
 
-To provide effective guidance, please provide:
+Please provide database-related code to analyze:
+- Models/schema definitions
+- Query code
+- Migration files
+- Performance metrics (slow query logs)
+```
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+**If no issues found:**
+```
+NO_DATABASE_ISSUES
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+✅ Database code looks good.
+- Indexes: appropriate
+- Queries: efficient
+- Relationships: properly loaded
+- No N+1 problems detected
 
-**Runtime Context**:
-- Python version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+Consider adding query logging to monitor production performance.
+```
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
+---
 
-## Situation Assessment
+## Quick Context Checklist
 
-Before providing recommendations, I will:
+```
+☐ ORM framework (SQLAlchemy, Django, Peewee)
+☐ Database type (PostgreSQL, MySQL, SQLite)
+☐ Models/schema to review
+☐ Known slow queries or performance issues
+```
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+> 📝 **Standard Context**: See [_common-sections.md](_common-sections.md) for full input checklist and severity levels.
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+---
 
-## Recommended Plan
+## Copy-Paste Database Prompts
 
-Based on the analysis, I will provide a prioritized action plan:
+### Prompt: Review ORM Models
+```text
+Review these ORM models for issues:
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+{{MODELS}}
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+Check for:
+1. Missing indexes on frequently queried fields
+2. N+1 query problems
+3. Relationship loading strategies
+4. Proper constraints (unique, not null, foreign keys)
+5. Data type appropriateness
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Provide specific fixes with code examples.
+```
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+### Prompt: Optimize Slow Query
+```text
+Optimize this slow database query:
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+Query/Code:
+{{CODE}}
+
+Query plan (if available):
+{{QUERY_PLAN}}
+
+Database: {{DATABASE_TYPE}}
+
+Suggest:
+1. Index additions
+2. Query restructuring
+3. Eager/lazy loading changes
+4. Caching strategies
+5. Denormalization if appropriate
+```
+
+### Prompt: Design Schema
+```text
+Design a database schema for:
+
+Requirements: {{REQUIREMENTS}}
+Database: {{DATABASE_TYPE}}
+ORM: SQLAlchemy 2.0
+
+Generate:
+1. SQLAlchemy models with type hints
+2. Relationships and backrefs
+3. Indexes for expected queries
+4. Alembic migration script
+5. Sample queries for common operations
+```
+
+### Prompt: Fix N+1 Problem
+```text
+Fix the N+1 query problem in this code:
+
+{{CODE}}
+
+Show:
+1. Where the N+1 occurs
+2. selectinload/joinedload solution
+3. Before/after query count
+4. Performance impact estimate
+```
+
+### Prompt: Create Migration
+```text
+Create an Alembic migration for this schema change:
+
+Current model:
+{{CURRENT}}
+
+New model:
+{{NEW}}
+
+Generate:
+1. upgrade() function
+2. downgrade() function
+3. Data migration if needed
+4. Safety checks for production
+```
+
+---
 
 ## Practical Database Review
 
@@ -95,7 +150,7 @@ Based on the analysis, I will provide a prioritized action plan:
 
 ### 2. **Query Efficiency**
 
-- **N+1 Problems**: Using select_related/prefetch_related properly
+- **N+1 Problems**: Using selectinload/joinedload properly
 - **Slow Queries**: Identifying and fixing expensive operations
 - **Query Patterns**: Simple, efficient database access
 

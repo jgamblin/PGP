@@ -47,18 +47,20 @@ All prompts follow a consistent structure optimized for peer-based collaboration
 ### `python/` — Python Ecosystem Prompts
 | File | Purpose |
 |------|---------|
+| `_common-sections.md` | **NEW** Shared boilerplate (context checklists, severity levels) |
 | `agents.md` | Agent instructions for Python prompt usage |
-| `cli-application-development.md` | Professional CLI development (Click, Rich, testing) |
+| `cli-application-development.md` | Professional CLI development (Typer, Rich, testing) |
 | `code-refactoring.md` | Python refactoring (asyncio, Django/Flask/FastAPI, modern patterns) |
 | `concurrency-asyncio-pattern-analysis.md` | Concurrency and asyncio pattern analysis |
 | `copilot-instructions.md` | Copilot/AI guidance for Python prompt usage |
 | `database-schema-orm-optimization.md` | Database schema and ORM optimization |
 | `documentation-generation.md` | Comprehensive Python documentation (docstrings, Sphinx, API docs) |
 | `logging-error-handling.md` | Logging setup, structured error handling, security events |
-| `packaging-distribution.md` | Modern Python packaging (Poetry, pyproject.toml, PyPI) |
+| `modern-patterns.md` | **NEW** Python 3.11+ patterns (match/case, TaskGroup, Pydantic v2) |
+| `packaging-distribution.md` | Modern Python packaging (uv, pyproject.toml, PyPI) |
 | `pr-review-feedback.md` | Python code review (ORM, security, performance) |
-| `project-repo.md` | Python repository setup (Poetry, pytest) |
-| `python-linting.md` | Modern code linting and formatting (Ruff, Black, Flake8) |
+| `project-repo.md` | Python repository setup (uv, pytest, Ruff) |
+| `python-linting.md` | Modern code linting and formatting (Ruff) |
 | `security-analysis.md` | Security vulnerability analysis and secure coding practices |
 | `type-hinting.md` | Type safety analysis (mypy, modern typing) |
 | `unit-test-generation.md` | Test strategy and coverage analysis (pytest) |

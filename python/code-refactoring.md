@@ -1,22 +1,143 @@
 # Python Code Refactoring Analysis
 
-You are a **Python Code Helper** focused on writing clean, maintainable code for personal projects and proof-of-concept development. You specialize in Pythonic patterns, web framework optimization, and improving code quality for small to medium-sized projects.
+> **Purpose**: Improve code quality and structure  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Python Version**: 3.11+  
+> **Last Updated**: 2025-12-09
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
-Analyze the provided code to identify practical improvements that will make it cleaner, faster, and easier to maintain. Focus on quick wins and actionable suggestions for personal projects and POC development.
+Analyze code to identify practical improvements using modern Pythonic patterns, type hints, and clean code principles.
 
-**Core Python Improvement Areas:**
-1. **Clean Code**: PEP 8 compliance, readable patterns, and clear naming
-2. **Type Hints**: Basic type annotations for better code clarity
-3. **Performance**: Simple optimizations and async patterns where helpful
-4. **Framework Best Practices**: Clean Django/Flask/FastAPI patterns
-5. **Security Basics**: Input validation and safe database queries
-6. **Modern Python**: Using current Python features effectively
-7. **Testing**: Basic pytest setup and key test coverage
+---
+
+## Guard Clauses
+
+**If no code provided:**
+```
+NO_ACTIONABLE_INPUT
+
+Please provide Python code to refactor:
+- Source files or code snippets
+- Specific improvement goals
+- Constraints (backward compatibility, etc.)
+```
+
+**If code is already clean:**
+```
+NO_REFACTORING_NEEDED
+
+✅ Code is already well-structured.
+- Follows PEP 8: ✓
+- Type hints present: ✓
+- Functions focused: ✓
+- No obvious improvements needed
+
+Consider adding property-based tests for additional confidence.
+```
+
+---
+
+## Quick Context Checklist
+
+```
+☐ Code to refactor
+☐ Current pain points
+☐ Constraints (performance, compatibility)
+☐ Target patterns or style
+```
+
+> 📝 **Standard Context**: See [_common-sections.md](_common-sections.md) for full input checklist and severity levels.
+
+---
+
+## Copy-Paste Refactoring Prompts
+
+### Prompt: General Code Review
+```text
+Review this Python code for refactoring opportunities:
+
+{{CODE}}
+
+Identify:
+1. Code smells (duplication, long functions, deep nesting)
+2. PEP 8 violations
+3. Missing type hints
+4. Opportunities for Python 3.11+ features
+5. Performance improvements
+
+Prioritize by impact. Show before/after for top 3 issues.
+```
+
+### Prompt: Extract Functions
+```text
+This function is too long. Extract smaller, focused functions:
+
+{{CODE}}
+
+Goals:
+- Each function does one thing
+- Functions are under 20 lines
+- Clear, descriptive names
+- Proper parameter passing (no global state)
+
+Show the refactored code with all extracted functions.
+```
+
+### Prompt: Modernize Legacy Code
+```text
+Modernize this Python code for 3.11+:
+
+{{CODE}}
+
+Update to use:
+- Type hints (PEP 484, 585, 604)
+- Pattern matching (match/case) where appropriate
+- Dataclasses or Pydantic models
+- f-strings instead of .format()
+- Walrus operator where it improves clarity
+- pathlib instead of os.path
+
+Preserve functionality. Show complete updated code.
+```
+
+### Prompt: Improve Error Handling
+```text
+Improve error handling in this code:
+
+{{CODE}}
+
+Fix:
+- Bare except clauses
+- Generic Exception catches
+- Missing error context
+- Silent failures
+
+Add:
+- Specific exception types
+- Helpful error messages
+- Proper logging
+- Graceful degradation
+```
+
+### Prompt: Reduce Complexity
+```text
+Reduce cyclomatic complexity in this code:
+
+{{CODE}}
+
+Apply:
+- Early returns (guard clauses)
+- Dictionary dispatch instead of if/elif chains
+- Extract conditional logic to functions
+- Use itertools/comprehensions where clearer
+
+Target: No function over complexity 10.
+```
+
+---
 
 **Report Format:**
 Generate a practical code improvement report and save it as a markdown file named `python-refactoring-analysis-[YYYY-MM-DD].md`:

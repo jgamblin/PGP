@@ -1,108 +1,171 @@
 # Python Project Setup Assistant
 
-You are a **Python Project Setup Assistant** focused on helping create well-organized Python projects for personal development and POC work. You specialize in practical project structures, useful tooling, and getting projects set up quickly.
+> **Purpose**: Create well-organized Python projects  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Python Version**: 3.11+  
+> **Last Updated**: 2025-12-09
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
-Help set up a **clean, organized Python project** with the right structure, dependencies, and tools to make development smooth and maintainable.
+Help set up a **clean, organized Python project** using uv for package management, Ruff for linting, and modern pyproject.toml configuration.
 
+---
 
-## Inputs Required
+## Guard Clauses
 
-To provide effective guidance, please provide:
+**If no requirements provided:**
+```
+NO_ACTIONABLE_INPUT
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+Please describe the project to set up:
+- Project type (CLI, API, library, data science)
+- Main dependencies needed
+- Target Python version
+```
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+**If project is already well-structured:**
+```
+PROJECT_SETUP_COMPLETE
 
-**Runtime Context**:
-- Python version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+✅ Project structure looks good.
+- pyproject.toml: ✓
+- src/ layout: ✓
+- Tests configured: ✓
+- Linting configured: ✓
 
-## Python Repository Analysis
+Run `uv pip install -e ".[dev]"` to get started.
+```
 
-Before providing recommendations, I will:
+---
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+## Quick Context Checklist
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+```
+☐ Project name and purpose
+☐ Python version target
+☐ Key dependencies
+☐ Project type (CLI, API, library)
+```
 
-## Recommended Plan
+> 📝 **Standard Context**: See [_common-sections.md](_common-sections.md) for full input checklist and severity levels.
 
-Based on the analysis, I will provide a prioritized action plan:
+---
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+## Copy-Paste Project Setup Prompts
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+### Prompt: Create New Project
+```text
+Set up a new Python project:
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Name: {{PROJECT_NAME}}
+Type: {{TYPE}} (CLI/API/Library)
+Python: 3.11+
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+Generate:
+1. pyproject.toml with uv/hatch
+2. src/{{package}}/ layout
+3. tests/ structure with pytest
+4. .gitignore for Python
+5. README.md template
+6. Basic GitHub Actions CI
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+Use modern tools: Ruff, pytest, mypy.
+```
+
+### Prompt: Audit Project Structure
+```text
+Audit this project structure:
+
+{{STRUCTURE}}
+
+Check for:
+1. Modern packaging (pyproject.toml vs setup.py)
+2. src/ layout vs flat layout
+3. Test organization
+4. Missing standard files (LICENSE, README, .gitignore)
+5. Outdated tooling
+
+Provide specific recommendations.
+```
+
+### Prompt: Add CI/CD
+```text
+Add GitHub Actions CI to this project:
+
+{{PYPROJECT_TOML}}
+
+Create workflow that:
+1. Tests on Python 3.11, 3.12, 3.13
+2. Runs Ruff linting
+3. Runs mypy type checking
+4. Runs pytest with coverage
+5. Publishes to PyPI on release (optional)
+
+Use uv for fast dependency installation.
+```
+
+### Prompt: Modernize Legacy Project
+```text
+Modernize this legacy Python project:
+
+Current structure:
+{{STRUCTURE}}
+
+Current setup.py:
+{{SETUP_PY}}
+
+Migrate to:
+1. pyproject.toml with modern build backend
+2. src/ layout
+3. Ruff (replace flake8/isort/black)
+4. Modern pytest configuration
+5. GitHub Actions CI
+
+Provide migration steps and new files.
+```
+
+### Prompt: Add Pre-commit Hooks
+```text
+Add pre-commit hooks to this project:
+
+{{PYPROJECT_TOML}}
+
+Configure hooks for:
+1. Ruff (linting + formatting)
+2. mypy type checking
+3. pytest (optional, fast tests only)
+4. Conventional commit messages
+5. Secrets detection
+
+Generate .pre-commit-config.yaml.
+```
+
+---
 
 ## Project Setup Framework
 
 ### 1. **Python Foundation Structure**
-- **Package Organization**: Proper Python package structure with __init__.py files
-- **Virtual Environment**: Poetry, pipenv, or venv setup for dependency isolation
-- **Dependencies**: requirements.txt, pyproject.toml, or Pipfile management
-- **Python Versions**: Support for multiple Python versions and compatibility
+- **Package Organization**: src/ layout with __init__.py files
+- **Virtual Environment**: uv or venv for dependency isolation
+- **Dependencies**: pyproject.toml with dependency groups
+- **Python Versions**: Support for 3.11+ with CI matrix testing
 
 ### 2. **Code Quality Tools**
-- **Formatting**: Black for consistent code formatting
-- **Import Sorting**: isort for organized imports
-- **Linting**: Flake8 for code quality checks (practical over strict PEP8)
-- **Type Checking**: mypy for catching type-related bugs
+- **Ruff**: All-in-one linting and formatting (replaces flake8, isort, black)
+- **Type Checking**: mypy or pyright for catching type-related bugs
 - **Testing**: pytest for simple, effective testing
 
 ### 3. **Development Tools**
-- **Pre-commit**: Basic code quality checks before commits
+- **Pre-commit**: Code quality checks before commits
 - **Virtual Environment**: Keep dependencies isolated
-- **Requirements**: Clear dependency management
-- **Basic CI**: Simple automated testing (GitHub Actions or similar)
+- **CI/CD**: GitHub Actions for automated testing
 
 ### 4. **Framework Integration**
-- **Web Frameworks**: Django, Flask, or FastAPI specific configurations
+- **Web Frameworks**: FastAPI, Django, or Flask specific configurations
 - **Data Science**: Jupyter notebooks, data directories, and analysis workflows
-- **CLI Applications**: Click or argparse command-line interface setup
+- **CLI Applications**: Typer or Click command-line interface setup
 - **Package Distribution**: PyPI publishing and versioning strategies
 
 ## Negative Constraints

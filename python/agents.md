@@ -1,238 +1,211 @@
 # Python Assistant Prompts
 
-## Purpose
-This folder contains Python helper prompts designed for personal projects and proof-of-concept development. These assistants provide practical guidance on Python code quality, testing, documentation, and common improvements.
-
-## Available Assistants
-- **Code Helper**: Practical code improvements and refactoring suggestions
-- **Testing Assistant**: Simple test patterns and pytest guidance
-- **Type Hints Assistant**: Basic type annotations for better code clarity
-- **Code Review Assistant**: Helpful feedback on Python code quality
-- **Documentation Assistant**: Clear docstrings and project documentation
-
-
-## Inputs Required
-
-To provide effective guidance, please provide:
-
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- Python version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-## How to Use These Prompts
-1. Choose the assistant that matches your needs (e.g., type-hinting.md for adding type hints)
-2. Focus on practical improvements that make your code more maintainable
-3. Start with small, incremental changes rather than major rewrites
-4. Prioritize readability and bug prevention over complex optimizations
-5. Test changes to make sure they work as expected
-
-## Best Practices
-- Start with the most impactful improvements first
-- Keep solutions simple and easy to understand
-- Add type hints gradually to improve code clarity
-- Write tests for important functionality
-- Document your code so you can understand it later
-
-## Typical Workflow
-1. Review current Python code structure
-2. Identify areas for improvement (bugs, unclear code, missing tests)
-3. Make targeted improvements with clear explanations
-4. Add or update tests to cover changes
-5. Document decisions and patterns for future reference
+> **Purpose**: Index of all Python development prompts  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Python Version**: 3.11+  
+> **Last Updated**: 2025-12-09
 
 ---
-For generic or other language instructions, see agents.md in the generic, html, or ruby folders.
 
+## Quick Start
 
+Choose the assistant that matches your task:
 
+| Task | File | Description |
+|------|------|-------------|
+| **New Project** | [project-repo.md](project-repo.md) | Initialize project structure and tooling |
+| **Code Review** | [pr-review-feedback.md](pr-review-feedback.md) | PR review, refactoring, quality checks |
+| **Refactoring** | [code-refactoring.md](code-refactoring.md) | Improve code structure and patterns |
+| **Testing** | [unit-test-generation.md](unit-test-generation.md) | pytest, coverage, property testing |
+| **Type Safety** | [type-hinting.md](type-hinting.md) | Type hints, Pydantic, validation |
+| **Security** | [security-analysis.md](security-analysis.md) | Vulnerability scanning, secure patterns |
+| **Documentation** | [documentation-generation.md](documentation-generation.md) | Docstrings, API docs, README |
+| **CLI Apps** | [cli-application-development.md](cli-application-development.md) | Click, Typer, Rich terminal UIs |
+| **Database** | [database-schema-orm-optimization.md](database-schema-orm-optimization.md) | SQLAlchemy, database patterns |
+| **Error Handling** | [logging-error-handling.md](logging-error-handling.md) | Logging, exceptions, Result types |
+| **Packaging** | [packaging-distribution.md](packaging-distribution.md) | uv, PyPI, distribution |
+| **Modern Patterns** | [modern-patterns.md](modern-patterns.md) | Python 3.11+ features, async, AI |
+| **Async** | [concurrency-asyncio-pattern-analysis.md](concurrency-asyncio-pattern-analysis.md) | Async/await patterns |
+| **Linting** | [python-linting.md](python-linting.md) | Ruff, code style |
 
-## Tooling & Automation
+---
 
-Recommended tools and commands for Python development:
+## Shared Resources
 
-### Analysis & Quality Tools
+- **[_common-sections.md](_common-sections.md)** — Shared boilerplate, tool configs, guard clauses
+
+---
+
+## Quick Context Checklist
+
+Copy this into any prompt:
+
+```
+☐ Branch: `git branch --show-current`
+☐ Changes: `git diff main...HEAD --name-only`
+☐ Python: 3.11+ / 3.12+
+☐ Frameworks: [Django/Flask/FastAPI/none]
+☐ Pain points: [specific issues]
+```
+
+---
+
+## Guard Clauses
+
+All prompts handle these edge cases:
+
+| Situation | Response Token |
+|-----------|----------------|
+| No input provided | `NO_ACTIONABLE_INPUT` |
+| Empty diff | `NO_CHANGES_DETECTED` |
+| Analysis clean | `NO_ISSUES_FOUND` |
+| Issues found | `ANALYSIS_COMPLETE` |
+
+See [_common-sections.md](_common-sections.md) for full templates.
+
+---
+
+## 2026 Tool Stack
+
 ```bash
-# Python code quality
-ruff check .
-black --check .
-mypy .
+# Package management (10-100x faster than pip)
+uv pip install package-name
+
+# Linting + formatting (replaces flake8, isort, black)
+ruff check --fix . && ruff format .
+
+# Type checking
+mypy src/
 
 # Testing
-pytest --cov=. --cov-report=term-missing
+pytest --cov=src
 
 # Security
-bandit -r .
-pip-audit
+pip-audit && ruff check --select=S .
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+---
 
-# Identify changed files
-git diff main...HEAD --name-only
+## Severity Levels
+
+Use consistent severity across all analyses:
+
+| Level | When to Use |
+|-------|-------------|
+| 🔴 **Critical** | Security vulnerability, data loss, crashes |
+| 🟠 **High** | Bugs, performance issues, breaking changes |
+| 🟡 **Medium** | Code quality, maintainability issues |
+| 🟢 **Low** | Style, minor improvements |
+
+---
+
+## Copy-Paste Prompts
+
+### Quick Code Review
+```text
+Review this Python code for issues:
+
+{{CODE}}
+
+Check: security, performance, code quality, testing gaps.
+Output severity as: 🔴 Critical, 🟠 High, 🟡 Medium, 🟢 Low
+
+If no issues: output `NO_ISSUES_FOUND`
 ```
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run ruff --all-files
-pre-commit run black --all-files
-pre-commit run mypy --all-files
+### Quick Refactor
+```text
+Refactor this Python code to be more Pythonic:
+
+{{CODE}}
+
+Apply:
+- List/dict comprehensions where clearer
+- Context managers for resources
+- f-strings for formatting
+- Type hints on function signatures
+- Dataclasses for data containers
+
+Show before/after with explanations.
 ```
 
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
+### Quick Type Hints
+```text
+Add type hints to this Python code:
 
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
+{{CODE}}
+
+Requirements:
+- All function parameters and returns
+- Use modern syntax (X | None, not Optional[X])
+- Use collections.abc for generic types
+- Add Literal for string constants
+
+If already fully typed: output `ALREADY_TYPED`
 ```
 
+### Quick Security Scan
+```text
+Security scan this Python code:
 
-## Metrics & Validation
+{{CODE}}
 
-Define clear success criteria for outcomes:
+Check for:
+- SQL/command injection
+- Hardcoded secrets
+- Unsafe deserialization
+- Path traversal
 
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: Ruff and Black passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
+Output as: 🔴 Critical | 🟠 High | 🟡 Medium | 🟢 Low
 
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
+If clean: output `NO_SECURITY_ISSUES`
+```
 
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
+### Quick Test Generation
+```text
+Generate pytest tests for this code:
 
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
+{{CODE}}
 
+Include:
+- Happy path tests
+- Edge cases (empty, None, boundaries)
+- Error conditions
+- Use @pytest.mark.parametrize for variants
 
+Output ready-to-run test code.
+```
 
-## Follow-Up & Continuous Improvement
+---
 
-### Feedback Loop
-After implementing changes:
+## How to Use These Prompts
 
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
+1. Choose the assistant that matches your needs
+2. Copy the relevant prompt
+3. Replace `{{PLACEHOLDERS}}` with your actual content
+4. Paste into Copilot, ChatGPT, Claude, or your agent system
 
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
+---
 
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
+## Workflow Examples
 
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
+### New Feature Development
+1. [project-repo.md](project-repo.md) — Set up project if new
+2. Write feature code
+3. [type-hinting.md](type-hinting.md) — Add type hints
+4. [unit-test-generation.md](unit-test-generation.md) — Write tests
+5. [pr-review-feedback.md](pr-review-feedback.md) — Self-review before PR
 
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
+### PR Review
+1. [pr-review-feedback.md](pr-review-feedback.md) — Full review with suggestions
+2. Check [security-analysis.md](security-analysis.md) for sensitive changes
+3. Verify [unit-test-generation.md](unit-test-generation.md) coverage
 
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+### Modernization
+1. [modern-patterns.md](modern-patterns.md) — Apply 3.11+ features
+2. [type-hinting.md](type-hinting.md) — Add comprehensive types
+3. [logging-error-handling.md](logging-error-handling.md) — Structured logging
+
+---
+
+*For tool configurations and shared sections, see [_common-sections.md](_common-sections.md)*

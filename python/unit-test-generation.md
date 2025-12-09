@@ -1,88 +1,142 @@
 # Python Testing Helper
 
-You are a **Python Testing Assistant** focused on helping write practical tests for personal projects and POC code. You specialize in pytest basics, simple test patterns, and creating useful tests that catch bugs without being overly complex.
+> **Purpose**: Generate and improve Python tests  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Python Version**: 3.11+  
+> **Last Updated**: 2025-12-09
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
-Help create **reliable, well-tested code** through practical test coverage that catches bugs early, gives confidence when making changes, and keeps testing simple and maintainable for small to medium projects.
+Help create **reliable, well-tested code** using pytest, hypothesis for property testing, and modern async testing patterns.
+
+---
+
+## Guard Clauses
+
+**If no code provided:**
+```
+NO_ACTIONABLE_INPUT
+
+Please provide Python code to generate tests for:
+- Function or class to test
+- Expected behavior description
+- Edge cases to consider
+```
+
+**If code already has good coverage:**
+```
+TESTS_ADEQUATE
+
+✅ Test coverage appears adequate.
+- Happy path: ✓
+- Edge cases: ✓
+- Error handling: ✓
+
+Consider adding property-based tests with hypothesis for additional confidence.
+```
+
+---
+
+## Quick Context Checklist
+
+```
+☐ Code to test
+☐ Existing tests (if any)
+☐ Test framework (pytest recommended)
+☐ Special requirements (async, database, mocking)
+```
 
 
-## Inputs Required
+> 📝 **Standard Context**: See [_common-sections.md](_common-sections.md) for full input checklist and severity levels.
 
-To provide effective guidance, please provide:
+---
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+## Copy-Paste Testing Prompts
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+### Prompt: Generate Basic Tests
+```text
+Generate pytest tests for this code:
 
-**Runtime Context**:
-- Python version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+{{CODE}}
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
+Include:
+1. Happy path test (expected usage)
+2. Edge cases (empty, None, boundaries)
+3. Error conditions (invalid input, exceptions)
+4. Use @pytest.mark.parametrize for multiple inputs
 
-## Situation Assessment
+Output complete, runnable test file with docstrings.
+```
 
-Before providing recommendations, I will:
+### Prompt: Generate Property-Based Tests
+```text
+Generate hypothesis property-based tests for this code:
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+{{CODE}}
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+Use hypothesis to test:
+1. Properties that should always hold
+2. Invariants the function maintains
+3. Round-trip behaviors (serialize/deserialize)
+4. Commutative/associative properties if applicable
 
-## Recommended Plan
+Include appropriate @given strategies.
+```
 
-Based on the analysis, I will provide a prioritized action plan:
+### Prompt: Generate Async Tests
+```text
+Generate pytest-asyncio tests for this async code:
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+{{CODE}}
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+Include:
+1. Basic async function tests
+2. Concurrent execution tests
+3. Timeout handling tests
+4. Exception propagation tests
+5. Use async fixtures where needed
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Mark tests with @pytest.mark.asyncio.
+```
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+### Prompt: Generate API Tests
+```text
+Generate tests for this FastAPI/Flask endpoint:
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+{{CODE}}
+
+Include:
+1. Successful request tests
+2. Validation error tests (400)
+3. Authentication tests (401/403)
+4. Not found tests (404)
+5. Use TestClient or pytest fixtures
+
+Test both response status and body content.
+```
+
+### Prompt: Improve Test Coverage
+```text
+Analyze this code and existing tests:
+
+Code:
+{{CODE}}
+
+Existing Tests:
+{{TESTS}}
+
+Identify:
+1. Untested code paths
+2. Missing edge cases
+3. Uncovered error conditions
+4. Integration points without tests
+
+Generate additional tests to improve coverage.
+```
+
+---
 
 ## Practical Testing Approach
 
