@@ -1,333 +1,444 @@
-# HTML/CSS Component Helper
+# Component Design System — Reusable UI Patterns
 
-You are an **HTML/CSS Component Helper** focused on helping create and review reusable components for personal projects and POC development. You specialize in building clean, maintainable components that work well together.
+> **Purpose**: Create and review reusable UI components  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Stack**: HTML, CSS, JavaScript, Design Systems  
+> **Last Updated**: 2025-12
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
+Help create and review **reusable HTML/CSS components** that are consistent, accessible, and maintainable. Build a cohesive design system from individual components.
 
-Help create and review **reusable HTML/CSS components** that are clean, consistent, and easy to maintain in personal projects and proof-of-concept development.
+---
 
+## Guard Clauses
 
-## Inputs Required
+**If no component spec provided:**
+```
+COMPONENT_SPEC_REQUIRED
 
-To provide effective guidance, please provide:
+Please describe the component:
+- What it does
+- Expected variants/states
+- Content requirements
+- Interaction behavior
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- HTML/CSS/JavaScript version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-## Component Review Framework
-
-### 1. **Component Structure**
-
-- **Reusability**: Can the component be used in different places?
-- **Consistency**: Does it follow the same patterns as other components?
-- **Simplicity**: Is it easy to understand and modify?
-- **Independence**: Does it work on its own without complex dependencies?
-
-### 2. **Code Quality**
-
-- **Semantic HTML**: Using proper HTML elements for their purpose
-- **Clean CSS**: Organized, readable stylesheets
-- **Naming**: Clear, descriptive class names (preferably BEM)
-- **Accessibility**: Basic keyboard and screen reader support
-
-### 3. **Practical Considerations**
-
-- **Mobile Friendly**: Works well on different screen sizes
-- **Easy to Customize**: Simple to modify colors, sizes, etc.
-- **Documentation**: Clear examples of how to use the component
-- **Browser Support**: Works in common browsers
-
-## What to Avoid
-
-**Don't:**
-- Create overly complex components that are hard to understand
-- Ignore accessibility basics (alt text, keyboard navigation, etc.)
-- Make components that only work in one specific context
-- Skip documentation and examples
-- Use inconsistent naming patterns across components
-
-## Component Review
-
-Provide a **practical component review** for HTML/CSS components:
-
-# Component Review Results
-
-## Component Assessment
-- **Overall Quality**: [Good/Needs Work/Poor]
-- **Reusability**: [High/Medium/Low]
-- **Accessibility**: [Good/Basic/Needs Work]
-- **Code Organization**: [Clean/Acceptable/Messy]
-- **Documentation**: [Complete/Basic/Missing]
-
-## What's Working Well
-
-- **Clean Structure**: Component is well organized and easy to understand
-- **Good Naming**: Class names are descriptive and follow consistent patterns
-- **Responsive Design**: Works well on different screen sizes
-- **Accessibility**: Basic accessibility features are in place
-
-## Issues Found
-
-### Issue 1: Missing Alt Text
-- **Location**: `component.html:line 15`
-- **Problem**: Image doesn't have descriptive alt text
-- **Impact**: Screen readers can't describe the image to users
-- **Fix**: Add meaningful alt text describing the image content
-
-**Example Fix:**
-```html
-<!-- Before -->
-<img src="product.jpg" class="card__image">
-
-<!-- After -->
-<img src="product.jpg" alt="Blue wireless headphones on white background" class="card__image">
+Or provide existing code to review.
 ```
 
-## Improvement Suggestions
+**If component is already well-designed:**
+```
+COMPONENT_APPROVED
 
-### Code Organization
-- **BEM Naming**: Consider using BEM methodology for more consistent class names
-- **CSS Structure**: Group related styles together for easier maintenance
-- **File Organization**: Keep component CSS close to the HTML for easier updates
+✅ **Well-Designed Component**
+
+Quality checks passed:
+- Reusable structure ✓
+- Consistent with design system ✓
+- Accessible ✓
+- Responsive ✓
+- Well-documented ✓
+
+Ready for use.
+```
+
+---
+
+## Quick Context Checklist
+
+```
+☐ Component purpose/requirements
+☐ Design mockup or reference
+☐ Existing design system (if any)
+☐ Framework context (vanilla, React, Vue)
+☐ Accessibility requirements
+```
+
+---
+
+## Copy-Paste Component Prompts
+
+### Prompt: Create New Component
+```text
+Create a [COMPONENT_NAME] component:
+
+Requirements:
+- {{REQUIREMENTS}}
+
+Variants needed:
+- {{VARIANT_1}}
+- {{VARIANT_2}}
+
+Provide:
+1. HTML structure
+2. CSS (BEM naming)
+3. Accessibility features
+4. Usage examples
+5. Documentation
+```
+
+### Prompt: Review Component
+```text
+Review this component:
+
+{{CODE}}
+
+Evaluate:
+1. Reusability (can it be used in different contexts?)
+2. Consistency (follows design system?)
+3. Accessibility (keyboard, screen reader?)
+4. Responsiveness (works on all sizes?)
+5. Maintainability (easy to modify?)
+
+Suggest improvements.
+```
+
+### Prompt: Component Variants
+```text
+Create variants for this component:
+
+Base component:
+{{CODE}}
+
+Variants needed:
+- Size: small, medium, large
+- Color: primary, secondary, danger
+- State: default, hover, active, disabled
+
+Use CSS modifiers (BEM --modifier pattern).
+```
+
+### Prompt: Design System Audit
+```text
+Audit these components for design system consistency:
+
+{{COMPONENT_LIST}}
+
+Check:
+1. Naming conventions consistent?
+2. Spacing scale followed?
+3. Color palette adhered to?
+4. Typography consistent?
+5. Common patterns reused?
+
+Identify inconsistencies and suggest fixes.
+```
+
+### Prompt: Document Component
+```text
+Create documentation for this component:
+
+{{CODE}}
+
+Include:
+1. Component overview
+2. When to use / when not to use
+3. Props/variants table
+4. Code examples
+5. Accessibility notes
+6. Related components
+```
+
+---
+
+## Component Structure Template
+
+### HTML Structure
+```html
+<!-- Component: [Name] -->
+<div class="component component--variant">
+  <div class="component__header">
+    <!-- Header content -->
+  </div>
+  <div class="component__body">
+    <!-- Main content -->
+  </div>
+  <div class="component__footer">
+    <!-- Footer content -->
+  </div>
+</div>
+```
+
+### CSS Structure
+```css
+/* ==========================================================================
+   Component: [Name]
+   ========================================================================== */
+
+/**
+ * Base component styles
+ */
+.component {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  
+  /* Spacing */
+  padding: var(--spacing-md);
+  gap: var(--spacing-sm);
+  
+  /* Appearance */
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+/* Elements
+   ========================================================================== */
+
+.component__header {
+  /* Header styles */
+}
+
+.component__body {
+  /* Body styles */
+}
+
+.component__footer {
+  /* Footer styles */
+}
+
+/* Modifiers
+   ========================================================================== */
+
+.component--small {
+  padding: var(--spacing-sm);
+}
+
+.component--large {
+  padding: var(--spacing-lg);
+}
+
+/* States
+   ========================================================================== */
+
+.component:hover {
+  /* Hover state */
+}
+
+.component:focus-within {
+  /* Focus state */
+}
+
+.component--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+```
+
+---
+
+## Common Components Library
+
+### Button
+```html
+<button class="btn btn--primary btn--medium">
+  <span class="btn__icon">→</span>
+  <span class="btn__label">Button Text</span>
+</button>
+```
+
+| Modifier | Purpose |
+|----------|---------|
+| `--primary` | Main action |
+| `--secondary` | Secondary action |
+| `--ghost` | Subtle action |
+| `--danger` | Destructive action |
+| `--small/medium/large` | Size variants |
+| `--disabled` | Inactive state |
+| `--loading` | Loading state |
+
+### Card
+```html
+<article class="card card--interactive">
+  <img class="card__image" src="..." alt="...">
+  <div class="card__content">
+    <h3 class="card__title">Title</h3>
+    <p class="card__description">Description</p>
+  </div>
+  <div class="card__actions">
+    <button class="btn btn--primary">Action</button>
+  </div>
+</article>
+```
+
+| Modifier | Purpose |
+|----------|---------|
+| `--interactive` | Clickable card |
+| `--horizontal` | Side-by-side layout |
+| `--featured` | Highlighted card |
+| `--compact` | Less padding |
+
+### Form Field
+```html
+<div class="form-field form-field--error">
+  <label class="form-field__label" for="email">
+    Email
+    <span class="form-field__required">*</span>
+  </label>
+  <input class="form-field__input" type="email" id="email">
+  <span class="form-field__error">Please enter a valid email</span>
+  <span class="form-field__hint">We'll never share your email</span>
+</div>
+```
+
+| Modifier | Purpose |
+|----------|---------|
+| `--error` | Validation error |
+| `--success` | Validation success |
+| `--disabled` | Disabled field |
+| `--required` | Required indicator |
+
+### Modal
+```html
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal__overlay"></div>
+  <div class="modal__container">
+    <header class="modal__header">
+      <h2 class="modal__title" id="modal-title">Modal Title</h2>
+      <button class="modal__close" aria-label="Close modal">×</button>
+    </header>
+    <div class="modal__body">
+      <!-- Content -->
+    </div>
+    <footer class="modal__footer">
+      <button class="btn btn--secondary">Cancel</button>
+      <button class="btn btn--primary">Confirm</button>
+    </footer>
+  </div>
+</div>
+```
+
+---
+
+## Design Tokens
+
+### Spacing Scale
+```css
+:root {
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+}
+```
+
+### Color Palette
+```css
+:root {
+  /* Brand */
+  --color-primary: #0066cc;
+  --color-secondary: #6c757d;
+  
+  /* Semantic */
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-info: #17a2b8;
+  
+  /* Neutral */
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-text: #212529;
+  --color-text-muted: #6c757d;
+  --color-border: #dee2e6;
+}
+```
+
+### Typography Scale
+```css
+:root {
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-md: 1rem;       /* 16px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 2rem;      /* 32px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.75;
+}
+```
+
+---
+
+## Component Checklist
+
+### Structure
+- [ ] Single responsibility (does one thing well)
+- [ ] Self-contained (no external dependencies)
+- [ ] Composable (can be combined with others)
+- [ ] BEM naming convention
 
 ### Accessibility
-- **Keyboard Navigation**: Ensure all interactive elements work with Tab key
-- **Focus Indicators**: Make sure focus states are clearly visible
-- **Screen Reader Support**: Add ARIA labels where needed
+- [ ] Keyboard navigable
+- [ ] Focus indicators visible
+- [ ] ARIA attributes where needed
+- [ ] Color contrast compliant
+- [ ] Screen reader friendly
 
-### Reusability
-- **Modifier Classes**: Add variation classes for different component states
-- **Documentation**: Include usage examples and customization options
-- **Independence**: Make sure component works without external dependencies
+### Responsiveness
+- [ ] Works on mobile (320px+)
+- [ ] Works on tablet (768px+)
+- [ ] Works on desktop (1024px+)
+- [ ] Content adapts gracefully
 
-## Action Items
+### Documentation
+- [ ] Purpose described
+- [ ] Variants documented
+- [ ] Usage examples provided
+- [ ] Accessibility notes included
 
-1. **Fix Critical Issues**: Address accessibility and semantic HTML problems
-2. **Improve Organization**: Apply consistent naming and structure patterns
-3. **Add Documentation**: Create clear usage examples and guidelines
-4. **Test Thoroughly**: Verify component works across different contexts
+---
 
-## Component Quality Checklist
+## Report Format
 
-- [ ] Uses semantic HTML elements appropriately
-- [ ] Has clear, descriptive class names (preferably BEM)
-- [ ] Includes proper alt text for images
-- [ ] Works with keyboard navigation
-- [ ] Is responsive across different screen sizes
-- [ ] Can be reused in different contexts
-- [ ] Has clear documentation and examples
-- [ ] Follows consistent patterns with other components
+### Component Review: `component-review-[YYYY-MM-DD].md`
 
-## Next Steps
+```markdown
+# Component Review
 
-After reviewing the component:
+## Component: [Name]
 
-1. **Prioritize Fixes**: Start with accessibility and semantic HTML issues
-2. **Update Documentation**: Add clear usage examples and customization options
-3. **Test Integration**: Make sure the component works well with others
-4. **Gather Feedback**: Test with real users if possible
-5. **Iterate**: Continuously improve based on usage and feedback
+## Quality Assessment
+| Criteria | Score | Notes |
+|----------|-------|-------|
+| Reusability | ⭐⭐⭐⭐☆ | |
+| Consistency | ⭐⭐⭐⭐⭐ | |
+| Accessibility | ⭐⭐⭐☆☆ | |
+| Responsiveness | ⭐⭐⭐⭐☆ | |
+| Documentation | ⭐⭐☆☆☆ | |
 
-## Best Practices for Components
+## Findings
 
-- **Keep it Simple**: Components should do one thing well
-- **Make it Flexible**: Allow for customization without breaking the design
-- **Document Everything**: Include examples, variations, and usage guidelines
-- **Test Thoroughly**: Verify accessibility, responsiveness, and browser compatibility
-- **Stay Consistent**: Follow the same patterns across all components
-- **Think Reusable**: Design components that can work in multiple contexts
+### Issues
+| Issue | Severity | Fix |
+|-------|----------|-----|
 
+### Suggestions
+| Suggestion | Impact |
+|------------|--------|
 
-
-
-## Tooling & Automation
-
-Recommended tools and commands for frontend development:
-
-### Analysis & Quality Tools
-```bash
-# Frontend code quality
-eslint .
-stylelint "**/*.css"
-prettier --check .
-
-# Accessibility
-pa11y-ci
-axe-cli
+## Recommended Changes
+1. [Change 1]
+2. [Change 2]
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+---
 
-# Identify changed files
-git diff main...HEAD --name-only
-```
+## Severity Guide
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run eslint --all-files
-pre-commit run prettier --all-files
-```
-
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
-
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
-
-
-## Metrics & Validation
-
-Define clear success criteria for outcomes:
-
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: ESLint and Stylelint passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
-
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
-
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+| Level | Icon | Impact | Examples |
+|-------|------|--------|----------|
+| **Critical** | 🔴 | Unusable | Component broken, inaccessible |
+| **High** | 🟠 | Major issue | Not reusable, inconsistent |
+| **Medium** | 🟡 | Should fix | Missing variants, poor docs |
+| **Low** | 🟢 | Enhancement | Could be more polished |

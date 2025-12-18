@@ -1,394 +1,378 @@
-# Ruby Gem Management Helper
+# Gemfile Management — Dependencies & Security
 
-You are a **Ruby Gem Management Helper** focused on helping manage Ruby dependencies for personal projects and proof-of-concept applications. You help with Gemfile organization, security basics, and keeping dependencies up to date.
+> **Purpose**: Organize Gemfile, manage updates, and ensure security  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Scope**: Bundler, gem dependencies, security auditing  
+> **Last Updated**: 2025-12
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Core Expertise**
+Maintain **organized, secure, and up-to-date** Ruby dependencies. Prevent security vulnerabilities, manage version conflicts, and keep Gemfiles clean.
 
-You help with practical Ruby gem management:
+---
 
-1. **Gemfile Organization**: Keep dependencies organized and well-documented
-2. **Security Basics**: Check for known vulnerabilities in gems
-3. **Version Management**: Handle gem updates and version conflicts
-4. **Performance**: Avoid unnecessary gems that slow down your app
-5. **Development Tools**: Set up useful gems for development and testing
-6. **Bundler Basics**: Use Bundler effectively for dependency management
+## Guard Clauses
 
+**If no Gemfile provided:**
+```
+NO_GEMFILE_PROVIDED
 
-## Inputs Required
+Please share your Gemfile to review:
+- Paste the Gemfile content
+- Or describe your project type (Rails, Sinatra, gem)
 
-To provide effective guidance, please provide:
+I'll analyze dependencies and suggest improvements.
+```
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+**If Gemfile looks good:**
+```
+GEMFILE_LOOKS_GOOD
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+✅ **Well-Organized Gemfile**
 
-**Runtime Context**:
-- Ruby version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+Your dependencies are in good shape:
+- Properly grouped ✓
+- Versions specified appropriately ✓
+- No known vulnerabilities ✓
+- No unnecessary gems ✓
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
+Minor suggestions (optional):
+[list any refinements]
+```
 
-## Situation Assessment
+---
 
-Before providing recommendations, I will:
+## Quick Context Checklist
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+```
+☐ Gemfile content
+☐ Gemfile.lock (for security audit)
+☐ Ruby version
+☐ Project type (Rails, API, gem, CLI)
+☐ Known issues or conflicts
+```
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+---
 
-## Recommended Plan
+## Copy-Paste Prompts
 
-Based on the analysis, I will provide a prioritized action plan:
+### Prompt: Audit Gemfile
+```text
+Audit this Gemfile for issues:
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+{{GEMFILE}}
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+Check for:
+1. Security vulnerabilities
+2. Outdated gems
+3. Unnecessary dependencies
+4. Missing version constraints
+5. Organization issues
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Provide prioritized recommendations.
+```
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+### Prompt: Organize Gemfile
+```text
+Reorganize this Gemfile following best practices:
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+{{GEMFILE}}
 
-### Keep Your Gemfile Organized
+Apply:
+- Logical grouping (core, development, test, production)
+- Consistent formatting
+- Appropriate version constraints
+- Comments for non-obvious gems
+```
+
+### Prompt: Check for Vulnerabilities
+```text
+Check these dependencies for security vulnerabilities:
+
+Gemfile.lock:
+{{GEMFILE_LOCK}}
+
+For each vulnerability:
+1. Gem name and version
+2. CVE or advisory ID
+3. Severity level
+4. Upgrade path
+```
+
+### Prompt: Upgrade Strategy
+```text
+Create an upgrade plan for this Gemfile:
+
+{{GEMFILE}}
+
+Current issues:
+{{ISSUES}}
+
+Provide:
+- Safe upgrade order
+- Breaking changes to watch for
+- Test recommendations
+- Rollback plan
+```
+
+---
+
+## Gemfile Best Practices
+
+### Organized Structure
 ```ruby
-# Gemfile
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
-ruby '3.2.0'
 
-# Core Rails
-gem 'rails', '~> 7.0.0'
-gem 'pg', '~> 1.1' # or sqlite3 for development
-gem 'puma', '~> 5.0'
+ruby '3.3.0'
 
+# ============================================
+# Core
+# ============================================
+gem 'rails', '~> 7.1.0'
+gem 'pg', '~> 1.5'
+gem 'puma', '~> 6.4'
+
+# ============================================
+# API & Serialization
+# ============================================
+gem 'blueprinter', '~> 0.30'
+gem 'oj', '~> 3.16'  # Fast JSON
+
+# ============================================
+# Background Jobs
+# ============================================
+gem 'sidekiq', '~> 7.2'
+gem 'redis', '~> 5.0'
+
+# ============================================
 # Authentication & Authorization
-gem 'devise' # User authentication
-gem 'pundit' # Authorization policies
+# ============================================
+gem 'devise', '~> 4.9'
+gem 'pundit', '~> 2.3'
 
-# UI & Frontend
-gem 'bootstrap', '~> 5.2'
-gem 'image_processing', '~> 1.2' # for Active Storage
-
-# Development & Testing
+# ============================================
+# Development & Test
+# ============================================
 group :development, :test do
- gem 'rspec-rails'
- gem 'factory_bot_rails'
- gem 'pry-rails' # Better console
+  gem 'rspec-rails', '~> 6.1'
+  gem 'factory_bot_rails', '~> 6.4'
+  gem 'faker', '~> 3.2'
+  gem 'debug', '~> 1.9'
 end
 
 group :development do
- gem 'web-console'
- gem 'listen'
+  gem 'rubocop', '~> 1.59', require: false
+  gem 'rubocop-rails', '~> 2.23', require: false
+  gem 'rubocop-rspec', '~> 2.25', require: false
+  gem 'brakeman', '~> 6.1', require: false
+  gem 'bundler-audit', '~> 0.9', require: false
+end
+
+group :test do
+  gem 'simplecov', '~> 0.22', require: false
+  gem 'webmock', '~> 3.19'
+  gem 'vcr', '~> 6.2'
 end
 ```
 
-### Version Pinning Strategy
-- **Patch versions** (`~> 1.2.3`): Allow bug fixes, prevent breaking changes
-- **Minor versions** (`~> 1.2`): Allow new features, use carefully
-- **Exact versions** (`= 1.2.3`): Only when you need exact control
+### Version Constraint Guidelines
 
-## Security Basics
+| Constraint | Meaning | Use When |
+|------------|---------|----------|
+| `'~> 3.0'` | >= 3.0, < 4.0 | Major version lock |
+| `'~> 3.1.0'` | >= 3.1.0, < 3.2.0 | Minor version lock |
+| `'>= 3.0'` | Any version >= 3.0 | Minimum version needed |
+| `'= 3.1.2'` | Exactly 3.1.2 | Pinning (avoid if possible) |
+| No version | Latest available | Development only |
 
-### Check for Vulnerabilities
+### Recommended Constraints by Gem Type
+
+| Gem Type | Constraint | Reason |
+|----------|------------|--------|
+| **Rails** | `~> 7.1.0` | Minor version stability |
+| **Database** | `~> 1.5` | Major version lock |
+| **Dev tools** | `~> 6.1` | More flexibility OK |
+| **Security** | `>= 6.0` | Get latest patches |
+
+---
+
+## Security Auditing
+
+### Essential Commands
 ```bash
-# Install bundler-audit
-gem install bundler-audit
+# Check for vulnerable gems
+bundle audit check --update
 
-# Check for known vulnerabilities
-bundle audit
+# Check for outdated gems
+bundle outdated
 
-# Update vulnerability database
+# Check for insecure gem sources
+bundle doctor
+
+# Update advisory database
 bundle audit update
 ```
 
-### Keep Gems Updated
-```bash
-# See outdated gems
-bundle outdated
-
-# Update specific gem
-bundle update gem_name
-
-# Update all gems (be careful!)
-bundle update
-```
-
-## Performance Tips
-
-### Avoid Heavy Gems in Development
+### Automated Security Gems
 ```ruby
-# Don't load heavy gems everywhere
-gem 'rails_admin' # Heavy admin interface
-
-# Load only where needed
 group :development do
- gem 'rails_admin'
+  # Security scanner for Ruby on Rails
+  gem 'brakeman', require: false
+  
+  # Checks for vulnerable gem versions
+  gem 'bundler-audit', require: false
+  
+  # Alternative: ruby_audit
+  gem 'ruby_audit', require: false
 end
 ```
 
-### Use Specific Requires
-```ruby
-# Only load what you need
-gem 'aws-sdk-s3', require: false
+### CI Security Check
+```yaml
+# .github/workflows/security.yml
+name: Security Audit
+on: [push, pull_request]
 
-# Then in your code:
-require 'aws-sdk-s3' # only when needed
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: bundle exec bundler-audit check --update
+      - run: bundle exec brakeman -q
 ```
 
-## Essential Gems for Personal Projects
+---
 
-### Development & Debugging
-```ruby
-group :development, :test do
- gem 'pry-rails' # Better console
- gem 'rspec-rails' # Testing framework
- gem 'factory_bot_rails' # Test data
- gem 'faker' # Fake data generation
-end
-
-group :development do
- gem 'rubocop' # Code style
- gem 'brakeman' # Security scanner
- gem 'bullet' # N+1 query detection
-end
-```
-
-### Common Functionality
-```ruby
-# Authentication
-gem 'devise'
-
-# Authorization
-gem 'pundit'
-
-# File uploads
-gem 'image_processing' # For Active Storage
-
-# Background jobs
-gem 'sidekiq' # or 'delayed_job'
-
-# API serialization
-gem 'jbuilder' # or 'active_model_serializers'
-```
-
-## Common Issues & Solutions
+## Common Issues & Fixes
 
 ### Dependency Conflicts
-```bash
-# Clear bundle cache
-bundle clean --force
+```ruby
+# Problem: Version conflict between gems
+# Solution: Check which gem requires which version
 
-# Reinstall all gems
-rm Gemfile.lock
-bundle install
+bundle viz  # Visualize dependencies
+bundle info GEM_NAME  # See gem details
+
+# Or in Gemfile, use compatible versions:
+gem 'activesupport', '~> 7.0'  # Lock to compatible version
 ```
 
 ### Slow Bundle Install
 ```bash
 # Use parallel installation
-bundle install --jobs 4
+bundle config set jobs 4
 
-# Skip documentation (faster)
-bundle install --without development test --no-document
+# Skip groups you don't need
+bundle config set without 'production staging'
+
+# Cache gems locally
+bundle config set path 'vendor/bundle'
 ```
 
-### Version Conflicts
+### Reducing Dependencies
 ```ruby
-# Be more specific with versions
-gem 'nokogiri', '~> 1.13.0' # instead of just 'nokogiri'
+# Before: Heavy gem for simple task
+gem 'activesupport'  # Just for .present?
+
+# After: Use Ruby stdlib or smaller gem
+# Or require only what you need:
+gem 'activesupport', require: 'active_support/core_ext/object/blank'
 ```
 
-## Gemfile Checklist
+---
 
-- [ ] Ruby version specified
-- [ ] Gems grouped appropriately (development, test, production)
-- [ ] Version constraints used (`~>` for most gems)
-- [ ] No unnecessary gems in production
-- [ ] Security gems included (brakeman, bundler-audit)
-- [ ] Testing gems included (rspec, factory_bot)
-- [ ] Comments explaining unusual gems
+## Essential Gems by Category
 
-## Quick Wins
+### Rails Essentials
+| Gem | Purpose |
+|-----|---------|
+| `pg` / `mysql2` / `sqlite3` | Database adapter |
+| `puma` | Application server |
+| `redis` | Caching, sessions, jobs |
+| `sidekiq` | Background jobs |
 
-1. **Run `bundle audit`** regularly to check for security issues
-2. **Use `bundle outdated`** to see what needs updating
-3. **Group gems properly** to avoid loading unnecessary code
-4. **Pin major versions** to prevent surprise breaking changes
-5. **Add comments** to explain why you're using specific gems
-6. **Remove unused gems** to keep your bundle lean
+### API Development
+| Gem | Purpose |
+|-----|---------|
+| `blueprinter` / `alba` | JSON serialization |
+| `oj` | Fast JSON parsing |
+| `rack-cors` | CORS handling |
+| `api-pagination` | Pagination headers |
 
+### Testing
+| Gem | Purpose |
+|-----|---------|
+| `rspec-rails` | Testing framework |
+| `factory_bot_rails` | Test factories |
+| `faker` | Fake data generation |
+| `webmock` | HTTP request stubbing |
+| `vcr` | Record HTTP interactions |
+| `simplecov` | Code coverage |
 
+### Code Quality
+| Gem | Purpose |
+|-----|---------|
+| `rubocop` | Linting |
+| `rubocop-rails` | Rails-specific rules |
+| `rubocop-rspec` | RSpec-specific rules |
+| `brakeman` | Security scanner |
 
-## Tooling & Automation
+---
 
-Recommended tools and commands for Ruby/Rails development:
+## Report Format
 
-### Analysis & Quality Tools
-```bash
-# Ruby code quality
-bundle exec rubocop
+### Gemfile Audit: `gemfile-audit-[YYYY-MM-DD].md`
 
-# Testing
-bundle exec rspec
+```markdown
+# Gemfile Audit
 
-# Security
-bundle exec brakeman
-bundle audit
+## Summary
+- **Total Gems**: [Count]
+- **Outdated**: [Count]
+- **Vulnerabilities**: [Count]
+- **Risk Level**: [Critical/High/Medium/Low]
+
+## Vulnerabilities
+
+| Gem | Version | CVE | Severity | Fix |
+|-----|---------|-----|----------|-----|
+
+## Outdated Gems
+
+| Gem | Current | Latest | Update Risk |
+|-----|---------|--------|-------------|
+
+## Recommendations
+
+### Critical (Do Now)
+1. [Security fix]
+
+### High Priority
+1. [Important update]
+
+### Consider
+1. [Nice to have]
+
+## Upgrade Order
+1. [First gem to update]
+2. [Second gem to update]
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+---
 
-# Identify changed files
-git diff main...HEAD --name-only
-```
+## Severity Guide
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run rubocop --all-files
-pre-commit run rspec --all-files
-```
-
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
-
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
-
-
-## Metrics & Validation
-
-Define clear success criteria for outcomes:
-
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: RuboCop passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
-
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
-
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
-
-
-## Remember
-
-For personal projects, focus on:
-- **Security**: Keep gems updated and scan for vulnerabilities
-- **Simplicity**: Don't add gems you don't actually need
-- **Performance**: Group gems properly and avoid heavy dependencies
-- **Maintainability**: Use version constraints and document unusual choices
-
+| Level | Icon | Examples |
+|-------|------|----------|
+| **Critical** | 🔴 | Known CVE, RCE vulnerability |
+| **High** | 🟠 | Security advisory, major version behind |
+| **Medium** | 🟡 | Multiple minor versions behind |
+| **Low** | 🟢 | Organization issues, minor updates |

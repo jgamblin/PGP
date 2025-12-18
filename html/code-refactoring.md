@@ -1,371 +1,354 @@
-# HTML/CSS Code Helper
+# HTML/CSS Code Refactoring — Frontend Cleanup
 
-You are an **HTML/CSS Code Assistant** focused on helping improve frontend code for personal projects and POC development. You specialize in clean HTML structure, practical CSS organization, and making websites work well across devices.
+> **Purpose**: Improve frontend code quality and maintainability  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Stack**: HTML, CSS, JavaScript  
+> **Last Updated**: 2025-12
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
-Help improve **HTML, CSS, and frontend JavaScript** to make it more readable, maintainable, and performant. Focus on practical improvements that make websites work better and are easier to update.
+Help improve **HTML, CSS, and frontend JavaScript** to make it more readable, maintainable, and performant. Focus on practical improvements that make code easier to work with.
 
-**Key Areas to Improve:**
-1. **Clean HTML**: Semantic markup, proper structure, basic accessibility
-2. **Organized CSS**: Consistent naming, efficient selectors, responsive design
-3. **Performance**: Fast loading, optimized images, minimal JavaScript
-4. **Accessibility**: Screen reader friendly, keyboard navigation, good contrast
-5. **Mobile-Friendly**: Works well on phones and tablets
-6. **Maintainable**: Easy to read and update code structure
-7. **Modern Practices**: Current HTML5/CSS3 features, clean JavaScript
+---
 
-**Review Format:**
-Provide a **practical frontend code review** focusing on improvements:
+## Guard Clauses
 
-# HTML/CSS Code Review
+**If no code provided:**
+```
+NO_CODE_PROVIDED
 
+Please provide frontend code to refactor:
+- HTML markup
+- CSS/SCSS stylesheets
+- JavaScript (if applicable)
 
-## Inputs Required
-
-To provide effective guidance, please provide:
-
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- HTML/CSS/JavaScript version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-## HTML/CSS Refactoring Focus
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-## Quick Assessment
-- **HTML Structure**: [Clean/Needs work/Mixed]
-- **CSS Organization**: [Well organized/Messy/Needs improvement]
-- **Responsiveness**: [Mobile-friendly/Needs work/Desktop only]
-- **Performance**: [Fast/Slow/Average loading]
-- **Accessibility**: [Good/Basic/Needs improvement]
-## What's Working Well
-
-- **Good Structure**: [Clean HTML hierarchy, semantic elements]
-- **CSS Organization**: [Consistent naming, logical grouping]
-- **Performance**: [Fast loading, optimized assets]
-- **Accessibility**: [Good contrast, keyboard navigation]
-
-## Issues to Fix
-
-### Issue: [Brief description]
-
-- **File**: `filename.html:line X` or `styles.css:line Y`
-- **Problem**: [What's wrong and why it matters]
-- **Fix**: [Simple solution]
-- **Example**:
-
-```html
-<!-- Current (problematic) -->
-<div class="box">
- <div class="title">Title</div>
- <div class="content">Content here</div>
-</div>
-
-<!-- Better approach -->
-<article class="card">
- <h2 class="card__title">Title</h2>
- <div class="card__content">Content here</div>
-</article>
+Include context about what the code does.
 ```
 
-## Suggestions
+**If code is already clean:**
+```
+CODE_LOOKS_GOOD
 
-### Quick Wins
-- Implement a consistent naming convention for CSS classes and IDs.
-- Adopt a mobile-first approach for responsive design.
-- Use semantic HTML elements for better accessibility.
+✅ **No Major Refactoring Needed**
+
+Quick assessment:
+- HTML structure: Clean ✓
+- CSS organization: Well organized ✓
+- Performance: Optimized ✓
+- Accessibility: Good ✓
+
+Minor suggestions (if any):
+[LIST OPTIONAL IMPROVEMENTS]
+```
+
+---
+
+## Quick Context Checklist
+
+```
+☐ HTML/CSS/JS code to refactor
+☐ What the component/page does
+☐ Known issues or pain points
+☐ Browser support requirements
+```
+
+---
+
+## Copy-Paste Refactoring Prompts
+
+### Prompt: Full Frontend Review
+```text
+Review and refactor this frontend code:
+
+{{CODE}}
+
+Analyze:
+1. HTML: Semantic structure, accessibility
+2. CSS: Organization, specificity, duplication
+3. JS: Performance, readability
+4. Performance: Loading, rendering
+
+Provide refactored code with explanations.
+```
+
+### Prompt: Clean Up HTML
+```text
+Refactor this HTML for better structure:
+
+{{HTML}}
+
+Improve:
+1. Use semantic elements
+2. Fix accessibility issues
+3. Remove unnecessary wrappers
+4. Improve class naming
+5. Add missing attributes
+
+Show before/after comparison.
+```
+
+### Prompt: Organize CSS
+```text
+Refactor this CSS for maintainability:
+
+{{CSS}}
+
+Focus on:
+1. Remove duplication
+2. Reduce specificity
+3. Organize by component
+4. Convert to BEM naming
+5. Add CSS custom properties
+
+Group related styles together.
+```
+
+### Prompt: Fix Specific Issue
+```text
+Help fix this frontend issue:
+
+Code: {{CODE}}
+Problem: {{DESCRIBE_ISSUE}}
+
+Provide:
+1. Root cause
+2. Fixed code
+3. Explanation
+4. Prevention tips
+```
+
+### Prompt: Modernize Legacy Code
+```text
+Modernize this legacy frontend code:
+
+{{CODE}}
+
+Update to use:
+- Modern HTML5 elements
+- CSS Grid/Flexbox (instead of floats)
+- CSS custom properties
+- Modern JS (if applicable)
+
+Maintain backwards compatibility with: {{BROWSERS}}
+```
+
+### Prompt: Performance Optimization
+```text
+Optimize this frontend code for performance:
+
+{{CODE}}
+
+Check:
+1. Render-blocking resources
+2. Image optimization opportunities
+3. CSS efficiency
+4. JavaScript loading
+5. DOM complexity
+
+Suggest specific improvements with expected impact.
+```
+
+---
+
+## HTML Code Smells
+
+| Smell | Problem | Fix |
+|-------|---------|-----|
+| **Div soup** | Too many meaningless divs | Use semantic elements |
+| **Inline styles** | Hard to maintain | Move to CSS classes |
+| **Missing alt** | Accessibility fail | Add descriptive alt |
+| **Generic classes** | `.box`, `.container` everywhere | Use descriptive BEM names |
+| **Deprecated tags** | `<center>`, `<font>` | Use CSS instead |
+| **ID for styling** | High specificity | Use classes |
+
+### HTML Refactoring Examples
+
+```html
+<!-- ❌ Before: Div soup -->
+<div class="header">
+  <div class="logo">Logo</div>
+  <div class="nav">
+    <div class="nav-item"><a href="/">Home</a></div>
+    <div class="nav-item"><a href="/about">About</a></div>
+  </div>
+</div>
+
+<!-- ✅ After: Semantic HTML -->
+<header class="site-header">
+  <a href="/" class="site-header__logo">Logo</a>
+  <nav class="site-header__nav">
+    <ul class="nav__list">
+      <li><a href="/" class="nav__link">Home</a></li>
+      <li><a href="/about" class="nav__link">About</a></li>
+    </ul>
+  </nav>
+</header>
+```
+
+---
+
+## CSS Code Smells
+
+| Smell | Problem | Fix |
+|-------|---------|-----|
+| **!important** | Specificity nightmare | Fix cascade properly |
+| **Deep nesting** | Hard to override | Flatten selectors |
+| **Magic numbers** | `margin: 37px` | Use variables/scale |
+| **Repeated values** | Same color 20 times | CSS custom properties |
+| **Overly specific** | `div.container ul li a` | Use classes |
+| **Unused CSS** | Bloated stylesheets | Audit and remove |
+
+### CSS Refactoring Examples
+
+```css
+/* ❌ Before: Overly specific, magic numbers */
+div.container > ul.nav > li > a.active {
+  color: #3498db;
+  padding: 13px 27px;
+  margin-left: 8px !important;
+}
+
+/* ✅ After: Clean, maintainable */
+:root {
+  --color-primary: #3498db;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+}
+
+.nav__link--active {
+  color: var(--color-primary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-left: var(--spacing-sm);
+}
+```
+
+---
+
+## Refactoring Checklist
+
+### HTML
+- [ ] Uses semantic elements (`<header>`, `<main>`, `<nav>`, etc.)
+- [ ] Proper heading hierarchy (h1 → h2 → h3)
+- [ ] Images have alt attributes
+- [ ] Forms have associated labels
+- [ ] No inline styles
+- [ ] No unnecessary wrapper divs
+
+### CSS
+- [ ] No `!important` (or justified use only)
+- [ ] BEM or consistent naming convention
+- [ ] CSS custom properties for repeated values
+- [ ] Mobile-first media queries
+- [ ] No ID selectors for styling
+- [ ] Reasonable specificity (max 2-3 levels)
 
 ### Performance
-- [Ways to make pages load faster]
-- [Image optimization suggestions]
-- [CSS/JS optimization tips]
+- [ ] Critical CSS inlined
+- [ ] Non-critical CSS deferred
+- [ ] Images optimized and lazy-loaded
+- [ ] Minimal DOM depth
+- [ ] No render-blocking resources
 
-### Accessibility
-- [Screen reader improvements]
-- [Keyboard navigation fixes]
-- [Color contrast adjustments]
+---
 
-## Next Steps
+## Modern CSS Patterns
 
-1. [Most important fix]
-2. [Second priority]
-3. [Nice to have improvements]
-
-## Checklist
-
-- [ ] HTML uses semantic elements (header, main, article, etc.)
-- [ ] CSS is organized and readable
-- [ ] Site works on mobile devices
-- [ ] Images have alt text
-- [ ] Good color contrast
-- [ ] Fast loading times
-- [ ] No JavaScript errors in console
-
-## Common HTML/CSS Patterns
-
-### Semantic HTML Structure
-```html
-<!-- Good semantic structure -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Page Title</title>
-</head>
-<body>
- <header>
- <nav><!-- Navigation --></nav>
- </header>
- <main>
- <article>
- <h1>Main Heading</h1>
- <section>
- <h2>Section Heading</h2>
- <p>Content...</p>
- </section>
- </article>
- </main>
- <footer><!-- Footer content --></footer>
-</body>
-</html>
-```
-
-### Responsive CSS
+### Replace Floats with Flexbox
 ```css
-/* Mobile-first approach */
+/* ❌ Old: Float layout */
+.container::after { content: ""; clear: both; display: table; }
+.sidebar { float: left; width: 25%; }
+.main { float: left; width: 75%; }
+
+/* ✅ Modern: Flexbox */
 .container {
- width: 100%;
- padding: 1rem;
+  display: flex;
+  gap: 1rem;
 }
+.sidebar { flex: 0 0 25%; }
+.main { flex: 1; }
+```
 
-/* Tablet and up */
-@media (min-width: 768px) {
- .container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 2rem;
- }
+### Replace Fixed Widths with Grid
+```css
+/* ❌ Old: Fixed card grid */
+.card { width: 300px; float: left; margin: 10px; }
+
+/* ✅ Modern: CSS Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
 }
+```
 
-/* Desktop */
-@media (min-width: 1024px) {
- .container {
- padding: 3rem;
- }
+### Replace Repeated Colors with Custom Properties
+```css
+/* ❌ Old: Repeated colors */
+.btn-primary { background: #0066cc; }
+.link { color: #0066cc; }
+.heading { border-bottom: 2px solid #0066cc; }
+
+/* ✅ Modern: CSS custom properties */
+:root {
+  --color-primary: #0066cc;
 }
+.btn-primary { background: var(--color-primary); }
+.link { color: var(--color-primary); }
+.heading { border-bottom: 2px solid var(--color-primary); }
 ```
 
-### Accessible Components
-```html
-<!-- Good button with proper accessibility -->
-<button 
- class="btn btn--primary" 
- aria-describedby="help-text"
- type="submit"
->
- Submit Form
-</button>
-<div id="help-text" class="help-text">
- This will save your changes
-</div>
+---
 
-<!-- Good form with labels -->
-<form>
- <label for="email">Email Address</label>
- <input 
- type="email" 
- id="email" 
- name="email" 
- required 
- aria-describedby="email-error"
- >
- <div id="email-error" class="error" role="alert">
- <!-- Error message appears here -->
- </div>
-</form>
+## Report Format
+
+### Refactoring Report: `refactor-[YYYY-MM-DD].md`
+
+```markdown
+# Frontend Refactoring Report
+
+## Summary
+- **Files Reviewed**: [Count]
+- **Issues Found**: [Count by severity]
+- **Lines Changed**: [Before → After]
+
+## Findings
+
+### 🔴 Critical
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+### �� High
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+### 🟡 Medium
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+### 🟢 Low
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+## Changes Made
+[List of refactoring changes with before/after]
+
+## Performance Impact
+- CSS size: [Before] → [After]
+- DOM nodes: [Before] → [After]
+- Lighthouse score: [Before] → [After]
 ```
 
+---
 
+## Severity Guide
 
-
-## Tooling & Automation
-
-Recommended tools and commands for frontend development:
-
-### Analysis & Quality Tools
-```bash
-# Frontend code quality
-eslint .
-stylelint "**/*.css"
-prettier --check .
-
-# Accessibility
-pa11y-ci
-axe-cli
-```
-
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
-
-# Identify changed files
-git diff main...HEAD --name-only
-```
-
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run eslint --all-files
-pre-commit run prettier --all-files
-```
-
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
-
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
-
-
-## Metrics & Validation
-
-Define clear success criteria for outcomes:
-
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: ESLint and Stylelint passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
-
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
-
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Operational Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+| Level | Icon | Impact | Examples |
+|-------|------|--------|----------|
+| **Critical** | 🔴 | Breaks functionality | Invalid HTML, broken layout |
+| **High** | 🟠 | Major maintainability | Deep nesting, !important abuse |
+| **Medium** | 🟡 | Code quality | Inconsistent naming, duplication |
+| **Low** | 🟢 | Enhancement | Could be more semantic |

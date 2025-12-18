@@ -1,237 +1,145 @@
-# HTML/CSS Assistant Prompts
+# HTML/CSS Prompts — Index
 
-## Purpose
-This folder contains HTML/CSS helper prompts designed for personal projects and proof-of-concept sites. These assistants provide practical guidance on HTML structure, CSS styling, accessibility basics, and performance optimization.
-
-## Available Assistants
-- **Accessibility Helper**: Basic accessibility improvements and WCAG compliance
-- **Semantic Markup Helper**: Proper HTML structure and semantic elements
-- **Performance Helper**: Core Web Vitals optimization and loading improvements
-- **BEM Helper**: CSS naming conventions and architecture
-- **Navigation Helper**: User-friendly navigation design
-- **Component Helper**: Reusable component patterns
-- **Code Review Assistant**: Practical feedback on HTML/CSS code
-- **Documentation Assistant**: Clear documentation for frontend projects
-
-
-## Inputs Required
-
-To provide effective guidance, please provide:
-
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- HTML/CSS/JavaScript version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-## How to Use These Prompts
-1. Choose the assistant that matches your needs (e.g., accessibility-check.md for accessibility help)
-2. Focus on practical, actionable improvements for personal projects
-3. Prioritize user experience and accessibility over complex enterprise solutions
-4. Make incremental improvements rather than complete rewrites
-5. Test changes on real devices and with real users when possible
-
-## Best Practices
-- Start with accessibility and semantic HTML basics
-- Focus on the most impactful changes first
-- Keep solutions simple and maintainable
-- Test with keyboard navigation and screen readers when possible
-- Optimize for mobile devices and slow connections
-
-## Typical Workflow
-1. Review current HTML/CSS structure
-2. Identify high-priority accessibility and performance issues
-3. Make targeted improvements with clear before/after examples
-4. Test changes across different browsers and devices
-5. Document decisions for future reference
+> **Purpose**: Quick reference for all HTML/CSS prompts  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Stack**: HTML, CSS, JavaScript, Accessibility  
+> **Last Updated**: 2025-12
 
 ---
-For other domains, see agents.md in the generic, python, or ruby folders.
 
+## Available Prompts
 
+| Prompt | Purpose | Use When |
+|--------|---------|----------|
+| [accessibility-check.md](accessibility-check.md) | WCAG compliance & a11y | Making sites accessible |
+| [semantic-markup-refinement.md](semantic-markup-refinement.md) | Proper HTML elements | Improving structure |
+| [performance-core-web-vitals-audit.md](performance-core-web-vitals-audit.md) | Core Web Vitals | Site is slow |
+| [bem-naming-convention.md](bem-naming-convention.md) | CSS organization | Messy stylesheets |
+| [navigation-consistency.md](navigation-consistency.md) | Nav patterns | Building menus |
+| [component-design-system-review.md](component-design-system-review.md) | Reusable components | Creating UI library |
+| [code-refactoring.md](code-refactoring.md) | Clean up code | Technical debt |
+| [pr-review-feedback.md](pr-review-feedback.md) | Review changes | Before merging |
+| [documentation-generation.md](documentation-generation.md) | Write docs | New projects |
+| [project-repo.md](project-repo.md) | Project setup | Starting fresh |
+| [copilot-instructions.md](copilot-instructions.md) | AI configuration | Copilot setup |
 
+---
 
-## Tooling & Automation
+## Quick Start Prompts
 
-Recommended tools and commands for frontend development:
+### Fix Accessibility Issues
+```text
+Review this HTML for accessibility:
 
-### Analysis & Quality Tools
-```bash
-# Frontend code quality
-eslint .
-stylelint "**/*.css"
-prettier --check .
+{{CODE}}
 
-# Accessibility
-pa11y-ci
-axe-cli
+Check WCAG 2.1 AA compliance:
+1. Missing alt text
+2. Form labels
+3. Color contrast
+4. Keyboard navigation
+5. ARIA usage
+
+Prioritize fixes by impact.
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+### Improve Performance
+```text
+Audit this page for Core Web Vitals:
 
-# Identify changed files
-git diff main...HEAD --name-only
+{{HTML}}
+
+Focus on:
+- LCP (Largest Contentful Paint) < 2.5s
+- FID (First Input Delay) < 100ms
+- CLS (Cumulative Layout Shift) < 0.1
+
+Suggest specific fixes.
 ```
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run eslint --all-files
-pre-commit run prettier --all-files
+### Clean Up CSS
+```text
+Refactor this CSS using BEM methodology:
+
+{{CSS}}
+
+Convert to:
+- Block__Element--Modifier naming
+- Remove deeply nested selectors
+- Consolidate duplicate styles
+- Organize by component
 ```
 
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
+### Review HTML Structure
+```text
+Review this HTML for semantic markup:
 
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
+{{HTML}}
+
+Check:
+1. Proper use of semantic elements
+2. Heading hierarchy (h1-h6)
+3. Landmark regions
+4. List structure
+5. Form organization
+
+Show before/after examples.
 ```
 
+---
 
-## Metrics & Validation
+## Severity Guide
 
-Define clear success criteria for outcomes:
+| Level | Icon | Meaning | Examples |
+|-------|------|---------|----------|
+| **Critical** | 🔴 | Breaks functionality | Missing form labels, broken navigation |
+| **High** | 🟠 | Major UX/a11y issue | No alt text, poor contrast |
+| **Medium** | 🟡 | Should fix | Non-semantic HTML, unoptimized images |
+| **Low** | 🟢 | Nice to have | CSS organization, minor improvements |
 
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: ESLint and Stylelint passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
+---
 
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
+## Common Workflows
 
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
+### New Project Setup
+1. Start with [project-repo.md](project-repo.md) for structure
+2. Use [copilot-instructions.md](copilot-instructions.md) for AI config
+3. Apply [bem-naming-convention.md](bem-naming-convention.md) for CSS
 
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
+### Code Review
+1. Run [accessibility-check.md](accessibility-check.md) first
+2. Check [performance-core-web-vitals-audit.md](performance-core-web-vitals-audit.md)
+3. Use [pr-review-feedback.md](pr-review-feedback.md) for final review
 
+### Refactoring
+1. Start with [semantic-markup-refinement.md](semantic-markup-refinement.md)
+2. Apply [code-refactoring.md](code-refactoring.md)
+3. Organize with [component-design-system-review.md](component-design-system-review.md)
 
+---
 
-## Follow-Up & Continuous Improvement
+## HTML/CSS Best Practices
 
-### Feedback Loop
-After implementing changes:
+### Accessibility First
+- All images have descriptive `alt` text
+- Forms have associated `<label>` elements
+- Color contrast meets WCAG AA (4.5:1 for text)
+- All functionality works via keyboard
 
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
+### Semantic HTML
+- Use `<header>`, `<nav>`, `<main>`, `<footer>`
+- Proper heading hierarchy (one `<h1>` per page)
+- Lists for related items (`<ul>`, `<ol>`)
+- `<button>` for actions, `<a>` for navigation
 
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
+### Performance
+- Optimize and lazy-load images
+- Minimize CSS/JS bundles
+- Use modern image formats (WebP, AVIF)
+- Set explicit `width`/`height` on images
 
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+### CSS Organization
+- BEM naming: `.block__element--modifier`
+- Mobile-first responsive design
+- CSS custom properties for theming
+- Avoid deep nesting (max 3 levels)

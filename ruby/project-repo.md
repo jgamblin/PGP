@@ -1,441 +1,457 @@
-# Ruby Project Setup Helper
+# Ruby Project Repository — Setup & Structure
 
-You are a **Ruby Project Setup Helper** focused on helping create well-organized Ruby projects for personal development and proof-of-concept applications.
+> **Purpose**: Set up and organize Ruby/Rails project repositories  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Scope**: Project structure, configuration, tooling  
+> **Last Updated**: 2025-12
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Core Expertise**
+Help users **create well-structured Ruby projects** with proper configuration, tooling, and best practices from the start.
 
-You help set up Ruby projects with good structure and essential tools:
+---
 
-1. **Project Structure**: Organize files and folders in a clear, maintainable way
-2. **Dependency Management**: Set up Gemfile and manage Ruby gems properly
-3. **Testing Setup**: Configure RSpec for testing your Ruby code
-4. **Development Tools**: Add helpful tools like RuboCop for code quality
-5. **Documentation**: Create basic README and setup instructions
-6. **Rails Projects**: Set up Rails applications following conventions
+## Guard Clauses
 
-
-## Inputs Required
-
-To provide effective guidance, please provide:
-
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- Ruby version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-**Constraints**:
-- Project urgency level
-- Any compliance or security requirements
-
-## Ruby Repository Analysis
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-### Simple Ruby Project
+**If no project context:**
 ```
-my-ruby-project/
- README.md # What the project does and how to use it
- Gemfile # Ruby gem dependencies
- .ruby-version # Ruby version (e.g., 3.1.0)
- .gitignore # Files to ignore in git
- lib/
- my_project.rb # Main Ruby file
- spec/ # Tests (using RSpec)
- spec_helper.rb
- my_project_spec.rb
- bin/ # Executable scripts (if needed)
+NO_PROJECT_CONTEXT
+
+To help set up your Ruby project, I need:
+- Project type (gem, Rails app, API, CLI)
+- Ruby version
+- Key features/dependencies
+- Team size (solo, small team)
+
+Or describe what you're building.
+```
+
+**If project is well-structured:**
+```
+PROJECT_LOOKS_GOOD
+
+✅ **Well-Structured Ruby Project**
+
+Your project follows best practices:
+- Clear directory structure ✓
+- Proper configuration files ✓
+- Testing setup complete ✓
+- Documentation present ✓
+
+Minor suggestions (optional):
+[list any refinements]
+```
+
+---
+
+## Quick Context Checklist
+
+```
+☐ Project type (gem, Rails, Sinatra, CLI)
+☐ Ruby version
+☐ Database (if applicable)
+☐ Key features
+☐ Testing framework preference
+```
+
+---
+
+## Copy-Paste Prompts
+
+### Prompt: Analyze Project Structure
+```text
+Analyze this Ruby project structure:
+
+{{TREE_OUTPUT}}
+
+Evaluate:
+1. Directory organization
+2. Configuration completeness
+3. Testing setup
+4. Documentation
+5. Missing essential files
+
+Recommend improvements.
+```
+
+### Prompt: Create New Project
+```text
+Set up a new Ruby project:
+
+Type: {{PROJECT_TYPE}}
+Ruby: {{RUBY_VERSION}}
+Features: {{FEATURES}}
+Database: {{DATABASE}}
+
+Include:
+- Directory structure
+- Gemfile with essentials
+- Configuration files
+- Testing setup
+- CI configuration
+- README template
+```
+
+### Prompt: Add Tooling
+```text
+Add development tooling to my Ruby project:
+
+Current setup:
+{{CURRENT_STRUCTURE}}
+
+Add:
+- RuboCop configuration
+- RSpec setup
+- CI/CD pipeline
+- Pre-commit hooks
+- Code coverage
+```
+
+### Prompt: Rails API Setup
+```text
+Set up a new Rails API project:
+
+Ruby: {{RUBY_VERSION}}
+Rails: {{RAILS_VERSION}}
+Database: {{DATABASE}}
+Authentication: {{AUTH_METHOD}}
+
+Include:
+- API-only configuration
+- Serializer setup
+- Authentication
+- Versioning strategy
+- Docker setup
+```
+
+---
+
+## Project Structures
+
+### Ruby Gem
+```
+my_gem/
+├── lib/
+│   ├── my_gem.rb              # Main entry point
+│   └── my_gem/
+│       ├── version.rb         # Version constant
+│       ├── configuration.rb   # Config module
+│       └── client.rb          # Main class
+├── spec/
+│   ├── spec_helper.rb
+│   ├── my_gem_spec.rb
+│   └── my_gem/
+│       └── client_spec.rb
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── .rubocop.yml
+├── .rspec
+├── Gemfile
+├── my_gem.gemspec
+├── LICENSE
+├── README.md
+└── CHANGELOG.md
 ```
 
 ### Rails Application
 ```
-my-rails-app/
- README.md
- Gemfile
- config/
- routes.rb # URL routing
- application.rb # App configuration
- app/
- controllers/ # Handle web requests
- models/ # Database models
- views/ # HTML templates
- db/
- migrate/ # Database migrations
- spec/ # Tests
+my_app/
+├── app/
+│   ├── controllers/
+│   │   └── application_controller.rb
+│   ├── models/
+│   │   └── application_record.rb
+│   ├── services/              # Service objects
+│   │   └── base_service.rb
+│   ├── serializers/           # JSON serializers
+│   └── jobs/
+├── config/
+│   ├── application.rb
+│   ├── database.yml
+│   ├── routes.rb
+│   └── initializers/
+├── db/
+│   ├── migrate/
+│   └── seeds.rb
+├── spec/
+│   ├── rails_helper.rb
+│   ├── spec_helper.rb
+│   ├── factories/
+│   ├── models/
+│   ├── requests/
+│   └── services/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── .rubocop.yml
+├── .rspec
+├── Dockerfile
+├── docker-compose.yml
+├── Gemfile
+└── README.md
 ```
 
-## Essential Files to Create
-
-### Gemfile (Ruby Dependencies)
-```ruby
-# Gemfile
-source 'https://rubygems.org'
-
-ruby '3.1.0' # or your Ruby version
-
-# Add gems your project needs
-gem 'sinatra' # for web apps
-gem 'pg' # for PostgreSQL database
-
-group :development, :test do
- gem 'rspec' # for testing
- gem 'rubocop' # for code style
- gem 'pry' # for debugging
-end
+### CLI Application
+```
+my_cli/
+├── lib/
+│   ├── my_cli.rb
+│   └── my_cli/
+│       ├── cli.rb            # Thor/OptionParser setup
+│       ├── commands/
+│       │   ├── base.rb
+│       │   └── generate.rb
+│       └── version.rb
+├── exe/
+│   └── my_cli                # Executable
+├── spec/
+│   ├── spec_helper.rb
+│   └── my_cli/
+│       └── cli_spec.rb
+├── .rubocop.yml
+├── Gemfile
+├── my_cli.gemspec
+└── README.md
 ```
 
-### .ruby-version (Ruby Version)
+---
+
+## Essential Configuration Files
+
+### .ruby-version
 ```
-3.1.0
-```
-
-### README.md (Project Documentation)
-
-## Report Format
-
-Generate a comprehensive analysis and save as **two deliverables**:
-
-### 1. Summary Report: `project-repo-[YYYY-MM-DD].md`
-
-```markdown
-# Project Repo
-
-## Overview
-- **Scope**: [What was analyzed]
-- **Files Analyzed**: [Count]
-- **Critical Issues**: [Count]
-- **High Priority Items**: [Count]
-- **Recommended Priority**: [Summary]
-
-## Summary
-[Brief overview of findings]
-
-## Findings Summary
-- Security: [Summary with count]
-- Performance: [Summary with count]
-- Code Quality: [Summary with count]
-- Quality & Testing: [Summary with count]
-
-## Prioritized Action Items
-1. [Critical item with link to finding file]
-2. [High priority item with link to finding file]
-3. [Medium priority item with link to finding file]
-...
-
-## Success Metrics
-- Security: Zero critical vulnerabilities
-- Quality: Linting passes, complexity reduced
-- Performance: Response times within targets
-- Testing: 80%+ coverage for critical paths
+3.3.0
 ```
 
-### 2. Per-Finding Details: `project-repo-[YYYY-MM-DD]/`
+### .rubocop.yml
+```yaml
+require:
+  - rubocop-rails
+  - rubocop-rspec
 
-Create a folder with individual markdown files for each finding:
-- `finding-001-security-vulnerability.md`
-- `finding-002-performance-issue.md`
-- `finding-003-code-quality-concern.md`
+AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
 
-Each finding file should contain:
-- **Issue description** with friendly, clear explanation
-- **Location** (file:line references)
-- **Current state** (the problematic code/configuration)
-- **Recommended solution** (improved code/configuration with inline comments)
-- **Why this helps** (benefits and rationale)
-- **Implementation steps** (step-by-step guidance)
-- **Testing recommendations** (how to verify the fix works)
+Style/Documentation:
+  Enabled: false
 
+Style/FrozenStringLiteralComment:
+  Enabled: true
 
-```markdown
-# My Ruby Project
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/routes.rb'
 
-Brief description of what your project does.
+Metrics/MethodLength:
+  Max: 15
 
-## Setup
-
-1. Install Ruby 3.1.0
-2. Run `bundle install` to install dependencies
-3. Run `rspec` to run tests
-
-## Usage
-
-Explain how to use your project with examples.
+Layout/LineLength:
+  Max: 120
 ```
 
-### .gitignore (Files to Ignore)
+### .rspec
 ```
-*.gem
-*.log
-.bundle/
-vendor/bundle/
-.env
+--require spec_helper
+--format documentation
+--color
 ```
-
-## Testing Setup (RSpec)
 
 ### spec/spec_helper.rb
 ```ruby
+# frozen_string_literal: true
+
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+  add_group 'Models', 'app/models'
+  add_group 'Services', 'app/services'
+end
+
 RSpec.configure do |config|
- config.expect_with :rspec do |expectations|
- expectations.include_chain_clauses_in_custom_matcher_descriptions = true
- end
+  config.expect_with :rspec do |expectations|
+    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+  end
 
- config.mock_with :rspec do |mocks|
- mocks.verify_partial_doubles = true
- end
+  config.mock_with :rspec do |mocks|
+    mocks.verify_partial_doubles = true
+  end
 
- config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.filter_run_when_matching :focus
+  config.disable_monkey_patching!
+  config.order = :random
+  Kernel.srand config.seed
 end
 ```
 
-### Basic Test Example
-```ruby
-# spec/my_project_spec.rb
-require 'spec_helper'
-require_relative '../lib/my_project'
-
-RSpec.describe MyProject do
- describe '#hello' do
- it 'returns a greeting' do
- expect(MyProject.hello).to eq('Hello, World!')
- end
- end
-end
-```
-
-## Development Tools
-
-### RuboCop (.rubocop.yml)
+### .github/workflows/ci.yml
 ```yaml
-AllCops:
- TargetRubyVersion: 3.1
- NewCops: enable
+name: CI
 
-Style/Documentation:
- Enabled: false # Don't require class documentation for small projects
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
-Metrics/MethodLength:
- Max: 15 # Keep methods reasonably short
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      
+      - name: Setup database
+        env:
+          RAILS_ENV: test
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:schema:load
+      
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
+        run: bundle exec rspec
+      
+      - name: Run linter
+        run: bundle exec rubocop
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - run: bundle exec bundler-audit check --update
+      - run: bundle exec brakeman -q
 ```
 
-## Getting Started Steps
+### Dockerfile
+```dockerfile
+FROM ruby:3.3-slim
 
-1. **Create project directory**: `mkdir my-ruby-project && cd my-ruby-project`
-2. **Initialize git**: `git init`
-3. **Create Gemfile**: Add your dependencies
-4. **Install gems**: `bundle install`
-5. **Create basic structure**: lib/, spec/, README.md
-6. **Write first test**: Create a simple spec file
-7. **Write code**: Make the test pass
-8. **Set up RuboCop**: Add .rubocop.yml for code style
+RUN apt-get update -qq && \
+    apt-get install -y build-essential libpq-dev && \
+    rm -rf /var/lib/apt/lists/*
 
-## Quick Tips
+WORKDIR /app
 
-### For Rails Projects
-- Use `rails new my_app` to generate the basic structure
-- Add `gem 'rspec-rails'` to Gemfile for testing
-- Run `rails generate rspec:install` to set up RSpec
+COPY Gemfile Gemfile.lock ./
+RUN bundle install --jobs 4 --retry 3
 
-### For Simple Ruby Projects
-- Keep it simple - don't over-engineer the structure
-- Start with one main file in lib/
-- Add tests as you add features
-- Use bundler to manage dependencies
+COPY . .
 
-### For Gems
-- Use `bundle gem my_gem` to generate gem structure
-- Include a proper gemspec file
-- Follow semantic versioning
-
-## Common Project Types
-
-**Web Application**: Use Rails or Sinatra
-**API**: Rails API mode or Grape framework
-**Command Line Tool**: Simple Ruby script with Thor gem
-**Library/Gem**: Standard gem structure with lib/ and spec/
-**Script**: Single Ruby file for automation tasks
-
-Remember: Start simple and add complexity only when needed!
-
-
-
-
-## Tooling & Automation
-
-Recommended tools and commands for Ruby/Rails development:
-
-### Analysis & Quality Tools
-```bash
-# Ruby code quality
-bundle exec rubocop
-
-# Testing
-bundle exec rspec
-
-# Security
-bundle exec brakeman
-bundle audit
+EXPOSE 3000
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+### docker-compose.yml
+```yaml
+version: '3.8'
 
-# Identify changed files
-git diff main...HEAD --name-only
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/app_development
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+
+volumes:
+  postgres_data:
+  bundle:
 ```
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run rubocop --all-files
-pre-commit run rspec --all-files
+---
+
+## Report Format
+
+### Project Analysis: `project-analysis-[YYYY-MM-DD].md`
+
+```markdown
+# Project Analysis
+
+## Overview
+- **Type**: [Gem/Rails/CLI]
+- **Ruby Version**: [Version]
+- **Health Score**: [X/10]
+
+## Structure Analysis
+| Aspect | Status | Notes |
+|--------|--------|-------|
+| Directory Layout | ✅/⚠️/❌ | |
+| Configuration | ✅/⚠️/❌ | |
+| Testing | ✅/⚠️/❌ | |
+| CI/CD | ✅/⚠️/❌ | |
+| Documentation | ✅/⚠️/❌ | |
+
+## Missing Files
+- [ ] .rubocop.yml
+- [ ] CI configuration
+- [ ] README sections
+
+## Recommendations
+1. [Priority fix]
+2. [Should add]
+3. [Nice to have]
 ```
 
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
+---
 
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
+## Severity Guide
 
-
-## Metrics & Validation
-
-Define clear success criteria for outcomes:
-
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: RuboCop passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
-
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
-
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Operational Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+| Level | Icon | Examples |
+|-------|------|----------|
+| **Critical** | 🔴 | No tests, security config missing |
+| **High** | 🟠 | Missing CI, no linting |
+| **Medium** | 🟡 | Incomplete docs, config improvements |
+| **Low** | 🟢 | Style preferences, optional tooling |

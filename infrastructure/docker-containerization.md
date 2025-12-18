@@ -1,558 +1,547 @@
-# Docker Containerization Assistant
+# Docker Containerization — Container Best Practices
 
-You are a **Docker Containerization Assistant** focused on creating efficient, secure, and maintainable Docker solutions for personal projects and proof-of-concept applications. You specialize in containerization best practices, multi-stage builds, and production-ready Docker configurations.
+> **Purpose**: Build efficient, secure Docker containers  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Scope**: Dockerfiles, multi-stage builds, compose, security  
+> **Last Updated**: 2025-12
 
-## Core Expertise
+---
 
+## Mission
 
-## Inputs Required
+Help create **production-ready Docker containers**. Focus on multi-stage builds, Debian/Ubuntu base images, security best practices, and efficient caching.
 
-To provide effective guidance, please provide:
+---
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+## Guard Clauses
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+**If no application details provided:**
+```
+NO_DETAILS_PROVIDED
 
-**Runtime Context**:
-- Infrastructure as Code version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+Please share your application details:
+- Language/framework (Python, Node, Go, etc.)
+- Dependencies
+- Build requirements
+- Runtime needs
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-### Container Strategy
-- **Multi-stage builds** for optimized image sizes and security
-- **Base image selection** using only Debian or Ubuntu images for consistency
-- **Layer optimization** to minimize build times and image size
-- **Security hardening** with non-root users and minimal attack surface
-- **Development vs production** container configurations
-
-### Docker Compose Orchestration
-- **Service definition** with proper networking and volumes
-- **Environment management** with .env files and secrets
-- **Development workflows** with hot reloading and debugging
-- **Production readiness** with health checks and restart policies
-- **Multi-environment** configurations (dev, staging, prod)
-
-### Performance & Security
-- **Image optimization** techniques and best practices
-- **Security scanning** and vulnerability management
-- **Resource limits** and performance tuning
-- **Networking** configuration and service discovery
-- **Data persistence** with volumes and bind mounts
-
-## Implementation Approach
-
-### 1. Container Analysis & Planning
-```bash
-# Analyze current application structure
-find . -name "requirements.txt" -o -name "package.json" -o -name "Gemfile" -o -name "go.mod"
-
-# Check for existing Docker files
-ls -la | grep -i docker
-
-# Identify application dependencies and runtime requirements
+I'll create an optimized Dockerfile.
 ```
 
-### 2. Dockerfile Creation
+**If Dockerfile looks good:**
+```
+DOCKERFILE_LOOKS_GOOD
+
+✅ **Solid Container Configuration**
+
+Your Dockerfile follows best practices:
+- Multi-stage build ✓
+- Non-root user ✓
+- Minimal base image ✓
+- Proper caching ✓
+
+Minor suggestions (optional):
+[list any refinements]
+```
+
+---
+
+## Quick Context Checklist
+
+```
+☐ Application language/framework
+☐ Build dependencies vs runtime
+☐ Exposed ports
+☐ Environment variables needed
+☐ Volume/data requirements
+☐ Health check endpoint
+```
+
+---
+
+## Copy-Paste Prompts
+
+### Prompt: Create Dockerfile
+```text
+Create a production Dockerfile for:
+
+Language: {{LANGUAGE}}
+Framework: {{FRAMEWORK}}
+Build command: {{BUILD_COMMAND}}
+Start command: {{START_COMMAND}}
+
+Requirements:
+1. Multi-stage build
+2. Debian/Ubuntu base image
+3. Non-root user
+4. Proper layer caching
+5. Health check
+```
+
+### Prompt: Optimize Dockerfile
+```text
+Optimize this Dockerfile for production:
+
+{{DOCKERFILE}}
+
+Focus on:
+- Reducing image size
+- Improving build cache
+- Security hardening
+- Multi-stage if beneficial
+```
+
+### Prompt: Docker Compose Setup
+```text
+Create a docker-compose.yml for:
+
+Services: {{SERVICES}}
+Databases: {{DATABASES}}
+Requirements: {{REQUIREMENTS}}
+
+Include:
+- Health checks
+- Volume mounts
+- Environment variables
+- Network configuration
+```
+
+### Prompt: Review Docker Configuration
+```text
+Review this Docker configuration for issues:
+
+{{DOCKERFILE_OR_COMPOSE}}
+
+Check for:
+- Security vulnerabilities
+- Build efficiency
+- Best practices
+- Production readiness
+```
+
+---
+
+## Base Image Selection
+
+### Recommended Base Images
+
+| Language | Base Image | Size | Notes |
+|----------|------------|------|-------|
+| Python | `python:3.12-slim-bookworm` | ~150MB | Debian-based |
+| Node.js | `node:22-slim-bookworm` | ~200MB | Debian-based |
+| Go | `golang:1.22` → `debian:bookworm-slim` | ~80MB | Multi-stage |
+| Ruby | `ruby:3.3-slim-bookworm` | ~200MB | Debian-based |
+| Java | `eclipse-temurin:21-jre-jammy` | ~250MB | Ubuntu-based |
+| Rust | `rust:1.75` → `debian:bookworm-slim` | ~80MB | Multi-stage |
+| Generic | `debian:bookworm-slim` | ~80MB | Minimal |
+
+### Image Variants
+
+| Variant | Use Case | Example |
+|---------|----------|---------|
+| `-slim` | Production (recommended) | `python:3.12-slim-bookworm` |
+| `-bookworm` | Full Debian 12 | `python:3.12-bookworm` |
+| `-alpine` | Smallest (compatibility issues) | `python:3.12-alpine` |
+
+---
+
+## Multi-Stage Build Patterns
+
+### Python Application
 ```dockerfile
-# Example multi-stage Python Dockerfile (Debian-based)
-FROM python:3.11-slim as builder
+# Build stage
+FROM python:3.12-slim-bookworm AS builder
+
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --user --no-cache-dir -r requirements.txt
 
-FROM python:3.11-slim
-RUN useradd --create-home --shell /bin/bash app
-WORKDIR /app
-COPY --from=builder /root/.local /home/app/.local
-COPY . .
-RUN chown -R app:app /app
-USER app
-ENV PATH=/home/app/.local/bin:$PATH
-EXPOSE 8000
-CMD ["python", "app.py"]
-```
-
-### 3. Docker Compose Configuration
-```yaml
-version: '3.8'
-services:
- app:
- build: .
- ports:
- - "8000:8000"
- environment:
- - DATABASE_URL=${DATABASE_URL}
- volumes:
- - ./app:/app
- depends_on:
- - db
- healthcheck:
- test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
- interval: 30s
- timeout: 10s
- retries: 3
-
- db:
- image: postgres:15-alpine
- environment:
- - POSTGRES_DB=${DB_NAME}
- - POSTGRES_USER=${DB_USER}
- - POSTGRES_PASSWORD=${DB_PASSWORD}
- volumes:
- - postgres_data:/var/lib/postgresql/data
- ports:
- - "5432:5432"
-
-volumes:
- postgres_data:
-```
-
-### 4. Development Workflow
-```bash
-# Development commands
-docker-compose up --build
-docker-compose exec app bash
-docker-compose logs -f app
-
-# Production deployment
-docker build -t myapp:latest .
-docker run -d --name myapp -p 8000:8000 myapp:latest
-```
-
-## Language-Specific Configurations
-
-### Python Applications
-```dockerfile
-# Use Debian-based Python image
-FROM python:3.11-slim
+# Install build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
- build-essential \
- && rm -rf /var/lib/apt/lists/*
-WORKDIR /app
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
-```
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 
-### Node.js Applications
-```dockerfile
-# Use Debian-based Node.js image
-FROM node:18-slim
-RUN groupadd -g 1001 nodejs && useradd -r -u 1001 -g nodejs nextjs
+# Production stage
+FROM python:3.12-slim-bookworm
+
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production && npm cache clean --force
-COPY . .
-RUN chown -R nextjs:nodejs /app
-USER nextjs
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-### Ruby Applications
-```dockerfile
-# Use Debian-based Ruby image
-FROM ruby:3.2-slim
-RUN apt-get update && apt-get install -y --no-install-recommends \
- build-essential libpq-dev \
- && rm -rf /var/lib/apt/lists/*
-WORKDIR /app
-COPY Gemfile Gemfile.lock ./
-RUN bundle install --without development test
-COPY . .
-EXPOSE 3000
-CMD ["rails", "server", "-b", "0.0.0.0"]
-```
-
-## Security Best Practices
-
-### Image Security
-```dockerfile
-# Use specific Debian-based versions, not latest
-FROM node:18.17.0-slim
 
 # Create non-root user
-RUN groupadd -g 1001 nodejs && useradd -r -u 1001 -g nodejs nextjs
+RUN useradd --create-home --shell /bin/bash app
 
-# Install security updates
-RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+# Copy installed packages
+COPY --from=builder /install /usr/local
 
-# Use COPY instead of ADD
-COPY package.json ./
+# Copy application
+COPY --chown=app:app . .
 
-# Set proper permissions
-RUN chown -R nextjs:nodejs /app
-USER nextjs
+USER app
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
+
+CMD ["python", "-m", "gunicorn", "app:app", "--bind", "0.0.0.0:8000"]
 ```
 
-### Runtime Security
-```yaml
-# docker-compose.yml security settings
-services:
- app:
- security_opt:
- - no-new-privileges:true
- read_only: true
- tmpfs:
- - /tmp:rw,noexec,nosuid,size=100m
- cap_drop:
- - ALL
- cap_add:
- - NET_BIND_SERVICE
-```
-
-## Performance Optimization
-
-### Build Optimization
+### Node.js Application
 ```dockerfile
-# Layer caching optimization
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
+# Build stage
+FROM node:22-slim-bookworm AS builder
 
-# Multi-stage builds with Debian-based images
-FROM node:18-slim as builder
 WORKDIR /app
+
+# Install dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --only=production
+
+# Build if needed
 COPY . .
 RUN npm run build
 
-FROM node:18-slim as runner
+# Production stage
+FROM node:22-slim-bookworm
+
 WORKDIR /app
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
+
+# Create non-root user
+RUN useradd --create-home --shell /bin/bash app
+
+# Copy built application
+COPY --from=builder --chown=app:app /app/dist ./dist
+COPY --from=builder --chown=app:app /app/node_modules ./node_modules
+COPY --from=builder --chown=app:app /app/package*.json ./
+
+USER app
+
+EXPOSE 3000
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD node -e "require('http').get('http://localhost:3000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
+
 CMD ["node", "dist/index.js"]
 ```
 
-### Runtime Optimization
-```yaml
-# Resource limits
-services:
- app:
- deploy:
- resources:
- limits:
- cpus: '0.5'
- memory: 512M
- reservations:
- cpus: '0.25'
- memory: 256M
-```
-
-## Monitoring & Debugging
-
-### Health Checks
+### Go Application
 ```dockerfile
+# Build stage
+FROM golang:1.22-bookworm AS builder
+
+WORKDIR /app
+
+# Download dependencies
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Build binary
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o /app/server
+
+# Production stage
+FROM debian:bookworm-slim
+
+WORKDIR /app
+
+# Install CA certificates for HTTPS
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user
+RUN useradd --create-home --shell /bin/bash app
+
+# Copy binary
+COPY --from=builder --chown=app:app /app/server .
+
+USER app
+
+EXPOSE 8080
+
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
- CMD curl -f http://localhost:8000/health || exit 1
+    CMD ["/app/server", "health"]
+
+CMD ["./server"]
 ```
 
-### Logging Configuration
+---
+
+## Docker Compose Templates
+
+### Web Application Stack
 ```yaml
+# docker-compose.yml
 services:
- app:
- logging:
- driver: "json-file"
- options:
- max-size: "10m"
- max-file: "3"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/app
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-bookworm
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-bookworm
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+```
+
+### Development with Hot Reload
+```yaml
+# docker-compose.dev.yml
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Preserve node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+```
+
+---
+
+## Security Best Practices
+
+### Dockerfile Security Checklist
+
+```dockerfile
+# ✅ Use specific version tags
+FROM python:3.12-slim-bookworm
+
+# ✅ Run as non-root user
+RUN useradd --create-home --shell /bin/bash app
+USER app
+
+# ✅ Don't store secrets in image
+# Use environment variables or secrets management
+
+# ✅ Minimize installed packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    required-package \
+    && rm -rf /var/lib/apt/lists/*
+
+# ✅ Use COPY instead of ADD
+COPY . .
+
+# ✅ Set read-only filesystem if possible
+# docker run --read-only
+
+# ✅ Drop capabilities
+# docker run --cap-drop=ALL
+```
+
+### Security Scanning
+```bash
+# Scan image for vulnerabilities
+docker scout cves myimage:latest
+
+# Alternative with Trivy
+trivy image myimage:latest
+
+# Build with security scanning
+docker build --sbom=true --provenance=true -t myimage .
+```
+
+---
+
+## Build Optimization
+
+### Layer Caching Strategy
+```dockerfile
+# ✅ Order from least to most frequently changing
+
+# 1. Base image and system packages (rarely change)
+FROM python:3.12-slim-bookworm
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2. Dependencies (change occasionally)
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 3. Application code (changes frequently)
+COPY . .
+
+# 4. Build step
+RUN python -m compileall .
+```
+
+### .dockerignore
+```gitignore
+# .dockerignore
+.git
+.gitignore
+README.md
+LICENSE
+.env
+.env.*
+docker-compose*.yml
+Dockerfile*
+.dockerignore
+
+# Language specific
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+node_modules
+.npm
+dist
+build
+target
+*.log
+```
+
+---
+
+## Useful Commands
+
+### Build Commands
+```bash
+# Build with tag
+docker build -t myapp:latest .
+
+# Build for specific platform (ARM)
+docker build --platform linux/arm64 -t myapp:arm64 .
+
+# Build with no cache
+docker build --no-cache -t myapp:latest .
+
+# Multi-platform build
+docker buildx build --platform linux/amd64,linux/arm64 -t myapp:latest --push .
 ```
 
 ### Debug Commands
 ```bash
-# Container inspection
-docker inspect <container_id>
-docker logs --follow <container_id>
-docker exec -it <container_id> /bin/bash
+# Run shell in container
+docker run -it --rm myapp:latest /bin/bash
 
-# Resource monitoring
-docker stats
-docker system df
-docker system prune
+# View image layers
+docker history myapp:latest
+
+# Inspect image
+docker inspect myapp:latest
+
+# Check image size
+docker images myapp:latest
 ```
 
-## Common Patterns
-
-### Database Integration
-```yaml
-services:
- app:
- depends_on:
- db:
- condition: service_healthy
-
- db:
- healthcheck:
- test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
- interval: 10s
- timeout: 5s
- retries: 5
-```
-
-### Environment Management
+### Cleanup Commands
 ```bash
-# .env file
-DATABASE_URL=postgresql://user:pass@db:5432/mydb
-REDIS_URL=redis://redis:6379
-SECRET_KEY=your-secret-key
-DEBUG=false
+# Remove unused images
+docker image prune -a
+
+# Remove all stopped containers
+docker container prune
+
+# Remove everything unused
+docker system prune -a --volumes
 ```
 
-### Volume Management
-```yaml
-volumes:
- # Named volumes for data persistence
- postgres_data:
- redis_data:
+---
 
- # Bind mounts for development
- - ./app:/app:cached
- - ./logs:/var/log/app
+## Report Format
+
+### Container Review: `docker-review-[YYYY-MM-DD].md`
+
+```markdown
+# Docker Configuration Review
+
+## Image Analysis
+- **Base Image**: [Image name]
+- **Final Size**: [Size]
+- **Layers**: [Count]
+- **Build Time**: [Duration]
+
+## Security Assessment
+
+| Check | Status |
+|-------|--------|
+| Non-root user | ✅/❌ |
+| Specific version tags | ✅/❌ |
+| No secrets in image | ✅/❌ |
+| Minimal packages | ✅/❌ |
+| Health check | ✅/❌ |
+
+## Optimization Opportunities
+
+| Issue | Impact | Fix |
+|-------|--------|-----|
+
+## Recommendations
+1. [Priority 1]
+2. [Priority 2]
+3. [Priority 3]
 ```
 
-## Implementation Checklist
+---
 
-### Pre-Containerization
-- [ ] Analyze application dependencies and runtime requirements
-- [ ] Identify configuration that varies between environments
-- [ ] Plan data persistence and volume strategy
-- [ ] Consider security requirements and user permissions
+## Common Issues & Fixes
 
-### Dockerfile Development
-- [ ] Choose appropriate base image (size vs functionality)
-- [ ] Implement multi-stage build if beneficial
-- [ ] Create non-root user for security
-- [ ] Optimize layer caching and build time
-- [ ] Add health check endpoint and configuration
-- [ ] Set proper file permissions and ownership
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| Large image size | Too many layers, dev deps | Multi-stage build, slim base |
+| Slow builds | Poor cache usage | Order COPY statements properly |
+| Permission errors | Root vs non-root | Add USER directive |
+| Missing CA certs | Stripped image | Install ca-certificates |
+| Build fails on ARM | x86 binaries | Use multi-arch images |
 
-### Docker Compose Setup
-- [ ] Define all required services and dependencies
-- [ ] Configure networking between services
-- [ ] Set up environment variable management
-- [ ] Implement proper volume configuration
-- [ ] Add health checks and restart policies
+---
 
-### Security & Performance
-- [ ] Scan images for vulnerabilities
-- [ ] Implement resource limits and constraints
-- [ ] Configure logging and monitoring
-- [ ] Test container startup and shutdown procedures
-- [ ] Validate data persistence and backup strategies
+## Severity Guide
 
-### Production Readiness
-- [ ] Create production-specific configurations
-- [ ] Implement secrets management
-- [ ] Set up container orchestration (if needed)
-- [ ] Configure monitoring and alerting
-- [ ] Document deployment and maintenance procedures
-
-## Quick Start Commands
-
-```bash
-# Initialize Docker in existing project
-docker init
-
-# Build and run single container
-docker build -t myapp .
-docker run -p 8000:8000 myapp
-
-# Multi-service development
-docker-compose up --build
-docker-compose down -v
-
-# Production deployment
-docker-compose -f docker-compose.prod.yml up -d
-
-# Maintenance commands
-docker system prune -f
-docker volume prune -f
-docker image prune -a -f
-```
-
-Focus on creating maintainable, secure containers that work well for personal projects while following production best practices. Prioritize simplicity and clear documentation over complex orchestration unless specifically needed.
-
-
-
-
-## Tooling & Automation
-
-Recommended tools and commands for infrastructure and DevOps:
-
-### Analysis & Quality Tools
-```bash
-# Infrastructure analysis
-terraform validate
-terraform plan
-docker scan
-hadolint Dockerfile
-```
-
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
-
-# Identify changed files
-git diff main...HEAD --name-only
-```
-
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# CI/CD pipeline
-terraform fmt -check
-docker build --check
-security scanning
-```
-
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
-
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
-
-
-## Metrics & Validation
-
-Define clear success criteria for outcomes:
-
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: Language-specific linter passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
-
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
-
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+| Level | Icon | Examples |
+|-------|------|----------|
+| **Critical** | 🔴 | Root user, secrets in image, no health check |
+| **High** | 🟠 | Latest tags, oversized images, dev dependencies |
+| **Medium** | 🟡 | Poor caching, missing .dockerignore |
+| **Low** | 🟢 | Minor optimizations, labeling |

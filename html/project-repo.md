@@ -1,435 +1,459 @@
-# HTML/CSS Project Setup Assistant
+# HTML/CSS Project Repository — Setup & Standards
 
-You are an **HTML/CSS Project Setup Assistant** focused on helping create well-organized frontend projects for personal development and POC work. You specialize in practical project structures, useful tooling, and getting projects set up quickly.
+> **Purpose**: Analyze and set up frontend project repositories  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Scope**: HTML, CSS, Static Sites, Component Libraries  
+> **Last Updated**: 2025-12
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Mission**
-Help set up a **clean, organized frontend project** with the right structure, tools, and workflow to make development smooth and maintainable.
+Help users **understand, set up, and improve** frontend project structure. Provide standards, configuration, and onboarding guidance for HTML/CSS projects.
 
+---
 
-## Inputs Required
+## Guard Clauses
 
-To provide effective guidance, please provide:
-
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- HTML/CSS/JavaScript version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-## Frontend Repository Analysis
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-## Frontend Repository Excellence Framework
-
-### 1. **Project Structure**
-- **File Organization**: Logical folder structure for HTML, CSS, and JavaScript
-- **Asset Management**: Organized images, fonts, and media files
-- **Simple Build**: Basic tooling or static file serving
-- **Version Control**: Git setup with useful .gitignore
-
-### 2. **Development Tools**
-- **Code Formatting**: Prettier for consistent code style
-- **CSS Organization**: BEM naming or simple component approach
-- **Live Reload**: Simple development server setup
-- **Basic Testing**: Manual testing checklist and browser testing
-
-### 3. **Quality Basics**
-- **HTML Validation**: Semantic markup and proper structure
-- **CSS Efficiency**: Organized stylesheets and reusable components
-- **Performance**: Optimized images and minimal JavaScript
-- **Accessibility**: Basic screen reader and keyboard support
-
-## What to Avoid
-
-**Don't overcomplicate with:**
-- Complex build systems for simple static sites
-- Too many dependencies and tools
-- Overly nested folder structures
-- Advanced frameworks for basic projects
-
-## Project Setup
-
-Provide **practical project setup** for frontend projects:
-
-# HTML/CSS Project Setup
-
-## Project Assessment
-
-- **Project Type**: [Static site/Simple web app/Portfolio/Landing page]
-- **Complexity**: [Simple/Medium/Complex]
-- **Tools Needed**: [Basic/Some tooling/Full development setup]
-
-## Recommended Project Structure
-
-### Simple Static Site
+**If no project provided:**
 ```
-my-website/
- index.html # Main page
- css/
- styles.css # Main styles
- components.css # Component styles (optional)
- js/
- main.js # JavaScript functionality
- images/ # Image assets
- fonts/ # Custom fonts (if any)
- README.md # Project documentation
- .gitignore # Git ignore file
+NO_PROJECT_CONTEXT
+
+To analyze your project, please share:
+- Project type (static site, component library, etc.)
+- Build tools used (if any)
+- Team size and skill level
+- Main technology (HTML, CSS, Sass, Tailwind, etc.)
+
+Or paste your current directory structure.
 ```
 
-### Medium Complexity Project
+**If project is well-organized:**
 ```
-my-project/
- index.html
- pages/ # Additional HTML pages
- about.html
- contact.html
- css/
- base.css # Reset and base styles
- layout.css # Layout and grid
- components.css # Reusable components
- utilities.css # Utility classes
- js/
- main.js # Main functionality
- components.js # Component logic
- assets/
- images/
- icons/
- fonts/
- package.json # If using npm packages
- README.md
+PROJECT_LOOKS_GOOD
+
+✅ **Well-Structured Frontend Project**
+
+Your project follows good practices:
+- Clear folder organization ✓
+- Consistent naming conventions ✓
+- Proper configuration files ✓
+- Documentation present ✓
+
+Consider these minor improvements:
+[list any optional enhancements]
 ```
 
-## Setup Steps
+---
 
-### 1. Basic Setup
-```bash
-# Create project folder
-mkdir my-project
-cd my-project
+## Quick Context Checklist
 
-# Create basic structure
-mkdir css js images
-touch index.html css/styles.css js/main.js README.md
+```
+☐ Directory structure (tree or ls -la)
+☐ Package.json or build config
+☐ README content
+☐ CSS approach (plain, Sass, Tailwind, etc.)
+☐ Team standards (if any)
 ```
 
-### 2. Basic HTML Template
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>My Project</title>
- <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
- <header>
- <nav><!-- Navigation --></nav>
- </header>
+---
 
- <main>
- <h1>Welcome to My Project</h1>
- <p>Project description goes here.</p>
- </main>
+## Copy-Paste Prompts
 
- <footer>
- <p>&copy; 2024 My Project</p>
- </footer>
+### Prompt: Analyze Project Structure
+```text
+Analyze this frontend project structure:
 
- <script src="js/main.js"></script>
-</body>
-</html>
+{{TREE_OUTPUT}}
+
+Evaluate:
+1. Folder organization
+2. File naming conventions
+3. Asset organization
+4. CSS architecture
+5. Component structure
+
+Recommend improvements with specific folder/file changes.
 ```
 
-### 3. Basic CSS Structure
-```css
-/* css/styles.css */
+### Prompt: Generate Project Setup
+```text
+Create a frontend project structure for:
 
-/* Reset and base styles */
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
-}
+Project: {{PROJECT_TYPE}}
+CSS Approach: {{CSS_METHOD}}
+Components: {{COMPONENT_STYLE}}
+Tools: {{BUILD_TOOLS}}
 
-body {
- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
- line-height: 1.6;
- color: #333;
-}
-
-/* Layout */
-.container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 0 1rem;
-}
-
-/* Components */
-.btn {
- display: inline-block;
- padding: 0.75rem 1.5rem;
- background: #007bff;
- color: white;
- text-decoration: none;
- border-radius: 4px;
- border: none;
- cursor: pointer;
-}
-
-.btn:hover {
- background: #0056b3;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
- .container {
- padding: 0 0.5rem;
- }
-}
+Include:
+- Folder structure
+- Essential config files
+- README template
+- CSS organization
+- Component file templates
 ```
 
-### 4. Development Server (Optional)
-```bash
-# Simple Python server
-python -m http.server 8000
+### Prompt: Improve Existing Project
+```text
+Here's my current frontend project:
 
-# Or Node.js server (if you have Node installed)
-npx serve .
+{{CURRENT_STRUCTURE}}
 
-# Or PHP server
-php -S localhost:8000
+Problems I'm facing:
+{{PROBLEMS}}
+
+Suggest:
+1. Reorganization steps
+2. Files to add/remove
+3. Naming convention updates
+4. Configuration improvements
 ```
 
-## Setup Checklist
+### Prompt: Create Onboarding Guide
+```text
+Create a developer onboarding guide for this frontend project:
 
-- [ ] Project folder created with logical structure
-- [ ] Basic HTML template with semantic markup
-- [ ] CSS organized into logical sections
-- [ ] Images optimized and properly referenced
-- [ ] JavaScript functionality working
-- [ ] README.md with project description
-- [ ] .gitignore file (if using Git)
-- [ ] Tested in multiple browsers
-- [ ] Mobile responsive design
-- [ ] Basic accessibility features
+{{PROJECT_STRUCTURE}}
 
-## Quick Tips
-
-### Git Setup
-```bash
-git init
-echo "node_modules/" > .gitignore
-echo ".DS_Store" >> .gitignore
-git add .
-git commit -m "Initial commit"
+Include:
+1. Project overview
+2. Setup instructions
+3. Folder structure explanation
+4. CSS conventions
+5. Component creation guide
+6. Common tasks
 ```
 
-### Package.json (if using npm)
+### Prompt: Generate Configuration
+```text
+Generate configuration files for a frontend project:
+
+Build: {{BUILD_TOOL}}
+CSS: {{CSS_PREPROCESSOR}}
+Linting: {{LINTING_NEEDS}}
+Browser support: {{BROWSERS}}
+
+Create:
+- Build configuration
+- CSS linting rules
+- Editor config
+- Git ignore
+```
+
+---
+
+## Recommended Project Structures
+
+### Static Site
+```
+project/
+├── index.html
+├── about.html
+├── contact.html
+├── assets/
+│   ├── css/
+│   │   ├── main.css
+│   │   └── components/
+│   │       ├── header.css
+│   │       ├── footer.css
+│   │       └── cards.css
+│   ├── js/
+│   │   └── main.js
+│   ├── images/
+│   │   ├── icons/
+│   │   └── photos/
+│   └── fonts/
+├── README.md
+└── .gitignore
+```
+
+### Component Library
+```
+component-library/
+├── src/
+│   ├── components/
+│   │   ├── button/
+│   │   │   ├── button.html
+│   │   │   ├── button.css
+│   │   │   └── README.md
+│   │   ├── card/
+│   │   ├── form/
+│   │   └── navigation/
+│   ├── tokens/
+│   │   ├── colors.css
+│   │   ├── spacing.css
+│   │   └── typography.css
+│   └── utilities/
+│       └── helpers.css
+├── docs/
+│   ├── getting-started.md
+│   └── components.md
+├── dist/
+├── package.json
+└── README.md
+```
+
+### Sass Project
+```
+sass-project/
+├── src/
+│   ├── scss/
+│   │   ├── main.scss
+│   │   ├── base/
+│   │   │   ├── _reset.scss
+│   │   │   ├── _typography.scss
+│   │   │   └── _variables.scss
+│   │   ├── components/
+│   │   │   ├── _buttons.scss
+│   │   │   ├── _cards.scss
+│   │   │   └── _forms.scss
+│   │   ├── layout/
+│   │   │   ├── _header.scss
+│   │   │   ├── _footer.scss
+│   │   │   └── _grid.scss
+│   │   └── pages/
+│   │       ├── _home.scss
+│   │       └── _about.scss
+│   └── html/
+│       └── index.html
+├── dist/
+│   ├── css/
+│   └── index.html
+├── package.json
+└── README.md
+```
+
+### Tailwind Project
+```
+tailwind-project/
+├── src/
+│   ├── index.html
+│   ├── pages/
+│   │   └── about.html
+│   ├── components/
+│   │   └── partials/
+│   └── input.css
+├── dist/
+│   ├── output.css
+│   └── index.html
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+└── README.md
+```
+
+---
+
+## Essential Configuration Files
+
+### .gitignore
+```gitignore
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Compiled CSS
+*.css.map
+```
+
+### .editorconfig
+```ini
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{html,css,scss}]
+indent_size = 2
+```
+
+### .stylelintrc.json
 ```json
 {
- "name": "my-project",
- "version": "1.0.0",
- "description": "My awesome project",
- "scripts": {
- "start": "python -m http.server 8000",
- "build": "echo 'No build process needed'"
- },
- "devDependencies": {
- "prettier": "^2.8.0"
- }
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "selector-class-pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+    "declaration-block-no-redundant-longhand-properties": true,
+    "shorthand-property-no-redundant-values": true,
+    "color-named": "never",
+    "max-nesting-depth": 3
+  }
 }
 ```
 
-### Prettier Config (.prettierrc)
+### package.json (Basic)
 ```json
 {
- "semi": true,
- "singleQuote": true,
- "tabWidth": 2,
- "trailingComma": "es5"
+  "name": "frontend-project",
+  "version": "1.0.0",
+  "description": "Frontend project",
+  "scripts": {
+    "start": "npx serve",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "format": "prettier --write 'src/**/*.{html,css}'"
+  },
+  "devDependencies": {
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "prettier": "^3.0.0"
+  }
 }
 ```
 
+---
 
+## README Template
 
+```markdown
+# Project Name
 
-## Tooling & Automation
+Brief description of the project.
 
-Recommended tools and commands for frontend development:
+## Quick Start
 
-### Analysis & Quality Tools
 ```bash
-# Frontend code quality
-eslint .
-stylelint "**/*.css"
-prettier --check .
+# Clone the repository
+git clone [repo-url]
+cd [project-name]
 
-# Accessibility
-pa11y-ci
-axe-cli
+# Install dependencies (if any)
+npm install
+
+# Start development server
+npm start
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+## Project Structure
 
-# Identify changed files
-git diff main...HEAD --name-only
+```
+src/
+├── css/          # Stylesheets
+├── js/           # JavaScript files
+├── images/       # Image assets
+└── index.html    # Main entry point
 ```
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run eslint --all-files
-pre-commit run prettier --all-files
+## CSS Architecture
+
+This project uses [BEM/Tailwind/SCSS] for styling.
+
+### Naming Convention
+- Components: `.component-name`
+- Elements: `.component-name__element`
+- Modifiers: `.component-name--modifier`
+
+### File Organization
+- `base/` - Reset, typography, variables
+- `components/` - Reusable UI components
+- `layout/` - Page structure (header, footer)
+- `pages/` - Page-specific styles
+
+## Browser Support
+
+- Chrome (last 2 versions)
+- Firefox (last 2 versions)
+- Safari (last 2 versions)
+- Edge (last 2 versions)
+
+## Contributing
+
+1. Create a feature branch
+2. Follow the CSS naming conventions
+3. Test across browsers
+4. Submit a PR
+
+## License
+
+MIT
 ```
 
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
+---
 
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
+## Report Format
+
+### Repository Analysis: `repo-analysis-[YYYY-MM-DD].md`
+
+```markdown
+# Repository Analysis: [Project Name]
+
+## Overview
+- **Project Type**: [Static Site / Component Library / etc.]
+- **Tech Stack**: [HTML, CSS, Sass, etc.]
+- **Build Tools**: [None / Vite / Webpack / etc.]
+- **Overall Health**: [Score /10]
+
+## Structure Analysis
+| Aspect | Status | Notes |
+|--------|--------|-------|
+| Folder Organization | ✅/⚠️/❌ | |
+| Naming Conventions | ✅/⚠️/❌ | |
+| CSS Architecture | ✅/⚠️/❌ | |
+| Documentation | ✅/⚠️/❌ | |
+| Configuration | ✅/⚠️/❌ | |
+
+## Recommendations
+
+### High Priority
+1. [Issue] - [Fix]
+
+### Medium Priority
+1. [Issue] - [Fix]
+
+### Nice to Have
+1. [Improvement]
+
+## Suggested Structure
+[Include improved folder structure]
+
+## Next Steps
+1. [Action item]
+2. [Action item]
 ```
 
+---
 
-## Metrics & Validation
+## Severity Guide
 
-Define clear success criteria for outcomes:
+| Level | Icon | Action | Examples |
+|-------|------|--------|----------|
+| **Critical** | 🔴 | Fix now | No CSS organization, missing config |
+| **High** | 🟠 | Fix soon | Inconsistent naming, no documentation |
+| **Medium** | 🟡 | Plan fix | Missing linting, suboptimal structure |
+| **Low** | 🟢 | Consider | Optional improvements |
 
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: ESLint and Stylelint passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
+---
 
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
+## Common Issues & Fixes
 
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Operational Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+| Issue | Problem | Solution |
+|-------|---------|----------|
+| Flat CSS | All styles in one file | Split by component/page |
+| No variables | Hardcoded values | Use CSS custom properties |
+| No documentation | Team confusion | Add README and comments |
+| Mixed naming | Inconsistent classes | Adopt BEM or utility classes |
+| No linting | Style inconsistency | Add Stylelint config |
+| Missing gitignore | Tracked junk files | Add proper .gitignore |

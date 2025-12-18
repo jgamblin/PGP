@@ -19,13 +19,16 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 - `LICENSE` — License terms for reuse.
 - `README.md` — This documentation.
 
-**Total: 49 prompts across all technology stacks**
+**Total: 52 prompts across all technology stacks**
 
-All prompts follow a consistent structure optimized for peer-based collaboration:
-- 📋 Structured outputs with summary report + per-finding details
-- 🤝 Peer-friendly language (no hierarchical terms)
-- 🎯 Measurable success indicators (no arbitrary time estimates)
-- 🔧 Stack-specific tooling and automation guidance
+All prompts follow a consistent modern structure:
+- 📋 **Header metadata** — Purpose, Best For, Scope, Last Updated
+- 🛡️ **Guard clauses** — Handle missing context and already-clean code
+- ✅ **Quick context checklist** — What to provide for best results
+- 📝 **Copy-paste prompts** — Ready-to-use templates with placeholders
+- 📊 **Reference tables** — Code examples and configuration templates
+- 📄 **Report format** — Standardized output structure
+- 🎯 **Severity guide** — Critical/High/Medium/Low classifications
 
 ---
 
@@ -40,6 +43,7 @@ All prompts follow a consistent structure optimized for peer-based collaboration
 | `documentation-generation.md` | Documentation strategy (API specs, records) |
 | `pr-review-feedback.md` | Code review (security, performance) |
 | `project-repo.md` | Repository setup guide |
+| `security-analysis.md` | Security vulnerability analysis (OWASP, secrets, dependencies) |
 | `system-design-architecture-review.md` | System design and architecture review |
 
 ---
@@ -67,13 +71,11 @@ All prompts follow a consistent structure optimized for peer-based collaboration
 
 ---
 
----
-
 ### `infrastructure/` — DevOps & Infrastructure Prompts
 | File | Purpose |
 |------|---------|
-| `aws-ec2-deployment.md` | EC2 instance selection, containerized deployment scripts |
-| `docker-containerization.md` | Container optimization, multi-stage builds, orchestration |
+| `aws-ec2-deployment.md` | ARM-based EC2 deployment (t4g Graviton), security groups, Terraform |
+| `docker-containerization.md` | Multi-stage builds, Debian/Ubuntu bases, compose, security scanning |
 
 ---
 
@@ -98,17 +100,17 @@ All prompts follow a consistent structure optimized for peer-based collaboration
 ### `ruby/` — Ruby & Rails Prompts
 | File | Purpose |
 |------|---------|
-| `agents.md` | Agent instructions for Ruby/Rails prompt usage |
-| `code-refactoring.md` | Ruby refactoring (Rails, metaprogramming, gems) |
-| `copilot-instructions.md` | Copilot/AI guidance for Ruby/Rails prompt usage |
-| `documentation-generation.md` | Ruby documentation (YARD, Rails API) |
-| `gemfile-management.md` | Dependency security audit (Gemfile) |
-| `pr-review-feedback.md` | Ruby code review (Rails, ActiveRecord) |
-| `project-repo.md` | Ruby repository setup (Bundler, RSpec, Rails) |
-| `rails-active-record-performance-audit.md` | ActiveRecord performance optimization and N+1 query detection |
-| `rspec-test-generation.md` | RSpec test strategy (coverage planning) |
-| `rubocop-compliance.md` | Code quality analysis (Rubocop) |
-| `service-object-domain-logic-refactoring.md` | Service object and domain logic refactoring |
+| `agents.md` | Prompt index with quick-start commands and workflows |
+| `code-refactoring.md` | Ruby 3.x idioms (guard clauses, enumerable, pattern matching) |
+| `copilot-instructions.md` | AI configuration template with VS Code settings |
+| `documentation-generation.md` | YARD documentation, common tags, README templates |
+| `gemfile-management.md` | Dependency organization, security auditing, bundler-audit CI |
+| `pr-review-feedback.md` | Review checklist, common issues, GitHub suggestion format |
+| `project-repo.md` | Project structures (gem, Rails, CLI), config files, Docker |
+| `rails-active-record-performance-audit.md` | N+1 query detection, eager loading, indexes, Bullet gem |
+| `rspec-test-generation.md` | Test patterns (model, request, service specs), FactoryBot |
+| `rubocop-compliance.md` | Full .rubocop.yml config, common violations with fixes |
+| `service-object-domain-logic-refactoring.md` | Service objects, form objects, fat controller extraction |
 
 ---
 
@@ -402,38 +404,37 @@ See each folder for details and usage examples.
 
 ## Recent Cleanup Snapshot
 
-- **Repository-Wide Enterprise Language Cleanup (Latest)**: Cleaned all 49 prompt files
- - Changed "Executive Summary" → "Summary" across all files
- - Changed "Quality Gates" → "Quality Guidelines" across all files
- - Changed "Operational Readiness" → "Deployment Readiness" across all files
- - Removed "Situation Assessment" and "Recommended Plan" enterprise structures
- - Removed team collaboration and deployment environment constraints
- - All prompts now use practical, personal-project focused language
-- Normalized all prompts across Python, Ruby, HTML/CSS, and Generic technology stacks
-- **Python Collection Enhanced**: Added 4 new essential prompts and modernized existing ones
- - New: CLI development, packaging/distribution, logging/error handling, security analysis
- - Updated: Consolidated documentation prompts, modernized linting with Ruff/Black
- - Enhanced: Code refactoring with Python-specific patterns (dataclasses, context managers, etc.)
-- **Infrastructure Collection Added**: 2 focused DevOps prompts for personal projects
- - Docker containerization with multi-stage builds and security best practices
- - AWS EC2 deployment with instance selection and automated deployment scripts
-- Transformed enterprise-focused prompts into practical personal project helpers
-- Consolidated PERSONAL_PROJECT_GUIDE.md and QUICK_REFERENCE.md into README.md
-- Standardized role statements and removed "world-class" language
-- Added comprehensive quick start guides and workflows by technology
-- Unified prompt naming conventions (e.g., "Python Code Helper", "Ruby Testing Assistant")
-- **Modern Python Tooling**: Updated all Python prompts to feature current best practices
- - Ruff for ultra-fast linting (10-100x faster than Flake8)
- - Poetry for modern dependency management and packaging
- - Click and Rich for professional CLI applications
- - Structured logging and comprehensive security analysis
-- **Practical Infrastructure Approach**: Simple, effective deployment toolkit
- - Container-first development with Docker optimization and security
- - AWS EC2 deployment with cost-effective instance selection and automation
- - Complete deployment scripts for containerized applications
- - Focus on personal projects and proof-of-concept deployments
-- Removed quantified hour/effort estimates and enterprise jargon
-- Added copy-paste command examples for immediate use
+- **December 2025 Modernization (Latest)**: Complete rewrite of all 49 prompts with new format
+ - Standardized header metadata (Purpose, Best For, Scope, Last Updated)
+ - Added guard clauses for missing context and clean code responses
+ - Added quick context checklists for each prompt type
+ - Added copy-paste prompt templates with placeholders
+ - Added reference tables, code examples, and severity guides
+- **Ruby Collection Modernized**: All 11 Ruby/Rails prompts rewritten
+ - Ruby 3.x patterns (guard clauses, enumerable, pattern matching, safe navigation)
+ - Rails 7+ best practices (service objects, form objects, N+1 detection)
+ - Complete RSpec testing patterns with FactoryBot examples
+ - Full RuboCop configuration with common violation fixes
+- **Infrastructure Collection Modernized**: Both DevOps prompts rewritten
+ - ARM-based EC2 (t4g Graviton) for 40% cost savings
+ - Multi-stage Docker builds with security best practices
+ - Terraform examples and deployment scripts
+- **HTML/CSS Collection Modernized**: All 12 frontend prompts rewritten
+ - Core Web Vitals optimization patterns
+ - WCAG 2.1 accessibility compliance
+ - Modern CSS (Grid, Flexbox, BEM methodology)
+- **Generic Collection Modernized**: All 9 universal prompts rewritten
+ - CI/CD pipeline templates (GitHub Actions, GitLab CI)
+ - Security analysis (OWASP Top 10, dependency scanning)
+- **Python Collection Enhanced**: 17 prompts with modern tooling
+ - uv for fast dependency management
+ - Ruff for linting (10-100x faster than Flake8)
+ - Python 3.11+ patterns (match/case, TaskGroup, Pydantic v2)
+- All prompts now feature:
+ - Consistent structure across all technology stacks
+ - Practical code examples and configuration templates
+ - Report format templates for documentation
+ - Severity guides (Critical/High/Medium/Low)
 
 ---
 

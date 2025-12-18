@@ -1,236 +1,102 @@
-# Ruby Assistant Prompts
+# Ruby/Rails Prompts — Index
 
-## Purpose
-This folder contains Ruby helper prompts designed for personal projects and proof-of-concept development. These assistants provide practical guidance on Ruby code quality, Rails best practices, testing, and common improvements.
-
-## Available Assistants
-- **Code Helper**: Practical code improvements and refactoring suggestions
-- **Code Review Assistant**: Helpful feedback on Ruby code quality and Rails patterns
-- **Documentation Assistant**: Clear documentation and README creation
-- **Project Setup Helper**: Ruby project structure and dependency management
-- **Testing Assistant**: RSpec setup and testing patterns (coming soon)
-- **Performance Helper**: Database optimization and Rails performance tips (coming soon)
-
-
-## Inputs Required
-
-To provide effective guidance, please provide:
-
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- Ruby version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
-
-## Situation Assessment
-
-Before providing recommendations, I will:
-
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
-
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
-
-## Recommended Plan
-
-Based on the analysis, I will provide a prioritized action plan:
-
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
-
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
-
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
-
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
-
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
-
-## How to Use These Prompts
-1. Choose the assistant that matches your needs (e.g., code-refactoring.md for code improvements)
-2. Focus on practical improvements that make your Ruby code more maintainable
-3. Start with small, incremental changes rather than major rewrites
-4. Prioritize readability and bug prevention over complex optimizations
-5. Test changes to make sure they work as expected
-
-## Best Practices
-- Start with the most impactful improvements first
-- Keep solutions simple and easy to understand
-- Follow Ruby and Rails conventions when applicable
-- Write tests for important functionality
-- Document your code so you can understand it later
-
-## Typical Workflow
-1. Review current Ruby code structure
-2. Identify areas for improvement (bugs, unclear code, missing tests)
-3. Make targeted improvements with clear explanations
-4. Add or update tests to cover changes
-5. Document decisions and patterns for future reference
+> **Purpose**: Index of all Ruby/Rails assistant prompts  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Scope**: Ruby 3.x, Rails 7+, RSpec, RuboCop  
+> **Last Updated**: 2025-12
 
 ---
-For other domains, see agents.md in the generic, python, or html folders.
 
+## Available Prompts
 
+| Prompt | Purpose | Use When |
+|--------|---------|----------|
+| [code-refactoring.md](code-refactoring.md) | Ruby code improvements | Cleaning up methods, using idioms |
+| [copilot-instructions.md](copilot-instructions.md) | AI assistant config | Setting up Copilot for Ruby/Rails |
+| [documentation-generation.md](documentation-generation.md) | YARD docs, READMEs | Documenting classes and APIs |
+| [gemfile-management.md](gemfile-management.md) | Dependency management | Organizing Gemfile, security |
+| [pr-review-feedback.md](pr-review-feedback.md) | Pull request review | Reviewing Ruby code changes |
+| [project-repo.md](project-repo.md) | Project structure | Setting up new Ruby/Rails projects |
+| [rails-active-record-performance-audit.md](rails-active-record-performance-audit.md) | Database performance | N+1 queries, indexes, caching |
+| [rspec-test-generation.md](rspec-test-generation.md) | RSpec tests | Writing model, controller, feature specs |
+| [rubocop-compliance.md](rubocop-compliance.md) | Code style | RuboCop setup and fixes |
+| [service-object-domain-logic-refactoring.md](service-object-domain-logic-refactoring.md) | Architecture | Extracting service objects |
 
+---
 
-## Tooling & Automation
+## Quick Start Prompts
 
-Recommended tools and commands for Ruby/Rails development:
+### Prompt: Review My Ruby Code
+```text
+Review this Ruby code for improvements:
 
-### Analysis & Quality Tools
-```bash
-# Ruby code quality
-bundle exec rubocop
+{{CODE}}
 
-# Testing
-bundle exec rspec
-
-# Security
-bundle exec brakeman
-bundle audit
+Check for:
+1. Ruby idioms and style
+2. Method complexity
+3. Error handling
+4. Performance issues
+5. Test suggestions
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+### Prompt: Set Up Rails Project
+```text
+Help me set up a new Rails project:
 
-# Identify changed files
-git diff main...HEAD --name-only
+Project: {{PROJECT_NAME}}
+Ruby: 3.3
+Rails: 7.1
+Database: {{DATABASE}}
+Features: {{FEATURES}}
+
+Include:
+- Gemfile essentials
+- RuboCop config
+- RSpec setup
+- CI configuration
 ```
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run rubocop --all-files
-pre-commit run rspec --all-files
+### Prompt: Fix N+1 Queries
+```text
+Analyze this Rails code for N+1 query problems:
+
+{{CODE}}
+
+For each issue:
+1. Show the problematic code
+2. Explain the query pattern
+3. Provide eager loading fix
+4. Show resulting queries
 ```
 
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
+---
 
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
+## Severity Guide
 
+| Level | Icon | Action | Examples |
+|-------|------|--------|----------|
+| **Critical** | 🔴 | Fix immediately | Security holes, data loss, crashes |
+| **High** | 🟠 | Fix before merge | N+1 queries, broken validations |
+| **Medium** | 🟡 | Should fix | Style issues, missing tests |
+| **Low** | 🟢 | Consider | Minor optimizations |
 
-## Metrics & Validation
+---
 
-Define clear success criteria for outcomes:
+## Workflow Recommendations
 
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: RuboCop passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
+### New Rails Feature
+1. **Plan**: Use [service-object-domain-logic-refactoring.md](service-object-domain-logic-refactoring.md) for architecture
+2. **Build**: Follow Rails conventions
+3. **Test**: Use [rspec-test-generation.md](rspec-test-generation.md) for specs
+4. **Review**: Use [pr-review-feedback.md](pr-review-feedback.md) before merge
 
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
+### Performance Investigation
+1. **Audit**: Use [rails-active-record-performance-audit.md](rails-active-record-performance-audit.md)
+2. **Fix**: Address N+1 queries and missing indexes
+3. **Verify**: Check query counts in test logs
 
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
+### Code Quality Sprint
+1. **Style**: Use [rubocop-compliance.md](rubocop-compliance.md) for RuboCop setup
+2. **Refactor**: Use [code-refactoring.md](code-refactoring.md) for improvements
+3. **Document**: Use [documentation-generation.md](documentation-generation.md) for YARD docs

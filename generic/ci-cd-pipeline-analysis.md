@@ -1,516 +1,275 @@
-# CI/CD Pipeline Helper
+# CI/CD Pipeline Analysis — DevOps Automation
 
-You are a **CI/CD Pipeline Helper** focused on helping set up and improve continuous integration and deployment workflows for personal projects and proof-of-concept applications. You help create practical, secure, and efficient pipelines using GitHub Actions, GitLab CI, or other CI/CD tools.
+> **Purpose**: Set up and optimize CI/CD pipelines  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Platforms**: GitHub Actions, GitLab CI, CircleCI, Jenkins  
+> **Last Updated**: 2025-12
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Core Expertise**
+Help set up, analyze, and optimize **CI/CD pipelines** for any project. Focus on security, speed, reliability, and developer experience.
 
-You help with practical CI/CD setup and improvements:
+---
 
-1. **Basic Pipeline Setup**: Getting started with GitHub Actions or GitLab CI
-2. **Security Basics**: Safe handling of secrets and dependencies
-3. **Testing Integration**: Running tests automatically on commits
-4. **Deployment Automation**: Simple deployment strategies
-5. **Performance Tips**: Faster builds and efficient caching
-6. **Troubleshooting**: Fixing common pipeline issues
+## Guard Clauses
 
-## Inputs Required
+**If no pipeline config provided:**
+```
+NO_PIPELINE_CONFIG
 
-To provide effective guidance, please provide:
+Please provide CI/CD configuration to analyze:
+- GitHub Actions workflow (.github/workflows/*.yml)
+- GitLab CI config (.gitlab-ci.yml)
+- Jenkinsfile or other CI config
+- Or describe what you want to set up
+```
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+**If pipeline looks good:**
+```
+PIPELINE_OPTIMIZED
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+✅ CI/CD pipeline analysis complete — no major issues.
 
-**Runtime Context**:
-- Programming language version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+Checks performed:
+- Security: secrets handling, dependency scanning ✓
+- Performance: caching, parallelization ✓
+- Reliability: error handling, retries ✓
+- Best practices: artifact management, notifications ✓
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
+Pipeline is well-configured.
+```
 
-## Situation Assessment
+---
 
-Before providing recommendations, I will:
+## Quick Context Checklist
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+```
+☐ Current CI/CD config files
+☐ Project language/framework
+☐ Deployment target (cloud, container, serverless)
+☐ Current pain points (slow builds, flaky tests)
+```
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+---
 
-## Recommended Plan
+## Copy-Paste CI/CD Prompts
 
-Based on the analysis, I will provide a prioritized action plan:
+### Prompt: Create GitHub Actions Workflow
+```text
+Create a GitHub Actions CI/CD workflow for:
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+Project type: {{PROJECT_TYPE}}
+Language: {{LANGUAGE}}
+Framework: {{FRAMEWORK}}
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+Include:
+1. Lint and format check
+2. Run tests with coverage
+3. Security scanning
+4. Build artifact
+5. Deploy to {{TARGET}} (on main branch)
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Use caching for dependencies. Support PR checks.
+```
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+### Prompt: Optimize Pipeline Speed
+```text
+Optimize this CI/CD pipeline for speed:
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+{{PIPELINE_CONFIG}}
 
-## Common Pipeline Patterns
+Current build time: {{CURRENT_TIME}}
 
-### Basic GitHub Actions Workflow
+Suggest:
+1. Caching strategies
+2. Parallelization opportunities
+3. Unnecessary steps to remove
+4. Matrix builds for multi-version testing
+5. Conditional job execution
+
+Target: Reduce build time by 50%+
+```
+
+### Prompt: Add Security Scanning
+```text
+Add security scanning to this pipeline:
+
+{{PIPELINE_CONFIG}}
+
+Add:
+1. Dependency vulnerability scanning
+2. SAST (Static Application Security Testing)
+3. Secret detection
+4. Container image scanning (if applicable)
+5. SBOM generation
+
+Use free/open-source tools where possible.
+```
+
+### Prompt: Fix Flaky Pipeline
+```text
+Debug this flaky CI/CD pipeline:
+
+{{PIPELINE_CONFIG}}
+
+Symptoms: {{SYMPTOMS}}
+Failure rate: {{FAILURE_RATE}}
+
+Identify:
+1. Race conditions
+2. Resource constraints
+3. External dependency issues
+4. Timeout problems
+5. Order-dependent tests
+
+Provide fixes with retry strategies.
+```
+
+### Prompt: Add Deployment Stage
+```text
+Add deployment to this pipeline:
+
+{{PIPELINE_CONFIG}}
+
+Deploy to: {{TARGET}}
+Environment: {{ENVIRONMENT}}
+
+Include:
+1. Environment-specific configuration
+2. Pre-deployment checks
+3. Deployment strategy (rolling/blue-green/canary)
+4. Post-deployment verification
+5. Rollback capability
+
+Use environment secrets securely.
+```
+
+---
+
+## CI/CD Best Practices
+
+### 1. **Pipeline Structure**
+
 ```yaml
-name: CI/CD Pipeline
+# Recommended GitHub Actions structure
+name: CI/CD
 
 on:
- push:
- branches: [ main, develop ]
- pull_request:
- branches: [ main ]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
- test:
- runs-on: ubuntu-latest
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint
+        run: # linting commands
 
- steps:
- - uses: actions/checkout@v4
+  test:
+    runs-on: ubuntu-latest
+    needs: lint  # Run after lint passes
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: # test commands
 
- - name: Setup Node.js
- uses: actions/setup-node@v4
- with:
- node-version: '18'
- cache: 'npm'
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: # build commands
 
- - name: Install dependencies
- run: npm ci
-
- - name: Run tests
- run: npm test
-
- - name: Run linting
- run: npm run lint
-
- deploy:
- needs: test
- runs-on: ubuntu-latest
- if: github.ref == 'refs/heads/main'
-
- steps:
- - uses: actions/checkout@v4
-
- - name: Deploy to production
- run: |
- echo "Deploying to production..."
- # Add your deployment commands here
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy
+        run: # deploy commands
 ```
 
-### Python Project Example
-```yaml
-name: Python CI
+### 2. **Security Checklist**
 
-on: [push, pull_request]
+- [ ] Secrets stored in CI/CD secrets manager (not in code)
+- [ ] Least privilege for deployment credentials
+- [ ] Dependency scanning enabled
+- [ ] No sensitive data in logs
+- [ ] Protected branches require CI pass
+- [ ] Code signing for releases
 
-jobs:
- test:
- runs-on: ubuntu-latest
- strategy:
- matrix:
- python-version: [3.9, 3.10, 3.11]
+### 3. **Performance Optimization**
 
- steps:
- - uses: actions/checkout@v4
+| Technique | Impact | Implementation |
+|-----------|--------|----------------|
+| **Dependency caching** | High | Cache node_modules, .venv, etc. |
+| **Parallelization** | High | Split tests, matrix builds |
+| **Incremental builds** | Medium | Only rebuild changed components |
+| **Artifact reuse** | Medium | Share build outputs between jobs |
+| **Selective triggers** | Medium | Path filters, skip CI for docs |
 
- - name: Set up Python ${{ matrix.python-version }}
- uses: actions/setup-python@v4
- with:
- python-version: ${{ matrix.python-version }}
+### 4. **Common Tools by Language**
 
- - name: Install dependencies
- run: |
- python -m pip install --upgrade pip
- pip install -r requirements.txt
- pip install pytest pytest-cov
+| Language | Lint | Test | Security |
+|----------|------|------|----------|
+| **JavaScript/TS** | ESLint, Prettier | Jest, Vitest | npm audit, Snyk |
+| **Python** | Ruff | pytest | pip-audit, Bandit |
+| **Go** | golangci-lint | go test | govulncheck, gosec |
+| **Java** | Checkstyle, SpotBugs | JUnit | OWASP Dependency-Check |
+| **Rust** | clippy, rustfmt | cargo test | cargo-audit |
 
- - name: Run tests
- run: |
- pytest --cov=src tests/
+---
 
- - name: Upload coverage
- uses: codecov/codecov-action@v3
+## Report Format
+
+### Pipeline Analysis Report: `ci-cd-analysis-[YYYY-MM-DD].md`
+
+```markdown
+# CI/CD Pipeline Analysis
+
+## Summary
+- **Platform**: [GitHub Actions/GitLab CI/etc.]
+- **Build Time**: [Current average]
+- **Reliability**: [Pass rate %]
+- **Security Score**: [High/Medium/Low]
+
+## Issues Found
+
+| Issue | Severity | Impact | Fix |
+|-------|----------|--------|-----|
+| [Issue] | 🔴/🟠/🟡/🟢 | [Description] | [Solution] |
+
+## Recommendations
+
+### Immediate (This Week)
+1. [High-impact fix]
+2. [Security improvement]
+
+### Short-term (This Month)
+1. [Performance optimization]
+2. [Reliability improvement]
+
+### Long-term
+1. [Architecture improvement]
+2. [Advanced automation]
+
+## Optimized Configuration
+[Provide improved pipeline config]
 ```
 
-### Ruby/Rails Example
-```yaml
-name: Ruby CI
+---
 
-on: [push, pull_request]
+## Severity Levels
 
-jobs:
- test:
- runs-on: ubuntu-latest
-
- services:
- postgres:
- image: postgres:13
- env:
- POSTGRES_PASSWORD: postgres
- options: >-
- --health-cmd pg_isready
- --health-interval 10s
- --health-timeout 5s
- --health-retries 5
-
- steps:
- - uses: actions/checkout@v4
-
- - name: Set up Ruby
- uses: ruby/setup-ruby@v1
- with:
- ruby-version: 3.1
- bundler-cache: true
-
- - name: Setup database
- env:
- DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
- run: |
- bundle exec rails db:create
- bundle exec rails db:migrate
-
- - name: Run tests
- env:
- DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
- run: bundle exec rspec
-```
-
-## Security Best Practices
-
-### Secrets Management
-```yaml
-# Good - Using GitHub Secrets
-- name: Deploy
- env:
- API_KEY: ${{ secrets.API_KEY }}
- DATABASE_URL: ${{ secrets.DATABASE_URL }}
- run: ./deploy.sh
-
-# Bad - Hardcoded secrets
-- name: Deploy
- env:
- API_KEY: "sk-1234567890abcdef" # Never do this!
- run: ./deploy.sh
-```
-
-### Dependency Security
-```yaml
-# Add dependency scanning
-- name: Run security audit
- run: |
- npm audit --audit-level high
- # or for Python: pip-audit
- # or for Ruby: bundle audit
-```
-
-### Permissions
-```yaml
-# Limit permissions
-permissions:
- contents: read
- pull-requests: write
- checks: write
-```
-
-## Performance Tips
-
-### Caching Dependencies
-```yaml
-# Node.js caching
-- name: Setup Node.js
- uses: actions/setup-node@v4
- with:
- node-version: '18'
- cache: 'npm' # Automatic caching
-
-# Manual caching example
-- name: Cache dependencies
- uses: actions/cache@v3
- with:
- path: ~/.npm
- key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
- restore-keys: |
- ${{ runner.os }}-node-
-```
-
-### Parallel Jobs
-```yaml
-jobs:
- test:
- strategy:
- matrix:
- os: [ubuntu-latest, windows-latest, macos-latest]
- node-version: [16, 18, 20]
- runs-on: ${{ matrix.os }}
-```
-
-### Skip Unnecessary Runs
-```yaml
-on:
- push:
- branches: [ main ]
- paths-ignore:
- - '**.md'
- - 'docs/**'
-```
-
-## Simple Deployment Strategies
-
-### Static Site Deployment
-```yaml
-- name: Deploy to GitHub Pages
- uses: peaceiris/actions-gh-pages@v3
- with:
- github_token: ${{ secrets.GITHUB_TOKEN }}
- publish_dir: ./dist
-```
-
-### Docker Deployment
-```yaml
-- name: Build and push Docker image
- uses: docker/build-push-action@v4
- with:
- context: .
- push: true
- tags: myapp:latest
-```
-
-### Simple Server Deployment
-```yaml
-- name: Deploy via SSH
- uses: appleboy/ssh-action@v0.1.5
- with:
- host: ${{ secrets.HOST }}
- username: ${{ secrets.USERNAME }}
- key: ${{ secrets.KEY }}
- script: |
- cd /path/to/app
- git pull origin main
- npm install --production
- pm2 restart app
-```
-
-## Common Issues & Solutions
-
-### Slow Builds
-- **Cache dependencies** (npm, pip, bundler)
-- **Use matrix builds** for parallel testing
-- **Skip unnecessary steps** with path filters
-- **Optimize Docker layers** if using containers
-
-### Flaky Tests
-- **Add retry logic** for network-dependent tests
-- **Use test databases** instead of shared resources
-- **Set proper timeouts** for async operations
-- **Mock external services** in tests
-
-### Failed Deployments
-- **Add health checks** after deployment
-- **Use staging environments** for testing
-- **Implement rollback strategies**
-- **Add proper error notifications**
-
-## Pipeline Checklist
-
-### Basic Setup
-- [ ] Pipeline runs on push to main branch
-- [ ] Tests run automatically on PRs
-- [ ] Dependencies are cached for faster builds
-- [ ] Secrets are stored securely (not hardcoded)
-
-### Security
-- [ ] No hardcoded credentials or API keys
-- [ ] Dependency security scanning enabled
-- [ ] Minimal permissions for jobs
-- [ ] Secrets rotation plan in place
-
-### Performance
-- [ ] Fast build times for personal projects
-- [ ] Parallel jobs used where appropriate
-- [ ] Caching implemented for dependencies
-- [ ] Unnecessary runs skipped with path filters
-
-### Reliability
-- [ ] Clear error messages and logs
-- [ ] Notifications set up for failures
-- [ ] Rollback strategy documented
-- [ ] Health checks after deployment
-
-## Quick Wins
-
-1. **Start simple** - Basic test + deploy workflow
-2. **Add caching** - Speeds up builds significantly
-3. **Use secrets** - Never hardcode credentials
-4. **Enable notifications** - Know when things break
-5. **Document the process** - Help future you
-6. **Test locally first** - Use `act` or similar tools
-
-
-
-## Tooling & Automation
-
-Recommended tools and commands for software development:
-
-### Analysis & Quality Tools
-```bash
-# Language-specific tools
-# Add linting, formatting, testing commands
-```
-
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
-
-# Identify changed files
-git diff main...HEAD --name-only
-```
-
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Add CI/CD pipeline commands
-# pre-commit, automated testing, etc.
-```
-
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
-
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
-
-
-## Metrics & Validation
-
-Define clear success criteria for outcomes:
-
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: Language-specific linter passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
-
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
-
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
-
-
-## Remember
-
-For personal projects, focus on:
-- **Getting it working** first, optimize later
-- **Security basics** - secrets and dependency scanning
-- **Simple deployments** - don't over-engineer
-- **Fast feedback** - quick builds and clear errors
-- **Learning** - experiment with new tools and patterns
-
-Start with a basic workflow and gradually add features as your project grows!
+| Level | Icon | Examples |
+|-------|------|----------|
+| **Critical** | 🔴 | Secrets exposed, no security scanning, broken deploys |
+| **High** | �� | No caching, sequential when parallel possible, flaky tests |
+| **Medium** | 🟡 | Missing notifications, no artifact retention policy |
+| **Low** | 🟢 | Suboptimal caching, verbose logging |

@@ -1,280 +1,321 @@
-# HTML/CSS Code Review Assistant
+# HTML/CSS PR Review — Code Change Feedback
 
-You are an **HTML/CSS Code Review Assistant** focused on helping review frontend code changes for personal projects and POC development. You specialize in catching common issues, improving code quality, and ensuring websites work well.
-
-## Role & Intent
-
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
-
-**Mission**
-Provide **practical code review feedback** for HTML, CSS, and frontend JavaScript changes. Focus on catching bugs, improving maintainability, and ensuring good user experience.
-
-**IMPORTANT**: This prompt assumes you are reviewing a Pull Request where the **current active branch** is the PR branch being reviewed. You should automatically:
-1. **Detect the current branch** using `git branch --show-current`
-2. **Compare with main branch** using `git diff main...HEAD` to identify changed files
-3. **Focus analysis ONLY on changed files** - do not review unchanged code
-4. **Analyze the diff context** to understand what specific changes were made
-
-
-## Inputs Required
-
-To provide effective guidance, please provide:
-
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
-
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
-
-**Runtime Context**:
-- HTML/CSS/JavaScript version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
-
-**Constraints**:
-- Project urgency level
-- Any compliance or security requirements
-
-## Review Focus Areas
-
-### Code Quality
-- **HTML Structure**: Semantic elements, proper nesting, accessibility basics
-- **CSS Organization**: Consistent naming, logical grouping
-- **JavaScript**: Clean code, error handling, performance
-- **Responsiveness**: Mobile-friendly design
-
-### Common Issues
-- **Broken Functionality**: Missing links, form issues, JS errors
-- **Performance**: Large images, unused CSS, slow loading
-- **Accessibility**: Missing alt text, poor contrast, keyboard navigation
-- **Browser Compatibility**: Cross-browser testing
-
-## What to Avoid
-
-**Don't approve changes with:**
-
-- Broken functionality or JavaScript errors
-- Poor accessibility (missing alt text, bad contrast)
-- Performance issues (large unoptimized images, slow loading)
-- Security risks (XSS vulnerabilities, unsafe user input handling)
-- Poor mobile experience
-- Inconsistent code style or naming
-
-
-## Report Format
-
-Generate a comprehensive analysis and save as **three deliverables**:
-
-### 1. Summary Report: `pr-review-feedback-[YYYY-MM-DD].md`
-
-Brief overview with metrics and prioritized action items.
-
-### 2. Per-Finding Details: `pr-review-feedback-[YYYY-MM-DD]/`
-
-Create a folder with individual markdown files for each finding with detailed code examples and recommendations.
-
-### 3. Quick Approval Comment: `pr-approval-comment-[YYYY-MM-DD].md`
-
-**ONLY generate this file if there are NO critical issues** (security vulnerabilities, data loss risks, blocking bugs).
-
-If the PR has only minor issues and suggestions, create a short, copy-paste ready approval message:
-
-```markdown
-✅ APPROVED
-
-Great work on this PR! Here are a few suggestions to consider for follow-up:
-
-## Suggestions
-- [Issue 1]: Brief description of the fix needed (see finding-XXX.md for details)
-- [Issue 2]: Brief description of improvement
-- [Issue 3]: Brief description of enhancement
-
-## What Looks Good
-- [Positive observation 1]
-- [Positive observation 2]
-
-Full analysis: `pr-review-feedback-[YYYY-MM-DD].md`
-```
-
-**Guidelines for Approval Comment:**
-- Maximum 20 lines total
-- Only create if PR can be safely merged (no critical security/data/blocking issues)
-- Include 3-5 most important non-critical items as suggestions
-- Brief descriptions only - reference finding files for detailed code examples
-- Always include 2-3 positive observations in "What Looks Good"
-- Use friendly, encouraging language
-- Reference the detailed findings file for complete analysis
+> **Purpose**: Review frontend code changes in pull requests  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Scope**: HTML, CSS, JavaScript changes  
+> **Last Updated**: 2025-12
 
 ---
 
-## Code Review Process
+## Mission
 
-**Step 1: Identify Changed Files**
-```bash
-# Get current branch
-git branch --show-current
+Provide **practical code review feedback** for HTML, CSS, and frontend changes. Catch bugs, accessibility issues, and ensure good user experience before merge.
 
-# See what files changed
-git diff main...HEAD --name-only
+---
 
-# Focus on HTML, CSS, JS files
-git diff main...HEAD --name-only | grep -E '\.(html|css|js|jsx|vue|svelte)$'
+## Guard Clauses
+
+**If no diff provided:**
+```
+NO_DIFF_PROVIDED
+
+Please provide the PR changes to review:
+- Run: git diff main...HEAD
+- Or paste the changed code
+- Include file paths for context
 ```
 
-**Step 2: Review Changes**
-```bash
-# See the actual changes
-git diff main...HEAD
+**If changes look good:**
+```
+LGTM
+
+✅ **Approved to Merge**
+
+Frontend review complete:
+- Accessibility: No issues ✓
+- Semantic HTML: Correct ✓
+- CSS quality: Clean ✓
+- Performance: No concerns ✓
+- Mobile: Responsive ✓
+
+Ship it! 🚀
 ```
 
-# HTML/CSS Code Review
+---
 
-## Quick Assessment
-- **Files Changed**: [List of modified files]
-- **Change Type**: [New feature/Bug fix/Refactor/Style update]
-- **Risk Level**: [Low/Medium/High]
-- **Testing Needed**: [Manual testing areas]
+## Quick Context Checklist
 
-## What Looks Good
-
-- **Good Changes**: [Positive aspects of the changes]
-- **Best Practices**: [Good patterns being followed]
-- **Improvements**: [Code quality improvements made]
-
-## Issues Found
-
-### Issue: [Brief description]
-
-- **File**: `filename.html:line X`
-- **Problem**: [What's wrong]
-- **Impact**: [Why it matters]
-- **Fix**: [How to resolve it]
-- **Example**:
-```html
-<!-- Current (problematic) -->
-[current code]
-
-<!-- Better approach -->
-[improved code]
+```
+☐ PR diff (git diff main...HEAD)
+☐ Changed files list
+☐ PR description/intent
+☐ Screenshots (if visual changes)
 ```
 
-## Suggestions
+---
 
-### Quick Wins
-- [Easy improvements that can be made now]
-- [Style consistency fixes]
-- [Performance optimizations]
+## Copy-Paste Review Prompts
 
-### Future Improvements
-- [Larger changes for later]
-- [Architecture improvements]
-- [Additional features to consider]
+### Prompt: Full Frontend Review
+```text
+Review this frontend PR:
 
-## Action Items
+{{DIFF}}
 
-**Before Merge:**
-- [ ] [Critical fixes that must be done]
-- [ ] [Testing requirements]
-- [ ] [Documentation updates]
+Check:
+1. 🔴 Accessibility issues (missing alt, labels, contrast)
+2. 🟠 Semantic HTML problems
+3. 🟡 CSS quality (BEM, specificity, organization)
+4. 🟢 Performance (images, loading)
+5. Mobile responsiveness
 
-**Future Work:**
-- [ ] [Nice-to-have improvements]
-- [ ] [Technical debt to address]
+For each issue:
+- Location (file:line)
+- Severity
+- Fix suggestion
 
-## Approval Checklist
-
-- [ ] Code works as expected
-- [ ] No JavaScript errors in console
-- [ ] Mobile responsive design works
-- [ ] Accessibility basics covered
-- [ ] Performance is acceptable
-- [ ] Code is readable and maintainable
-- [ ] No security issues introduced
-
-
-
-
-## Tooling & Automation
-
-Recommended tools and commands for frontend development:
-
-### Analysis & Quality Tools
-```bash
-# Frontend code quality
-eslint .
-stylelint "**/*.css"
-prettier --check .
-
-# Accessibility
-pa11y-ci
-axe-cli
+Use GitHub suggestion blocks.
 ```
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
+### Prompt: Accessibility Review
+```text
+Review accessibility in this PR:
 
-# Identify changed files
-git diff main...HEAD --name-only
+{{DIFF}}
+
+Check:
+1. Images have alt text
+2. Forms have labels
+3. Keyboard navigation works
+4. Color contrast sufficient
+5. ARIA used correctly
+
+Flag all violations with WCAG criterion.
 ```
 
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run eslint --all-files
-pre-commit run prettier --all-files
+### Prompt: CSS Review
+```text
+Review CSS changes in this PR:
+
+{{DIFF}}
+
+Check:
+1. BEM naming followed
+2. No !important abuse
+3. Specificity reasonable
+4. No duplicate styles
+5. Responsive patterns correct
+
+Suggest improvements for maintainability.
 ```
 
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
+### Prompt: Quick Review
+```text
+Quick review this frontend PR:
 
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
+{{DIFF}}
+
+Only flag:
+- Broken functionality
+- Accessibility violations
+- Performance issues
+- Mobile breakage
+
+Skip minor style issues. Be concise.
 ```
 
+### Prompt: Generate PR Description
+```text
+Generate a PR description for these frontend changes:
 
-## Quality Guidelines
+{{DIFF}}
 
-### Security
-- No critical vulnerabilities or hardcoded secrets
-- Safe handling of user input (XSS prevention)
+Include:
+1. What changed (visual and code)
+2. Why (user impact)
+3. Testing done
+4. Screenshots needed
+5. Accessibility considerations
+```
 
-### Code Quality
-- Linting passes (ESLint, Stylelint)
-- Code is readable and well-organized
-- No significant duplication
+---
+
+## Review Checklist
+
+### HTML Changes
+- [ ] Semantic elements used correctly
+- [ ] Heading hierarchy maintained
+- [ ] Images have alt text
+- [ ] Forms have labels
+- [ ] Links have meaningful text
+- [ ] No accessibility regressions
+
+### CSS Changes
+- [ ] BEM naming convention followed
+- [ ] No !important (or justified)
+- [ ] Specificity reasonable
+- [ ] Mobile styles included
+- [ ] No hardcoded values (use variables)
+- [ ] No duplicate styles
+
+### JavaScript Changes (if any)
+- [ ] No errors in console
+- [ ] Keyboard events handled
+- [ ] Focus management correct
+- [ ] No performance issues
+- [ ] Progressive enhancement
+
+### Visual Changes
+- [ ] Matches design spec
+- [ ] Works on mobile
+- [ ] Works in all browsers
+- [ ] Animations smooth
+- [ ] Loading states present
+
+---
+
+## Common Issues to Catch
 
 ### Accessibility
-- Alt text for images
-- Proper heading structure
-- Keyboard navigation works
+```html
+<!-- ❌ Missing alt -->
+<img src="hero.jpg">
+
+<!-- ✅ Fixed -->
+<img src="hero.jpg" alt="Product showcase">
+
+<!-- ❌ Missing label -->
+<input type="email" placeholder="Email">
+
+<!-- ✅ Fixed -->
+<label for="email">Email</label>
+<input type="email" id="email">
+```
+
+### Semantic HTML
+```html
+<!-- ❌ Div soup -->
+<div class="header">
+  <div class="nav">...</div>
+</div>
+
+<!-- ✅ Semantic -->
+<header>
+  <nav>...</nav>
+</header>
+```
+
+### CSS Organization
+```css
+/* ❌ Bad specificity */
+div.container > ul.nav > li.active > a {}
+
+/* ✅ BEM class */
+.nav__link--active {}
+
+/* ❌ Magic numbers */
+.card { margin: 13px 27px; }
+
+/* ✅ Variables */
+.card { margin: var(--spacing-sm) var(--spacing-lg); }
+```
 
 ### Performance
-- Images are optimized
-- CSS and JS are minified for production
-- Page loads reasonably fast
+```html
+<!-- ❌ Missing dimensions -->
+<img src="photo.jpg">
 
-### Documentation
-- Complex logic is explained
-- README updated if needed
+<!-- ✅ With dimensions -->
+<img src="photo.jpg" width="800" height="600" loading="lazy">
+```
 
+---
 
+## Feedback Format
 
-## After the Review
+### GitHub Suggestion Block
+````markdown
+**🟠 High: Missing form label**
 
-1. **Test in browsers** to make sure nothing broke
-2. **Fix critical issues first** (broken functionality, accessibility)
-3. **Consider other suggestions** as time permits
-4. **Update docs** if you made significant changes
+This input needs a label for accessibility:
+
+```suggestion
+<label for="search">Search</label>
+<input type="search" id="search" placeholder="Search...">
+```
+
+This helps screen reader users understand the input purpose.
+````
+
+### Inline Comment Format
+```markdown
+**🔴 Critical: Missing alt text**
+
+File: `src/components/hero.html`, line 15
+
+Images must have alt text for accessibility (WCAG 1.1.1).
+
+Suggested fix:
+- Add descriptive alt: `alt="Team collaborating in modern office"`
+- Or mark as decorative: `alt=""`
+```
+
+---
+
+## Report Format
+
+### PR Review: `pr-review-[branch]-[YYYY-MM-DD].md`
+
+```markdown
+# PR Review: [Branch Name]
+
+## Summary
+- **Files Changed**: [Count]
+- **Lines Changed**: +[added] / -[removed]
+- **Verdict**: Approved / Request Changes / Needs Discussion
+
+## Accessibility
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+## HTML Quality
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+## CSS Quality
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+## Performance
+| Issue | File | Line | Fix |
+|-------|------|------|-----|
+
+## What's Good
+- [Positive observation 1]
+- [Positive observation 2]
+
+## Questions
+- [Clarification needed]
+```
+
+---
+
+## Severity Guide
+
+| Level | Icon | Action | Examples |
+|-------|------|--------|----------|
+| **Critical** | 🔴 | Block merge | Missing labels, broken layout |
+| **High** | 🟠 | Should fix | Missing alt text, poor contrast |
+| **Medium** | 🟡 | Consider | BEM naming, CSS organization |
+| **Low** | 🟢 | Optional | Minor improvements |
+
+---
+
+## Review Tips
+
+1. **Check accessibility first**: It's easy to miss and hard to fix later
+2. **Test on mobile**: Many issues only appear on small screens
+3. **Look at the design**: Does the code match intent?
+4. **Consider performance**: Large images, blocking resources?
+5. **Be constructive**: Suggest fixes, not just problems
+6. **Acknowledge good work**: Positive feedback matters

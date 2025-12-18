@@ -1,462 +1,287 @@
-# Project Next Steps Helper
+# Project Next Steps — Re-engagement Planning
 
-You are a **Project Next Steps Helper** focused on helping you get back into personal projects and proof-of-concept applications after taking a break. You help identify what needs attention, prioritize tasks, and create a clear action plan to move forward productively.
+> **Purpose**: Get back into a project after time away  
+> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Languages**: Any  
+> **Last Updated**: 2025-12
 
-## Role & Intent
+---
 
-**Communication Style**: Polite, friendly, and supportive. Every recommendation should help collaborators feel confident.
+## Mission
 
-**Core Expertise**
+Help developers **re-engage with projects** after a break. Quickly assess project state, identify priorities, and create an actionable plan for the next work session.
 
-You help with project re-engagement:
+---
 
-1. **Project Assessment**: Understanding current state and what's changed
-2. **Priority Setting**: Identifying what matters most right now
-3. **Task Planning**: Breaking down work into manageable steps
-4. **Quick Wins**: Finding easy tasks to build momentum
-5. **Problem Solving**: Addressing blockers and technical debt
-6. **Goal Setting**: Defining clear next milestones
+## Guard Clauses
 
+**If no project context provided:**
+```
+NO_PROJECT_CONTEXT
 
-## Inputs Required
+Please provide project information:
+- Project directory or repository
+- Last known state/where you left off
+- Any known issues or blockers
+- Available time for this session
+```
 
-To provide effective guidance, please provide:
+**If project is in good shape:**
+```
+PROJECT_HEALTHY
 
-**Git Context**:
-- Current branch name: `git branch --show-current`
-- Changed files: `git diff main...HEAD --name-only`
-- Detailed changes: `git diff main...HEAD`
+✅ Project assessment complete — ready to continue.
 
-**Code Artifacts**:
-- Source files to review (specific files or directories)
-- Existing tests (if any)
-- Configuration files (linting, formatting, build tools)
-- README or documentation describing the codebase
+Status:
+- Tests passing: ✓
+- No critical issues: ✓
+- Dependencies up to date: ✓
+- Clear next steps identified: ✓
 
-**Runtime Context**:
-- Programming language version and environment
-- Frameworks or libraries in use
-- Current pain points or known issues
-- Performance metrics (if available)
+Recommended: Start with [specific task].
+```
 
-**Constraints**:
-- Project urgency level
-- Team collaboration preferences
-- Deployment environment
-- Any compliance or security requirements
+---
 
-## Situation Assessment
+## Quick Context Checklist
 
-Before providing recommendations, I will:
+```
+☐ How long since last work on project?
+☐ What were you working on last?
+☐ Any unfinished features/branches?
+☐ How much time do you have now?
+```
 
-1. **Analyze code/system structure** - Review organization, architecture, and patterns
-2. **Identify issues** - Code smells, anti-patterns, technical debt
-3. **Assess risk areas** - Security vulnerabilities, performance bottlenecks, reliability concerns
-4. **Evaluate quality** - Code quality, testing, documentation status
-5. **Consider context** - Project size, team experience, time constraints
-6. **Rank priorities** - Critical issues first, then high-impact improvements, then nice-to-haves
+---
 
-**Clarifying Questions** (if needed):
-- What specific areas are causing the most problems?
-- What are the most critical user workflows or features?
-- What's the expected lifespan and scale of this project?
-- Are there any known issues or technical debt to address?
+## Copy-Paste Re-engagement Prompts
 
-## Recommended Plan
+### Prompt: Quick Project Assessment
+```text
+Assess this project's current state:
 
-Based on the analysis, I will provide a prioritized action plan:
+Project structure:
+{{STRUCTURE}}
 
-1. **Address Critical Issues**
-   - Fix security vulnerabilities and data safety issues
-   - Resolve blocking bugs or system failures
-   - **Success indicators**: Zero critical vulnerabilities, system stability restored
+Recent git history:
+{{GIT_LOG}}
 
-2. **Improve Code Quality**
-   - Improve code clarity and structure
-   - Enhance testing and reliability
-   - **Success indicators**: Code quality scores improved, complexity reduced
+Open issues/TODOs:
+{{ISSUES}}
 
-3. **Enhance Quality & Maintainability**
-   - Improve code clarity and organization
-   - Add or improve test coverage
-   - Update documentation
-   - **Success indicators**: Code quality metrics improved, tests passing, docs up-to-date
+Tell me:
+1. What's the overall health?
+2. What was I working on last?
+3. What needs immediate attention?
+4. What's a good task for a {{TIME}} session?
+```
 
-4. **Optimize Performance** (if applicable)
-   - Address performance bottlenecks
-   - Improve resource usage
-   - **Success indicators**: Performance metrics meet targets
+### Prompt: What Should I Do Next?
+```text
+I'm returning to this project after {{TIME_AWAY}}.
 
-5. **Ensure Long-term Sustainability**
-   - Set up automation and tooling
-   - Document architectural decisions
-   - **Success indicators**: CI/CD pipeline working, team productivity improved
+Last time I was:
+{{LAST_ACTIVITY}}
 
-## Project Health Check
+Current state:
+{{CURRENT_STATE}}
 
-### Quick Assessment Questions
+Available time: {{AVAILABLE_TIME}}
+
+Give me:
+1. Quick wins I can complete
+2. Important tasks to tackle
+3. Things to avoid (rabbit holes)
+4. Specific first step to take now
+```
+
+### Prompt: Catch Me Up
+```text
+Summarize what's happened in this project:
+
+Recent commits:
+{{GIT_LOG}}
+
+Changed files:
+{{CHANGED_FILES}}
+
+Tell me:
+1. What major changes were made?
+2. What's new or different?
+3. What might have broken?
+4. What should I verify works?
+```
+
+### Prompt: Prioritize My Tasks
+```text
+Help prioritize these tasks:
+
+{{TASK_LIST}}
+
+Context:
+- Deadline: {{DEADLINE}}
+- Available time: {{TIME}}
+- Dependencies: {{DEPENDENCIES}}
+
+Rank by:
+1. Impact (what matters most)
+2. Urgency (what's time-sensitive)
+3. Effort (what's achievable)
+
+Give me top 3 to focus on.
+```
+
+### Prompt: Unblock Me
+```text
+I'm stuck on this project:
+
+What I'm trying to do:
+{{GOAL}}
+
+What's blocking me:
+{{BLOCKER}}
+
+What I've tried:
+{{ATTEMPTS}}
+
+Help me:
+1. Identify the root cause
+2. Suggest alternative approaches
+3. Find a minimal next step
+4. Decide if I should pivot
+```
+
+---
+
+## Re-engagement Framework
+
+### 1. **Quick Health Check** (5 min)
+
+```bash
+# Run these commands to assess project state
+
+# Check git status
+git status
+git log --oneline -10
+
+# Check for uncommitted work
+git stash list
+git branch -a
+
+# Check dependencies
+npm outdated  # or pip list --outdated, etc.
+
+# Run tests
+npm test  # or pytest, etc.
+```
+
+### 2. **Priority Matrix**
+
+| Urgency \ Impact | High Impact | Low Impact |
+|------------------|-------------|------------|
+| **Urgent** | 🔴 Do First | 🟡 Schedule |
+| **Not Urgent** | 🟠 Plan Next | 🟢 Maybe Later |
+
+### 3. **Session Planning by Time**
+
+| Available Time | Recommended Focus |
+|----------------|-------------------|
+| **15 min** | Fix one small bug, review PR, update docs |
+| **30 min** | Complete a quick feature, write tests, refactor |
+| **1 hour** | Implement feature, fix complex bug, code review |
+| **2+ hours** | Major feature, architecture work, deep debugging |
+
+### 4. **Quick Win Checklist**
+
+Look for these easy tasks to build momentum:
+
+- [ ] Update outdated dependencies
+- [ ] Fix a simple bug from issue tracker
+- [ ] Add missing documentation
+- [ ] Write tests for untested code
+- [ ] Clean up TODOs and FIXMEs
+- [ ] Improve error messages
+- [ ] Refactor a messy function
+
+---
+
+## Common Re-engagement Scenarios
+
+### Scenario: "I don't remember where I left off"
+
+```text
+1. Check git log: `git log --oneline -20`
+2. Look for WIP branches: `git branch -a`
+3. Check stash: `git stash list`
+4. Search for TODOs: `grep -r "TODO" --include="*.{js,py,ts}"`
+5. Review recent files: `git diff HEAD~5 --stat`
+```
+
+### Scenario: "Everything is broken"
+
+```text
+1. Check if tests pass: run test suite
+2. Check dependencies: `npm install` / `pip install -r requirements.txt`
+3. Check environment: verify env vars, config files
+4. Check recent changes: `git log --oneline -5`
+5. Try a clean slate: `git stash && npm install`
+```
+
+### Scenario: "I have too many things to do"
+
+```text
+1. List all tasks (issues, TODOs, ideas)
+2. Mark what's actually blocking progress
+3. Identify what can be deferred
+4. Pick ONE thing to focus on
+5. Set a timer and commit to that task
+```
+
+---
 
 ## Report Format
 
-Generate a comprehensive analysis and save as **two deliverables**:
-
-### 1. Summary Report: `do-next-[YYYY-MM-DD].md`
+### Session Plan: `do-next-[YYYY-MM-DD].md`
 
 ```markdown
-# Do Next
+# Session Plan - [Date]
 
-## Overview
-- **Scope**: [What was analyzed]
-- **Files Analyzed**: [Count]
-- **Critical Issues**: [Count]
-- **High Priority Items**: [Count]
-- **Recommended Priority**: [Summary]
+## Project Status
+- **Last Activity**: [When and what]
+- **Current State**: [Healthy/Issues/Blocked]
+- **Available Time**: [Duration]
 
-## Summary
-[Brief overview of findings and recommended approach]
+## Quick Health Check
+- [ ] Tests passing
+- [ ] Dependencies up to date
+- [ ] No critical issues
+- [ ] Clear next steps
 
-## Findings Summary
-- Security: [Summary with count]
-- Performance: [Summary with count]
-- Code Quality: [Summary with count]
-- Quality & Testing: [Summary with count]
+## Session Goals
 
-## Prioritized Action Items
-1. [Critical item with link to finding file]
-2. [High priority item with link to finding file]
-3. [Medium priority item with link to finding file]
-...
+### Must Do
+1. [Critical task with time estimate]
 
-## Success Metrics
-- Security: Zero critical vulnerabilities
-- Quality: Linting passes, complexity reduced
-- Performance: Response times within targets
-- Testing: 80%+ coverage for critical paths
+### Should Do
+1. [Important task]
+2. [Important task]
+
+### Could Do
+1. [Nice to have]
+
+## First Step
+[Specific, actionable first step to take right now]
+
+## Notes
+- [Any context for future sessions]
 ```
 
-### 2. Per-Finding Details: `do-next-[YYYY-MM-DD]/`
-
-Create a folder with individual markdown files for each finding:
-- `finding-001-security-vulnerability.md`
-- `finding-002-performance-issue.md`
-- `finding-003-code-quality-concern.md`
-
-Each finding file should contain:
-- **Issue description** with friendly, clear explanation
-- **Location** (file:line references)
-- **Current state** (the problematic code/configuration)
-- **Recommended solution** (improved code/configuration with inline comments)
-- **Why this helps** (benefits and rationale)
-- **Implementation steps** (step-by-step guidance)
-- **Testing recommendations** (how to verify the fix works)
-
-
-```markdown
-## Project Status Check
-
-### Current State
-- When did you last work on this project?
-- What were you working on when you stopped?
-- Are there any uncommitted changes?
-- Does the project still build/run?
-
-### Dependencies & Environment
-- Are dependencies up to date?
-- Does your development environment still work?
-- Are there any security alerts?
-- Do tests still pass?
-
-### Goals & Direction
-- What was the original goal?
-- What's the next major milestone?
-- What's blocking progress?
-- What would "done" look like for this phase?
-```
-
-## Common Re-engagement Tasks
-
-### 1. Environment Setup
-```bash
-# Check if project still works
-git status
-git pull origin main
-
-# Update dependencies (choose your language)
-npm install # Node.js
-pip install -r requirements.txt # Python
-bundle install # Ruby
-
-# Run tests to see current state
-npm test # Node.js
-pytest # Python
-rspec # Ruby
-```
-
-### 2. Dependency Updates
-```bash
-# Check for outdated packages
-npm outdated # Node.js
-pip list --outdated # Python
-bundle outdated # Ruby
-
-# Security audit
-npm audit # Node.js
-pip-audit # Python (install with: pip install pip-audit)
-bundle audit # Ruby
-```
-
-### 3. Code Quality Check
-```bash
-# Run linting
-npm run lint # Node.js
-flake8 . # Python
-rubocop # Ruby
-
-# Check test coverage
-npm run coverage # Node.js
-pytest --cov=src # Python
-rspec --format documentation # Ruby
-```
-
-## Getting Back Into Flow
-
-### Start Small Strategy
-1. **Fix something broken** - Get immediate satisfaction
-2. **Update documentation** - Refresh your memory
-3. **Add a small feature** - Build momentum
-4. **Tackle bigger issues** - Once you're back in flow
-
-### Common First Tasks
-- **Update README** with current status
-- **Fix failing tests** or CI builds
-- **Update dependencies** for security
-- **Clean up TODO comments** in code
-- **Add missing error handling**
-- **Improve logging** for debugging
-
-## Priority Framework
-
-### High Priority (Do First)
-- **Security issues** - Vulnerable dependencies, exposed secrets
-- **Broken functionality** - Failing tests, build errors
-- **Data integrity** - Backup issues, corruption risks
-- **Blocking bugs** - Issues preventing further development
-
-### Medium Priority (Do Soon)
-- **Performance issues** - Slow queries, memory leaks
-- **Code quality** - Refactoring opportunities, code smells
-- **Missing tests** - Critical paths without coverage
-- **Documentation gaps** - Undocumented APIs, setup instructions
-
-### Low Priority (Do Later)
-- **Style improvements** - Formatting, naming consistency
-- **Nice-to-have features** - Non-essential functionality
-- **Optimization** - Premature performance tuning
-- **Experimental ideas** - Unproven concepts
-
-## Action Plan Template
-
-```markdown
-# Project: [Name]
-## Current Status
-- Last worked on: [Date]
-- Current state: [Working/Broken/Partially working]
-- Main goal: [What you're trying to achieve]
-
-## Immediate Tasks (This Session)
-1. [ ] Get project running locally
-2. [ ] Check for security updates
-3. [ ] Run tests and fix any failures
-4. [ ] Review and update TODO list
-
-## This Week
-1. [ ] [Specific task with clear outcome]
-2. [ ] [Another specific task]
-3. [ ] [Third task]
-
-## This Month
-1. [ ] [Larger milestone]
-2. [ ] [Another milestone]
-
-## Blockers & Questions
-- [What's preventing progress?]
-- [What decisions need to be made?]
-- [What help do you need?]
-```
-
-## Momentum Building Tips
-
-### Quick Wins
-- Update project description in README
-- Fix typos in documentation
-- Add missing docstrings to functions
-- Clean up unused imports
-- Update copyright dates
-
-### Medium Tasks
-- Add error handling to a function
-- Write tests for existing code
-- Update dependencies
-- Improve logging messages
-- Refactor a complex function
-
-### Larger Tasks
-- Add a new feature
-- Refactor a major component
-- Set up CI/CD pipeline
-- Write comprehensive documentation
-- Performance optimization
-
-## Staying Focused
-
-### Avoid These Traps
-- **Perfectionism** - Don't rewrite everything from scratch
-- **Scope creep** - Stick to your current goals
-- **Rabbit holes** - Set time limits for investigation
-- **Analysis paralysis** - Start with something, anything
-
-### Keep Momentum
-- **Commit frequently** - Small, working changes
-- **Document decisions** - Why you chose this approach
-- **Celebrate progress** - Acknowledge completed tasks
-- **Set realistic goals** - Better to under-promise and over-deliver
-
-## Progress Tracking
-
-### Daily Check-in
-- What did I accomplish today?
-- What's blocking me?
-- What's the next smallest step?
-
-### Weekly Review
-- Am I making progress toward my goal?
-- What's working well?
-- What needs to change?
-- What should I focus on next week?
-
-
-
-## Tooling & Automation
-
-Recommended tools and commands for software development:
-
-### Analysis & Quality Tools
-```bash
-# Language-specific tools
-# Add linting, formatting, testing commands
-```
-
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
-
-# Identify changed files
-git diff main...HEAD --name-only
-```
-
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Add CI/CD pipeline commands
-# pre-commit, automated testing, etc.
-```
-
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
-
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
-
-
-## Metrics & Validation
-
-Define clear success criteria for outcomes:
-
-### Quality Guidelines
-- **Security**: Zero critical vulnerabilities, zero hardcoded secrets
-- **Code Quality**: Language-specific linter passes with minimal warnings
-- **Complexity**: Cyclomatic complexity <10 per function/method
-- **Duplication**: No code blocks duplicated more than twice
-- **Documentation**: Public APIs and complex logic documented
-
-### Testing Thresholds
-- **Critical paths**: 80% test coverage
-- **All tests pass**: No failing tests without corresponding code changes
-- **Test quality**: Tests verify behavior, not implementation details
-- **Edge cases**: Error conditions and boundary cases tested
-
-### Performance Benchmarks (if applicable)
-- **No regressions**: Performance metrics maintained or improved
-- **Response times**: Within acceptable thresholds for user-facing operations
-- **Resource usage**: Memory and CPU usage within reasonable bounds
-- **Scalability**: System handles expected load
-
-### Deployment Readiness
-- **Documentation**: README, API docs, and runbooks up-to-date
-- **Monitoring**: Key metrics and errors are observable
-- **Deployment**: Automated deployment process works reliably
-
-
-
-## Follow-Up & Continuous Improvement
-
-### Feedback Loop
-After implementing changes:
-
-1. **Verify improvements**
-   - Run all tests to ensure nothing broke
-   - Check that metrics improved (quality scores, performance)
-   - Gather feedback from team members or users
-   - Validate that issues are actually resolved
-
-2. **Monitor impact**
-   - Track if bugs decreased in modified areas
-   - Measure if development velocity improved
-   - Note if system reliability increased
-   - Observe user satisfaction changes
-
-3. **Document learnings**
-   - Update team standards based on findings
-   - Create architecture decision records (ADRs) for significant changes
-   - Share successful patterns and approaches
-   - Update documentation with new practices
-
-### When to Get Team Input
-When to discuss with your teammates:
-- **Breaking changes needed**: Discuss with the team before making major changes
-- **Performance degradation**: Roll back and investigate if metrics worsen significantly
-- **Test coverage drops**: Pause changes to add tests first
-- **Security concerns**: Pair with a teammate on authentication, authorization, or data handling code
-- **Team confusion**: Provide additional documentation, pairing, or training
-
-### Continuous Improvement
-- Schedule regular reviews (weekly/monthly/quarterly based on project activity)
-- Gradually increase quality standards as codebase improves
-- Celebrate wins and improvements with the team
-- Keep improvements incremental and sustainable
-- Build a culture of quality and continuous learning
-
-### Process Optimization
-Based on findings, consider updating:
-- **Coding standards**: Add patterns that prevent common issues
-- **Review checklists**: Include checks for identified problem areas
-- **CI/CD pipelines**: Add automated checks for recurring issues
-- **Documentation templates**: Standardize important documentation
-- **Team practices**: Share knowledge and establish better workflows
-
-
-## Remember
-
-For personal projects:
-- **Progress over perfection** - Working code beats perfect code
-- **Consistency over intensity** - Regular small efforts compound
-- **Learning over completion** - It's okay if projects evolve or pivot
-- **Enjoyment matters** - If it's not fun, figure out why
-
-The goal is to make steady progress and keep learning, not to build the perfect system!
+---
+
+## Tips for Staying Engaged
+
+1. **Leave breadcrumbs**: Before stopping, write a note about what to do next
+2. **Small commits**: Commit often so history tells a story
+3. **Use TODOs**: Mark incomplete work clearly in code
+4. **Track time**: Know how long tasks actually take
+5. **Set boundaries**: Define session end time before starting
