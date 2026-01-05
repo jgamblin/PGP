@@ -12,14 +12,14 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 
 ---
 
-
 ## Repository Structure & File Index
 
 ### Top-Level Files
 - `LICENSE` — License terms for reuse.
 - `README.md` — This documentation.
+- `docs/CHANGELOG.md` — Version history and updates.
 
-**Total: 59 prompts across all technology stacks**
+**Total: ~90 prompts across all technology stacks**
 
 All prompts follow a consistent modern structure:
 - 📋 **Header metadata** — Purpose, Best For, Scope, Last Updated
@@ -32,16 +32,47 @@ All prompts follow a consistent modern structure:
 
 ---
 
+### `ai/` — AI/ML Development Prompts ⭐ NEW
+| File | Purpose |
+|------|---------|
+| `agents.md` | AI agent architectures, tool use, memory patterns |
+| `copilot-instructions.md` | AI guidance for AI development (meta!) |
+| `llm-integration.md` | LangChain, Instructor, OpenAI/Anthropic SDK patterns |
+| `mcp-server-development.md` | Model Context Protocol servers and tools |
+| `prompt-engineering.md` | Meta-prompt design, chain-of-thought, few-shot patterns |
+| `rag-patterns.md` | RAG architecture, chunking, embeddings, retrieval |
+| `vector-databases.md` | pgvector, Pinecone, Weaviate, Chroma patterns |
+
+---
+
+### `frontend/` — TypeScript, React & Modern Frontend ⭐ NEW
+| File | Purpose |
+|------|---------|
+| `_common-sections.md` | Shared boilerplate for frontend prompts |
+| `agents.md` | Agent instructions for frontend development |
+| `copilot-instructions.md` | AI guidance for frontend prompts |
+| `frontend-testing.md` | Vitest, Playwright, Testing Library patterns |
+| `modern-css.md` | Container queries, :has(), cascade layers, subgrid |
+| `nextjs-vite-config.md` | Next.js 14+, Vite, build optimization |
+| `react-components.md` | React 18+, hooks, Server Components, patterns |
+| `state-management.md` | Zustand, Jotai, TanStack Query patterns |
+| `tailwind-css.md` | Utility-first patterns, plugins, optimization |
+| `typescript-patterns.md` | TypeScript best practices, generics, utility types |
+
+---
+
 ### `generic/` — Universal Prompts
 | File | Purpose |
 |------|---------|
 | `agents.md` | Agent instructions for using generic prompts |
+| `api-design.md` | ⭐ REST, GraphQL, OpenAPI, versioning, error handling |
 | `ci-cd-pipeline-analysis.md` | CI/CD pipeline analysis |
 | `code-refactoring.md` | Refactoring analysis (security, performance, architecture) |
 | `copilot-instructions.md` | Copilot/AI guidance for generic prompt usage |
 | `deep-code-cleaning.md` | Repository cleanup (dead code, unused files, legacy artifacts) |
 | `do-next.md` | Next-step planning prompt |
 | `documentation-generation.md` | Documentation strategy (API specs, records) |
+| `observability-logging.md` | ⭐ Structured logging, OpenTelemetry, metrics |
 | `pr-review-feedback.md` | Code review (security, performance) |
 | `project-repo.md` | Repository setup guide |
 | `security-analysis.md` | Security vulnerability analysis (OWASP, secrets, dependencies) |
@@ -52,18 +83,38 @@ All prompts follow a consistent modern structure:
 ### `db/` — Database Prompts
 | File | Purpose |
 |------|---------|
+| `agents.md` | ⭐ Agent instructions for database development |
 | `copilot-instructions.md` | Copilot/AI guidance for database development |
 | `database-documentation.md` | Schema documentation, data dictionaries, ER diagrams |
+| `migrations-safety.md` | ⭐ Safe migrations, zero-downtime deploys |
 | `mysql-optimization.md` | MySQL query tuning, indexing, EXPLAIN analysis |
+| `nosql-mongodb.md` | ⭐ MongoDB patterns, aggregation, schema design |
 | `postgresql-optimization.md` | PostgreSQL optimization, advanced indexes, partitioning |
+| `redis-patterns.md` | ⭐ Caching, pub/sub, data structures, Lua scripting |
 | `schema-design-review.md` | Schema design review, normalization, data modeling |
+
+---
+
+### `infrastructure/` — DevOps & Infrastructure Prompts
+| File | Purpose |
+|------|---------|
+| `_common-sections.md` | ⭐ Shared boilerplate for infrastructure prompts |
+| `agents.md` | ⭐ Agent instructions for infrastructure tasks |
+| `aws-ec2-deployment.md` | ARM-based EC2 deployment (t4g Graviton), security groups, Terraform |
+| `docker-configuration-audit.md` | Docker/Compose audit, security review, best practices |
+| `docker-containerization.md` | Multi-stage builds, Debian/Ubuntu bases, compose, security |
+| `github-actions-deployment.md` | ⭐ CI/CD pipelines, deployment workflows, matrix builds |
+| `kubernetes.md` | ⭐ K8s deployments, Helm, resource management, debugging |
+| `monitoring-observability.md` | ⭐ Prometheus, Grafana, OpenTelemetry, alerting |
+| `serverless.md` | ⭐ AWS Lambda, Vercel, Cloudflare Workers, edge functions |
+| `terraform-iac.md` | ⭐ Multi-cloud IaC, modules, state management |
 
 ---
 
 ### `python/` — Python Ecosystem Prompts
 | File | Purpose |
 |------|---------|
-| `_common-sections.md` | **NEW** Shared boilerplate (context checklists, severity levels) |
+| `_common-sections.md` | Shared boilerplate (context checklists, severity levels) |
 | `agents.md` | Agent instructions for Python prompt usage |
 | `cli-application-development.md` | Professional CLI development (Typer, Rich, testing) |
 | `code-refactoring.md` | Python refactoring (asyncio, Django/Flask/FastAPI, modern patterns) |
@@ -72,7 +123,7 @@ All prompts follow a consistent modern structure:
 | `database-schema-orm-optimization.md` | Database schema and ORM optimization |
 | `documentation-generation.md` | Comprehensive Python documentation (docstrings, Sphinx, API docs) |
 | `logging-error-handling.md` | Logging setup, structured error handling, security events |
-| `modern-patterns.md` | **NEW** Python 3.11+ patterns (match/case, TaskGroup, Pydantic v2) |
+| `modern-patterns.md` | Python 3.11+ patterns (match/case, TaskGroup, Pydantic v2) |
 | `packaging-distribution.md` | Modern Python packaging (uv, pyproject.toml, PyPI) |
 | `pr-review-feedback.md` | Python code review (ORM, security, performance) |
 | `project-repo.md` | Python repository setup (uv, pytest, Ruff) |
@@ -83,16 +134,30 @@ All prompts follow a consistent modern structure:
 
 ---
 
-### `infrastructure/` — DevOps & Infrastructure Prompts
+### `ruby/` — Ruby & Rails Prompts
 | File | Purpose |
 |------|---------|
-| `aws-ec2-deployment.md` | ARM-based EC2 deployment (t4g Graviton), security groups, Terraform |
-| `docker-configuration-audit.md` | Docker/Compose audit, security review, best practices validation |
-| `docker-containerization.md` | Multi-stage builds, Debian/Ubuntu bases, compose, security scanning |
+| `_common-sections.md` | ⭐ Shared boilerplate for Ruby prompts |
+| `agents.md` | Prompt index with quick-start commands and workflows |
+| `background-jobs.md` | ⭐ Sidekiq, Solid Queue, Active Job patterns |
+| `code-refactoring.md` | Ruby 3.x idioms (guard clauses, enumerable, pattern matching) |
+| `copilot-instructions.md` | AI configuration template with VS Code settings |
+| `documentation-generation.md` | YARD documentation, common tags, README templates |
+| `gemfile-management.md` | Dependency organization, security auditing, bundler-audit CI |
+| `hotwire-turbo.md` | ⭐ Turbo Frames, Streams, morphing, broadcasting |
+| `pr-review-feedback.md` | Review checklist, common issues, GitHub suggestion format |
+| `project-repo.md` | Project structures (gem, Rails, CLI), config files, Docker |
+| `rails-active-record-performance-audit.md` | N+1 query detection, eager loading, indexes, Bullet gem |
+| `rspec-test-generation.md` | Test patterns (model, request, service specs), FactoryBot |
+| `rubocop-compliance.md` | Full .rubocop.yml config, common violations with fixes |
+| `security-analysis.md` | ⭐ Ruby/Rails security audit, OWASP patterns |
+| `service-object-domain-logic-refactoring.md` | Service objects, form objects, fat controller extraction |
+| `stimulus-controllers.md` | ⭐ Stimulus patterns, targets, values, outlets |
+| `viewcomponent.md` | ⭐ Component-based views, previews, testing |
 
 ---
 
-### `html/` — Frontend & Web Prompts
+### `html/` — HTML/CSS & Web Fundamentals
 | File | Purpose |
 |------|---------|
 | `accessibility-check.md` | WCAG compliance audit (accessibility) |
@@ -107,23 +172,6 @@ All prompts follow a consistent modern structure:
 | `pr-review-feedback.md` | Frontend code review (performance, accessibility) |
 | `project-repo.md` | Frontend repository setup (Webpack/Vite, ESLint) |
 | `semantic-markup-refinement.md` | HTML5 semantic optimization (SEO, performance) |
-
----
-
-### `ruby/` — Ruby & Rails Prompts
-| File | Purpose |
-|------|---------|
-| `agents.md` | Prompt index with quick-start commands and workflows |
-| `code-refactoring.md` | Ruby 3.x idioms (guard clauses, enumerable, pattern matching) |
-| `copilot-instructions.md` | AI configuration template with VS Code settings |
-| `documentation-generation.md` | YARD documentation, common tags, README templates |
-| `gemfile-management.md` | Dependency organization, security auditing, bundler-audit CI |
-| `pr-review-feedback.md` | Review checklist, common issues, GitHub suggestion format |
-| `project-repo.md` | Project structures (gem, Rails, CLI), config files, Docker |
-| `rails-active-record-performance-audit.md` | N+1 query detection, eager loading, indexes, Bullet gem |
-| `rspec-test-generation.md` | Test patterns (model, request, service specs), FactoryBot |
-| `rubocop-compliance.md` | Full .rubocop.yml config, common violations with fixes |
-| `service-object-domain-logic-refactoring.md` | Service objects, form objects, fat controller extraction |
 
 ---
 
@@ -467,48 +515,19 @@ See each folder for details and usage examples.
 
 ---
 
-## Recent Cleanup Snapshot
+## Recent Updates
 
-- **December 2025 Modernization (Latest)**: Complete rewrite of all 59 prompts with new format
- - Added `db/` folder with 5 database prompts (MySQL, PostgreSQL, schema design, documentation)
- - Added `generic/deep-code-cleaning.md` for repository cleanup and dead code removal
- - Added `infrastructure/docker-configuration-audit.md` for Docker/Compose review and validation
- - Standardized header metadata (Purpose, Best For, Scope, Last Updated)
- - Added guard clauses for missing context and clean code responses
- - Added quick context checklists for each prompt type
- - Added copy-paste prompt templates with placeholders
- - Added reference tables, code examples, and severity guides
-- **Database Collection Added**: 5 new database prompts
- - MySQL query optimization, EXPLAIN analysis, configuration tuning
- - PostgreSQL optimization with advanced indexes (GIN, GiST, BRIN), partitioning
- - Schema design review with normalization analysis and anti-patterns
- - Database documentation with ER diagrams and data dictionaries
- - Copilot instructions for SQL best practices
-- **Ruby Collection Modernized**: All 11 Ruby/Rails prompts rewritten
- - Ruby 3.x patterns (guard clauses, enumerable, pattern matching, safe navigation)
- - Rails 7+ best practices (service objects, form objects, N+1 detection)
- - Complete RSpec testing patterns with FactoryBot examples
- - Full RuboCop configuration with common violation fixes
-- **Infrastructure Collection Modernized**: Both DevOps prompts rewritten
- - ARM-based EC2 (t4g Graviton) for 40% cost savings
- - Multi-stage Docker builds with security best practices
- - Terraform examples and deployment scripts
-- **HTML/CSS Collection Modernized**: All 12 frontend prompts rewritten
- - Core Web Vitals optimization patterns
- - WCAG 2.1 accessibility compliance
- - Modern CSS (Grid, Flexbox, BEM methodology)
-- **Generic Collection Modernized**: All 9 universal prompts rewritten
- - CI/CD pipeline templates (GitHub Actions, GitLab CI)
- - Security analysis (OWASP Top 10, dependency scanning)
-- **Python Collection Enhanced**: 17 prompts with modern tooling
- - uv for fast dependency management
- - Ruff for linting (10-100x faster than Flake8)
- - Python 3.11+ patterns (match/case, TaskGroup, Pydantic v2)
-- All prompts now feature:
- - Consistent structure across all technology stacks
- - Practical code examples and configuration templates
- - Report format templates for documentation
- - Severity guides (Critical/High/Medium/Low)
+### 🎉 2026 Relaunch (January 2026)
+Complete transformation of PGP from 59 to ~90 prompts:
+
+- **New `ai/` folder** (7 prompts) — LLM integration, RAG patterns, prompt engineering, MCP servers, vector databases, AI agents
+- **New `frontend/` folder** (10 prompts) — TypeScript, React 18+, modern CSS, Tailwind, testing, state management
+- **Infrastructure expansion** (8 total) — Kubernetes, Terraform, serverless, GitHub Actions, monitoring
+- **Ruby modernization** (17 total) — Hotwire/Turbo, Stimulus, ViewComponent, background jobs, security
+- **Database expansion** (9 total) — MongoDB, Redis, migrations safety, database agents
+- **Generic additions** (13 total) — API design, observability/logging
+
+See [docs/CHANGELOG.md](docs/CHANGELOG.md) for full details.
 
 ---
 
