@@ -19,7 +19,7 @@ Personal prompt collection by **[@JGamblin](https://github.com/JGamblin)**. Shar
 - `LICENSE` — License terms for reuse.
 - `README.md` — This documentation.
 
-**Total: 52 prompts across all technology stacks**
+**Total: 59 prompts across all technology stacks**
 
 All prompts follow a consistent modern structure:
 - 📋 **Header metadata** — Purpose, Best For, Scope, Last Updated
@@ -39,12 +39,24 @@ All prompts follow a consistent modern structure:
 | `ci-cd-pipeline-analysis.md` | CI/CD pipeline analysis |
 | `code-refactoring.md` | Refactoring analysis (security, performance, architecture) |
 | `copilot-instructions.md` | Copilot/AI guidance for generic prompt usage |
+| `deep-code-cleaning.md` | Repository cleanup (dead code, unused files, legacy artifacts) |
 | `do-next.md` | Next-step planning prompt |
 | `documentation-generation.md` | Documentation strategy (API specs, records) |
 | `pr-review-feedback.md` | Code review (security, performance) |
 | `project-repo.md` | Repository setup guide |
 | `security-analysis.md` | Security vulnerability analysis (OWASP, secrets, dependencies) |
 | `system-design-architecture-review.md` | System design and architecture review |
+
+---
+
+### `db/` — Database Prompts
+| File | Purpose |
+|------|---------|
+| `copilot-instructions.md` | Copilot/AI guidance for database development |
+| `database-documentation.md` | Schema documentation, data dictionaries, ER diagrams |
+| `mysql-optimization.md` | MySQL query tuning, indexing, EXPLAIN analysis |
+| `postgresql-optimization.md` | PostgreSQL optimization, advanced indexes, partitioning |
+| `schema-design-review.md` | Schema design review, normalization, data modeling |
 
 ---
 
@@ -75,6 +87,7 @@ All prompts follow a consistent modern structure:
 | File | Purpose |
 |------|---------|
 | `aws-ec2-deployment.md` | ARM-based EC2 deployment (t4g Graviton), security groups, Terraform |
+| `docker-configuration-audit.md` | Docker/Compose audit, security review, best practices validation |
 | `docker-containerization.md` | Multi-stage builds, Debian/Ubuntu bases, compose, security scanning |
 
 ---
@@ -150,7 +163,14 @@ Feel free to publish your own variant.
 **Python:** `python/documentation-generation.md` - Python Documentation Assistant 
 **Ruby:** `ruby/documentation-generation.md` - Ruby Documentation Assistant 
 **Frontend:** `html/documentation-generation.md` - Frontend Documentation Assistant 
+**Database:** `db/database-documentation.md` - Database Documentation Assistant 
 **Any Language:** `generic/documentation-generation.md` - Documentation Helper 
+
+### "I need to clean up a messy repository"
+**Any Language:** `generic/deep-code-cleaning.md` - Repository Cleanup Assistant 
+- Find unused files and dead code
+- Identify orphaned scripts and migrations
+- Remove legacy artifacts safely
 
 ### "I need to set up a new project"
 **Any Language:** `generic/project-repo.md` - Project Setup Helper 
@@ -178,8 +198,15 @@ Feel free to publish your own variant.
 **CSS Organization:** `html/bem-naming-convention.md` - CSS Organization Helper 
 **Navigation:** `html/navigation-consistency.md` - Navigation Helper
 
+### "I need help with database optimization"
+**MySQL:** `db/mysql-optimization.md` - MySQL Optimization Assistant 
+**PostgreSQL:** `db/postgresql-optimization.md` - PostgreSQL Optimization Assistant 
+**Schema Design:** `db/schema-design-review.md` - Schema Design Review Assistant 
+**Documentation:** `db/database-documentation.md` - Database Documentation Assistant 
+
 ### "I need help with infrastructure and DevOps"
-**Docker:** `infrastructure/docker-containerization.md` - Docker Container Assistant 
+**Docker Build:** `infrastructure/docker-containerization.md` - Docker Container Assistant 
+**Docker Audit:** `infrastructure/docker-configuration-audit.md` - Docker Configuration Audit Assistant 
 **AWS EC2:** `infrastructure/aws-ec2-deployment.md` - AWS EC2 Deployment Assistant 
 
 ### "I need help with development workflow"
@@ -244,9 +271,36 @@ Use the Python Security Assistant prompt to find vulnerabilities:
 Use the Docker Container Assistant prompt to create optimized containers:
 [describe your application stack or paste existing Dockerfile]
 
+# Audit existing Docker configuration
+Use the Docker Configuration Audit Assistant prompt to review:
+[paste your Dockerfile and docker-compose.yml]
+
 # Deploy to AWS EC2
 Use the AWS EC2 Deployment Assistant prompt to deploy containerized apps:
 [describe your application requirements and expected traffic]
+```
+
+### Database Projects
+```
+# Optimize MySQL queries
+Use the MySQL Optimization Assistant prompt to improve performance:
+[paste your slow query and EXPLAIN output]
+
+# Optimize PostgreSQL queries
+Use the PostgreSQL Optimization Assistant prompt to improve performance:
+[paste your slow query and EXPLAIN ANALYZE output]
+
+# Review schema design
+Use the Schema Design Review Assistant prompt to evaluate:
+[paste your CREATE TABLE statements or schema]
+
+# Document database
+Use the Database Documentation Assistant prompt to create docs:
+[paste your schema or describe the data model]
+
+# Clean up repository
+Use the Repository Cleanup Assistant prompt to find dead code:
+[describe your repository structure and entry points]
 ```
 
 ### Ruby/Rails Projects
@@ -332,7 +386,10 @@ Use the Architecture Review Helper prompt to evaluate this design:
 1. **Setup:** `generic/project-repo.md` → **Code:** `html/code-refactoring.md` → **Performance:** `html/performance-core-web-vitals-audit.md` → **Accessibility:** `html/accessibility-check.md` → **CSS:** `html/bem-naming-convention.md`
 
 ### Any Project - Quick Cleanup
-1. **Review:** `generic/pr-review-feedback.md` → **Refactor:** Language-specific `code-refactoring.md` → **Document:** `generic/documentation-generation.md`
+1. **Deep Clean:** `generic/deep-code-cleaning.md` → **Review:** `generic/pr-review-feedback.md` → **Refactor:** Language-specific `code-refactoring.md` → **Document:** `generic/documentation-generation.md`
+
+### Database Project
+1. **Schema Review:** `db/schema-design-review.md` → **Optimization:** `db/mysql-optimization.md` or `db/postgresql-optimization.md` → **Documentation:** `db/database-documentation.md`
 
 ### Infrastructure Project - Simple Stack
 1. **Containers:** `infrastructure/docker-containerization.md` → **Deploy:** `infrastructure/aws-ec2-deployment.md`
@@ -369,15 +426,23 @@ Use the Architecture Review Helper prompt to evaluate this design:
 
 ### Infrastructure & DevOps Projects
 1. **Containerize**: `infrastructure/docker-containerization.md` - Create optimized containers
-2. **Deploy**: `infrastructure/aws-ec2-deployment.md` - Deploy to AWS EC2 with automation scripts
-3. **Optimize performance**: `html/performance-core-web-vitals-audit.md` - Speed up loading
-4. **Improve CSS**: `html/bem-naming-convention.md` - Better CSS organization
+2. **Audit Docker**: `infrastructure/docker-configuration-audit.md` - Review existing Docker configs
+3. **Deploy**: `infrastructure/aws-ec2-deployment.md` - Deploy to AWS EC2 with automation scripts
+4. **Optimize performance**: `html/performance-core-web-vitals-audit.md` - Speed up loading
+5. **Improve CSS**: `html/bem-naming-convention.md` - Better CSS organization
+
+### Database Projects
+1. **Schema review**: `db/schema-design-review.md` - Evaluate schema design
+2. **MySQL optimization**: `db/mysql-optimization.md` - Tune MySQL queries and indexes
+3. **PostgreSQL optimization**: `db/postgresql-optimization.md` - Tune PostgreSQL queries and indexes
+4. **Documentation**: `db/database-documentation.md` - Document schemas and relationships
 
 ### Any Project Type (Generic)
 1. **Project setup**: `generic/project-repo.md` - Organize your repository
-2. **Code review**: `generic/pr-review-feedback.md` - Get feedback on changes
-3. **Documentation**: `generic/documentation-generation.md` - Write clear docs
-4. **CI/CD**: `generic/ci-cd-pipeline-analysis.md` - Automate testing and deployment
+2. **Deep cleaning**: `generic/deep-code-cleaning.md` - Remove dead code and unused files
+3. **Code review**: `generic/pr-review-feedback.md` - Get feedback on changes
+4. **Documentation**: `generic/documentation-generation.md` - Write clear docs
+5. **CI/CD**: `generic/ci-cd-pipeline-analysis.md` - Automate testing and deployment
 
 ---
 
@@ -404,12 +469,21 @@ See each folder for details and usage examples.
 
 ## Recent Cleanup Snapshot
 
-- **December 2025 Modernization (Latest)**: Complete rewrite of all 49 prompts with new format
+- **December 2025 Modernization (Latest)**: Complete rewrite of all 59 prompts with new format
+ - Added `db/` folder with 5 database prompts (MySQL, PostgreSQL, schema design, documentation)
+ - Added `generic/deep-code-cleaning.md` for repository cleanup and dead code removal
+ - Added `infrastructure/docker-configuration-audit.md` for Docker/Compose review and validation
  - Standardized header metadata (Purpose, Best For, Scope, Last Updated)
  - Added guard clauses for missing context and clean code responses
  - Added quick context checklists for each prompt type
  - Added copy-paste prompt templates with placeholders
  - Added reference tables, code examples, and severity guides
+- **Database Collection Added**: 5 new database prompts
+ - MySQL query optimization, EXPLAIN analysis, configuration tuning
+ - PostgreSQL optimization with advanced indexes (GIN, GiST, BRIN), partitioning
+ - Schema design review with normalization analysis and anti-patterns
+ - Database documentation with ER diagrams and data dictionaries
+ - Copilot instructions for SQL best practices
 - **Ruby Collection Modernized**: All 11 Ruby/Rails prompts rewritten
  - Ruby 3.x patterns (guard clauses, enumerable, pattern matching, safe navigation)
  - Rails 7+ best practices (service objects, form objects, N+1 detection)
