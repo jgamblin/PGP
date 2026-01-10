@@ -92,6 +92,15 @@ Original 59-prompt collection covering:
 
 ---
 
+## [2.0.1] - 2026-01-10
+
+### Added
+
+#### Python
+- `python/data-processing-performance.md` — Heavy data processing optimization with mandatory benchmarking, vectorization patterns, Pandas/Polars/DuckDB comparisons, parallelization strategies, and performance measurement framework
+
+---
+
 ## Roadmap
 
 ### Planned for v2.1.0

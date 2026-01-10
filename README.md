@@ -120,6 +120,7 @@ All prompts follow a consistent modern structure:
 | `code-refactoring.md` | Python refactoring (asyncio, Django/Flask/FastAPI, modern patterns) |
 | `concurrency-asyncio-pattern-analysis.md` | Concurrency and asyncio pattern analysis |
 | `copilot-instructions.md` | Copilot/AI guidance for Python prompt usage |
+| `data-processing-performance.md` | ⭐ Data processing optimization with benchmarking, vectorization, Polars/Pandas |
 | `database-schema-orm-optimization.md` | Database schema and ORM optimization |
 | `documentation-generation.md` | Comprehensive Python documentation (docstrings, Sphinx, API docs) |
 | `logging-error-handling.md` | Logging setup, structured error handling, security events |
