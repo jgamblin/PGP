@@ -1,0 +1,4 @@
+interface:
+  display_name: "PGP Codex Skill"
+  short_description: "Route PGP prompts for Codex workflows"
+  default_prompt: "Use $codex-pgp to select and apply the best PGP prompt for this coding task."

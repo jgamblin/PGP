@@ -1,8 +1,10 @@
 # Common Sections Reference — Infrastructure
 
 > **Purpose**: Shared boilerplate for all infrastructure prompts  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Shared reference sections for infrastructure prompt workflows  
+> **Last Updated**: 2026-03
 > **Usage**: Reference this file instead of duplicating content  
-> **Last Updated**: 2026-01
 
 ---
 

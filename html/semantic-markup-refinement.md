@@ -1,11 +1,14 @@
 # Semantic Markup Refinement — HTML Structure Audit
 
 > **Purpose**: Improve HTML document structure and semantics  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: HTML5 Semantic Elements, Document Outline, Accessibility  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
+
+> **Legacy Path Notice**: `html/` is maintained for backward compatibility. For stack-first guidance, also use [frontend/agents.md](../frontend/agents.md). 
+> **Migration Map**: [docs/compat/html-to-frontend-map.md](../docs/compat/html-to-frontend-map.md)
 
 ## Mission
 
@@ -450,7 +453,7 @@ Recommended:
 
 | Level | Icon | Examples |
 |-------|------|----------|
-| **Critical** | �� | No h1, broken outline, no main element |
+| **Critical** | 🔴 | No h1, broken outline, no main element |
 | **High** | 🟠 | Heading hierarchy skips, missing nav |
 | **Medium** | 🟡 | Div instead of section, missing article |
 | **Low** | 🟢 | Could use figure, time, or address |

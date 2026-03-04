@@ -1,8 +1,10 @@
 # Common Sections Reference
 
 > **Purpose**: Shared boilerplate for all Python prompts  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Shared reference sections for python prompt workflows  
+> **Last Updated**: 2026-03
 > **Usage**: Reference this file instead of duplicating content  
-> **Last Updated**: 2025-12-09
 
 ---
 

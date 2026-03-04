@@ -1,11 +1,15 @@
 # Performance & Core Web Vitals — Speed Optimization
 
 > **Purpose**: Optimize website speed and user experience  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: HTML/CSS web fundamentals, accessibility, and frontend quality  
+> **Last Updated**: 2026-03
 > **Metrics**: LCP, FID/INP, CLS  
-> **Last Updated**: 2025-12
 
 ---
+
+> **Legacy Path Notice**: `html/` is maintained for backward compatibility. For stack-first guidance, also use [frontend/agents.md](../frontend/agents.md). 
+> **Migration Map**: [docs/compat/html-to-frontend-map.md](../docs/compat/html-to-frontend-map.md)
 
 ## Mission
 

@@ -1,9 +1,10 @@
 # Python Data Processing Performance Optimization
 
 > **Purpose**: Maximize data processing speed with measurable benchmarks  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Python 3.11+ application development, tooling, and code quality  
+> **Last Updated**: 2026-03
 > **Python Version**: 3.11+ (3.12+ for free-threading)  
-> **Last Updated**: 2026-01-10
 
 ---
 

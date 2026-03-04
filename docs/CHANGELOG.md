@@ -1,94 +1,43 @@
 # Changelog
 
-All notable changes to Pretty Good Prompts will be documented in this file.
+All notable changes to Pretty Good Prompts are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
-## [2.0.0] - 2026-01-05
-
-### 🎉 Major Relaunch — "2026 Edition"
-
-Complete transformation of PGP into a comprehensive, modern prompt library for AI-assisted development. Expanded from 59 to ~90 prompts.
+## [2.2.0] - 2026-03-04
 
 ### Added
 
-#### New `ai/` Folder (7 prompts)
-- `ai/llm-integration.md` — LangChain, Instructor, OpenAI/Anthropic SDK patterns
-- `ai/rag-patterns.md` — RAG architecture, chunking, embeddings, retrieval strategies
-- `ai/prompt-engineering.md` — Meta-prompt design, chain-of-thought, few-shot patterns
-- `ai/mcp-server-development.md` — Model Context Protocol servers and tools
-- `ai/vector-databases.md` — pgvector, Pinecone, Weaviate, Chroma patterns
-- `ai/agents.md` — AI agent architectures, tool use, memory patterns
-- `ai/copilot-instructions.md` — AI guidance for AI development
-
-#### New `frontend/` Folder (9 prompts)
-- `frontend/typescript-patterns.md` — TypeScript best practices, generics, utility types
-- `frontend/react-components.md` — React 18+, hooks, Server Components, patterns
-- `frontend/modern-css.md` — Container queries, :has(), cascade layers, subgrid
-- `frontend/tailwind-css.md` — Utility-first patterns, plugins, optimization
-- `frontend/frontend-testing.md` — Vitest, Playwright, Testing Library
-- `frontend/nextjs-vite-config.md` — Next.js 14+, Vite configuration, build optimization
-- `frontend/state-management.md` — Zustand, Jotai, TanStack Query patterns
-- `frontend/agents.md` — Agent instructions for frontend development
-- `frontend/copilot-instructions.md` — AI guidance for frontend prompts
-- `frontend/_common-sections.md` — Shared boilerplate for frontend prompts
-
-#### Infrastructure Expansion (5 new prompts)
-- `infrastructure/kubernetes.md` — K8s deployments, Helm, resource management
-- `infrastructure/terraform-iac.md` — Multi-cloud IaC, modules, state management
-- `infrastructure/serverless.md` — AWS Lambda, Vercel, Cloudflare Workers
-- `infrastructure/github-actions-deployment.md` — CI/CD pipelines, deployment workflows
-- `infrastructure/monitoring-observability.md` — Prometheus, Grafana, OpenTelemetry
-- `infrastructure/agents.md` — Agent instructions for infrastructure tasks
-- `infrastructure/_common-sections.md` — Shared boilerplate for infrastructure prompts
-
-#### Ruby Modernization (5 new prompts)
-- `ruby/hotwire-turbo.md` — Turbo Frames, Streams, morphing, broadcasting
-- `ruby/stimulus-controllers.md` — Stimulus patterns, targets, values, outlets
-- `ruby/viewcomponent.md` — Component-based views, previews, testing
-- `ruby/background-jobs.md` — Sidekiq, Solid Queue, Active Job patterns
-- `ruby/security-analysis.md` — Ruby/Rails security audit, OWASP patterns
-- `ruby/_common-sections.md` — Shared boilerplate for Ruby prompts
-
-#### Database Expansion (4 new prompts)
-- `db/nosql-mongodb.md` — MongoDB patterns, aggregation, schema design
-- `db/redis-patterns.md` — Caching, pub/sub, data structures, Lua scripting
-- `db/migrations-safety.md` — Safe migrations, zero-downtime deploys
-- `db/agents.md` — Agent instructions for database tasks
-
-#### Generic Additions (2 new prompts)
-- `generic/api-design.md` — REST, GraphQL, OpenAPI, versioning
-- `generic/observability-logging.md` — Structured logging, OpenTelemetry
+- Native Codex skill pack: `skills/codex-pgp/`
+- Native ClaudeAI skill pack: `skills/claudeai-pgp/`
+- Documentation QA scripts:
+  - `scripts/qa/validate_metadata.py`
+  - `scripts/qa/check_internal_links.py`
+  - `scripts/qa/check_mojibake.py`
+  - `scripts/qa/run_docs_qa.sh`
+- GitHub Actions workflow: `.github/workflows/docs-quality.yml`
+- Compatibility map: `docs/compat/html-to-frontend-map.md`
+- Baseline audit snapshot: `docs/audit/2026-03-baseline.md`
 
 ### Changed
 
-- Updated all prompts to "Last Updated: 2026-01" date format
-- Standardized severity labels across all prompts (🔴 Critical, 🟠 High, 🟡 Medium, 🟢 Low)
-- Added guard clauses to all prompts for handling edge cases
-- Added report templates to all prompts missing them
-- Updated tool references to 2026 stack (uv, Ruff, Bun, Vite, etc.)
+- Standardized metadata contract across all prompt files:
+  - `Purpose`
+  - `Best For`
+  - `Scope`
+  - `Last Updated`
+- Normalized prompt `Last Updated` values to `2026-03`.
+- Fixed AI index references in `ai/agents.md`.
+- Removed mojibake severity markers and replaced with canonical icons.
+- Reduced repeated Python boilerplate by routing shared sections to `python/_common-sections.md`.
+- Rewrote `README.md` with current inventory, QA usage, and skill integration docs.
+- Rewrote `docs/prompt-standards.md` to a valid, enforceable markdown standard.
 
-### Documentation
+### Compatibility
 
-- Complete rewrite of `README.md` for new structure
-- Created `docs/CHANGELOG.md` (this file)
-- Created `_common-sections.md` files for ruby/, frontend/, infrastructure/
-
----
-
-## [1.0.0] - 2025-12-01
-
-### Initial Release
-
-Original 59-prompt collection covering:
-- **generic/** — 11 universal prompts
-- **python/** — 17 Python ecosystem prompts  
-- **ruby/** — 11 Ruby/Rails prompts
-- **html/** — 12 frontend/web prompts
-- **db/** — 5 database prompts
-- **infrastructure/** — 3 DevOps prompts
+- Preserved `html/` paths and added forward links to `frontend/` guidance.
 
 ---
 
@@ -96,28 +45,48 @@ Original 59-prompt collection covering:
 
 ### Added
 
-#### Python
-- `python/data-processing-performance.md` — Heavy data processing optimization with mandatory benchmarking, vectorization patterns, Pandas/Polars/DuckDB comparisons, parallelization strategies, and performance measurement framework
+- `python/data-processing-performance.md` — heavy data processing optimization with benchmarking and vectorization guidance.
+
+---
+
+## [2.0.0] - 2026-01-05
+
+### Added
+
+- New `ai/` folder (7 prompts)
+- New `frontend/` folder (9 prompts + `_common-sections.md`)
+- Infrastructure expansion prompts (`kubernetes.md`, `terraform-iac.md`, `serverless.md`, `github-actions-deployment.md`, `monitoring-observability.md`)
+- Ruby additions (`hotwire-turbo.md`, `stimulus-controllers.md`, `viewcomponent.md`, `background-jobs.md`, `security-analysis.md`, `_common-sections.md`)
+- Database additions (`nosql-mongodb.md`, `redis-patterns.md`, `migrations-safety.md`, `agents.md`)
+- Generic additions (`api-design.md`, `observability-logging.md`)
+
+### Documentation
+
+- Full README rewrite for 2026 structure
+- Initial `docs/CHANGELOG.md`
+- Shared common-section references for selected domains
+
+---
+
+## [1.0.0] - 2025-12-01
+
+### Initial Release
+
+Original prompt collection covering:
+
+- `generic/`
+- `python/`
+- `ruby/`
+- `html/`
+- `db/`
+- `infrastructure/`
 
 ---
 
 ## Roadmap
 
-### Planned for v2.1.0
+### Planned for v2.3.0
 
-- [ ] Python additions (fastapi-development.md, ai-ml-integration.md, data-engineering.md)
-- [ ] Update html/ folder prompts for WCAG 2.2
-- [ ] Add more language-specific prompts (Go, Rust)
-
-### Under Consideration
-
-- [ ] Mobile development prompts (React Native, Flutter)
-- [ ] Game development prompts
-- [ ] Embedded/IoT prompts
-- [ ] Machine learning operations (MLOps) prompts
-
----
-
-## Contributing
-
-This is a personal project and PRs are not accepted. Feel free to fork and adapt for your own use. See README.md for details.
+- Expand AI prompt coverage for evaluation workflows
+- Add additional language packs (Go, Rust)
+- Continue `html/` to `frontend/` compatibility migration notes

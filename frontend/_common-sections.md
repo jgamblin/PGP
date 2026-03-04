@@ -1,8 +1,10 @@
 # Common Sections Reference — Frontend
 
 > **Purpose**: Shared boilerplate for all frontend/TypeScript prompts  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Shared reference sections for frontend prompt workflows  
+> **Last Updated**: 2026-03
 > **Usage**: Reference this file instead of duplicating content  
-> **Last Updated**: 2026-01
 
 ---
 

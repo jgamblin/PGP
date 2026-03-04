@@ -1,8 +1,10 @@
 # Common Sections Reference — Ruby
 
 > **Purpose**: Shared boilerplate for all Ruby/Rails prompts  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Shared reference sections for ruby prompt workflows  
+> **Last Updated**: 2026-03
 > **Usage**: Reference this file instead of duplicating content  
-> **Last Updated**: 2026-01
 
 ---
 

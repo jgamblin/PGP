@@ -1,9 +1,9 @@
 # MCP Server Development — Model Context Protocol
 
 > **Purpose**: Build production-ready MCP servers for AI tools  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Tool design, server implementation, deployment  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

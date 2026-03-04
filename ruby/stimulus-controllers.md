@@ -1,9 +1,9 @@
 # Stimulus Controllers — Modern Rails JavaScript
 
 > **Purpose**: Production-ready Stimulus controller patterns and best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Controllers, targets, values, outlets, actions  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

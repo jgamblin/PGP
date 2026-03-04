@@ -1,9 +1,10 @@
 # Database Documentation — Schema & API Documentation
 
 > **Purpose**: Generate clear, comprehensive database documentation  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Database design, query optimization, migrations, and data operations  
+> **Last Updated**: 2026-03
 > **Databases**: MySQL, PostgreSQL, SQLite, SQL Server  
-> **Last Updated**: 2025-12
 
 ---
 

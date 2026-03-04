@@ -1,9 +1,10 @@
 # Schema Design Review — Database Architecture Analysis
 
 > **Purpose**: Review and improve database schema design  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Database design, query optimization, migrations, and data operations  
+> **Last Updated**: 2026-03
 > **Databases**: MySQL, PostgreSQL, SQL Server, SQLite  
-> **Last Updated**: 2025-12
 
 ---
 

@@ -1,9 +1,9 @@
 # ViewComponent — Component-Based Rails Views
 
 > **Purpose**: Production-ready ViewComponent patterns and best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Components, slots, previews, testing, Hotwire integration  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

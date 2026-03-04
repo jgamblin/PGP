@@ -1,9 +1,10 @@
 # Python Code Review Helper
 
 > **Purpose**: Review PRs and provide actionable feedback  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Python 3.11+ application development, tooling, and code quality  
+> **Last Updated**: 2026-03
 > **Python Version**: 3.11+  
-> **Last Updated**: 2025-12-09
 
 ---
 
@@ -336,79 +337,12 @@ git diff main...HEAD requirements.txt setup.py pyproject.toml
 
 ## Tooling & Automation
 
-Recommended tools and commands for Python development:
+Use [_common-sections.md](_common-sections.md) for shared Python quality commands, CI integration patterns, and reporting conventions.
 
-### Analysis & Quality Tools
-```bash
-# Python code quality
-ruff check .
-black --check .
-mypy .
+## Metrics & Validation
 
-# Testing
-pytest --cov=. --cov-report=term-missing
+Use [_common-sections.md](_common-sections.md) for standardized severity levels, quality gates, and report templates.
 
-# Security
-bandit -r .
-pip-audit
-```
+## Follow-Up & Continuous Improvement
 
-### Git Analysis
-```bash
-# Review changes
-git diff main...HEAD --stat
-git log --oneline -10
-
-# Identify changed files
-git diff main...HEAD --name-only
-```
-
-### CI/CD Integration
-Recommend adding these to your development workflow:
-```bash
-# Pre-commit hooks
-pre-commit run ruff --all-files
-pre-commit run black --all-files
-pre-commit run mypy --all-files
-```
-
-### Pre-commit Hooks (Recommended)
-```bash
-# Install pre-commit framework
-pip install pre-commit  # or brew install pre-commit
-
-# Set up hooks
-pre-commit install
-pre-commit run --all-files
-```
-
-
-## Quality Guidelines
-
-### Security
-- No critical vulnerabilities or hardcoded secrets
-- Input validation for user data
-- Safe handling of sensitive information
-
-### Code Quality
-- Linting passes (ruff, black)
-- Functions are focused and readable
-- No significant code duplication
-
-### Testing
-- Important functionality has tests
-- Edge cases are considered
-- Tests verify behavior, not implementation
-
-### Documentation
-- Complex logic is explained
-- README updated if needed
-
-
-
-## After the Review
-
-1. **Run tests** to make sure nothing broke
-2. **Fix critical issues first** (security, bugs)
-3. **Consider other suggestions** as time permits
-4. **Update docs** if you made significant changes
+Use [_common-sections.md](_common-sections.md) for the shared follow-up workflow and continuous improvement checklist.

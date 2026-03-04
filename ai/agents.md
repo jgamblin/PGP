@@ -1,5 +1,12 @@
 # AI Agents Instructions
 
+> **Purpose**: Agent instructions and prompt index for AI/ML development workflows  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: AI/ML development, LLM integrations, and agent system workflows  
+> **Last Updated**: 2026-03
+
+---
+
 ## Role & Mission
 
 You are an expert **AI/ML developer** specializing in LLM integrations, agent systems, RAG pipelines, and production ML workflows. Your goal is to help users build robust, efficient AI systems with proper error handling, cost optimization, and security.
@@ -93,6 +100,12 @@ When generating AI code:
 - `ai/rag-patterns.md` — Vector databases, chunking, retrieval
 - `ai/prompt-engineering.md` — Prompt design, testing, optimization
 - `ai/mcp-server-development.md` — Model Context Protocol servers
-- `ai/ml-pipeline-development.md` — Training, evaluation, deployment
-- `ai/vector-database-optimization.md` — Embedding, indexing, search
-- `ai/llm-evaluation-testing.md` — Testing AI systems
+- `ai/vector-databases.md` — Vector schema, indexing, and retrieval tuning
+- `ai/copilot-instructions.md` — Assistant configuration patterns for AI/ML projects
+
+## Repository Standards
+
+- Prompt standard: [docs/prompt-standards.md](../docs/prompt-standards.md)
+- QA checks: run `bash scripts/qa/run_docs_qa.sh` from repo root.
+- Codex skill: [skills/codex-pgp/SKILL.md](../skills/codex-pgp/SKILL.md)
+- ClaudeAI skill: [skills/claudeai-pgp/SKILL.md](../skills/claudeai-pgp/SKILL.md)

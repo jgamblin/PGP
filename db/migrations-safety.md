@@ -1,9 +1,9 @@
 # Database Migrations — Safety & Zero-Downtime Patterns
 
 > **Purpose**: Safe migration strategies for production databases  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Schema changes, data migrations, rollback strategies, zero-downtime deploys  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

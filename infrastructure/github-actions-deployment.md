@@ -1,9 +1,9 @@
 # GitHub Actions — CI/CD & Deployment Workflows
 
 > **Purpose**: Production-ready GitHub Actions workflows for CI/CD  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Testing, building, deploying, security scanning  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

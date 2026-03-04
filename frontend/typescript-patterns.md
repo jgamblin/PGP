@@ -1,9 +1,9 @@
 # TypeScript Patterns — Modern Type-Safe Development
 
 > **Purpose**: Production-ready TypeScript patterns and best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Types, generics, utilities, architecture  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

@@ -1,9 +1,10 @@
 # PostgreSQL Optimization — Performance & Query Tuning
 
 > **Purpose**: Optimize PostgreSQL queries, indexes, and schema design  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Database design, query optimization, migrations, and data operations  
+> **Last Updated**: 2026-03
 > **Databases**: PostgreSQL  
-> **Last Updated**: 2025-12
 
 ---
 

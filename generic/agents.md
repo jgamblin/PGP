@@ -1,9 +1,10 @@
 # Generic Development Prompts — Index
 
 > **Purpose**: Universal prompts for any programming language or framework  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Cross-language engineering workflows, reviews, and project operations  
+> **Last Updated**: 2026-03
 > **Languages**: Any  
-> **Last Updated**: 2025-12
 
 ---
 
@@ -145,3 +146,10 @@ Suggest prioritized action items for the next work session.
 1. Use [do-next.md](do-next.md) for project assessment
 2. Use [code-refactoring.md](code-refactoring.md) for cleanup
 3. Use [documentation-generation.md](documentation-generation.md) to update docs
+
+## Repository Standards
+
+- Prompt standard: [docs/prompt-standards.md](../docs/prompt-standards.md)
+- QA checks: run `bash scripts/qa/run_docs_qa.sh` from repo root.
+- Codex skill: [skills/codex-pgp/SKILL.md](../skills/codex-pgp/SKILL.md)
+- ClaudeAI skill: [skills/claudeai-pgp/SKILL.md](../skills/claudeai-pgp/SKILL.md)

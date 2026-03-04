@@ -1,9 +1,9 @@
 # Ruby/Rails Prompts — Index
 
 > **Purpose**: Index of all Ruby/Rails assistant prompts  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Ruby 3.x, Rails 7+, RSpec, RuboCop  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 
@@ -100,3 +100,10 @@ For each issue:
 1. **Style**: Use [rubocop-compliance.md](rubocop-compliance.md) for RuboCop setup
 2. **Refactor**: Use [code-refactoring.md](code-refactoring.md) for improvements
 3. **Document**: Use [documentation-generation.md](documentation-generation.md) for YARD docs
+
+## Repository Standards
+
+- Prompt standard: [docs/prompt-standards.md](../docs/prompt-standards.md)
+- QA checks: run `bash scripts/qa/run_docs_qa.sh` from repo root.
+- Codex skill: [skills/codex-pgp/SKILL.md](../skills/codex-pgp/SKILL.md)
+- ClaudeAI skill: [skills/claudeai-pgp/SKILL.md](../skills/claudeai-pgp/SKILL.md)

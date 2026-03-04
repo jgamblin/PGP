@@ -1,9 +1,10 @@
 # MySQL Optimization — Performance & Query Tuning
 
 > **Purpose**: Optimize MySQL queries, indexes, and schema design  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Database design, query optimization, migrations, and data operations  
+> **Last Updated**: 2026-03
 > **Databases**: MySQL, MariaDB  
-> **Last Updated**: 2025-12
 
 ---
 

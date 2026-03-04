@@ -1,9 +1,9 @@
 # Monitoring & Observability
 
 > **Purpose**: Production-grade monitoring, logging, and observability  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Metrics, logging, tracing, alerting, dashboards  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

@@ -1,9 +1,9 @@
 # Frontend Testing — Vitest, RTL & E2E
 
 > **Purpose**: Modern frontend testing with Vitest, React Testing Library, and Playwright  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Unit tests, component tests, integration tests, E2E tests  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

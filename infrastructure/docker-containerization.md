@@ -1,9 +1,9 @@
 # Docker Containerization — Container Best Practices
 
 > **Purpose**: Build efficient, secure Docker containers  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Dockerfiles, multi-stage builds, compose, security  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

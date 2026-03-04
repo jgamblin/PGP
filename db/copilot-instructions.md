@@ -2,8 +2,9 @@
 
 > **Purpose**: Configure Copilot for database development best practices  
 > **Best For**: GitHub Copilot, VS Code  
+> **Scope**: Assistant instruction-file generation and coding guidance for db workflows  
+> **Last Updated**: 2026-03
 > **Databases**: MySQL, PostgreSQL, SQL Server, SQLite  
-> **Last Updated**: 2025-12
 
 ---
 

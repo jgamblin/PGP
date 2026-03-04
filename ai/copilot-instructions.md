@@ -1,5 +1,12 @@
 # Copilot Instructions — AI & ML
 
+> **Purpose**: Configure AI coding assistants for AI/ML development workflows  
+> **Best For**: GitHub Copilot, Codex, Claude, Cursor  
+> **Scope**: Assistant instruction-file generation and coding guidance for AI/ML workflows  
+> **Last Updated**: 2026-03
+
+---
+
 ## Context
 
 You are assisting with AI/ML development tasks including LLM integrations, agent systems, RAG pipelines, and ML workflows.

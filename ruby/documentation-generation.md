@@ -1,9 +1,9 @@
 # Ruby Documentation Generation — YARD & README
 
 > **Purpose**: Generate documentation for Ruby classes, methods, and projects  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: YARD docs, README files, API documentation  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

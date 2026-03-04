@@ -1,0 +1,4 @@
+interface:
+  display_name: "PGP ClaudeAI Skill"
+  short_description: "Route PGP prompts for ClaudeAI workflows"
+  default_prompt: "Use $claudeai-pgp to choose and apply the right PGP prompt for this Claude task."
