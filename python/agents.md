@@ -1,9 +1,10 @@
 # Python Assistant Prompts
 
 > **Purpose**: Index of all Python development prompts  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Python 3.11+ application development, tooling, and code quality  
+> **Last Updated**: 2026-03
 > **Python Version**: 3.11+  
-> **Last Updated**: 2025-12-09
 
 ---
 
@@ -209,3 +210,10 @@ Output ready-to-run test code.
 ---
 
 *For tool configurations and shared sections, see [_common-sections.md](_common-sections.md)*
+
+## Repository Standards
+
+- Prompt standard: [docs/prompt-standards.md](../docs/prompt-standards.md)
+- QA checks: run `bash scripts/qa/run_docs_qa.sh` from repo root.
+- Codex skill: [skills/codex-pgp/SKILL.md](../skills/codex-pgp/SKILL.md)
+- ClaudeAI skill: [skills/claudeai-pgp/SKILL.md](../skills/claudeai-pgp/SKILL.md)

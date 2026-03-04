@@ -1,9 +1,10 @@
 # Project Next Steps — Re-engagement Planning
 
 > **Purpose**: Get back into a project after time away  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Cross-language engineering workflows, reviews, and project operations  
+> **Last Updated**: 2026-03
 > **Languages**: Any  
-> **Last Updated**: 2025-12
 
 ---
 

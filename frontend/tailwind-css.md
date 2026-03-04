@@ -1,9 +1,9 @@
 # Tailwind CSS — Utility-First Patterns & Optimization
 
 > **Purpose**: Production-ready Tailwind CSS patterns and best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Tailwind v4, custom plugins, optimization, design systems  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

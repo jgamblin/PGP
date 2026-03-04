@@ -1,9 +1,9 @@
 # Gemfile Management — Dependencies & Security
 
 > **Purpose**: Organize Gemfile, manage updates, and ensure security  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Bundler, gem dependencies, security auditing  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

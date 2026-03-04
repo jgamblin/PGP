@@ -1,9 +1,9 @@
 # MongoDB — NoSQL Patterns & Optimization
 
 > **Purpose**: Production-ready MongoDB patterns, schema design, and optimization  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Document design, aggregation, indexes, performance  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

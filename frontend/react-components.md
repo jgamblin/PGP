@@ -1,9 +1,9 @@
 # React Component Development — Modern Patterns
 
 > **Purpose**: Production-ready React component patterns  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Components, hooks, state, performance  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

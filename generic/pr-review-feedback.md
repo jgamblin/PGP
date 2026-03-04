@@ -1,9 +1,10 @@
 # PR Review Feedback — Code Review Assistant
 
 > **Purpose**: Provide constructive, actionable PR reviews  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Cross-language engineering workflows, reviews, and project operations  
+> **Last Updated**: 2026-03
 > **Languages**: Any  
-> **Last Updated**: 2025-12
 
 ---
 
@@ -151,7 +152,7 @@ Keep it concise but complete.
 | **Security** | Injection, auth bypass, secrets | 🔴 Critical |
 | **Bugs** | Logic errors, null refs, race conditions | 🟠 High |
 | **Performance** | N+1 queries, memory leaks, blocking | 🟡 Medium |
-| **Maintainability** | Complexity, duplication, naming | �� Low |
+| **Maintainability** | Complexity, duplication, naming | 🟢 Low |
 
 ### 2. **Feedback Format**
 
@@ -241,7 +242,7 @@ return user.name;
 | Issue | Location | Fix |
 |-------|----------|-----|
 
-### �� High (Should Fix)
+### 🟠 High (Should Fix)
 | Issue | Location | Fix |
 |-------|----------|-----|
 

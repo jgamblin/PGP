@@ -1,9 +1,9 @@
 # Modern CSS — Container Queries, :has(), Cascade Layers & Subgrid
 
 > **Purpose**: Production-ready modern CSS patterns and best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: CSS 2024-2026 features, progressive enhancement  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

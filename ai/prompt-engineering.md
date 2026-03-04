@@ -1,9 +1,9 @@
 # Prompt Engineering — Design, Testing & Optimization
 
 > **Purpose**: Systematic prompt development for production systems  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Prompt design, testing, versioning, evaluation  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

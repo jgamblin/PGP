@@ -2,8 +2,9 @@
 
 > **Purpose**: Configure AI coding assistants for optimal output  
 > **Best For**: GitHub Copilot, ChatGPT, Claude, Cursor  
+> **Scope**: Assistant instruction-file generation and coding guidance for generic workflows  
+> **Last Updated**: 2026-03
 > **Languages**: Any  
-> **Last Updated**: 2025-12
 
 ---
 

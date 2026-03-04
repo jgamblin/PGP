@@ -1,11 +1,14 @@
 # BEM Naming Convention — CSS Architecture
 
 > **Purpose**: Organize CSS using Block Element Modifier methodology  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: CSS, SCSS, Component Styling  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
+
+> **Legacy Path Notice**: `html/` is maintained for backward compatibility. For stack-first guidance, also use [frontend/agents.md](../frontend/agents.md). 
+> **Migration Map**: [docs/compat/html-to-frontend-map.md](../docs/compat/html-to-frontend-map.md)
 
 ## Mission
 

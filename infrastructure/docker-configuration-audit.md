@@ -1,9 +1,9 @@
 # Docker Configuration Audit — Review & Validation
 
 > **Purpose**: Audit and validate Docker configurations for production readiness  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Dockerfile review, Compose validation, security audit, best practices  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

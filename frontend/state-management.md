@@ -1,9 +1,9 @@
 # State Management — Zustand, Jotai & TanStack Query
 
 > **Purpose**: Modern state management patterns for React applications  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Client state, server state, global state  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

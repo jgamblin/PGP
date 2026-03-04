@@ -1,9 +1,9 @@
 # LLM Integration — Application Development
 
 > **Purpose**: Best practices for integrating LLMs into applications  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: API usage, prompt management, error handling, cost optimization  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

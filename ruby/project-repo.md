@@ -1,9 +1,9 @@
 # Ruby Project Repository — Setup & Structure
 
 > **Purpose**: Set up and organize Ruby/Rails project repositories  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Project structure, configuration, tooling  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

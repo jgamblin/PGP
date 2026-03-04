@@ -1,9 +1,9 @@
 # Observability & Logging — Structured Logging, Tracing, and Monitoring
 
 > **Purpose**: Production-ready observability patterns and review  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Structured logging, OpenTelemetry, metrics, distributed tracing, alerting  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

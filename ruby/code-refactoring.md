@@ -1,9 +1,9 @@
 # Ruby Code Refactoring — Idiomatic Improvements
 
 > **Purpose**: Improve Ruby code using idiomatic patterns and best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Ruby 3.x, Rails 7+, Pure Ruby  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 
@@ -260,7 +260,7 @@ create_user(name: 'Alice', email: 'a@b.com', role: 'admin')
 
 ## Issues
 
-### �� Critical
+### 🔴 Critical
 | Location | Issue | Fix |
 |----------|-------|-----|
 

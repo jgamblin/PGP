@@ -1,9 +1,9 @@
 # Ruby PR Review — Code Change Feedback
 
 > **Purpose**: Review Ruby/Rails pull requests for quality and correctness  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Ruby code changes, Rails patterns, RSpec tests  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 
@@ -261,7 +261,7 @@ Use `includes` to eager load the association.
 
 ### Inline Comment Format
 ```markdown
-**�� Critical: SQL Injection**
+**🔴 Critical: SQL Injection**
 
 File: `app/models/user.rb`, line 15
 

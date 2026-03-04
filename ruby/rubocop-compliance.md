@@ -1,9 +1,9 @@
 # RuboCop Compliance — Ruby Code Style
 
 > **Purpose**: Set up and fix RuboCop linting issues  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: RuboCop configuration, style fixes, custom rules  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 
@@ -425,6 +425,6 @@ bundle exec rubocop --validate-config
 | Level | Icon | Examples |
 |-------|------|----------|
 | **Critical** | 🔴 | Security cops, Lint/Debugger |
-| **High** | �� | Style violations affecting readability |
+| **High** | 🟠 | Style violations affecting readability |
 | **Medium** | 🟡 | Metrics violations, minor style issues |
 | **Low** | 🟢 | Layout preferences, optional conventions |

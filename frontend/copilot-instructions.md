@@ -1,8 +1,10 @@
 # Frontend Copilot Instructions
 
 > **Purpose**: Repository-level instructions for GitHub Copilot in frontend projects  
+> **Best For**: GitHub Copilot, Codex, Claude, Cursor  
+> **Scope**: Assistant instruction-file generation and coding guidance for frontend workflows  
+> **Last Updated**: 2026-03
 > **Usage**: Save as `.github/copilot-instructions.md` in your frontend repository  
-> **Last Updated**: 2026-01
 
 ---
 

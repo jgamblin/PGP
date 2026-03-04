@@ -1,9 +1,10 @@
 # CI/CD Pipeline Analysis — DevOps Automation
 
 > **Purpose**: Set up and optimize CI/CD pipelines  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Cross-language engineering workflows, reviews, and project operations  
+> **Last Updated**: 2026-03
 > **Platforms**: GitHub Actions, GitLab CI, CircleCI, Jenkins  
-> **Last Updated**: 2025-12
 
 ---
 
@@ -270,6 +271,6 @@ jobs:
 | Level | Icon | Examples |
 |-------|------|----------|
 | **Critical** | 🔴 | Secrets exposed, no security scanning, broken deploys |
-| **High** | �� | No caching, sequential when parallel possible, flaky tests |
+| **High** | 🟠 | No caching, sequential when parallel possible, flaky tests |
 | **Medium** | 🟡 | Missing notifications, no artifact retention policy |
 | **Low** | 🟢 | Suboptimal caching, verbose logging |

@@ -1,11 +1,15 @@
 # HTML/CSS Prompts — Index
 
 > **Purpose**: Quick reference for all HTML/CSS prompts  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: HTML/CSS web fundamentals, accessibility, and frontend quality  
+> **Last Updated**: 2026-03
 > **Stack**: HTML, CSS, JavaScript, Accessibility  
-> **Last Updated**: 2025-12
 
 ---
+
+> **Legacy Path Notice**: `html/` is maintained for backward compatibility. For stack-first guidance, also use [frontend/agents.md](../frontend/agents.md). 
+> **Migration Map**: [docs/compat/html-to-frontend-map.md](../docs/compat/html-to-frontend-map.md)
 
 ## Available Prompts
 
@@ -143,3 +147,11 @@ Show before/after examples.
 - Mobile-first responsive design
 - CSS custom properties for theming
 - Avoid deep nesting (max 3 levels)
+
+## Repository Standards
+
+- Prompt standard: [docs/prompt-standards.md](../docs/prompt-standards.md)
+- QA checks: run `bash scripts/qa/run_docs_qa.sh` from repo root.
+- Codex skill: [skills/codex-pgp/SKILL.md](../skills/codex-pgp/SKILL.md)
+- ClaudeAI skill: [skills/claudeai-pgp/SKILL.md](../skills/claudeai-pgp/SKILL.md)
+- HTML compatibility map: [docs/compat/html-to-frontend-map.md](../docs/compat/html-to-frontend-map.md)

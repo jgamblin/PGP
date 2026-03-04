@@ -1,9 +1,9 @@
 # Kubernetes — Deployment & Operations
 
 > **Purpose**: Production-ready Kubernetes deployments, debugging, and best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: K8s manifests, Helm charts, troubleshooting, security  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

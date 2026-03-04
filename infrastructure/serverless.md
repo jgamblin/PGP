@@ -1,9 +1,9 @@
 # Serverless — Functions & Edge Computing
 
 > **Purpose**: Serverless application development and deployment patterns  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: AWS Lambda, Vercel, Cloudflare Workers, edge functions  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

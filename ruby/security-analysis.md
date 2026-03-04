@@ -1,9 +1,9 @@
 # Ruby/Rails Security Analysis
 
 > **Purpose**: Comprehensive security audit for Ruby and Rails applications  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: OWASP Top 10, Rails security, authentication, authorization  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

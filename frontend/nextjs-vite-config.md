@@ -1,9 +1,9 @@
 # Next.js & Vite Configuration — Modern Build Tools
 
 > **Purpose**: Production configuration for Next.js and Vite projects  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Configuration, optimization, deployment  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

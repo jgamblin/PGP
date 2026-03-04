@@ -1,9 +1,10 @@
 # Modern Python Patterns — 2026 Development Guide
 
 > **Purpose**: Cover Python 3.11+ features, modern patterns, and AI integration  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Python 3.11+ application development, tooling, and code quality  
+> **Last Updated**: 2026-03
 > **Python Version**: 3.11+ (3.12+ for latest features)  
-> **Last Updated**: 2025-12-09
 
 ---
 

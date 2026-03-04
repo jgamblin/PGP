@@ -1,9 +1,9 @@
 # RSpec Test Generation — Ruby/Rails Testing
 
 > **Purpose**: Generate RSpec tests for Ruby and Rails applications  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: RSpec, FactoryBot, model/request/feature specs  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

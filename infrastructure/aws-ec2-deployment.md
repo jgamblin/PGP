@@ -1,9 +1,9 @@
 # AWS EC2 Deployment — Infrastructure Automation
 
 > **Purpose**: Deploy applications to AWS EC2 with ARM-based instances  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: EC2, AMI selection, security groups, deployment scripts  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

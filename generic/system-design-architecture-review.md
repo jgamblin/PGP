@@ -1,9 +1,9 @@
 # System Design & Architecture Review — Technical Evaluation
 
 > **Purpose**: Evaluate and improve system architecture  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Any scale system  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 
@@ -315,7 +315,7 @@ Propose:
 | Issue | Impact | Recommendation |
 |-------|--------|----------------|
 
-### �� High Priority
+### 🟠 High Priority
 | Issue | Impact | Recommendation |
 |-------|--------|----------------|
 

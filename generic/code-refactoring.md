@@ -1,9 +1,10 @@
 # Code Refactoring — Quality Improvement
 
 > **Purpose**: Improve code quality, readability, and maintainability  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
+> **Scope**: Cross-language engineering workflows, reviews, and project operations  
+> **Last Updated**: 2026-03
 > **Languages**: Any  
-> **Last Updated**: 2025-12
 
 ---
 

@@ -1,9 +1,9 @@
 # Rails ActiveRecord Performance — N+1 & Query Optimization
 
 > **Purpose**: Identify and fix database performance issues in Rails  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: N+1 queries, indexes, eager loading, query optimization  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

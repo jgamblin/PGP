@@ -1,9 +1,9 @@
 # Terraform & Infrastructure as Code — IaC Patterns
 
 > **Purpose**: Production-ready Terraform configurations and IaC best practices  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Terraform, OpenTofu, multi-cloud infrastructure  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

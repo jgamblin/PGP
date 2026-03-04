@@ -1,9 +1,9 @@
 # Service Objects & Domain Logic — Rails Architecture
 
 > **Purpose**: Extract business logic from controllers/models into service objects  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Service objects, form objects, domain logic patterns  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

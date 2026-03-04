@@ -3,7 +3,7 @@
 > **Purpose**: Configure AI assistants for Ruby/Rails development  
 > **Best For**: GitHub Copilot, VS Code settings  
 > **Scope**: Ruby 3.x, Rails 7+, RSpec  
-> **Last Updated**: 2025-12
+> **Last Updated**: 2026-03
 
 ---
 

@@ -3,7 +3,7 @@
 > **Purpose**: Agent instructions for infrastructure-related development tasks  
 > **Best For**: Copilot, Cursor, Windsurf, Claude Agents  
 > **Scope**: Kubernetes, Terraform, Docker, CI/CD, serverless, monitoring  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 
@@ -444,3 +444,10 @@ Before completing any infrastructure task, verify:
 ---
 
 *Last updated: 2026-01*
+
+## Repository Standards
+
+- Prompt standard: [docs/prompt-standards.md](../docs/prompt-standards.md)
+- QA checks: run `bash scripts/qa/run_docs_qa.sh` from repo root.
+- Codex skill: [skills/codex-pgp/SKILL.md](../skills/codex-pgp/SKILL.md)
+- ClaudeAI skill: [skills/claudeai-pgp/SKILL.md](../skills/claudeai-pgp/SKILL.md)

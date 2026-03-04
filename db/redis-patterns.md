@@ -1,9 +1,9 @@
 # Redis — Caching & Data Structure Patterns
 
 > **Purpose**: Production-ready Redis patterns for caching, pub/sub, and data structures  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Caching strategies, data structures, pub/sub, Lua scripting, clustering  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

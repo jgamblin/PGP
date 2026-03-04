@@ -1,9 +1,9 @@
 # Hotwire & Turbo — Modern Rails Frontend
 
 > **Purpose**: Production-ready Turbo Frames, Streams, and morphing patterns  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: Turbo Drive, Frames, Streams, broadcasting, page refreshes  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 

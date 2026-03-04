@@ -1,9 +1,9 @@
 # API Design — REST, GraphQL, and Best Practices
 
 > **Purpose**: Production-ready API design patterns and review  
-> **Best For**: Copilot, ChatGPT, Claude, Agents  
+> **Best For**: Codex, Claude, ChatGPT, Copilot, Agents  
 > **Scope**: REST, GraphQL, OpenAPI, versioning, error handling  
-> **Last Updated**: 2026-01
+> **Last Updated**: 2026-03
 
 ---
 
